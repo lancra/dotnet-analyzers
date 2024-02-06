@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": ".NET Analyzer Rules",
+  "description": "Provides a group of analyzer rules.",
+  "definitions": {
+    "option": {
+      "title": "Formatting Option",
+      "description": "An option for customizing the formatting behavior of one or more analyzer rules.",
+      "properties": {
+        "name": {
+          "description": "The name of the option.",
+          "type": "string"
+        },
+        "values": {
+          "description": "The option values that are available for use.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/optionValue"
+          }
+        },
+        "default": {
+          "description": "The default value that is used when the option is not specified.",
+          "type": "string"
+        }
+      },
+      "required": ["name", "values"]
+    },
+    "optionValue": {
+      "title": "Formatting Option Value",
+      "description": "A value that can be used for a formatting option.",
+      "properties": {
+        "value": {
+          "description": "The formatting option value.",
+          "type": "string"
+        },
+        "alternate": {
+          "description": "An alternate option value that can be used in place of the normal value.",
+          "type": "string"
+        },
+        "specification": {
+          "description": "Additional specification about the value property. Used to provide context when many different values are possible.",
+          "type": "string"
+        },
+        "description": {
+          "description": "An explanation of the resulting behavior after applying the selected value.",
+          "type": "string"
+        }
+      },
+      "required": ["value", "description"]
+    },
+    "rule": {
+      "title": "Analyzer Rule",
+      "description": "A coded rule that is used by an analyzer to denote issues.",
+      "properties": {
+        "id": {
+          "description": "The unique code used to reference a rule.",
+          "type": "string"
+        },
+        "title": {
+          "description": "A short description of the rule.",
+          "type": "string"
+        },
+        "category": {
+          "description": "The sub-group organizational parent.",
+          "type": "string"
+        },
+        "options": {
+          "description": "Options used to further customize the rule's behavior.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/option"
+          }
+        }
+      },
+      "required": ["id", "title"]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "description": "The timestamp of the download.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "rules": {
+      "description": "The collection of analyzer rules.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/rule"
+      },
+      "minItems": 1
+    }
+  },
+  "required": ["rules"]
+}
