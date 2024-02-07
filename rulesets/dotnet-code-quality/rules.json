@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2024-02-06T06:02:35.9134125-05:00",
+  "timestamp": "2024-02-07T06:47:54.2064568-05:00",
   "rules": [
     {
       "id": "CA1000",
@@ -145,6 +145,11 @@
     {
       "id": "CA1046",
       "title": "Do not overload equality operator on reference types",
+      "category": "Design"
+    },
+    {
+      "id": "CA1047",
+      "title": "Do not declare protected member in sealed type",
       "category": "Design"
     },
     {
@@ -1403,8 +1408,18 @@
       "category": "Usage"
     },
     {
+      "id": "CA2218",
+      "title": "Override GetHashCode on overriding Equals",
+      "category": "Usage"
+    },
+    {
       "id": "CA2219",
       "title": "Do not raise exceptions in finally clauses",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2224",
+      "title": "Override Equals on overloading operator equals",
       "category": "Usage"
     },
     {
