@@ -13,6 +13,7 @@ try {
     }
 
     & "$env:DOTNET_ANALYZERS_SCRIPTS/generate-settings.ps1"
+    & "$env:DOTNET_ANALYZERS_SCRIPTS/generate-configurations.ps1"
 }
 finally {
     Switch-Environment
