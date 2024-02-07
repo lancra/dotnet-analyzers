@@ -131,7 +131,7 @@ CA1844,Provide memory-based overrides of async methods when subclassing 'Stream'
 CA1845,Use span-based 'string.Concat',.NET Quality,Performance,Warning,
 CA1846,Prefer 'AsSpan' over 'Substring',.NET Quality,Performance,Warning,
 CA1847,Use char literal for a single character lookup,.NET Quality,Performance,Warning,
-CA1848,Use the LoggerMessage delegates,.NET Quality,Performance,Disabled,
+CA1848,Use the LoggerMessage delegates,.NET Quality,Performance,Warning,
 CA1849,Call async methods when in an async method,.NET Quality,Performance,Warning,
 CA1850,Prefer static 'HashData' method over 'ComputeHash',.NET Quality,Performance,Warning,
 CA1851,Possible multiple enumerations of 'IEnumerable' collection,.NET Quality,Performance,Warning,
