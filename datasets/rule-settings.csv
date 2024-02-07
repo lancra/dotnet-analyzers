@@ -612,5 +612,5 @@ SA1025,The code contains multiple whitespace characters in a row.,StyleCop,Spaci
 SA1026,An implicitly typed new array allocation within a C# code file is not spaced correctly.,StyleCop,Spacing,Warning,
 SA1027,The code contains a tab or space character which is not consistent with the current project settings.,StyleCop,Spacing,Warning,
 SA1028,"A line of code ends with a space, tab, or other whitespace characters before the end of line character(s).",StyleCop,Spacing,Warning,
-SA0001,All diagnostics of XML documentation comments has been disabled due to the current project configuration.,StyleCop,Special,Warning,
+SA0001,All diagnostics of XML documentation comments has been disabled due to the current project configuration.,StyleCop,Special,Disabled,
 SA0002,The stylecop.json settings file could not be loaded due to a deserialization error.,StyleCop,Special,Warning,
