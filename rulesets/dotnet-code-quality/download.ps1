@@ -9,13 +9,13 @@ $jqQuery = '.runs[] | ' +
     'map({ value: .value }) | ' +
     'map(. + .value | del(.value)) | ' +
     'map(. + .properties | del(.properties)) | ' +
-    'map(select(.languages | index(["C#"]))) | ' +
     'map({ id, title: .shortDescription, category })'
 
 $netAnalyzerUrl = 'https://raw.githubusercontent.com/dotnet/roslyn-analyzers/main/src/NetAnalyzers/Microsoft.CodeAnalysis.NetAnalyzers.sarif'
 $rules = & curl --silent $netAnalyzerUrl |
     jq $jqQuery |
     jq -s 'add' |
+    jq '[.[]] | unique_by(.id)' |
     ConvertFrom-Json
 
 $textAnalyzerUrl = 'https://raw.githubusercontent.com/dotnet/roslyn-analyzers/main/src/Text.Analyzers/Text.Analyzers.sarif'
