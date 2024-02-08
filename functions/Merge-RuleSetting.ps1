@@ -18,7 +18,13 @@ function Merge-RuleSetting {
         $rawOnlineRules = @()
         $rulesets |
             ForEach-Object {
-                $groupRules = Get-Content -Path "$env:DOTNET_ANALYZERS_RULESETS/$($_.Directory)/rules.json" |
+                $groupRulesPath = "$env:DOTNET_ANALYZERS_RULESETS/$($_.Directory)/rules.json"
+                if (-not (Test-Path -Path $groupRulesPath)) {
+                    Write-Warning "Skipping merge of $($_.Name) rule settings, no downloaded rules found"
+                    return
+                }
+
+                $groupRules = Get-Content -Path $groupRulesPath |
                     ConvertFrom-Json |
                     Select-Object -ExpandProperty 'rules'
 
