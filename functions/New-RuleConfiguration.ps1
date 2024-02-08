@@ -28,6 +28,10 @@ function New-RuleConfiguration {
 
         $settingFormat = 'dotnet_diagnostic.{0}.severity = {1}'
         $builder = [System.Text.StringBuilder]::new()
+
+        [void]$builder.AppendLine('is_global = true')
+        [void]$builder.AppendLine()
+
         $groups |
             ForEach-Object -Begin { $script:i = 0 } -Process {
                 $lastGroup = -not ($i -lt $groups.Length - 1)
