@@ -9,7 +9,9 @@ the lists up-to-date and to generate the configuration files to apply the settin
 
 - [.NET Code Style](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules)
 
-- [StyleCop](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/f5f4ca9468fc29a4d34d50541afb2e496933feda/StyleCop.Analyzers/StyleCop.Analyzers.CodeFixes/rulesets/StyleCopAnalyzersDefault.ruleset)
+- [StyleCop](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/StyleCop.Analyzers/StyleCop.Analyzers.CodeFixes/rulesets/StyleCopAnalyzersDefault.ruleset)
+
+- [xUnit](https://xunit.net/xunit.analyzers/rules/)
 
 ## Usage
 
