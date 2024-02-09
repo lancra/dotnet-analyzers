@@ -64,6 +64,10 @@
           "description": "The sub-group organizational parent.",
           "type": "string"
         },
+        "default": {
+          "description": "The default severity for the rule.",
+          "type": "string"
+        },
         "options": {
           "description": "Options used to further customize the rule's behavior.",
           "type": "array",

@@ -35,9 +35,10 @@ function Merge-RuleSetting {
 
         $selectProperties = @(
             @{Name = $idProperty; Expression = {$_.id}},
-            @{Name = $titleProperty;Expression = {$_.title}},
+            @{Name = $titleProperty; Expression = {$_.title}},
             $groupProperty,
-            @{Name = $categoryProperty;Expression = {$_.category}}
+            @{Name = $categoryProperty; Expression = {$_.category}},
+            @{Name = $severityProperty; Expression = {$_.default}}
         )
         $onlineRules = $rawOnlineRules | Select-Object -Property $selectProperties
 
@@ -70,7 +71,6 @@ function Merge-RuleSetting {
                     $rule.$actionProperty = 'New'
                     $script:atLeastOneAction = $true
 
-                    $rule | Add-Member -MemberType NoteProperty -Name $severityProperty -Value ''
                     $rule | Add-Member -MemberType NoteProperty -Name $reasoningProperty -Value ''
                 }
 
