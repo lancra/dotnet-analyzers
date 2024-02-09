@@ -18,7 +18,13 @@ function Merge-OptionSetting {
         $rawOnlineOptions = @()
         $rulesets |
             ForEach-Object {
-                $groupOptions = Get-Content -Path "$env:DOTNET_ANALYZERS_RULESETS/$($_.Directory)/rules.json" |
+                $groupRulesPath = "$env:DOTNET_ANALYZERS_RULESETS/$($_.Directory)/rules.json"
+                if (-not (Test-Path -Path $groupRulesPath)) {
+                    Write-Warning "Skipping merge of $($_.Name) option settings, no downloaded rules found"
+                    return
+                }
+
+                $groupOptions = Get-Content -Path $groupRulesPath |
                     ConvertFrom-Json |
                     Select-Object -ExpandProperty 'rules' |
                     Where-Object -Property 'options' |

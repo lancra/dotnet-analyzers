@@ -4,6 +4,11 @@ function New-OptionConfiguration {
     process {
         $settings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/option-settings.csv"
 
+        if ($settings.Length -eq 0) {
+            Write-Warning 'Skipping configuration generation, no options settings found'
+            return
+        }
+
         $settingFormat = '{0} = {1} # {2}'
         $builder = [System.Text.StringBuilder]::new()
 

@@ -1,0 +1,456 @@
+{
+  "$schema": "../../analyzer-rules.schema.json",
+  "timestamp": "2024-02-08T07:37:19.8244451-05:00",
+  "rules": [
+    {
+      "id": "xUnit1000",
+      "title": "Test classes must be public",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1001",
+      "title": "Fact methods cannot have parameters",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1002",
+      "title": "Test methods cannot have multiple Fact or Theory attributes",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1003",
+      "title": "Theory methods must have test data",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1004",
+      "title": "Test methods should not be skipped",
+      "category": "Usage",
+      "default": "Info"
+    },
+    {
+      "id": "xUnit1005",
+      "title": "Fact methods should not have test data",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit1006",
+      "title": "Theory methods should have parameters",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit1007",
+      "title": "ClassData must point at a valid class",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1008",
+      "title": "Test data attribute should only be used on a Theory",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit1009",
+      "title": "InlineData values must match the number of method parameters",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1010",
+      "title": "The value is not convertible to the method parameter type",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1011",
+      "title": "There is no matching method parameter",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1012",
+      "title": "Null should not be used for value type parameters",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit1013",
+      "title": "Public method should be marked as test",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit1014",
+      "title": "MemberData should use nameof operator for member name",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit1015",
+      "title": "MemberData must reference an existing member",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1016",
+      "title": "MemberData must reference a public member",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1017",
+      "title": "MemberData must reference a static member",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1018",
+      "title": "MemberData must reference a valid member kind",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1019",
+      "title": "MemberData must reference a member providing a valid data type",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1020",
+      "title": "MemberData must reference a property with a getter",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1021",
+      "title": "MemberData should not have parameters if the referenced member is not a method",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit1022",
+      "title": "Theory methods cannot have a parameter array",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1023",
+      "title": "Theory methods cannot have default parameter values",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1024",
+      "title": "Test methods cannot have overloads",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1025",
+      "title": "InlineData should be unique within the Theory it belongs to",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit1026",
+      "title": "Theory methods should use all of their parameters",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit1027",
+      "title": "Collection definition classes must be public",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1028",
+      "title": "Test method must have valid return type",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1029",
+      "title": "Local functions cannot be test functions",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1030",
+      "title": "Do not call ConfigureAwait in test method",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit1031",
+      "title": "Do not use blocking task operations in test method",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit1032",
+      "title": "Test classes cannot be nested within a generic class",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1033",
+      "title": "Test classes decorated with &#39;Xunit.IClassFixture",
+      "category": "Usage",
+      "default": "Info"
+    },
+    {
+      "id": "xUnit1034",
+      "title": "Null should only be used for nullable parameters",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit1035",
+      "title": "The value is not convertible to the method parameter type",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1036",
+      "title": "There is no matching method parameter",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1037",
+      "title": "There are fewer TheoryData type arguments than required by the parameters of the test method",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1038",
+      "title": "There are more TheoryData type arguments than allowed by the parameters of the test method",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1039",
+      "title": "The type argument to TheoryData is not compatible with the type of the corresponding test method parameter",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1040",
+      "title": "The type argument to TheoryData is nullable, while the type of the corresponding test method parameter is not",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit1041",
+      "title": "Fixture arguments to test classes must have fixture sources",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit1042",
+      "title": "The member referenced by the MemberData attribute returns untyped data rows",
+      "category": "Usage",
+      "default": "Info"
+    },
+    {
+      "id": "xUnit1043",
+      "title": "Constructors on classes derived from FactAttribute must be public when used on test methods",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit2000",
+      "title": "Constants and literals should be the expected argument",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2001",
+      "title": "Do not use invalid equality check",
+      "category": "Assertion",
+      "default": "Hidden"
+    },
+    {
+      "id": "xUnit2002",
+      "title": "Do not use null check on value type",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2003",
+      "title": "Do not use equality check to test for null value",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2004",
+      "title": "Do not use equality check to test for boolean conditions",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2005",
+      "title": "Do not use identity check on value type",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2006",
+      "title": "Do not use invalid string equality check",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2007",
+      "title": "Do not use typeof expression to check the type",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2008",
+      "title": "Do not use boolean check to match on regular expressions",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2009",
+      "title": "Do not use boolean check to check for substrings",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2010",
+      "title": "Do not use boolean check to check for string equality",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2011",
+      "title": "Do not use empty collection check",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2012",
+      "title": "Do not use Enumerable.Any() to check if a value exists in a collection",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2013",
+      "title": "Do not use equality check to check for collection size.",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2014",
+      "title": "Do not use throws check to check for asynchronously thrown exception",
+      "category": "Assertion",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit2015",
+      "title": "Do not use typeof expression to check the exception type",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2016",
+      "title": "Keep precision in the allowed range when asserting equality of doubles or decimals.",
+      "category": "Assertion",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit2017",
+      "title": "Do not use Contains() to check if a value exists in a collection",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2018",
+      "title": "Do not compare an object&#39;s exact type to an abstract class or interface",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2019",
+      "title": "Do not use obsolete throws check to check for asynchronously thrown exception",
+      "category": "Assertion",
+      "default": "Hidden"
+    },
+    {
+      "id": "xUnit2020",
+      "title": "Do not use always-failing boolean assertion to fail a test",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2021",
+      "title": "Async assertions should be awaited",
+      "category": "Assertion",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit2022",
+      "title": "Boolean assertions should not be negated",
+      "category": "Assertion",
+      "default": "Info"
+    },
+    {
+      "id": "xUnit2023",
+      "title": "Do not use collection methods for single-item collections",
+      "category": "Assertion",
+      "default": "Info"
+    },
+    {
+      "id": "xUnit2024",
+      "title": "Do not use boolean asserts for simple equality tests",
+      "category": "Assertion",
+      "default": "Info"
+    },
+    {
+      "id": "xUnit2025",
+      "title": "The boolean assertion statement can be simplified",
+      "category": "Assertion",
+      "default": "Info"
+    },
+    {
+      "id": "xUnit2026",
+      "title": "Comparison of sets must be done with IEqualityComparer",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2027",
+      "title": "Comparison of sets to linear containers have undefined results",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2028",
+      "title": "Do not use Assert.Empty or Assert.NotEmpty with problematic types",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit3000",
+      "title": "Classes which cross AppDomain boundaries must derive directly or indirectly from LongLivedMarshalByRefObject",
+      "category": "Extensibility",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit3001",
+      "title": "Classes that implement Xunit.Abstractions.IXunitSerializable must have a public parameterless constructor",
+      "category": "Extensibility",
+      "default": "Error"
+    }
+  ]
+}

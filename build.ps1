@@ -1,5 +1,7 @@
 [CmdletBinding(SupportsShouldProcess)]
 param (
+    [Parameter()]
+    [string]$RuleSet,
     [switch]$SkipDownload
 )
 
@@ -9,7 +11,7 @@ try {
     Switch-Environment
 
     if (-not $SkipDownload) {
-        & "$env:DOTNET_ANALYZERS_SCRIPTS/download-rules.ps1"
+        & "$env:DOTNET_ANALYZERS_SCRIPTS/download-rules.ps1" -RuleSet $RuleSet
     }
 
     & "$env:DOTNET_ANALYZERS_SCRIPTS/generate-settings.ps1"

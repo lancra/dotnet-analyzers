@@ -18,7 +18,13 @@ function Merge-RuleSetting {
         $rawOnlineRules = @()
         $rulesets |
             ForEach-Object {
-                $groupRules = Get-Content -Path "$env:DOTNET_ANALYZERS_RULESETS/$($_.Directory)/rules.json" |
+                $groupRulesPath = "$env:DOTNET_ANALYZERS_RULESETS/$($_.Directory)/rules.json"
+                if (-not (Test-Path -Path $groupRulesPath)) {
+                    Write-Warning "Skipping merge of $($_.Name) rule settings, no downloaded rules found"
+                    return
+                }
+
+                $groupRules = Get-Content -Path $groupRulesPath |
                     ConvertFrom-Json |
                     Select-Object -ExpandProperty 'rules'
 
@@ -29,9 +35,10 @@ function Merge-RuleSetting {
 
         $selectProperties = @(
             @{Name = $idProperty; Expression = {$_.id}},
-            @{Name = $titleProperty;Expression = {$_.title}},
+            @{Name = $titleProperty; Expression = {$_.title}},
             $groupProperty,
-            @{Name = $categoryProperty;Expression = {$_.category}}
+            @{Name = $categoryProperty; Expression = {$_.category}},
+            @{Name = $severityProperty; Expression = {$_.default}}
         )
         $onlineRules = $rawOnlineRules | Select-Object -Property $selectProperties
 
@@ -64,7 +71,6 @@ function Merge-RuleSetting {
                     $rule.$actionProperty = 'New'
                     $script:atLeastOneAction = $true
 
-                    $rule | Add-Member -MemberType NoteProperty -Name $severityProperty -Value ''
                     $rule | Add-Member -MemberType NoteProperty -Name $reasoningProperty -Value ''
                 }
 
