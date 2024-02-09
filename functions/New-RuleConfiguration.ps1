@@ -2,12 +2,19 @@ function New-RuleConfiguration {
     [CmdletBinding(SupportsShouldProcess)]
     param ()
     process {
-        $severities = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/severities.csv"
-        $categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/categories.csv"
-        $settings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-settings.csv"
+        $severities = @{}
+        Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/severities.csv" |
+            ForEach-Object { $severities[$_.Name] = $_.Configuration }
 
-        $severityMappings = @{}
-        $severities | ForEach-Object { $severityMappings[$_.Name] = $_.Configuration }
+        $ruleSets = @{}
+        Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-sets.csv" |
+            ForEach-Object { $ruleSets[$_.Name] = [bool]::Parse($_.Configure) }
+
+        $categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/categories.csv" |
+            Where-Object { $ruleSets[$_.RuleSet] }
+
+        $settings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-settings.csv" |
+            Where-Object { $ruleSets[$_.RuleSet] }
 
         $settingsWithEmptySeverity = $settings |
             Where-Object { -not $_.Severity }
@@ -18,7 +25,7 @@ function New-RuleConfiguration {
         }
 
         $settingsWithUnmappedSeverity = $settings |
-            Where-Object { $_.Severity -and -not $severityMappings[$_.Severity] }
+            Where-Object { $_.Severity -and -not $severities[$_.Severity] }
         if ($settingsWithUnmappedSeverity.Length -gt 0) {
             $invalidSeverities = ($settingsWithUnmappedSeverity | Select-Object -InputObject { "$($_.Id)=$($_.Severity)" }) -join ', '
             Write-Error "Please specify a valid severity for the following settings: $invalidSeverities"
@@ -57,7 +64,7 @@ function New-RuleConfiguration {
                     ForEach-Object -Begin { $script:j = 0 } -Process {
                         $lastSetting = -not ($j -lt $matchingSettings.Length - 1)
 
-                        $setting = $settingFormat -f $_.Id, $severityMappings[$_.Severity]
+                        $setting = $settingFormat -f $_.Id, $severities[$_.Severity]
                         [void]$builder.Append($setting)
 
                         if (-not ($lastRuleSet -and $lastSetting)) {

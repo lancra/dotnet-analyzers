@@ -1,5 +1,5 @@
-Name,Directory
-.NET Quality,dotnet-code-quality
-.NET Style,dotnet-code-style
-StyleCop,stylecop
-xUnit,xunit
+Name,Directory,Configure
+.NET Quality,dotnet-code-quality,true
+.NET Style,dotnet-code-style,true
+StyleCop,stylecop,true
+xUnit,xunit,true
