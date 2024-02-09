@@ -11,12 +11,12 @@ $url = 'https://xunit.net/xunit.analyzers/rules/'
 $rules = @()
 
 enum RuleParserState {
-    Header # Skipping the table group header
+    Header # Skipping the table category header
     Active # Parsing rules from the table
 }
 $state = [RuleParserState]::Active
 
-$currentGroup = $null
+$currentCategory = $null
 (& curl --silent $url) |
     pup 'html body div table tbody json{}' |
     ConvertFrom-Json |
@@ -28,7 +28,7 @@ $currentGroup = $null
         }
 
         if ($_.children.Length -eq 1) {
-            $currentGroup = $_.children[0].children[0].text -replace ' Analyzers', ''
+            $currentCategory = $_.children[0].children[0].text -replace ' Analyzers', ''
             $state = [RuleParserState]::Header
             return
         }
@@ -36,7 +36,7 @@ $currentGroup = $null
         $rule = [ordered]@{}
         $rule.id = $_.children[0].children[0].children[0].text
         $rule.title = $_.children[1].text
-        $rule.category = $currentGroup
+        $rule.category = $currentCategory
         $rule.default = $_.children[0].children[1].text
         $rules += $rule
     }

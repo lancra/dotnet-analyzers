@@ -7,7 +7,7 @@ function Merge-OptionSetting {
         $actionProperty = 'Action'
         $nameProperty = 'Name'
         $idProperty = 'Id'
-        $groupProperty = 'Group'
+        $ruleSetProperty = 'RuleSet'
         $defaultProperty = 'Default'
         $valueProperty = 'Value'
         $reasoningProperty = 'Reasoning'
@@ -18,27 +18,27 @@ function Merge-OptionSetting {
         $rawOnlineOptions = @()
         $rulesets |
             ForEach-Object {
-                $groupRulesPath = "$env:DOTNET_ANALYZERS_RULESETS/$($_.Directory)/rules.json"
-                if (-not (Test-Path -Path $groupRulesPath)) {
+                $rulesPath = "$env:DOTNET_ANALYZERS_RULESETS/$($_.Directory)/rules.json"
+                if (-not (Test-Path -Path $rulesPath)) {
                     Write-Warning "Skipping merge of $($_.Name) option settings, no downloaded rules found"
                     return
                 }
 
-                $groupOptions = Get-Content -Path $groupRulesPath |
+                $ruleSetOptions = Get-Content -Path $rulesPath |
                     ConvertFrom-Json |
                     Select-Object -ExpandProperty 'rules' |
                     Where-Object -Property 'options' |
                     Select-Object -Property 'id' -ExpandProperty 'options'
 
-                $groupOptions | Add-Member -MemberType NoteProperty -Name $groupProperty -Value $_.Name
+                $ruleSetOptions | Add-Member -MemberType NoteProperty -Name $ruleSetProperty -Value $_.Name
 
-                $rawOnlineOptions += $groupOptions
+                $rawOnlineOptions += $ruleSetOptions
             }
 
         $selectProperties = @(
             @{Name = $nameProperty; Expression = {$_.name}},
             @{Name = $idProperty; Expression = {$_.id}},
-            $groupProperty,
+            $ruleSetProperty,
             @{Name = $defaultProperty;Expression = {$_.default}}
         )
         $onlineOptions = $rawOnlineOptions | Select-Object -Property $selectProperties
@@ -90,7 +90,7 @@ function Merge-OptionSetting {
         $outputProperties = @(
             $nameProperty,
             $idProperty,
-            $groupProperty,
+            $ruleSetProperty,
             $defaultProperty,
             $valueProperty,
             $reasoningProperty

@@ -3,7 +3,7 @@ function New-RuleConfiguration {
     param ()
     process {
         $severities = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/severities.csv"
-        $groups = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/groups.csv"
+        $categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/categories.csv"
         $settings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/rule-settings.csv"
 
         $severityMappings = @{}
@@ -32,12 +32,12 @@ function New-RuleConfiguration {
         [void]$builder.AppendLine('is_global = true')
         [void]$builder.AppendLine()
 
-        $groups |
+        $categories |
             ForEach-Object -Begin { $script:i = 0 } -Process {
-                $lastGroup = -not ($i -lt $groups.Length - 1)
+                $lastRuleSet = -not ($i -lt $categories.Length - 1)
 
                 [void]$builder.Append('# ')
-                [void]$builder.Append($_.Group)
+                [void]$builder.Append($_.RuleSet)
                 [void]$builder.Append(': ')
 
                 if ($_.Category) {
@@ -50,7 +50,7 @@ function New-RuleConfiguration {
                 [void]$builder.AppendLine('>')
 
                 $matchingSettings = $settings |
-                    Where-Object -Property Group -EQ $_.Group |
+                    Where-Object -Property RuleSet -EQ $_.RuleSet |
                     Where-Object -Property Category -EQ $_.Category
 
                 $matchingSettings |
@@ -60,7 +60,7 @@ function New-RuleConfiguration {
                         $setting = $settingFormat -f $_.Id, $severityMappings[$_.Severity]
                         [void]$builder.Append($setting)
 
-                        if (-not ($lastGroup -and $lastSetting)) {
+                        if (-not ($lastRuleSet -and $lastSetting)) {
                             [void]$builder.AppendLine()
                         }
 
@@ -70,7 +70,7 @@ function New-RuleConfiguration {
                 # Script scope required due to https://github.com/PowerShell/PSScriptAnalyzer/issues/1163
                 $j = 0
 
-                if (-not $lastGroup) {
+                if (-not $lastRuleSet) {
                     [void]$builder.AppendLine()
                 }
 

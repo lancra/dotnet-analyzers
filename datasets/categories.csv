@@ -1,4 +1,4 @@
-Group,Category,Url
+RuleSet,Category,Url
 .NET Quality,Design,https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/design-warnings
 .NET Quality,Documentation,https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/documentation-warnings
 .NET Quality,Globalization,https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/globalization-warnings

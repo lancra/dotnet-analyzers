@@ -2,10 +2,9 @@
 
 Spreadsheets of data used for building the analyzer configuration files.
 
-## Groups
+## Categories
 
-Provides the group and categories for each rule set, along with a URL for reference. Used for downloading or outputing rules by
-category.
+Provides the categories for each rule set, along with a URL for reference. Used for downloading or outputting rules by category.
 
 ## Option Settings
 

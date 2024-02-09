@@ -7,7 +7,7 @@ function Merge-RuleSetting {
         $actionProperty = 'Action'
         $idProperty = 'Id'
         $titleProperty = 'Title'
-        $groupProperty = 'Group'
+        $ruleSetProperty = 'RuleSet'
         $categoryProperty = 'Category'
         $severityProperty = 'Severity'
         $reasoningProperty = 'Reasoning'
@@ -18,25 +18,25 @@ function Merge-RuleSetting {
         $rawOnlineRules = @()
         $rulesets |
             ForEach-Object {
-                $groupRulesPath = "$env:DOTNET_ANALYZERS_RULESETS/$($_.Directory)/rules.json"
-                if (-not (Test-Path -Path $groupRulesPath)) {
+                $rulesPath = "$env:DOTNET_ANALYZERS_RULESETS/$($_.Directory)/rules.json"
+                if (-not (Test-Path -Path $rulesPath)) {
                     Write-Warning "Skipping merge of $($_.Name) rule settings, no downloaded rules found"
                     return
                 }
 
-                $groupRules = Get-Content -Path $groupRulesPath |
+                $ruleSetRules = Get-Content -Path $rulesPath |
                     ConvertFrom-Json |
                     Select-Object -ExpandProperty 'rules'
 
-                $groupRules | Add-Member -MemberType NoteProperty -Name $groupProperty -Value $_.Name
+                $ruleSetRules | Add-Member -MemberType NoteProperty -Name $ruleSetProperty -Value $_.Name
 
-                $rawOnlineRules += $groupRules
+                $rawOnlineRules += $ruleSetRules
             }
 
         $selectProperties = @(
             @{Name = $idProperty; Expression = {$_.id}},
             @{Name = $titleProperty; Expression = {$_.title}},
-            $groupProperty,
+            $ruleSetProperty,
             @{Name = $categoryProperty; Expression = {$_.category}},
             @{Name = $severityProperty; Expression = {$_.default}}
         )
@@ -80,7 +80,7 @@ function Merge-RuleSetting {
         $outputProperties = @(
             $idProperty,
             $titleProperty,
-            $groupProperty,
+            $ruleSetProperty,
             $categoryProperty,
             $severityProperty,
             $reasoningProperty
