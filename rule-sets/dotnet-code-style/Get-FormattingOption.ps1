@@ -22,7 +22,7 @@ function Get-FormattingOption {
         $defaultProperty = 'Default option value'
         $pipeEscapeCharacter = '&#124;'
 
-        $optionValueSpecifications = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/option-value-specifications.csv"
+        $optionValueSpecifications = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/option-value-specifications.csv"
     }
     process {
         Write-Verbose "Parsing formatting options from $(Split-Path -Path $Url -Leaf)."

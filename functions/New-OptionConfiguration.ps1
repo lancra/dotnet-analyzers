@@ -2,7 +2,7 @@ function New-OptionConfiguration {
     [CmdletBinding(SupportsShouldProcess)]
     param ()
     process {
-        $settings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/option-settings.csv"
+        $settings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/option-settings.csv"
 
         if ($settings.Length -eq 0) {
             Write-Warning 'Skipping configuration generation, no options settings found'

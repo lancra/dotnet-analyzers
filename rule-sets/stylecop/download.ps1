@@ -3,7 +3,7 @@ param ()
 
 . "$env:DOTNET_ANALYZERS_FUNCTIONS/Format-Plaintext.ps1"
 
-$categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/categories.csv" |
+$categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/categories.csv" |
     Where-Object -Property 'RuleSet' -EQ 'StyleCop' |
     Select-Object -ExpandProperty 'Category'
 $categoryUrlFormat = 'https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/documentation/{0}Rules.md'

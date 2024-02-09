@@ -13,12 +13,12 @@ function Merge-OptionSetting {
         $reasoningProperty = 'Reasoning'
     }
     process {
-        $rulesets = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/rulesets.csv"
+        $ruleSets = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-sets.csv"
 
         $rawOnlineOptions = @()
-        $rulesets |
+        $ruleSets |
             ForEach-Object {
-                $rulesPath = "$env:DOTNET_ANALYZERS_RULESETS/$($_.Directory)/rules.json"
+                $rulesPath = "$env:DOTNET_ANALYZERS_RULE_SETS/$($_.Directory)/rules.json"
                 if (-not (Test-Path -Path $rulesPath)) {
                     Write-Warning "Skipping merge of $($_.Name) option settings, no downloaded rules found"
                     return
@@ -43,7 +43,7 @@ function Merge-OptionSetting {
         )
         $onlineOptions = $rawOnlineOptions | Select-Object -Property $selectProperties
 
-        $settingsPath = "$env:DOTNET_ANALYZERS_DATASETS/option-settings.csv"
+        $settingsPath = "$env:DOTNET_ANALYZERS_DATA_SETS/option-settings.csv"
         $localOptions = Get-Setting -Path $settingsPath
 
         $names = @()

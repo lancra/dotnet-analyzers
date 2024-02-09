@@ -2,9 +2,9 @@ function New-RuleConfiguration {
     [CmdletBinding(SupportsShouldProcess)]
     param ()
     process {
-        $severities = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/severities.csv"
-        $categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/categories.csv"
-        $settings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/rule-settings.csv"
+        $severities = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/severities.csv"
+        $categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/categories.csv"
+        $settings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-settings.csv"
 
         $severityMappings = @{}
         $severities | ForEach-Object { $severityMappings[$_.Name] = $_.Configuration }
