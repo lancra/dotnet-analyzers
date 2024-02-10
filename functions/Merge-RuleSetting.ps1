@@ -7,42 +7,42 @@ function Merge-RuleSetting {
         $actionProperty = 'Action'
         $idProperty = 'Id'
         $titleProperty = 'Title'
-        $groupProperty = 'Group'
+        $ruleSetProperty = 'RuleSet'
         $categoryProperty = 'Category'
         $severityProperty = 'Severity'
         $reasoningProperty = 'Reasoning'
     }
     process {
-        $rulesets = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/rulesets.csv"
+        $ruleSets = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-sets.csv"
 
         $rawOnlineRules = @()
-        $rulesets |
+        $ruleSets |
             ForEach-Object {
-                $groupRulesPath = "$env:DOTNET_ANALYZERS_RULESETS/$($_.Directory)/rules.json"
-                if (-not (Test-Path -Path $groupRulesPath)) {
+                $rulesPath = "$env:DOTNET_ANALYZERS_RULE_SETS/$($_.Directory)/rules.json"
+                if (-not (Test-Path -Path $rulesPath)) {
                     Write-Warning "Skipping merge of $($_.Name) rule settings, no downloaded rules found"
                     return
                 }
 
-                $groupRules = Get-Content -Path $groupRulesPath |
+                $ruleSetRules = Get-Content -Path $rulesPath |
                     ConvertFrom-Json |
                     Select-Object -ExpandProperty 'rules'
 
-                $groupRules | Add-Member -MemberType NoteProperty -Name $groupProperty -Value $_.Name
+                $ruleSetRules | Add-Member -MemberType NoteProperty -Name $ruleSetProperty -Value $_.Name
 
-                $rawOnlineRules += $groupRules
+                $rawOnlineRules += $ruleSetRules
             }
 
         $selectProperties = @(
             @{Name = $idProperty; Expression = {$_.id}},
             @{Name = $titleProperty; Expression = {$_.title}},
-            $groupProperty,
+            $ruleSetProperty,
             @{Name = $categoryProperty; Expression = {$_.category}},
             @{Name = $severityProperty; Expression = {$_.default}}
         )
         $onlineRules = $rawOnlineRules | Select-Object -Property $selectProperties
 
-        $settingsPath = "$env:DOTNET_ANALYZERS_DATASETS/rule-settings.csv"
+        $settingsPath = "$env:DOTNET_ANALYZERS_DATA_SETS/rule-settings.csv"
         $localRules = Get-Setting -Path $settingsPath
 
         $ids = @()
@@ -80,7 +80,7 @@ function Merge-RuleSetting {
         $outputProperties = @(
             $idProperty,
             $titleProperty,
-            $groupProperty,
+            $ruleSetProperty,
             $categoryProperty,
             $severityProperty,
             $reasoningProperty

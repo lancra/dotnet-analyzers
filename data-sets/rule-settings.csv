@@ -1,4 +1,4 @@
-Id,Title,Group,Category,Severity,Reasoning
+Id,Title,RuleSet,Category,Severity,Reasoning
 CA1000,Do not declare static members on generic types,.NET Quality,Design,Warning,
 CA1001,Types that own disposable fields should be disposable,.NET Quality,Design,Warning,
 CA1002,Do not expose generic lists,.NET Quality,Design,Warning,

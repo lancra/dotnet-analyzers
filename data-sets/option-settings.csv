@@ -1,4 +1,4 @@
-Name,Id,Group,Default,Value,Reasoning
+Name,Id,RuleSet,Default,Value,Reasoning
 csharp_indent_block_contents,IDE0055,.NET Style,true,true,
 csharp_indent_braces,IDE0055,.NET Style,false,false,
 csharp_indent_case_contents,IDE0055,.NET Style,true,true,

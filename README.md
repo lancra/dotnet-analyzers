@@ -15,7 +15,7 @@ the lists up-to-date and to generate the configuration files to apply the settin
 
 ## Usage
 
-Run the build script to download rulesets, merge the results with local settings, and output configuration files.
+Run the build script to download rule sets, merge the results with local settings, and output configuration files.
 
 ```powershell
 ./build.ps1

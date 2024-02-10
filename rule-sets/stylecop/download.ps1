@@ -3,10 +3,10 @@ param ()
 
 . "$env:DOTNET_ANALYZERS_FUNCTIONS/Format-Plaintext.ps1"
 
-$ruleCategories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/groups.csv" |
-    Where-Object -Property Group -EQ 'StyleCop' |
+$categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/categories.csv" |
+    Where-Object -Property 'RuleSet' -EQ 'StyleCop' |
     Select-Object -ExpandProperty 'Category'
-$ruleCategoryUrlFormat = 'https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/documentation/{0}Rules.md'
+$categoryUrlFormat = 'https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/documentation/{0}Rules.md'
 $tableTitleHeader = 'Identifier | Name | Description'
 
 enum RuleParserState {
@@ -18,12 +18,12 @@ $state = [RuleParserState]::Search
 
 $rules = @()
 
-$ruleCategories |
+$categories |
     ForEach-Object {
-        $ruleCategory = $_
-        $ruleCategoryUrl = $ruleCategoryUrlFormat -f $ruleCategory
+        $category = $_
+        $categoryUrl = $categoryUrlFormat -f $category
 
-        & curl --silent $ruleCategoryUrl |
+        & curl --silent $categoryUrl |
             ForEach-Object {
                 if ($state -eq [RuleParserState]::Search) {
                     if ($_ -eq $tableTitleHeader) {
@@ -43,7 +43,7 @@ $ruleCategories |
                 $rule = [ordered]@{}
                 $rule.id = $rowValues[0]
                 $rule.title = $rowValues[2]
-                $rule.category = $ruleCategory
+                $rule.category = $category
                 $rules += $rule
             }
 

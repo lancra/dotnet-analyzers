@@ -2,12 +2,19 @@ function New-RuleConfiguration {
     [CmdletBinding(SupportsShouldProcess)]
     param ()
     process {
-        $severities = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/severities.csv"
-        $groups = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/groups.csv"
-        $settings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATASETS/rule-settings.csv"
+        $severities = @{}
+        Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/severities.csv" |
+            ForEach-Object { $severities[$_.Name] = $_.Configuration }
 
-        $severityMappings = @{}
-        $severities | ForEach-Object { $severityMappings[$_.Name] = $_.Configuration }
+        $ruleSets = @{}
+        Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-sets.csv" |
+            ForEach-Object { $ruleSets[$_.Name] = [bool]::Parse($_.Configure) }
+
+        $categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/categories.csv" |
+            Where-Object { $ruleSets[$_.RuleSet] }
+
+        $settings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-settings.csv" |
+            Where-Object { $ruleSets[$_.RuleSet] }
 
         $settingsWithEmptySeverity = $settings |
             Where-Object { -not $_.Severity }
@@ -18,7 +25,7 @@ function New-RuleConfiguration {
         }
 
         $settingsWithUnmappedSeverity = $settings |
-            Where-Object { $_.Severity -and -not $severityMappings[$_.Severity] }
+            Where-Object { $_.Severity -and -not $severities[$_.Severity] }
         if ($settingsWithUnmappedSeverity.Length -gt 0) {
             $invalidSeverities = ($settingsWithUnmappedSeverity | Select-Object -InputObject { "$($_.Id)=$($_.Severity)" }) -join ', '
             Write-Error "Please specify a valid severity for the following settings: $invalidSeverities"
@@ -32,12 +39,12 @@ function New-RuleConfiguration {
         [void]$builder.AppendLine('is_global = true')
         [void]$builder.AppendLine()
 
-        $groups |
+        $categories |
             ForEach-Object -Begin { $script:i = 0 } -Process {
-                $lastGroup = -not ($i -lt $groups.Length - 1)
+                $lastRuleSet = -not ($i -lt $categories.Length - 1)
 
                 [void]$builder.Append('# ')
-                [void]$builder.Append($_.Group)
+                [void]$builder.Append($_.RuleSet)
                 [void]$builder.Append(': ')
 
                 if ($_.Category) {
@@ -50,17 +57,17 @@ function New-RuleConfiguration {
                 [void]$builder.AppendLine('>')
 
                 $matchingSettings = $settings |
-                    Where-Object -Property Group -EQ $_.Group |
+                    Where-Object -Property RuleSet -EQ $_.RuleSet |
                     Where-Object -Property Category -EQ $_.Category
 
                 $matchingSettings |
                     ForEach-Object -Begin { $script:j = 0 } -Process {
                         $lastSetting = -not ($j -lt $matchingSettings.Length - 1)
 
-                        $setting = $settingFormat -f $_.Id, $severityMappings[$_.Severity]
+                        $setting = $settingFormat -f $_.Id, $severities[$_.Severity]
                         [void]$builder.Append($setting)
 
-                        if (-not ($lastGroup -and $lastSetting)) {
+                        if (-not ($lastRuleSet -and $lastSetting)) {
                             [void]$builder.AppendLine()
                         }
 
@@ -70,7 +77,7 @@ function New-RuleConfiguration {
                 # Script scope required due to https://github.com/PowerShell/PSScriptAnalyzer/issues/1163
                 $j = 0
 
-                if (-not $lastGroup) {
+                if (-not $lastRuleSet) {
                     [void]$builder.AppendLine()
                 }
 
