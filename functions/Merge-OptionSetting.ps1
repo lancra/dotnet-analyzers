@@ -8,6 +8,7 @@ function Merge-OptionSetting {
         $nameProperty = 'Name'
         $idProperty = 'Id'
         $ruleSetProperty = 'RuleSet'
+        $categoryProperty = 'Category'
         $defaultProperty = 'Default'
         $valueProperty = 'Value'
         $reasoningProperty = 'Reasoning'
@@ -31,6 +32,7 @@ function Merge-OptionSetting {
                     Select-Object -Property 'id' -ExpandProperty 'options'
 
                 $ruleSetOptions | Add-Member -MemberType NoteProperty -Name $ruleSetProperty -Value $_.Name
+                $ruleSetOptions | Add-Member -MemberType NoteProperty -Name $categoryProperty -Value ''
 
                 $rawOnlineOptions += $ruleSetOptions
             }
@@ -39,6 +41,7 @@ function Merge-OptionSetting {
             @{Name = $nameProperty; Expression = {$_.name}},
             @{Name = $idProperty; Expression = {$_.id}},
             $ruleSetProperty,
+            $categoryProperty,
             @{Name = $defaultProperty;Expression = {$_.default}}
         )
         $onlineOptions = $rawOnlineOptions | Select-Object -Property $selectProperties
@@ -91,6 +94,7 @@ function Merge-OptionSetting {
             $nameProperty,
             $idProperty,
             $ruleSetProperty,
+            $categoryProperty,
             $defaultProperty,
             $valueProperty,
             $reasoningProperty
