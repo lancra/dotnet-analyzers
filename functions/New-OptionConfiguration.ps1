@@ -1,7 +1,7 @@
 function New-OptionConfiguration {
     [CmdletBinding(SupportsShouldProcess)]
     param ()
-    process {
+    begin {
         $ruleSets = @{}
         Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-sets.csv" |
             ForEach-Object { $ruleSets[$_.Name] = [bool]::Parse($_.Configure) }
@@ -16,7 +16,8 @@ function New-OptionConfiguration {
 
         $settingFormat = '{0} = {1} # {2}'
         $builder = [System.Text.StringBuilder]::new()
-
+    }
+    process {
         [void]$builder.AppendLine('root = true')
         [void]$builder.AppendLine()
         [void]$builder.AppendLine('# TODO: Add editorconfig settings here that are not analyzer rule options.')

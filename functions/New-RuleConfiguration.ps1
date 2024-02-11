@@ -3,7 +3,7 @@ function New-RuleConfiguration {
     param (
         [switch]$IncludeOption
     )
-    process {
+    begin {
         $severities = @{}
         Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/severities.csv" |
             ForEach-Object { $severities[$_.Name] = $_.Configuration }
@@ -37,7 +37,8 @@ function New-RuleConfiguration {
 
         $settingFormat = 'dotnet_diagnostic.{0}.severity = {1}'
         $builder = [System.Text.StringBuilder]::new()
-
+    }
+    process {
         [void]$builder.AppendLine('is_global = true')
         [void]$builder.AppendLine()
 
