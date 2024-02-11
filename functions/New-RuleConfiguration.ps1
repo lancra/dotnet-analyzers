@@ -35,7 +35,11 @@ function New-RuleConfiguration {
             throw 'All analyzer settings must specify a valid severity.'
         }
 
+        $optionSettings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/option-settings.csv" |
+            Where-Object { $ruleSets[$_.RuleSet] }
+
         $ruleSettingFormat = 'dotnet_diagnostic.{0}.severity = {1}'
+        $optionSettingFormat = '{0} = {1} # {2}'
         $builder = [System.Text.StringBuilder]::new()
     }
     process {
@@ -64,13 +68,26 @@ function New-RuleConfiguration {
                     Where-Object -Property Category -EQ $_.Category |
                     ForEach-Object { $ruleSettingFormat -f $_.Id, $severities[$_.Severity] }
 
-                $ruleSettingLines |
+                $lines = $ruleSettingLines
+
+                if ($IncludeOption) {
+                    $optionSettingLines = $optionSettings |
+                        Where-Object -Property RuleSet -EQ $_.RuleSet |
+                        Where-Object -Property Category -EQ $_.Category |
+                        ForEach-Object { $optionSettingFormat -f $_.Name, $_.Value, $_.Id }
+
+                    if ($optionSettingLines) {
+                        $lines += ,'' + $optionSettingLines
+                    }
+                }
+
+                $lines |
                     ForEach-Object -Begin { $script:j = 0 } -Process {
-                        $lastRuleSetting = -not ($j -lt $matchingRuleSettings.Length - 1)
+                        $lastSetting = -not ($j -lt $lines.Length - 1)
 
                         [void]$builder.Append($_)
 
-                        if (-not ($lastRuleSet -and $lastRuleSetting)) {
+                        if (-not ($lastRuleSet -and $lastSetting)) {
                             [void]$builder.AppendLine()
                         }
 
