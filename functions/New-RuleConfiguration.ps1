@@ -1,6 +1,8 @@
 function New-RuleConfiguration {
     [CmdletBinding(SupportsShouldProcess)]
-    param ()
+    param (
+        [switch]$IncludeOption
+    )
     process {
         $severities = @{}
         Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/severities.csv" |

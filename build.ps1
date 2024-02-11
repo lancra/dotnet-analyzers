@@ -2,7 +2,8 @@
 param (
     [Parameter()]
     [string]$RuleSet,
-    [switch]$SkipDownload
+    [switch]$SkipDownload,
+    [switch]$MergeConfiguration
 )
 
 . "$PSScriptRoot/functions/Switch-Environment.ps1"
@@ -15,7 +16,7 @@ try {
     }
 
     & "$env:DOTNET_ANALYZERS_SCRIPTS/generate-settings.ps1"
-    & "$env:DOTNET_ANALYZERS_SCRIPTS/generate-configurations.ps1"
+    & "$env:DOTNET_ANALYZERS_SCRIPTS/generate-configurations.ps1" -MergeConfiguration:$MergeConfiguration
 }
 finally {
     Switch-Environment
