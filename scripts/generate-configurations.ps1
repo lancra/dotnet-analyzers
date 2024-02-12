@@ -1,6 +1,7 @@
 [CmdletBinding()]
 param (
-    [switch]$MergeConfiguration
+    [switch]$MergeConfiguration,
+    [switch]$IncludeVersion
 )
 
 . "$env:DOTNET_ANALYZERS_FUNCTIONS/New-RuleConfiguration.ps1"
@@ -8,9 +9,9 @@ param (
 
 $ruleConfigurationName = $MergeConfiguration ? 'combined' : 'rule'
 Write-Output "Generating $ruleConfigurationName configuration (.globalconfig)"
-New-RuleConfiguration -IncludeOption:$MergeConfiguration
+New-RuleConfiguration -IncludeOption:$MergeConfiguration -IncludeVersion:$IncludeVersion
 
 if (-not $MergeConfiguration) {
     Write-Output 'Generating option configuration (partial.editorconfig)'
-    New-OptionConfiguration
+    New-OptionConfiguration -IncludeVersion:$IncludeVersion
 }

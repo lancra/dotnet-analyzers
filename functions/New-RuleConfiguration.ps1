@@ -1,7 +1,8 @@
 function New-RuleConfiguration {
     [CmdletBinding(SupportsShouldProcess)]
     param (
-        [switch]$IncludeOption
+        [switch]$IncludeOption,
+        [switch]$IncludeVersion
     )
     begin {
         $severities = @{}

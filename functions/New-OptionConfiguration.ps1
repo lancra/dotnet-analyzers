@@ -1,6 +1,8 @@
 function New-OptionConfiguration {
     [CmdletBinding(SupportsShouldProcess)]
-    param ()
+    param (
+        [switch]$IncludeVersion
+    )
     begin {
         $ruleSets = @{}
         Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-sets.csv" |
