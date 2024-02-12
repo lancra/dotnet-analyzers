@@ -4,6 +4,8 @@ function New-OptionConfiguration {
         [switch]$IncludeVersion
     )
     begin {
+        . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-Version.ps1"
+
         $ruleSets = @{}
         Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-sets.csv" |
             ForEach-Object { $ruleSets[$_.Name] = [bool]::Parse($_.Configure) }
@@ -20,6 +22,11 @@ function New-OptionConfiguration {
         $builder = [System.Text.StringBuilder]::new()
     }
     process {
+        if ($IncludeVersion) {
+            $version = Get-Version
+            [void]$builder.AppendLine("# $version")
+        }
+
         [void]$builder.AppendLine('root = true')
         [void]$builder.AppendLine()
         [void]$builder.AppendLine('# TODO: Add editorconfig settings here that are not analyzer rule options.')

@@ -5,6 +5,8 @@ function New-RuleConfiguration {
         [switch]$IncludeVersion
     )
     begin {
+        . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-Version.ps1"
+
         $severities = @{}
         Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/severities.csv" |
             ForEach-Object { $severities[$_.Name] = $_.Configuration }
@@ -44,6 +46,11 @@ function New-RuleConfiguration {
         $builder = [System.Text.StringBuilder]::new()
     }
     process {
+        if ($IncludeVersion) {
+            $version = Get-Version
+            [void]$builder.AppendLine("# $version")
+        }
+
         [void]$builder.AppendLine('is_global = true')
         [void]$builder.AppendLine()
 
