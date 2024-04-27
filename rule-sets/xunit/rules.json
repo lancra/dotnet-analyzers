@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2024-04-27T06:54:38.2308827-04:00",
+  "timestamp": "2024-04-27T12:08:25.6892222-04:00",
   "rules": [
     {
       "id": "xUnit1000",
@@ -202,7 +202,7 @@
     },
     {
       "id": "xUnit1033",
-      "title": "Test classes decorated with 'Xunit.IClassFixture",
+      "title": "Test classes decorated with 'Xunit.IClassFixture' or 'Xunit.ICollectionFixture' should add a constructor argument of type TFixture",
       "category": "Usage",
       "default": "Info"
     },
