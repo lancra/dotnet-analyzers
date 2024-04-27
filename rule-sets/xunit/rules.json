@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2024-02-08T07:37:19.8244451-05:00",
+  "timestamp": "2024-04-27T06:54:38.2308827-04:00",
   "rules": [
     {
       "id": "xUnit1000",
@@ -202,7 +202,7 @@
     },
     {
       "id": "xUnit1033",
-      "title": "Test classes decorated with &#39;Xunit.IClassFixture",
+      "title": "Test classes decorated with 'Xunit.IClassFixture",
       "category": "Usage",
       "default": "Info"
     },
@@ -263,6 +263,42 @@
     {
       "id": "xUnit1043",
       "title": "Constructors on classes derived from FactAttribute must be public when used on test methods",
+      "category": "Usage",
+      "default": "Error"
+    },
+    {
+      "id": "xUnit1044",
+      "title": "Avoid using TheoryData type arguments that are not serializable",
+      "category": "Usage",
+      "default": "Info"
+    },
+    {
+      "id": "xUnit1045",
+      "title": "Avoid using TheoryData type arguments that might not be serializable",
+      "category": "Usage",
+      "default": "Info"
+    },
+    {
+      "id": "xUnit1046",
+      "title": "Avoid using TheoryDataRow arguments that are not serializable",
+      "category": "Usage",
+      "default": "Info"
+    },
+    {
+      "id": "xUnit1047",
+      "title": "Avoid using TheoryDataRow arguments that might not be serializable",
+      "category": "Usage",
+      "default": "Info"
+    },
+    {
+      "id": "xUnit1048",
+      "title": "Avoid using 'async void' for test methods as it is deprecated in xUnit.net v3",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit1049",
+      "title": "Do not use 'async void' for test methods as it is no longer supported",
       "category": "Usage",
       "default": "Error"
     },
@@ -376,7 +412,7 @@
     },
     {
       "id": "xUnit2018",
-      "title": "Do not compare an object&#39;s exact type to an abstract class or interface",
+      "title": "Do not compare an object's exact type to an abstract class or interface",
       "category": "Assertion",
       "default": "Warning"
     },
