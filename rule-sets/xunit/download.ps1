@@ -20,7 +20,7 @@ $state = [RuleParserState]::Active
 
 $currentCategory = $null
 (& curl --silent $url) |
-    pup 'html body div table tbody json{}' |
+    pup --plain 'html body div table tbody json{}' |
     ConvertFrom-Json |
     Select-Object -ExpandProperty 'children' |
     ForEach-Object {
