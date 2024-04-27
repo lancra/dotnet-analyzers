@@ -6,6 +6,8 @@ if ($null -eq (Get-Command -Name 'pup' -ErrorAction SilentlyContinue)) {
         'via Go (go install github.com/ericchiang/pup@latest).'
 }
 
+. "$env:DOTNET_ANALYZERS_FUNCTIONS/Test-RuleSetDifference.ps1"
+
 $url = 'https://xunit.net/xunit.analyzers/rules/'
 
 $rules = @()
@@ -48,4 +50,6 @@ $output.'$schema' = $env:DOTNET_ANALYZERS_SCHEMA
 $output.timestamp = (Get-Date -Format 'o')
 $output.rules = $rules
 
-$output | ConvertTo-Json > $path
+if (Test-RuleSetDifference -Path $path -Json ($output.rules | ConvertTo-Json)) {
+    $output | ConvertTo-Json > $path
+}

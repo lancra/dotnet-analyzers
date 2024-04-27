@@ -2,6 +2,7 @@
 param ()
 
 . "$env:DOTNET_ANALYZERS_FUNCTIONS/Format-Plaintext.ps1"
+. "$env:DOTNET_ANALYZERS_FUNCTIONS/Test-RuleSetDifference.ps1"
 
 $jqQuery = '.runs[] | ' +
     '.rules | ' +
@@ -71,4 +72,6 @@ $output.'$schema' = $env:DOTNET_ANALYZERS_SCHEMA
 $output.timestamp = (Get-Date -Format 'o')
 $output.rules = $rules | Sort-Object -Property @('category', 'id')
 
-$output | ConvertTo-Json > $path
+if (Test-RuleSetDifference -Path $path -Json ($output.rules | ConvertTo-Json)) {
+    $output | ConvertTo-Json > $path
+}

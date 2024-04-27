@@ -3,6 +3,7 @@ param ()
 
 . "$PSScriptRoot/Get-FormattingOption.ps1"
 . "$env:DOTNET_ANALYZERS_FUNCTIONS/Format-Plaintext.ps1"
+. "$env:DOTNET_ANALYZERS_FUNCTIONS/Test-RuleSetDifference.ps1"
 
 function Read-Link {
     [CmdletBinding()]
@@ -99,10 +100,13 @@ $state = [RuleParserState]::Search
     }
 
 $path = Join-Path -Path $PSScriptRoot -ChildPath 'rules.json'
+$jsonDepth = 6
 
 $output = [ordered]@{}
 $output.'$schema' = $env:DOTNET_ANALYZERS_SCHEMA
 $output.timestamp = (Get-Date -Format 'o')
 $output.rules = $rules
 
-$output | ConvertTo-Json -Depth 6 > $path
+if (Test-RuleSetDifference -Path $path -Json ($output.rules | ConvertTo-Json -Depth $jsonDepth)) {
+    $output | ConvertTo-Json -Depth $jsonDepth > $path
+}
