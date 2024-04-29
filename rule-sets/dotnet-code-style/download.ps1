@@ -39,8 +39,6 @@ $dotnetFormattingUrl = $urlFormat -f 'dotnet-formatting-options.md'
 
 $tableTitleHeader = '> | Rule ID | Title | Option |'
 
-$rules = @()
-
 enum RuleParserState {
     Search # Looking for a table title header in the document
     Header # Skipping the table alignment header
@@ -48,6 +46,11 @@ enum RuleParserState {
     Done # Ignoring any additional content
 }
 $state = [RuleParserState]::Search
+
+$rules = @()
+
+$optionsJobs = @()
+$optionsFunctionDefinition = ${function:Get-FormattingOption}.ToString()
 
 (& curl --silent $ruleIndexUrl) |
     ForEach-Object {
@@ -83,24 +86,58 @@ $state = [RuleParserState]::Search
         $rule = [ordered]@{}
         $rule.id = $rowValues[0]
         $rule.title = $rowValues[1]
+        $rule.options = @()
+
+        $urls = @()
 
         $optionsText = $rowValues[2]
         if ($rule.id -eq 'IDE0055') {
-            $csharpOptions = @(Get-FormattingOption -Url $csharpFormattingUrl)
-            $dotnetOptions = @(Get-FormattingOption -Url $dotnetFormattingUrl)
-            $rule.options = ($csharpOptions + $dotnetOptions)
+            $urls += ,$csharpFormattingUrl
+            $urls += ,$dotnetFormattingUrl
         } elseif ($optionsText) {
             $ruleUrl = $urlFormat -f $links[$rule.id]
-            $rule.options = @(Get-FormattingOption -Url $ruleUrl)
-        } else {
-            $rule.options = @()
+            $urls += $ruleUrl
+        }
+
+        if ($urls.Length -gt 0) {
+            $optionsJob = Start-ThreadJob -Name $rule.Id -ScriptBlock {
+                param(
+                    [string[]]$Urls
+                )
+
+                ${function:Get-FormattingOption} = $using:optionsFunctionDefinition
+
+                $options = @()
+                $Urls |
+                    ForEach-Object {
+                        $options += (Get-FormattingOption -Url $_)
+                    }
+
+                return ,$options
+            } -ArgumentList (,$urls)
+            $optionsJobs += $optionsJob
         }
 
         $rules += $rule
     }
 
-$path = Join-Path -Path $PSScriptRoot -ChildPath 'rules.json'
 $jsonDepth = 6
+Wait-Job $optionsJobs | Out-Null
+$optionsJobs |
+    ForEach-Object {
+        $options = Receive-Job -Job $_
+        $rule = $rules |
+            Where-Object -Property id -EQ $_.Name |
+            Select-Object -First 1
+
+        $rule.options = @($options |
+            ConvertTo-Json -Depth $jsonDepth |
+            ConvertFrom-Json)
+
+        Remove-Job -Job $_
+    }
+
+$path = Join-Path -Path $PSScriptRoot -ChildPath 'rules.json'
 
 $output = [ordered]@{}
 $output.'$schema' = $env:DOTNET_ANALYZERS_SCHEMA
