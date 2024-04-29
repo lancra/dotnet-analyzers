@@ -6,6 +6,8 @@ if ($null -eq (Get-Command -Name 'pup' -ErrorAction SilentlyContinue)) {
         'via Go (go install github.com/ericchiang/pup@latest).'
 }
 
+. "$env:DOTNET_ANALYZERS_FUNCTIONS/Test-RuleSetDifference.ps1"
+
 $url = 'https://xunit.net/xunit.analyzers/rules/'
 
 $rules = @()
@@ -18,7 +20,7 @@ $state = [RuleParserState]::Active
 
 $currentCategory = $null
 (& curl --silent $url) |
-    pup 'html body div table tbody json{}' |
+    pup --plain 'html body div table tbody json{}' |
     ConvertFrom-Json |
     Select-Object -ExpandProperty 'children' |
     ForEach-Object {
@@ -33,9 +35,19 @@ $currentCategory = $null
             return
         }
 
+        $titleElement = $_.children[1]
+        $title = $titleElement.text
+
+        # Handle xUnit1033 title which is split across a hierarchy of elements.
+        $titleChildren = $titleElement.children
+        while ($null -ne $titleChildren) {
+            $title += $titleChildren[0].text
+            $titleChildren = $titleChildren[0].children
+        }
+
         $rule = [ordered]@{}
         $rule.id = $_.children[0].children[0].children[0].text
-        $rule.title = $_.children[1].text
+        $rule.title = $title
         $rule.category = $currentCategory
         $rule.default = $_.children[0].children[1].text
         $rules += $rule
@@ -48,4 +60,6 @@ $output.'$schema' = $env:DOTNET_ANALYZERS_SCHEMA
 $output.timestamp = (Get-Date -Format 'o')
 $output.rules = $rules
 
-$output | ConvertTo-Json > $path
+if (Test-RuleSetDifference -Path $path -Json ($output.rules | ConvertTo-Json)) {
+    $output | ConvertTo-Json > $path
+}

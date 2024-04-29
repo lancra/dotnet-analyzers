@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2024-02-07T06:47:54.2064568-05:00",
+  "timestamp": "2024-04-27T06:48:36.4979648-04:00",
   "rules": [
     {
       "id": "CA1000",
@@ -783,6 +783,16 @@
       "category": "Performance"
     },
     {
+      "id": "CA1871",
+      "title": "Do not pass a nullable struct to 'ArgumentNullException.ThrowIfNull'",
+      "category": "Performance"
+    },
+    {
+      "id": "CA1872",
+      "title": "Prefer 'Convert.ToHexString' and 'Convert.ToHexStringLower' over call chains based on 'BitConverter.ToString'",
+      "category": "Performance"
+    },
+    {
       "id": "CA2000",
       "title": "Dispose objects before losing scope",
       "category": "Reliability"
@@ -860,6 +870,11 @@
     {
       "id": "CA2021",
       "title": "Do not call Enumerable.Cast<T> or Enumerable.OfType<T> with incompatible types",
+      "category": "Reliability"
+    },
+    {
+      "id": "CA2022",
+      "title": "Avoid inexact read with 'Stream.Read'",
       "category": "Reliability"
     },
     {
@@ -1565,6 +1580,21 @@
     {
       "id": "CA2262",
       "title": "Set 'MaxResponseHeadersLength' properly",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2263",
+      "title": "Prefer generic overload when type is known",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2264",
+      "title": "Do not pass a non-nullable value to 'ArgumentNullException.ThrowIfNull'",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2265",
+      "title": "Do not compare Span<T> to 'null' or 'default'",
       "category": "Usage"
     }
   ]

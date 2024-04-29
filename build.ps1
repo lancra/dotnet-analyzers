@@ -10,6 +10,8 @@ param (
 . "$PSScriptRoot/functions/Switch-Environment.ps1"
 
 try {
+    New-Item -ItemType Directory -Path "$PSScriptRoot/artifacts" -Force | Out-Null
+
     Switch-Environment
 
     if (-not $SkipDownload) {

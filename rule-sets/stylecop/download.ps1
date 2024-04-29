@@ -2,6 +2,7 @@
 param ()
 
 . "$env:DOTNET_ANALYZERS_FUNCTIONS/Format-Plaintext.ps1"
+. "$env:DOTNET_ANALYZERS_FUNCTIONS/Test-RuleSetDifference.ps1"
 
 $categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/categories.csv" |
     Where-Object -Property 'RuleSet' -EQ 'StyleCop' |
@@ -57,4 +58,6 @@ $output.'$schema' = $env:DOTNET_ANALYZERS_SCHEMA
 $output.timestamp = (Get-Date -Format 'o')
 $output.rules = $rules
 
-$output | ConvertTo-Json > $path
+if (Test-RuleSetDifference -Path $path -Json ($output.rules | ConvertTo-Json)) {
+    $output | ConvertTo-Json > $path
+}
