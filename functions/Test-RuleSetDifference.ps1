@@ -15,8 +15,9 @@ function Test-RuleSetDifference {
     }
     process {
         if ($null -eq (Get-Command -Name 'jd' -ErrorAction SilentlyContinue)) {
-            Write-Warning 'Checking for rule-set differences requires jd. Please download it from GitHub ' +
-                '(https://github.com/josephburnett/jd) or via Go (go install github.com/josephburnett/jd@latest).'
+            $warningMessage = 'Checking for rule-set differences requires jd. Please download it from GitHub ' +
+                '(https://github.com/josephburnett/jd) or install it with Go (go install github.com/josephburnett/jd@latest).'
+            Write-Warning $warningMessage
             return $true
         }
 
