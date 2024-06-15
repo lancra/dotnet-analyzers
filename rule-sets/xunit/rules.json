@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2024-04-27T12:08:25.6892222-04:00",
+  "timestamp": "2024-06-15T10:46:01.7558771-04:00",
   "rules": [
     {
       "id": "xUnit1000",
@@ -226,25 +226,25 @@
     },
     {
       "id": "xUnit1037",
-      "title": "There are fewer TheoryData type arguments than required by the parameters of the test method",
+      "title": "There are fewer theory data type arguments than required by the parameters of the test method",
       "category": "Usage",
       "default": "Error"
     },
     {
       "id": "xUnit1038",
-      "title": "There are more TheoryData type arguments than allowed by the parameters of the test method",
+      "title": "There are more theory data type arguments than allowed by the parameters of the test method",
       "category": "Usage",
       "default": "Error"
     },
     {
       "id": "xUnit1039",
-      "title": "The type argument to TheoryData is not compatible with the type of the corresponding test method parameter",
+      "title": "The type argument to theory data is not compatible with the type of the corresponding test method parameter",
       "category": "Usage",
       "default": "Error"
     },
     {
       "id": "xUnit1040",
-      "title": "The type argument to TheoryData is nullable, while the type of the corresponding test method parameter is not",
+      "title": "The type argument to theory data is nullable, while the type of the corresponding test method parameter is not",
       "category": "Usage",
       "default": "Warning"
     },
@@ -301,6 +301,12 @@
       "title": "Do not use 'async void' for test methods as it is no longer supported",
       "category": "Usage",
       "default": "Error"
+    },
+    {
+      "id": "xUnit1050",
+      "title": "The class referenced by the ClassData attribute returns untyped data rows",
+      "category": "Usage",
+      "default": "Info"
     },
     {
       "id": "xUnit2000",

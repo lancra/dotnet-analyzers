@@ -673,6 +673,7 @@ xUnit1046,Avoid using TheoryDataRow arguments that are not serializable,xUnit,Us
 xUnit1047,Avoid using TheoryDataRow arguments that might not be serializable,xUnit,Usage,Warning,
 xUnit1048,Avoid using 'async void' for test methods as it is deprecated in xUnit.net v3,xUnit,Usage,Warning,
 xUnit1049,Do not use 'async void' for test methods as it is no longer supported,xUnit,Usage,Warning,
+xUnit1050,The class referenced by the ClassData attribute returns untyped data rows,xUnit,Usage,Warning,
 xUnit2000,Constants and literals should be the expected argument,xUnit,Assertion,Warning,
 xUnit2001,Do not use invalid equality check,xUnit,Assertion,Warning,
 xUnit2002,Do not use null check on value type,xUnit,Assertion,Warning,
