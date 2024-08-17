@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2024-06-15T10:46:01.7558771-04:00",
+  "timestamp": "2024-08-17T15:08:57.5502616-04:00",
   "rules": [
     {
       "id": "xUnit1000",
@@ -309,6 +309,12 @@
       "default": "Info"
     },
     {
+      "id": "xUnit1051",
+      "title": "Calls to methods which accept CancellationToken should use TestContext.Current.CancellationToken",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
       "id": "xUnit2000",
       "title": "Constants and literals should be the expected argument",
       "category": "Assertion",
@@ -483,6 +489,18 @@
       "default": "Warning"
     },
     {
+      "id": "xUnit2029",
+      "title": "Do not use Assert.Empty to check if a value does not exist in a collection",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2030",
+      "title": "Do not use Assert.NotEmpty to check if a value exists in a collection",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
       "id": "xUnit3000",
       "title": "Classes which cross AppDomain boundaries must derive directly or indirectly from LongLivedMarshalByRefObject",
       "category": "Extensibility",
@@ -490,9 +508,15 @@
     },
     {
       "id": "xUnit3001",
-      "title": "Classes that implement Xunit.Abstractions.IXunitSerializable must have a public parameterless constructor",
+      "title": "Classes that implement IXunitSerializable or are marked with [JsonTypeID] must have a public parameterless constructor",
       "category": "Extensibility",
       "default": "Error"
+    },
+    {
+      "id": "xUnit3002",
+      "title": "Classes which are JSON serializable should not be tested for their concrete type",
+      "category": "Extensibility",
+      "default": "Hidden"
     }
   ]
 }
