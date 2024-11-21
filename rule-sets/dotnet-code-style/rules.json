@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2024-02-06T06:02:55.3015796-05:00",
+  "timestamp": "2024-11-21T05:38:39.4843415-05:00",
   "rules": [
     {
       "id": "IDE0001",
@@ -642,7 +642,7 @@
           "values": [
             {
               "value": "true",
-              "description": "Prefer auto-implemented properties"
+              "description": "Prefer automatically implemented properties"
             },
             {
               "value": "false",
@@ -2718,6 +2718,46 @@
               "value": "false",
               "alternate": "never",
               "description": "Disables the rule."
+            }
+          ],
+          "default": "true"
+        }
+      ]
+    },
+    {
+      "id": "IDE0320",
+      "title": "Make anonymous function static",
+      "options": [
+        {
+          "name": "csharp_prefer_static_anonymous_function",
+          "values": [
+            {
+              "value": "true",
+              "description": "Prefer anonymous functions to be marked static"
+            },
+            {
+              "value": "false",
+              "description": "Disables the rule"
+            }
+          ],
+          "default": "true"
+        }
+      ]
+    },
+    {
+      "id": "IDE0330",
+      "title": "Prefer 'System.Threading.Lock'",
+      "options": [
+        {
+          "name": "csharp_prefer_system_threading_lock",
+          "values": [
+            {
+              "value": "true",
+              "description": "Prefer System.Threading.Lock locks"
+            },
+            {
+              "value": "false",
+              "description": "Disables the rule"
             }
           ],
           "default": "true"

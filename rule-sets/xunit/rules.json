@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2024-08-17T15:08:57.5502616-04:00",
+  "timestamp": "2024-11-21T05:53:06.0674703-05:00",
   "rules": [
     {
       "id": "xUnit1000",
@@ -501,6 +501,18 @@
       "default": "Warning"
     },
     {
+      "id": "xUnit2031",
+      "title": "Do not use Where clause with Assert.Single",
+      "category": "Assertion",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit2032",
+      "title": "Type assertions based on 'assignable from' are confusingly named",
+      "category": "Assertion",
+      "default": "Info"
+    },
+    {
       "id": "xUnit3000",
       "title": "Classes which cross AppDomain boundaries must derive directly or indirectly from LongLivedMarshalByRefObject",
       "category": "Extensibility",
@@ -508,7 +520,7 @@
     },
     {
       "id": "xUnit3001",
-      "title": "Classes that implement IXunitSerializable or are marked with [JsonTypeID] must have a public parameterless constructor",
+      "title": "Classes that are marked as serializable (or created by the test framework at runtime) must have a public parameterless constructor",
       "category": "Extensibility",
       "default": "Error"
     },
@@ -516,7 +528,7 @@
       "id": "xUnit3002",
       "title": "Classes which are JSON serializable should not be tested for their concrete type",
       "category": "Extensibility",
-      "default": "Hidden"
+      "default": "Warning"
     }
   ]
 }

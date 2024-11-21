@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2024-04-27T06:48:36.4979648-04:00",
+  "timestamp": "2024-11-21T05:38:34.1062900-05:00",
   "rules": [
     {
       "id": "CA1000",
@@ -875,6 +875,16 @@
     {
       "id": "CA2022",
       "title": "Avoid inexact read with 'Stream.Read'",
+      "category": "Reliability"
+    },
+    {
+      "id": "CA2023",
+      "title": "Invalid braces in message template",
+      "category": "Reliability"
+    },
+    {
+      "id": "CA2024",
+      "title": "Do not use 'StreamReader.EndOfStream' in async methods",
       "category": "Reliability"
     },
     {
