@@ -35,7 +35,7 @@ $currentCategory = $null
             return
         }
 
-        $titleElement = $_.children[1]
+        $titleElement = $_.children[3]
         $title = $titleElement.text
 
         # Handle xUnit1033 title which is split across a hierarchy of elements.
@@ -49,7 +49,7 @@ $currentCategory = $null
         $rule.id = $_.children[0].children[0].children[0].text
         $rule.title = $title
         $rule.category = $currentCategory
-        $rule.default = $_.children[0].children[1].text
+        $rule.default = $_.children[2].children[0].text
         $rules += $rule
     }
 
