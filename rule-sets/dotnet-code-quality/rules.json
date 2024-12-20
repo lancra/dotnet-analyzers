@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2024-11-21T05:38:34.1062900-05:00",
+  "timestamp": "2024-12-13T07:56:16.9467571-05:00",
   "rules": [
     {
       "id": "CA1000",
@@ -1375,6 +1375,11 @@
     {
       "id": "IL3003",
       "title": "'RequiresAssemblyFilesAttribute' annotations must match across all interface implementations or overrides.",
+      "category": "SingleFile"
+    },
+    {
+      "id": "IL3005",
+      "title": "RequiresAssemblyFilesAttribute cannot be placed directly on application entry point.",
       "category": "SingleFile"
     },
     {
