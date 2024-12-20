@@ -274,6 +274,7 @@ IL3000,Avoid accessing Assembly file path when publishing as a single file,.NET 
 IL3001,Avoid accessing Assembly file path when publishing as a single file,.NET Quality,SingleFile,Warning,
 IL3002,Avoid calling members annotated with 'RequiresAssemblyFilesAttribute' when publishing as a single file,.NET Quality,SingleFile,Warning,
 IL3003,'RequiresAssemblyFilesAttribute' annotations must match across all interface implementations or overrides.,.NET Quality,SingleFile,Warning,
+IL3005,RequiresAssemblyFilesAttribute cannot be placed directly on application entry point.,.NET Quality,SingleFile,Warning,
 CA1816,Dispose methods should call SuppressFinalize,.NET Quality,Usage,Warning,
 CA2200,Rethrow to preserve stack details,.NET Quality,Usage,Warning,
 CA2201,Do not raise reserved exception types,.NET Quality,Usage,Warning,
