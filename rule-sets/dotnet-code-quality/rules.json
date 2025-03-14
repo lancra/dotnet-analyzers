@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2024-12-13T07:56:16.9467571-05:00",
+  "timestamp": "2025-03-14T06:02:52.7635212-04:00",
   "rules": [
     {
       "id": "CA1000",
@@ -790,6 +790,21 @@
     {
       "id": "CA1872",
       "title": "Prefer 'Convert.ToHexString' and 'Convert.ToHexStringLower' over call chains based on 'BitConverter.ToString'",
+      "category": "Performance"
+    },
+    {
+      "id": "CA1873",
+      "title": "Avoid potentially expensive logging",
+      "category": "Performance"
+    },
+    {
+      "id": "CA1874",
+      "title": "Use 'Regex.IsMatch'",
+      "category": "Performance"
+    },
+    {
+      "id": "CA1875",
+      "title": "Use 'Regex.Count'",
       "category": "Performance"
     },
     {
