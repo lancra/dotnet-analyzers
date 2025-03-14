@@ -1,5 +1,5 @@
 Old,New,Description
-", separated list of rule IDs or categories (prefixed with category:)",*,
+"Comma-separated list of rule IDs or categories (prefixed with category:)",*,
 "One or more C# modifiers, such as public, private, and protected",*,
 "One or more Visual Basic modifiers, such as Partial, Private, and Public",*,
 "accessors, anonymous_methods, anonymous_types, control_blocks, events, indexers, lambdas, local_functions, methods, object_collection_array_initializers, properties, types",,Can use the complete set or a subset of the provided values
