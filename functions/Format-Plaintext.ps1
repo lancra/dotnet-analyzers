@@ -11,6 +11,7 @@ function Format-Plaintext {
         $codeSearch = '`(?<Text>.*?)`'
         $htmlLineBreakSearch = '<br\s*?\/>'
         $htmlLineBreakAlternateSearch = '<\/br>'
+        $footnoteSearch = '†'
 
         $textGroupReplace = '${Text}'
     }
@@ -19,6 +20,7 @@ function Format-Plaintext {
             -replace $boldItalicSearch, $textGroupReplace `
             -replace $codeSearch, $textGroupReplace `
             -replace $htmlLineBreakSearch, ' ' `
-            -replace $htmlLineBreakAlternateSearch, ' '
+            -replace $htmlLineBreakAlternateSearch, ' ' `
+            -replace $footnoteSearch, ''
     }
 }
