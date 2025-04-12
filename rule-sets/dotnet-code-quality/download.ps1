@@ -19,7 +19,7 @@ $rules = & curl --silent $netAnalyzerUrl |
     jq '[.[]] | unique_by(.id)' |
     ConvertFrom-Json
 
-$textAnalyzerUrl = 'https://raw.githubusercontent.com/dotnet/roslyn-analyzers/main/src/Text.Analyzers/Text.Analyzers.sarif'
+$textAnalyzerUrl = 'https://raw.githubusercontent.com/dotnet/roslyn/refs/heads/main/src/RoslynAnalyzers/Text.Analyzers/Text.Analyzers.sarif'
 $rules += & curl --silent $textAnalyzerUrl |
     jq $jqQuery |
     jq -s 'add' |
