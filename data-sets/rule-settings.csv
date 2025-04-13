@@ -423,7 +423,7 @@ IDE0251,Member can be made 'readonly',.NET Style,,Warning,
 IDE0260,Use pattern matching,.NET Style,,Warning,
 IDE0270,Null check can be simplified,.NET Style,,Warning,
 IDE0280,Use nameof,.NET Style,,Warning,
-IDE0290,Use primary constructor,.NET Style,,Disabled,Fields are created as non-read-only
+IDE0290,Use primary constructor,.NET Style,,Warning,
 IDE0300,Use collection expression for array,.NET Style,,Warning,
 IDE0301,Use collection expression for empty,.NET Style,,Warning,
 IDE0302,Use collection expression for stackalloc,.NET Style,,Warning,
