@@ -68,7 +68,15 @@ function Merge-OptionSetting {
 
                 $localOption = $localOptions | Where-Object -Property $nameProperty -EQ $_ | Select-Object -First 1
 
-                $option = $localOption ?? $onlineOption
+                $option = [PSCustomObject]@{
+                    $nameProperty = $onlineOption.$nameProperty ?? $localOption.$nameProperty
+                    $idProperty = $onlineOption.$idProperty ?? $localOption.$idProperty
+                    $ruleSetProperty = $onlineOption.$ruleSetProperty ?? $localOption.$ruleSetProperty
+                    $categoryProperty = $onlineOption.$categoryProperty ?? $localOption.$categoryProperty
+                    $defaultProperty = $onlineOption.$defaultProperty ?? $localOption.$defaultProperty
+                    $valueProperty = $localOption.$valueProperty
+                    $reasoningProperty = $localOption.$reasoningProperty
+                }
 
                 if (-not ($option.PSObject.Properties | Where-Object -Property Name -EQ $actionProperty)) {
                     $option | Add-Member -MemberType NoteProperty -Name $actionProperty -Value ''
