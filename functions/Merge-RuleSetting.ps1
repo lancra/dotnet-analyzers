@@ -56,7 +56,14 @@ function Merge-RuleSetting {
                 $onlineRule = $onlineRules | Where-Object -Property $idProperty -EQ $_ | Select-Object -First 1
                 $localRule = $localRules | Where-Object -Property $idProperty -EQ $_ | Select-Object -First 1
 
-                $rule = $localRule ?? $onlineRule
+                $rule = [PSCustomObject]@{
+                    $idProperty = $onlineRule.$idProperty ?? $localRule.$idProperty
+                    $titleProperty = $onlineRule.$titleProperty ?? $localRule.$titleProperty
+                    $ruleSetProperty = $onlineRule.$ruleSetProperty ?? $localRule.$ruleSetProperty
+                    $categoryProperty = $onlineRule.$categoryProperty ?? $localRule.$categoryProperty
+                    $severityProperty = $localRule.$severityProperty ?? $onlineRule.$severityProperty
+                    $reasoningProperty = $localRule.$reasoningProperty
+                }
 
                 if (-not ($rule.PSObject.Properties | Where-Object -Property Name -EQ $actionProperty)) {
                     $rule | Add-Member -MemberType NoteProperty -Name $actionProperty -Value ''
