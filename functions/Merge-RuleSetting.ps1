@@ -77,8 +77,6 @@ function Merge-RuleSetting {
                 } else {
                     $rule.$actionProperty = 'New'
                     $script:atLeastOneAction = $true
-
-                    $rule | Add-Member -MemberType NoteProperty -Name $reasoningProperty -Value ''
                 }
 
                 $rule

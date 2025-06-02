@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2025-03-14T06:02:52.7635212-04:00",
+  "timestamp": "2025-06-02T06:16:53.2787649-04:00",
   "rules": [
     {
       "id": "CA1000",
@@ -900,6 +900,11 @@
     {
       "id": "CA2024",
       "title": "Do not use 'StreamReader.EndOfStream' in async methods",
+      "category": "Reliability"
+    },
+    {
+      "id": "CA2025",
+      "title": "Do not pass 'IDisposable' instances into unawaited tasks",
       "category": "Reliability"
     },
     {
