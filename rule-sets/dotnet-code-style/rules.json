@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2025-04-12T15:55:40.8306944-04:00",
+  "timestamp": "2025-06-03T06:09:13.2843125-04:00",
   "rules": [
     {
       "id": "IDE0001",
@@ -562,14 +562,21 @@
           "values": [
             {
               "value": "true",
-              "description": "Prefer to use collection expressions."
+              "alternate": "when_types_exactly_match",
+              "description": "Prefer to use collection expressions only when types match exactly, for example, List<int> list = new List<int>() { 1, 2 };."
+            },
+            {
+              "value": "when_types_loosely_match",
+              "specification": "When this option is used, the code fix might change the semantics of your code.",
+              "description": "Prefer to use collection expressions even when types match loosely, for example, IEnumerable<int> list = new List<int>() { 1, 2 };. The targeted type must match the type on the right-hand side or be one of the following types: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, <xref:System.Collections.Generic.IReadOnlyList%601>."
             },
             {
               "value": "false",
-              "description": "Don't prefer collection expressions."
+              "alternate": "never",
+              "description": "Disables the rule."
             }
           ],
-          "default": "true"
+          "default": "when_types_loosely_match"
         }
       ]
     },
@@ -2583,12 +2590,12 @@
             {
               "value": "true",
               "alternate": "when_types_exactly_match",
-              "description": "Prefer to use collection expressions only when types match exactly, for example, int[] i = new int[] { 1, 2, 3 };."
+              "description": "Prefer to use collection expressions only when types match exactly, for example, List<int> list = new List<int>() { 1, 2 };."
             },
             {
               "value": "when_types_loosely_match",
-              "specification": "Only in .NET 9 and later versions",
-              "description": "Prefer to use collection expressions even when types match loosely, for example, IEnumerable<int> i = new int[] { 1, 2, 3 };. The targeted type must match the type on the right-hand side or be one of the following types: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, <xref:System.Collections.Generic.IReadOnlyList%601>."
+              "specification": "When this option is used, the code fix might change the semantics of your code.",
+              "description": "Prefer to use collection expressions even when types match loosely, for example, IEnumerable<int> list = new List<int>() { 1, 2 };. The targeted type must match the type on the right-hand side or be one of the following types: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, <xref:System.Collections.Generic.IReadOnlyList%601>."
             },
             {
               "value": "false",
@@ -2596,7 +2603,7 @@
               "description": "Disables the rule."
             }
           ],
-          "default": "true"
+          "default": "when_types_loosely_match"
         }
       ]
     },
@@ -2610,12 +2617,12 @@
             {
               "value": "true",
               "alternate": "when_types_exactly_match",
-              "description": "Prefer to use collection expressions only when types match exactly, for example, int[] i = Array.Empty<int>();."
+              "description": "Prefer to use collection expressions only when types match exactly, for example, List<int> list = new List<int>() { 1, 2 };."
             },
             {
               "value": "when_types_loosely_match",
-              "specification": "Only in .NET 9 and later versions",
-              "description": "Prefer to use collection expressions even when types match loosely, for example, IEnumerable<int> i = Array.Empty<int>();. The targeted type must match the type on the right-hand side or be one of the following types: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, <xref:System.Collections.Generic.IReadOnlyList%601>."
+              "specification": "When this option is used, the code fix might change the semantics of your code.",
+              "description": "Prefer to use collection expressions even when types match loosely, for example, IEnumerable<int> list = new List<int>() { 1, 2 };. The targeted type must match the type on the right-hand side or be one of the following types: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, <xref:System.Collections.Generic.IReadOnlyList%601>."
             },
             {
               "value": "false",
@@ -2623,7 +2630,7 @@
               "description": "Disables the rule."
             }
           ],
-          "default": "true"
+          "default": "when_types_loosely_match"
         }
       ]
     },
@@ -2637,7 +2644,12 @@
             {
               "value": "true",
               "alternate": "when_types_exactly_match",
-              "description": "Prefer to use collection expressions."
+              "description": "Prefer to use collection expressions only when types match exactly, for example, List<int> list = new List<int>() { 1, 2 };."
+            },
+            {
+              "value": "when_types_loosely_match",
+              "specification": "When this option is used, the code fix might change the semantics of your code.",
+              "description": "Prefer to use collection expressions even when types match loosely, for example, IEnumerable<int> list = new List<int>() { 1, 2 };. The targeted type must match the type on the right-hand side or be one of the following types: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, <xref:System.Collections.Generic.IReadOnlyList%601>."
             },
             {
               "value": "false",
@@ -2645,7 +2657,7 @@
               "description": "Disables the rule."
             }
           ],
-          "default": "true"
+          "default": "when_types_loosely_match"
         }
       ]
     },
@@ -2659,12 +2671,12 @@
             {
               "value": "true",
               "alternate": "when_types_exactly_match",
-              "description": "Prefer to use collection expressions only when types match exactly, for example, ImmutableArray<int> i = ImmutableArray.Create(1, 2, 3);."
+              "description": "Prefer to use collection expressions only when types match exactly, for example, List<int> list = new List<int>() { 1, 2 };."
             },
             {
               "value": "when_types_loosely_match",
-              "specification": "Only in .NET 9 and later versions",
-              "description": "Prefer to use collection expressions even when types match loosely, for example, IEnumerable<int> i = ImmutableArray.Create(1, 2, 3);. The targeted type must match the type on the right-hand side or be one of the following types: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, <xref:System.Collections.Generic.IReadOnlyList%601>."
+              "specification": "When this option is used, the code fix might change the semantics of your code.",
+              "description": "Prefer to use collection expressions even when types match loosely, for example, IEnumerable<int> list = new List<int>() { 1, 2 };. The targeted type must match the type on the right-hand side or be one of the following types: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, <xref:System.Collections.Generic.IReadOnlyList%601>."
             },
             {
               "value": "false",
@@ -2672,7 +2684,7 @@
               "description": "Disables the rule."
             }
           ],
-          "default": "true"
+          "default": "when_types_loosely_match"
         }
       ]
     },
@@ -2686,12 +2698,12 @@
             {
               "value": "true",
               "alternate": "when_types_exactly_match",
-              "description": "Prefer to use collection expressions only when types match exactly."
+              "description": "Prefer to use collection expressions only when types match exactly, for example, List<int> list = new List<int>() { 1, 2 };."
             },
             {
               "value": "when_types_loosely_match",
-              "specification": "Only in .NET 9 and later versions",
-              "description": "Prefer to use collection expressions even when types match loosely. The targeted type must match the type on the right-hand side or be one of the following types: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, <xref:System.Collections.Generic.IReadOnlyList%601>."
+              "specification": "When this option is used, the code fix might change the semantics of your code.",
+              "description": "Prefer to use collection expressions even when types match loosely, for example, IEnumerable<int> list = new List<int>() { 1, 2 };. The targeted type must match the type on the right-hand side or be one of the following types: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, <xref:System.Collections.Generic.IReadOnlyList%601>."
             },
             {
               "value": "false",
@@ -2699,7 +2711,7 @@
               "description": "Disables the rule."
             }
           ],
-          "default": "true"
+          "default": "when_types_loosely_match"
         }
       ]
     },
@@ -2713,12 +2725,12 @@
             {
               "value": "true",
               "alternate": "when_types_exactly_match",
-              "description": "Prefer to use collection expressions only when types match exactly, for example, List<int> list = new[] { 1, 2, 3 }.ToList();."
+              "description": "Prefer to use collection expressions only when types match exactly, for example, List<int> list = new List<int>() { 1, 2 };."
             },
             {
               "value": "when_types_loosely_match",
-              "specification": "Only in .NET 9 and later versions",
-              "description": "Prefer to use collection expressions even when types match loosely, for example, IEnumerable<int> list = new[] { 1, 2, 3 }.ToList();. The targeted type must match the type on the right-hand side or be one of the following types: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, <xref:System.Collections.Generic.IReadOnlyList%601>."
+              "specification": "When this option is used, the code fix might change the semantics of your code.",
+              "description": "Prefer to use collection expressions even when types match loosely, for example, IEnumerable<int> list = new List<int>() { 1, 2 };. The targeted type must match the type on the right-hand side or be one of the following types: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, <xref:System.Collections.Generic.IReadOnlyList%601>."
             },
             {
               "value": "false",
@@ -2726,7 +2738,7 @@
               "description": "Disables the rule."
             }
           ],
-          "default": "true"
+          "default": "when_types_loosely_match"
         }
       ]
     },
@@ -2740,12 +2752,12 @@
             {
               "value": "true",
               "alternate": "when_types_exactly_match",
-              "description": "Prefer to use collection expressions only when types match exactly, for example, List<int> m1 = new List<int>(new[] { 1, 2, 3 });."
+              "description": "Prefer to use collection expressions only when types match exactly, for example, List<int> list = new List<int>() { 1, 2 };."
             },
             {
               "value": "when_types_loosely_match",
-              "specification": "Only in .NET 9 and later versions",
-              "description": "Prefer to use collection expressions even when types match loosely, for example, IEnumerable<int> m1 = new List<int>(new[] { 1, 2, 3 });. The targeted type must match the type on the right-hand side or be one of the following types: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, <xref:System.Collections.Generic.IReadOnlyList%601>."
+              "specification": "When this option is used, the code fix might change the semantics of your code.",
+              "description": "Prefer to use collection expressions even when types match loosely, for example, IEnumerable<int> list = new List<int>() { 1, 2 };. The targeted type must match the type on the right-hand side or be one of the following types: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, <xref:System.Collections.Generic.IReadOnlyList%601>."
             },
             {
               "value": "false",
