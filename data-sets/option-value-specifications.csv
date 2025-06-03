@@ -6,6 +6,4 @@ Old,New,Description
 false (or any other value),false,Can use any value not mentioned to fill in for this
 "non-empty string, optionally containing a {fileName} placeholder",*,Can use a {fileName} placeholder in the text
 "unset or empty string",unset,Can use an empty string
-when_types_loosely_match (.NET 9 and later versions)<sup>\*</sup>,when_types_loosely_match,Only in .NET 9 and later versions
-when_types_loosely_match<sup>\*</sup>,when_types_loosely_match,Only in .NET 9 and later versions
 when_types_loosely_match\*,when_types_loosely_match,"When this option is used, the code fix might change the semantics of your code."

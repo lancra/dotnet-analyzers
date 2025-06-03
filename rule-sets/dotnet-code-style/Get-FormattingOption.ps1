@@ -83,9 +83,6 @@ function Get-FormattingOption {
                 $property = $rowValues[0]
                 $value = $rowValues[1]
 
-                # NOTE: Update the replacement value when .NET 9 is released in Nov-2024.
-                $value = $value.Replace('true in .NET 8 when_types_loosely_match in .NET 9 and later versions', 'true')
-
                 $valueObject = [ordered]@{ 'value' = $value; 'description' = $rowValues[2] }
 
                 $pipeIndex = $value.IndexOf($pipeEscapeCharacter)
