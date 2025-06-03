@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2025-06-03T06:09:13.2843125-04:00",
+  "timestamp": "2025-06-03T06:20:50.0728454-04:00",
   "rules": [
     {
       "id": "IDE0001",
@@ -2872,6 +2872,11 @@
     {
       "id": "IDE1006",
       "title": "Naming styles",
+      "options": []
+    },
+    {
+      "id": "IDE3000",
+      "title": "Implement with Copilot",
       "options": []
     }
   ]
