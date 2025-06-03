@@ -3,9 +3,13 @@ function Get-FormattingOption {
     [OutputType([ordered[]])]
     param (
         [Parameter(Mandatory)]
-        [string]$Url
+        [uri] $Url,
+
+        [Parameter(Mandatory)]
+        [string] $Directory
     )
     begin {
+        . "$Directory/Get-DocumentationUri.ps1"
         . "$env:DOTNET_ANALYZERS_FUNCTIONS/Format-Plaintext.ps1"
 
         enum OptionParserState {
@@ -29,7 +33,22 @@ function Get-FormattingOption {
         $options = @()
         $currentOption = [ordered]@{}
 
+        $uriGroup = 'uri'
+        $includePattern = "^\[!INCLUDE \[.*?\]\((?<$uriGroup>.*?)\)\]$"
+        $documentLines = @()
         (& curl --silent $Url) |
+            ForEach-Object {
+                if ($_ -match $includePattern) {
+                    $includeDocument = $matches[$uriGroup]
+                    $includeUri = Get-DocumentationUri -Document $includeDocument
+                    $includeLines = & curl --silent $includeUri
+                    $documentLines += $includeLines
+                } else {
+                    $documentLines += $_
+                }
+            }
+
+        $documentLines |
             ForEach-Object {
                 if ($state -eq [OptionParserState]::Search) {
                     if ($_.StartsWith($tableTitleHeaderPrefix)) {
@@ -98,7 +117,7 @@ function Get-FormattingOption {
                 } elseif (-not $property) {
                     $currentOption.values += $valueObject
                 } elseif ($property -eq $defaultProperty) {
-                    $currentOption.default = $value
+                    $currentOption.default = $valueObject.value
                 }
             }
 

@@ -51,6 +51,7 @@ $rules = @()
 
 $optionsJobs = @()
 $optionsFunctionDefinition = ${function:Get-FormattingOption}.ToString()
+$ruleSetDirectoryPath = $PSScriptRoot
 
 (& curl --silent $ruleIndexUrl) |
     ForEach-Object {
@@ -107,9 +108,9 @@ $optionsFunctionDefinition = ${function:Get-FormattingOption}.ToString()
                 ${function:Get-FormattingOption} = $using:optionsFunctionDefinition
 
                 $options = @()
-                $Urls |
+                $urls |
                     ForEach-Object {
-                        $options += (Get-FormattingOption -Url $_)
+                        $options += (Get-FormattingOption -Url $_ -Directory $using:ruleSetDirectoryPath)
                     }
 
                 return ,$options
