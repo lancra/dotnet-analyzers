@@ -1,6 +1,7 @@
 [CmdletBinding()]
 param ()
 
+. "$PSScriptRoot/Get-DocumentationUri.ps1"
 . "$PSScriptRoot/Get-FormattingOption.ps1"
 . "$env:DOTNET_ANALYZERS_FUNCTIONS/Format-Plaintext.ps1"
 . "$env:DOTNET_ANALYZERS_FUNCTIONS/Test-RuleSetDifference.ps1"
@@ -32,10 +33,9 @@ function Read-Link {
     }
 }
 
-$urlFormat = 'https://raw.githubusercontent.com/dotnet/docs/main/docs/fundamentals/code-analysis/style-rules/{0}'
-$ruleIndexUrl = $urlFormat -f 'index.md'
-$csharpFormattingUrl = $urlFormat -f 'csharp-formatting-options.md'
-$dotnetFormattingUrl = $urlFormat -f 'dotnet-formatting-options.md'
+$ruleIndexUrl = Get-DocumentationUri -Document 'index.md'
+$csharpFormattingUrl = Get-DocumentationUri -Document 'csharp-formatting-options.md'
+$dotnetFormattingUrl = Get-DocumentationUri -Document 'dotnet-formatting-options.md'
 
 $tableTitleHeader = '> | Rule ID | Title | Option |'
 
@@ -95,8 +95,7 @@ $optionsFunctionDefinition = ${function:Get-FormattingOption}.ToString()
             $urls += ,$csharpFormattingUrl
             $urls += ,$dotnetFormattingUrl
         } elseif ($optionsText) {
-            $ruleUrl = $urlFormat -f $links[$rule.id]
-            $urls += $ruleUrl
+            $urls += (Get-DocumentationUri -Document $links[$rule.id])
         }
 
         if ($urls.Length -gt 0) {
