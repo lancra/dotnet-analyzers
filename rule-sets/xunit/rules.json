@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2024-11-21T05:53:06.0674703-05:00",
+  "timestamp": "2025-08-18T06:37:10.0818800-04:00",
   "rules": [
     {
       "id": "xUnit1000",
@@ -315,6 +315,12 @@
       "default": "Warning"
     },
     {
+      "id": "xUnit1052",
+      "title": "Avoid using 'TheoryData<...>' with types that implement 'ITheoryDataRow'",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
       "id": "xUnit2000",
       "title": "Constants and literals should be the expected argument",
       "category": "Assertion",
@@ -527,6 +533,12 @@
     {
       "id": "xUnit3002",
       "title": "Classes which are JSON serializable should not be tested for their concrete type",
+      "category": "Extensibility",
+      "default": "Warning"
+    },
+    {
+      "id": "xUnit3003",
+      "title": "Classes which extend FactAttribute (directly or indirectly) should provide a public constructor for source information",
       "category": "Extensibility",
       "default": "Warning"
     }
