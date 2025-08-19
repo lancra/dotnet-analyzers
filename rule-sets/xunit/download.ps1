@@ -1,55 +1,80 @@
 [CmdletBinding()]
 param ()
 
-if ($null -eq (Get-Command -Name 'pup' -ErrorAction SilentlyContinue)) {
-    throw 'Downloading xUnit rules requires pup. Please download it from GitHub (https://github.com/ericchiang/pup) or ' +
-        'via Go (go install github.com/ericchiang/pup@latest).'
-}
-
 . "$env:DOTNET_ANALYZERS_FUNCTIONS/Test-RuleSetDifference.ps1"
 
-$url = 'https://xunit.net/xunit.analyzers/rules/'
+function Get-RegexMatch {
+    [CmdletBinding()]
+    [OutputType([string])]
+    param(
+        [Parameter(Mandatory)]
+        [string] $Text,
 
-$rules = @()
+        [Parameter(Mandatory)]
+        [string] $Pattern
+    )
+    begin {
+        $groupName = 'match'
+    }
+    process {
+        $namedPattern = $Pattern -f $groupName
+        $Text |
+            Select-String -Pattern $namedPattern |
+            Select-Object -ExpandProperty Matches |
+            Select-Object -ExpandProperty Groups |
+            Where-Object -Property Name -EQ $groupName |
+            Select-Object -ExpandProperty Value
+    }
+}
 
 enum RuleParserState {
-    Header # Skipping the table category header
-    Active # Parsing rules from the table
+    HeadingSearch # Searching for an analyzer category heading.
+    HeaderSearch # Searching for an analyzer table header.
+    Header # Skipping the table header.
+    Active # Parsing rules from the table.
 }
-$state = [RuleParserState]::Active
+$state = [RuleParserState]::HeadingSearch
 
+$rules = @()
 $currentCategory = $null
-(& curl --silent $url) |
-    pup --plain 'html body div table tbody json{}' |
-    ConvertFrom-Json |
-    Select-Object -ExpandProperty 'children' |
+
+& curl --silent 'https://raw.githubusercontent.com/xunit/xunit.net/refs/heads/main/site/xunit.analyzers/rules/index.md' |
     ForEach-Object {
+        if ($state -eq [RuleParserState]::HeadingSearch) {
+            if ($_.StartsWith('##')) {
+                $currentCategory = Get-RegexMatch -Text $_ -Pattern '## (?<{0}>.*?) Analyzers \(\dxxx\)'
+                $state = [RuleParserState]::HeaderSearch
+            }
+
+            return
+        }
+
+        if ($state -eq [RuleParserState]::HeaderSearch) {
+            if ($_.StartsWith('| ID')) {
+                $state = [RuleParserState]::Header
+            }
+
+            return
+        }
+
         if ($state -eq [RuleParserState]::Header) {
             $state = [RuleParserState]::Active
             return
         }
 
-        if ($_.children.Length -eq 1) {
-            $currentCategory = $_.children[0].children[0].text -replace ' Analyzers', ''
-            $state = [RuleParserState]::Header
+        if (-not $_) {
+            $state = [RuleParserState]::HeadingSearch
             return
         }
 
-        $titleElement = $_.children[3]
-        $title = $titleElement.text
-
-        # Handle xUnit1033 title which is split across a hierarchy of elements.
-        $titleChildren = $titleElement.children
-        while ($null -ne $titleChildren) {
-            $title += $titleChildren[0].text
-            $titleChildren = $titleChildren[0].children
-        }
+        $segments = $_.Substring(2) -split '\|' |
+            ForEach-Object { $_.Trim() }
 
         $rule = [ordered]@{}
-        $rule.id = $_.children[0].children[0].children[0].text
-        $rule.title = $title
+        $rule.id = Get-RegexMatch -Text $segments[0] -Pattern '\[(?<{0}>.*?)\]\(.*\)'
+        $rule.title = $segments[3]
         $rule.category = $currentCategory
-        $rule.default = $_.children[2].children[0].text
+        $rule.default = Get-RegexMatch -Text $segments[2] -Pattern '::(?<{0}>.*?)::.*'
         $rules += $rule
     }
 
