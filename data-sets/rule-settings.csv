@@ -78,6 +78,7 @@ CA1512,Use ArgumentOutOfRangeException throw helper,.NET Quality,Maintainability
 CA1513,Use ObjectDisposedException throw helper,.NET Quality,Maintainability,Warning,
 CA1514,Avoid redundant length argument,.NET Quality,Maintainability,Warning,
 CA1515,Consider making public types internal,.NET Quality,Maintainability,Warning,
+CA1516,Use cross-platform intrinsics,.NET Quality,Maintainability,Warning,
 CA1700,Do not name enum values 'Reserved',.NET Quality,Naming,Warning,
 CA1704,Identifiers should be spelled correctly,.NET Quality,Naming,Hidden,Undocumented and covered by typos linter
 CA1707,Identifiers should not contain underscores,.NET Quality,Naming,Warning,
