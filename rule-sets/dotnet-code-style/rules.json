@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2025-06-03T06:20:50.0728454-04:00",
+  "timestamp": "2025-08-21T04:00:02.7716903-04:00",
   "rules": [
     {
       "id": "IDE0001",
@@ -2873,6 +2873,146 @@
       "id": "IDE1006",
       "title": "Naming styles",
       "options": []
+    },
+    {
+      "id": "IDE2000",
+      "title": "Avoid multiple blank lines",
+      "options": [
+        {
+          "name": "dotnet_style_allow_multiple_blank_lines_experimental",
+          "values": [
+            {
+              "value": "true",
+              "description": "Allow multiple consecutive blank lines"
+            },
+            {
+              "value": "false",
+              "description": "Don't allow consecutive blank lines"
+            }
+          ],
+          "default": "true"
+        }
+      ]
+    },
+    {
+      "id": "IDE2001",
+      "title": "Embedded statements must be on their own line",
+      "options": [
+        {
+          "name": "csharp_style_allow_embedded_statements_on_same_line_experimental",
+          "values": [
+            {
+              "value": "true",
+              "description": "Allow embedded statements on same line as control keyword"
+            },
+            {
+              "value": "false",
+              "description": "Require embedded statements to be on their own line"
+            }
+          ],
+          "default": "true"
+        }
+      ]
+    },
+    {
+      "id": "IDE2002",
+      "title": "Consecutive braces must not have blank line between them",
+      "options": [
+        {
+          "name": "csharp_style_allow_blank_lines_between_consecutive_braces_experimental",
+          "values": [
+            {
+              "value": "true",
+              "description": "Allow blank lines between consecutive braces"
+            },
+            {
+              "value": "false",
+              "description": "Don't allow blank lines between consecutive braces"
+            }
+          ],
+          "default": "true"
+        }
+      ]
+    },
+    {
+      "id": "IDE2003",
+      "title": "Blank line required between block and subsequent statement",
+      "options": [
+        {
+          "name": "dotnet_style_allow_statement_immediately_after_block_experimental",
+          "values": [
+            {
+              "value": "true",
+              "description": "Allow subsequent statement to immediately follow block statement without a blank line in between"
+            },
+            {
+              "value": "false",
+              "description": "Require a blank line between a block statement and the subsequent statement"
+            }
+          ],
+          "default": "true"
+        }
+      ]
+    },
+    {
+      "id": "IDE2004",
+      "title": "Blank line not allowed after constructor initializer colon",
+      "options": [
+        {
+          "name": "csharp_style_allow_blank_line_after_colon_in_constructor_initializer_experimental",
+          "values": [
+            {
+              "value": "true",
+              "description": "Allow a blank line after the colon in a constructor initializer"
+            },
+            {
+              "value": "false",
+              "description": "Don't allow blank line after colon in constructor initializer"
+            }
+          ],
+          "default": "true"
+        }
+      ]
+    },
+    {
+      "id": "IDE2005",
+      "title": "Blank line not allowed after conditional expression token",
+      "options": [
+        {
+          "name": "csharp_style_allow_blank_line_after_token_in_conditional_expression_experimental",
+          "values": [
+            {
+              "value": "true",
+              "description": "Allow a blank line after the token in a conditional expression"
+            },
+            {
+              "value": "false",
+              "description": "Require statement to immediately follow token in a conditional expression"
+            }
+          ],
+          "default": "true"
+        }
+      ]
+    },
+    {
+      "id": "IDE2006",
+      "title": "Blank line not allowed after arrow expression clause token",
+      "options": [
+        {
+          "name": "csharp_style_allow_blank_line_after_token_in_arrow_expression_clause_experimental",
+          "values": [
+            {
+              "value": "true",
+              "description": "Allow a blank line after the token in an arrow expression clause"
+            },
+            {
+              "value": "false",
+              "description": "Require expression to immediately follow token in an arrow expression clause"
+            }
+          ],
+          "default": "true"
+        }
+      ]
     },
     {
       "id": "IDE3000",

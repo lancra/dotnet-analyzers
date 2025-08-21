@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2025-06-02T06:16:53.2787649-04:00",
+  "timestamp": "2025-08-21T03:59:59.9511767-04:00",
   "rules": [
     {
       "id": "CA1000",
@@ -395,6 +395,11 @@
     {
       "id": "CA1515",
       "title": "Consider making public types internal",
+      "category": "Maintainability"
+    },
+    {
+      "id": "CA1516",
+      "title": "Use cross-platform intrinsics",
       "category": "Maintainability"
     },
     {

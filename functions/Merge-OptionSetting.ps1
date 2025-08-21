@@ -90,9 +90,6 @@ function Merge-OptionSetting {
                 } else {
                     $option.$actionProperty = 'New'
                     $script:atLeastOneAction = $true
-
-                    $option | Add-Member -MemberType NoteProperty -Name $valueProperty -Value ''
-                    $option | Add-Member -MemberType NoteProperty -Name $reasoningProperty -Value ''
                 }
 
                 $option
