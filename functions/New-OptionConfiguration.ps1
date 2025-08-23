@@ -4,14 +4,18 @@ function New-OptionConfiguration {
         [switch]$IncludeVersion
     )
     begin {
+        . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-RuleSet.ps1"
         . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-Version.ps1"
 
-        $ruleSets = @{}
-        Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-sets.csv" |
-            ForEach-Object { $ruleSets[$_.Name] = [bool]::Parse($_.Configure) }
+        $enabledRuleSetNames = Get-RuleSet -Enabled |
+            Select-Object -ExpandProperty Name
 
         $settings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/option-settings.csv" |
-            Where-Object { $ruleSets[$_.RuleSet] }
+            Where-Object {
+                $optionRuleSet = $_.RuleSet
+                $enabledRuleSetNames |
+                    Where-Object { $_ -eq $optionRuleSet }
+                }
 
         if ($settings.Length -eq 0) {
             Write-Warning 'Skipping configuration generation, no options settings found'

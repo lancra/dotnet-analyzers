@@ -5,21 +5,29 @@ function New-RuleConfiguration {
         [switch]$IncludeVersion
     )
     begin {
+        . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-RuleSet.ps1"
         . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-Version.ps1"
 
         $severities = @{}
         Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/severities.csv" |
             ForEach-Object { $severities[$_.Name] = $_.Configuration }
 
-        $ruleSets = @{}
-        Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-sets.csv" |
-            ForEach-Object { $ruleSets[$_.Name] = [bool]::Parse($_.Configure) }
+        $enabledRuleSetNames = Get-RuleSet -Enabled |
+            Select-Object -ExpandProperty Name
 
         $categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/categories.csv" |
-            Where-Object { $ruleSets[$_.RuleSet] }
+            Where-Object {
+                $categoryRuleSet = $_.RuleSet
+                $enabledRuleSetNames |
+                    Where-Object { $_ -eq $categoryRuleSet }
+            }
 
         $ruleSettings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-settings.csv" |
-            Where-Object { $ruleSets[$_.RuleSet] }
+            Where-Object {
+                $ruleRuleSet = $_.RuleSet
+                $enabledRuleSetNames |
+                    Where-Object { $_ -eq $ruleRuleSet }
+            }
 
         $ruleSettingsWithEmptySeverity = $ruleSettings |
             Where-Object { -not $_.Severity }
@@ -39,7 +47,11 @@ function New-RuleConfiguration {
         }
 
         $optionSettings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/option-settings.csv" |
-            Where-Object { $ruleSets[$_.RuleSet] }
+            Where-Object {
+                $optionRuleSet = $_.RuleSet
+                $enabledRuleSetNames |
+                    Where-Object { $_ -eq $optionRuleSet }
+            }
 
         $ruleSettingFormat = 'dotnet_diagnostic.{0}.severity = {1}'
         $optionSettingFormat = '{0} = {1} # {2}'

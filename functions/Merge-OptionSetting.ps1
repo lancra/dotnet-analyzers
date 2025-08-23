@@ -2,6 +2,7 @@ function Merge-OptionSetting {
     [CmdletBinding()]
     param ()
     begin {
+        . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-RuleSet.ps1"
         . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-Setting.ps1"
 
         $actionProperty = 'Action'
@@ -14,14 +15,13 @@ function Merge-OptionSetting {
         $reasoningProperty = 'Reasoning'
     }
     process {
-        $ruleSets = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-sets.csv"
-
         $rawOnlineOptions = @()
-        $ruleSets |
+        Get-RuleSet |
             ForEach-Object {
-                $rulesPath = "$env:DOTNET_ANALYZERS_RULE_SETS/$($_.Directory)/rules.json"
+                $ruleSet = $_
+                $rulesPath = "$env:DOTNET_ANALYZERS_RULE_SETS/$($ruleSet.Id)/rules.json"
                 if (-not (Test-Path -Path $rulesPath)) {
-                    Write-Warning "Skipping merge of $($_.Name) option settings, no downloaded rules found"
+                    Write-Warning "Skipping merge of $($ruleSet.Name) option settings, no downloaded rules found"
                     return
                 }
 
@@ -31,7 +31,7 @@ function Merge-OptionSetting {
                     Where-Object -Property 'options' |
                     Select-Object -Property 'id' -ExpandProperty 'options'
 
-                $ruleSetOptions | Add-Member -MemberType NoteProperty -Name $ruleSetProperty -Value $_.Name
+                $ruleSetOptions | Add-Member -MemberType NoteProperty -Name $ruleSetProperty -Value $ruleSet.Name
                 $ruleSetOptions | Add-Member -MemberType NoteProperty -Name $categoryProperty -Value ''
 
                 $rawOnlineOptions += $ruleSetOptions
