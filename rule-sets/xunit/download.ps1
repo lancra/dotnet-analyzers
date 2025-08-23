@@ -75,6 +75,26 @@ $currentCategory = $null
         $rule.title = $segments[3]
         $rule.category = $currentCategory
         $rule.default = Get-RegexMatch -Text $segments[2] -Pattern '::(?<{0}>.*?)::.*'
+
+        $rule.versions = [ordered]@{}
+        $versionIdGroupName = 'name'
+        $versionValueGroupName = 'value'
+        $segments[1] |
+            Select-String -AllMatches -Pattern "::(?<$versionIdGroupName>.*?)::\{.*?\.label-version-(?<$versionValueGroupName>.*?)\}" |
+            Select-Object -ExpandProperty Matches |
+            ForEach-Object {
+                $groups = $_ |
+                    Select-Object -ExpandProperty Groups
+                $versionId = $groups |
+                    Where-Object -Property Name -EQ $versionIdGroupName |
+                    Select-Object -ExpandProperty Value
+                $versionValue = $groups |
+                    Where-Object -Property Name -EQ $versionValueGroupName |
+                    Select-Object -ExpandProperty Value
+
+                $rule.versions[$versionId] = [bool]::Parse($versionValue)
+            }
+
         $rules += $rule
     }
 
@@ -85,6 +105,7 @@ $output.'$schema' = $env:DOTNET_ANALYZERS_SCHEMA
 $output.timestamp = (Get-Date -Format 'o')
 $output.rules = $rules
 
-if (Test-RuleSetDifference -Path $path -Json ($output.rules | ConvertTo-Json)) {
-    $output | ConvertTo-Json > $path
+$jsonDepth = 3
+if (Test-RuleSetDifference -Path $path -Json ($output.rules | ConvertTo-Json -Depth $jsonDepth)) {
+    $output | ConvertTo-Json -Depth $jsonDepth > $path
 }
