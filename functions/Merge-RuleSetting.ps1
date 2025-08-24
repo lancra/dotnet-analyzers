@@ -2,6 +2,7 @@ function Merge-RuleSetting {
     [CmdletBinding()]
     param ()
     begin {
+        . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-RuleSet.ps1"
         . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-Setting.ps1"
 
         $actionProperty = 'Action'
@@ -13,14 +14,13 @@ function Merge-RuleSetting {
         $reasoningProperty = 'Reasoning'
     }
     process {
-        $ruleSets = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-sets.csv"
-
         $rawOnlineRules = @()
-        $ruleSets |
+        Get-RuleSet |
             ForEach-Object {
-                $rulesPath = "$env:DOTNET_ANALYZERS_RULE_SETS/$($_.Directory)/rules.json"
+                $ruleSet = $_
+                $rulesPath = "$env:DOTNET_ANALYZERS_RULE_SETS/$($ruleSet.Id)/rules.json"
                 if (-not (Test-Path -Path $rulesPath)) {
-                    Write-Warning "Skipping merge of $($_.Name) rule settings, no downloaded rules found"
+                    Write-Warning "Skipping merge of $($ruleSet.Name) rule settings, no downloaded rules found"
                     return
                 }
 
@@ -28,7 +28,7 @@ function Merge-RuleSetting {
                     ConvertFrom-Json |
                     Select-Object -ExpandProperty 'rules'
 
-                $ruleSetRules | Add-Member -MemberType NoteProperty -Name $ruleSetProperty -Value $_.Name
+                $ruleSetRules | Add-Member -MemberType NoteProperty -Name $ruleSetProperty -Value $ruleSet.Name
 
                 $rawOnlineRules += $ruleSetRules
             }

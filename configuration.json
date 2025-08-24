@@ -1,0 +1,28 @@
+{
+  "ruleSets": [
+    {
+      "id": "dotnet-code-quality",
+      "name": ".NET Quality",
+      "enabled": true
+    },
+    {
+      "id": "dotnet-code-style",
+      "name": ".NET Style",
+      "enabled": true
+    },
+    {
+      "id": "stylecop",
+      "name": "StyleCop",
+      "enabled": true
+    },
+    {
+      "id": "xunit",
+      "name": "xUnit",
+      "enabled": true,
+      "properties": {
+        "v2": true,
+        "v3": true
+      }
+    }
+  ]
+}
