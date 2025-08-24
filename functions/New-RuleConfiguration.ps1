@@ -12,21 +12,20 @@ function New-RuleConfiguration {
         Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/severities.csv" |
             ForEach-Object { $severities[$_.Name] = $_.Configuration }
 
-        $enabledRuleSetNames = Get-RuleSet -Enabled |
-            Select-Object -ExpandProperty Name
+        $enabledRuleSets = Get-RuleSet -Enabled
 
         $categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/categories.csv" |
             Where-Object {
                 $categoryRuleSet = $_.RuleSet
-                $enabledRuleSetNames |
-                    Where-Object { $_ -eq $categoryRuleSet }
+                $enabledRuleSets |
+                    Where-Object -Property Name -EQ $categoryRuleSet
             }
 
         $ruleSettings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-settings.csv" |
             Where-Object {
                 $ruleRuleSet = $_.RuleSet
-                $enabledRuleSetNames |
-                    Where-Object { $_ -eq $ruleRuleSet }
+                $enabledRuleSets |
+                    Where-Object -Property Name -EQ $ruleRuleSet
             }
 
         $ruleSettingsWithEmptySeverity = $ruleSettings |
@@ -49,8 +48,8 @@ function New-RuleConfiguration {
         $optionSettings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/option-settings.csv" |
             Where-Object {
                 $optionRuleSet = $_.RuleSet
-                $enabledRuleSetNames |
-                    Where-Object { $_ -eq $optionRuleSet }
+                $enabledRuleSets |
+                    Where-Object -Property Name -EQ $optionRuleSet
             }
 
         $ruleSettingFormat = 'dotnet_diagnostic.{0}.severity = {1}'
@@ -70,6 +69,17 @@ function New-RuleConfiguration {
             ForEach-Object -Begin { $script:i = 0 } -Process {
                 $lastRuleSet = -not ($i -lt $categories.Length - 1)
 
+                $ruleSet = $enabledRuleSets |
+                    Where-Object -Property Name -EQ $_.RuleSet
+
+                $inclusionScriptPathArguments = @{
+                    Path = $PSScriptRoot
+                    ChildPath = '..'
+                    AdditionalChildPath = @('rule-sets', $ruleSet.id, 'check-inclusion.ps1')
+                }
+                $inclusionScriptPath = Join-Path @inclusionScriptPathArguments
+                $hasInclusionScript = Test-Path -Path $inclusionScriptPath
+
                 [void]$builder.Append('# ')
                 [void]$builder.Append($_.RuleSet)
                 [void]$builder.Append(': ')
@@ -86,7 +96,16 @@ function New-RuleConfiguration {
                 $ruleSettingLines = $ruleSettings |
                     Where-Object -Property RuleSet -EQ $_.RuleSet |
                     Where-Object -Property Category -EQ $_.Category |
-                    ForEach-Object { $ruleSettingFormat -f $_.Id, $severities[$_.Severity] }
+                    ForEach-Object {
+                        if ($hasInclusionScript) {
+                            $include = & $inclusionScriptPath -Id $_.Id
+                            if (-not $include) {
+                                return
+                            }
+                        }
+
+                        $ruleSettingFormat -f $_.Id, $severities[$_.Severity]
+                    }
 
                 $lines = $ruleSettingLines
 
