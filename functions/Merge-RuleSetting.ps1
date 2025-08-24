@@ -26,7 +26,8 @@ function Merge-RuleSetting {
 
                 $ruleSetRules = Get-Content -Path $rulesPath |
                     ConvertFrom-Json |
-                    Select-Object -ExpandProperty 'rules'
+                    Select-Object -ExpandProperty 'rules' |
+                    Sort-Object -Property 'category', 'id'
 
                 $ruleSetRules | Add-Member -MemberType NoteProperty -Name $ruleSetProperty -Value $ruleSet.Name
 
