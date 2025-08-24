@@ -18,7 +18,11 @@
     {
       "id": "xunit",
       "name": "xUnit",
-      "enabled": true
+      "enabled": true,
+      "properties": {
+        "v2": true,
+        "v3": true
+      }
     }
   ]
 }
