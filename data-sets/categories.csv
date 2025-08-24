@@ -20,6 +20,6 @@ StyleCop,Ordering,https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/mast
 StyleCop,Readability,https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/ReadabilityRules.md
 StyleCop,Spacing,https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SpacingRules.md
 StyleCop,Special,https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SpecialRules.md
-xUnit,Assertion,https://xunit.net/xunit.analyzers/rules/
-xUnit,Extensibility,https://xunit.net/xunit.analyzers/rules/
-xUnit,Usage,https://xunit.net/xunit.analyzers/rules/
+xUnit,Assertion,https://xunit.net/xunit.analyzers/rules/#assertion-analyzers-2xxx
+xUnit,Extensibility,https://xunit.net/xunit.analyzers/rules/#extensibility-analyzers-3xxx
+xUnit,Usage,https://xunit.net/xunit.analyzers/rules/#usage-analyzers-1xxx
