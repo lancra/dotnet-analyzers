@@ -4,9 +4,6 @@ function New-OptionConfiguration {
         [switch]$IncludeVersion
     )
     begin {
-        . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-RuleSet.ps1"
-        . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-Version.ps1"
-
         $enabledRuleSetNames = Get-RuleSet -Enabled |
             Select-Object -ExpandProperty Name
 

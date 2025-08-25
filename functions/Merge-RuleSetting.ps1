@@ -2,9 +2,6 @@ function Merge-RuleSetting {
     [CmdletBinding()]
     param ()
     begin {
-        . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-RuleSet.ps1"
-        . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-Setting.ps1"
-
         $actionProperty = 'Action'
         $idProperty = 'Id'
         $titleProperty = 'Title'

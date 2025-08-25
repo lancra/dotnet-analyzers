@@ -4,8 +4,6 @@ param (
     [string]$RuleSet
 )
 
-. "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-RuleSet.ps1"
-
 Get-RuleSet |
     ForEach-Object {
         if ($RuleSet -and $_.Id -ne $RuleSet) {

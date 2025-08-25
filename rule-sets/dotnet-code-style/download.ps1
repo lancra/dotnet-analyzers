@@ -3,8 +3,6 @@ param ()
 
 . "$PSScriptRoot/Get-DocumentationUri.ps1"
 . "$PSScriptRoot/Get-FormattingOption.ps1"
-. "$env:DOTNET_ANALYZERS_FUNCTIONS/Format-Plaintext.ps1"
-. "$env:DOTNET_ANALYZERS_FUNCTIONS/Test-RuleSetDifference.ps1"
 
 function Read-Link {
     [CmdletBinding()]

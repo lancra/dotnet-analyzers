@@ -1,8 +1,6 @@
 [CmdletBinding()]
 param ()
 
-. "$env:DOTNET_ANALYZERS_FUNCTIONS/Test-RuleSetDifference.ps1"
-
 function Get-RegexMatch {
     [CmdletBinding()]
     [OutputType([string])]

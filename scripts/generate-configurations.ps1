@@ -4,9 +4,6 @@ param (
     [switch]$IncludeVersion
 )
 
-. "$env:DOTNET_ANALYZERS_FUNCTIONS/New-RuleConfiguration.ps1"
-. "$env:DOTNET_ANALYZERS_FUNCTIONS/New-OptionConfiguration.ps1"
-
 $ruleConfigurationName = $MergeConfiguration ? 'combined' : 'rule'
 Write-Output "Generating $ruleConfigurationName configuration (.globalconfig)"
 New-RuleConfiguration -IncludeOption:$MergeConfiguration -IncludeVersion:$IncludeVersion

@@ -1,9 +1,6 @@
 [CmdletBinding()]
 param ()
 
-. "$env:DOTNET_ANALYZERS_FUNCTIONS/Format-Plaintext.ps1"
-. "$env:DOTNET_ANALYZERS_FUNCTIONS/Test-RuleSetDifference.ps1"
-
 function Get-Rule {
     [CmdletBinding()]
     [OutputType([PSCustomObject[]])]
