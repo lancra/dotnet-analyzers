@@ -24,12 +24,12 @@ try {
     Switch-Environment
 
     if (-not $SkipDownload) {
-        & "$env:DOTNET_ANALYZERS_SCRIPTS/download-rules.ps1" -RuleSet $RuleSet
+        & "$PSScriptRoot/scripts/download-rules.ps1" -RuleSet $RuleSet
     }
 
-    & "$env:DOTNET_ANALYZERS_SCRIPTS/generate-settings.ps1"
+    & "$PSScriptRoot/scripts/generate-settings.ps1"
 
-    & "$env:DOTNET_ANALYZERS_SCRIPTS/generate-configurations.ps1" `
+    & "$PSScriptRoot/scripts/generate-configurations.ps1" `
         -MergeConfiguration:$MergeConfiguration `
         -IncludeVersion:$IncludeVersion
 }
