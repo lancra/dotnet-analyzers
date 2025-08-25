@@ -8,6 +8,7 @@ function Get-RuleSet {
         $properties = @(
             @{ Name = 'Id'; Expression = { $_.id } },
             @{ Name = 'Name'; Expression = { $_.name } },
+            @{ Name = 'HelpUriFormat'; Expression = { $_.helpUriFormat } },
             @{ Name = 'Enabled'; Expression = { $_.enabled } },
             @{ Name = 'Properties'; Expression = { $_.properties } }
         )

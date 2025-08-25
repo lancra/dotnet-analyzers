@@ -3,21 +3,25 @@
     {
       "id": "dotnet-code-quality",
       "name": ".NET Quality",
+      "helpUriFormat": "https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/warnings/{0}",
       "enabled": true
     },
     {
       "id": "dotnet-code-style",
       "name": ".NET Style",
+      "helpUriFormat": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/{0}",
       "enabled": true
     },
     {
       "id": "stylecop",
       "name": "StyleCop",
+      "helpUriFormat": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/{0}",
       "enabled": true
     },
     {
       "id": "xunit",
       "name": "xUnit",
+      "helpUriFormat": "https://xunit.net/xunit.analyzers/rules/{0}",
       "enabled": true,
       "properties": {
         "v2": true,
