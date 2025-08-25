@@ -10,7 +10,7 @@ $jqQuery = '.runs[] | ' +
     'map({ value: .value }) | ' +
     'map(. + .value | del(.value)) | ' +
     'map(. + .properties | del(.properties)) | ' +
-    'map({ id, title: .shortDescription, category })'
+    'map({ id, title: .shortDescription, helpUri, category })'
 
 $netAnalyzerUrl = 'https://raw.githubusercontent.com/dotnet/roslyn-analyzers/main/src/NetAnalyzers/Microsoft.CodeAnalysis.NetAnalyzers.sarif'
 $rules = & curl --silent $netAnalyzerUrl |
@@ -27,6 +27,8 @@ $rules += & curl --silent $textAnalyzerUrl |
 
 $singleFileUrl = 'https://raw.githubusercontent.com/dotnet/docs/main/docs/core/deploying/single-file/warnings/overview.md'
 $tableTitleHeader = '|Rule|Description|'
+
+$ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
 
 enum RuleParserState {
     Search # Looking for a table title header in the document
@@ -60,6 +62,7 @@ $state = [RuleParserState]::Search
         $rule = [PSCustomObject]@{
             id = $id
             title = $rowValues[1]
+            helpUri = $ruleSet.HelpUriFormat -f $id.ToLower()
             category = 'SingleFile'
         }
         $rules += $rule

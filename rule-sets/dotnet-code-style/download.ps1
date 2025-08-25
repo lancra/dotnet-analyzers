@@ -39,6 +39,8 @@ $dotnetFormattingUrl = Get-DocumentationUri -Document 'dotnet-formatting-options
 
 $tableTitleHeader = '> | Rule ID | Title | Option |'
 
+$ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
+
 enum RuleParserState {
     Search # Looking for a table title header in the document
     Header # Skipping the table alignment header
@@ -87,6 +89,7 @@ $ruleSetDirectoryPath = $PSScriptRoot
         $rule = [PSCustomObject]@{
             id = $rowValues[0]
             title = $rowValues[1]
+            helpUri = $ruleSet.HelpUriFormat -f $links[$rowValues[0]].Trim('.md')
             options = @()
         }
 

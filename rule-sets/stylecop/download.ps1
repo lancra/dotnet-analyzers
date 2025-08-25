@@ -10,6 +10,8 @@ $categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/categories.csv" 
 $categoryUrlFormat = 'https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/documentation/{0}Rules.md'
 $tableTitleHeader = 'Identifier | Name | Description'
 
+$ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
+
 enum RuleParserState {
     Search # Looking for a table title header in the document
     Header # Skipping the table alignment header
@@ -44,6 +46,7 @@ $categories |
                 $rule = [PSCustomObject]@{
                     id = $rowValues[0]
                     title = $rowValues[2]
+                    helpUri = $ruleSet.HelpUriFormat -f "$($rowValues[0]).md"
                     category = $category
                 }
 

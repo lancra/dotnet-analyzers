@@ -27,6 +27,8 @@ function Get-RegexMatch {
     }
 }
 
+$ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
+
 enum RuleParserState {
     HeadingSearch # Searching for an analyzer category heading.
     HeaderSearch # Searching for an analyzer table header.
@@ -74,6 +76,7 @@ $currentCategory = $null
         $rule = [PSCustomObject]@{
             id = $id
             title = $segments[3]
+            helpUri = $ruleSet.HelpUriFormat -f $id
             category = $currentCategory
             default = Get-RegexMatch -Text $segments[2] -Pattern '::(?<{0}>.*?)::.*'
             versions = [ordered]@{}
