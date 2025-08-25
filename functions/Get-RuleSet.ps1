@@ -1,6 +1,9 @@
 function Get-RuleSet {
     [CmdletBinding()]
     param(
+        [Parameter()]
+        [string] $Id,
+
         [switch] $Enabled
     )
     process {
@@ -16,7 +19,8 @@ function Get-RuleSet {
         Get-Content -Path $configurationPath |
             ConvertFrom-Json |
             Select-Object -ExpandProperty 'ruleSets' |
-            Where-Object { -not $Enabled -or $_.enabled -eq $true } |
-            Select-Object -Property $properties
+            Select-Object -Property $properties |
+            Where-Object { -not $Enabled -or $_.Enabled -eq $true } |
+            Where-Object { -not $Id -or $_.Id -eq $Id }
     }
 }
