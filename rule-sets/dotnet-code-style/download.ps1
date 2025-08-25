@@ -84,10 +84,11 @@ $ruleSetDirectoryPath = $PSScriptRoot
         $rawLine = Format-Plaintext $rawLine
         $rowValues = ($rawLine -split '\|').Trim()
 
-        $rule = [ordered]@{}
-        $rule.id = $rowValues[0]
-        $rule.title = $rowValues[1]
-        $rule.options = @()
+        $rule = [PSCustomObject]@{
+            id = $rowValues[0]
+            title = $rowValues[1]
+            options = @()
+        }
 
         $urls = @()
 
@@ -139,10 +140,12 @@ $optionsJobs |
 
 $path = Join-Path -Path $PSScriptRoot -ChildPath 'rules.json'
 
-$output = [ordered]@{}
-$output.'$schema' = $env:DOTNET_ANALYZERS_SCHEMA
-$output.timestamp = (Get-Date -Format 'o')
-$output.rules = $rules
+$output = [ordered]@{
+    '$schema' = $env:DOTNET_ANALYZERS_SCHEMA
+    timestamp = Get-Date -Format 'o'
+    rules = $rules |
+        Sort-Object -Property 'id'
+}
 
 if (Test-RuleSetDifference -Path $path -Json ($output.rules | ConvertTo-Json -Depth $jsonDepth)) {
     $output | ConvertTo-Json -Depth $jsonDepth > $path

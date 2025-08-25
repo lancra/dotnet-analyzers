@@ -1,6 +1,6 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2025-08-21T03:59:59.9511767-04:00",
+  "timestamp": "2025-08-25T06:13:40.1869989-04:00",
   "rules": [
     {
       "id": "CA1000",
@@ -288,11 +288,6 @@
       "category": "Globalization"
     },
     {
-      "id": "CA2101",
-      "title": "Specify marshaling for P/Invoke string arguments",
-      "category": "Globalization"
-    },
-    {
       "id": "CA1401",
       "title": "P/Invokes should not be visible",
       "category": "Interoperability"
@@ -526,6 +521,11 @@
       "id": "CA1815",
       "title": "Override equals and operator equals on value types",
       "category": "Performance"
+    },
+    {
+      "id": "CA1816",
+      "title": "Dispose methods should call SuppressFinalize",
+      "category": "Usage"
     },
     {
       "id": "CA1819",
@@ -918,6 +918,11 @@
       "category": "Security"
     },
     {
+      "id": "CA2101",
+      "title": "Specify marshaling for P/Invoke string arguments",
+      "category": "Globalization"
+    },
+    {
       "id": "CA2119",
       "title": "Seal methods that satisfy private interfaces",
       "category": "Security"
@@ -926,6 +931,231 @@
       "id": "CA2153",
       "title": "Do Not Catch Corrupted State Exceptions",
       "category": "Security"
+    },
+    {
+      "id": "CA2200",
+      "title": "Rethrow to preserve stack details",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2201",
+      "title": "Do not raise reserved exception types",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2207",
+      "title": "Initialize value type static fields inline",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2208",
+      "title": "Instantiate argument exceptions correctly",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2211",
+      "title": "Non-constant fields should not be visible",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2213",
+      "title": "Disposable fields should be disposed",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2214",
+      "title": "Do not call overridable methods in constructors",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2215",
+      "title": "Dispose methods should call base class dispose",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2216",
+      "title": "Disposable types should declare finalizer",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2217",
+      "title": "Do not mark enums with FlagsAttribute",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2218",
+      "title": "Override GetHashCode on overriding Equals",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2219",
+      "title": "Do not raise exceptions in finally clauses",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2224",
+      "title": "Override Equals on overloading operator equals",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2225",
+      "title": "Operator overloads have named alternates",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2226",
+      "title": "Operators should have symmetrical overloads",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2227",
+      "title": "Collection properties should be read only",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2231",
+      "title": "Overload operator equals on overriding value type Equals",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2234",
+      "title": "Pass system uri objects instead of strings",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2235",
+      "title": "Mark all non-serializable fields",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2237",
+      "title": "Mark ISerializable types with serializable",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2241",
+      "title": "Provide correct arguments to formatting methods",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2242",
+      "title": "Test for NaN correctly",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2243",
+      "title": "Attribute string literals should parse correctly",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2244",
+      "title": "Do not duplicate indexed element initializations",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2245",
+      "title": "Do not assign a property to itself",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2246",
+      "title": "Assigning symbol and its member in the same statement",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2247",
+      "title": "Argument passed to TaskCompletionSource constructor should be TaskCreationOptions enum instead of TaskContinuationOptions enum",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2248",
+      "title": "Provide correct 'enum' argument to 'Enum.HasFlag'",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2249",
+      "title": "Consider using 'string.Contains' instead of 'string.IndexOf'",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2250",
+      "title": "Use 'ThrowIfCancellationRequested'",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2251",
+      "title": "Use 'string.Equals'",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2252",
+      "title": "This API requires opting into preview features",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2253",
+      "title": "Named placeholders should not be numeric values",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2254",
+      "title": "Template should be a static expression",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2255",
+      "title": "The 'ModuleInitializer' attribute should not be used in libraries",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2256",
+      "title": "All members declared in parent interfaces must have an implementation in a DynamicInterfaceCastableImplementation-attributed interface",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2257",
+      "title": "Members defined on an interface with the 'DynamicInterfaceCastableImplementationAttribute' should be 'static'",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2258",
+      "title": "Providing a 'DynamicInterfaceCastableImplementation' interface in Visual Basic is unsupported",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2259",
+      "title": "'ThreadStatic' only affects static fields",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2260",
+      "title": "Use correct type parameter",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2261",
+      "title": "Do not use ConfigureAwaitOptions.SuppressThrowing with Task<TResult>",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2262",
+      "title": "Set 'MaxResponseHeadersLength' properly",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2263",
+      "title": "Prefer generic overload when type is known",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2264",
+      "title": "Do not pass a non-nullable value to 'ArgumentNullException.ThrowIfNull'",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2265",
+      "title": "Do not compare Span<T> to 'null' or 'default'",
+      "category": "Usage"
     },
     {
       "id": "CA2300",
@@ -1406,236 +1636,6 @@
       "id": "IL3005",
       "title": "RequiresAssemblyFilesAttribute cannot be placed directly on application entry point.",
       "category": "SingleFile"
-    },
-    {
-      "id": "CA1816",
-      "title": "Dispose methods should call SuppressFinalize",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2200",
-      "title": "Rethrow to preserve stack details",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2201",
-      "title": "Do not raise reserved exception types",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2207",
-      "title": "Initialize value type static fields inline",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2208",
-      "title": "Instantiate argument exceptions correctly",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2211",
-      "title": "Non-constant fields should not be visible",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2213",
-      "title": "Disposable fields should be disposed",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2214",
-      "title": "Do not call overridable methods in constructors",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2215",
-      "title": "Dispose methods should call base class dispose",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2216",
-      "title": "Disposable types should declare finalizer",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2217",
-      "title": "Do not mark enums with FlagsAttribute",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2218",
-      "title": "Override GetHashCode on overriding Equals",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2219",
-      "title": "Do not raise exceptions in finally clauses",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2224",
-      "title": "Override Equals on overloading operator equals",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2225",
-      "title": "Operator overloads have named alternates",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2226",
-      "title": "Operators should have symmetrical overloads",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2227",
-      "title": "Collection properties should be read only",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2231",
-      "title": "Overload operator equals on overriding value type Equals",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2234",
-      "title": "Pass system uri objects instead of strings",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2235",
-      "title": "Mark all non-serializable fields",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2237",
-      "title": "Mark ISerializable types with serializable",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2241",
-      "title": "Provide correct arguments to formatting methods",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2242",
-      "title": "Test for NaN correctly",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2243",
-      "title": "Attribute string literals should parse correctly",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2244",
-      "title": "Do not duplicate indexed element initializations",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2245",
-      "title": "Do not assign a property to itself",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2246",
-      "title": "Assigning symbol and its member in the same statement",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2247",
-      "title": "Argument passed to TaskCompletionSource constructor should be TaskCreationOptions enum instead of TaskContinuationOptions enum",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2248",
-      "title": "Provide correct 'enum' argument to 'Enum.HasFlag'",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2249",
-      "title": "Consider using 'string.Contains' instead of 'string.IndexOf'",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2250",
-      "title": "Use 'ThrowIfCancellationRequested'",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2251",
-      "title": "Use 'string.Equals'",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2252",
-      "title": "This API requires opting into preview features",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2253",
-      "title": "Named placeholders should not be numeric values",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2254",
-      "title": "Template should be a static expression",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2255",
-      "title": "The 'ModuleInitializer' attribute should not be used in libraries",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2256",
-      "title": "All members declared in parent interfaces must have an implementation in a DynamicInterfaceCastableImplementation-attributed interface",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2257",
-      "title": "Members defined on an interface with the 'DynamicInterfaceCastableImplementationAttribute' should be 'static'",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2258",
-      "title": "Providing a 'DynamicInterfaceCastableImplementation' interface in Visual Basic is unsupported",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2259",
-      "title": "'ThreadStatic' only affects static fields",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2260",
-      "title": "Use correct type parameter",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2261",
-      "title": "Do not use ConfigureAwaitOptions.SuppressThrowing with Task<TResult>",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2262",
-      "title": "Set 'MaxResponseHeadersLength' properly",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2263",
-      "title": "Prefer generic overload when type is known",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2264",
-      "title": "Do not pass a non-nullable value to 'ArgumentNullException.ThrowIfNull'",
-      "category": "Usage"
-    },
-    {
-      "id": "CA2265",
-      "title": "Do not compare Span<T> to 'null' or 'default'",
-      "category": "Usage"
     }
   ]
 }
