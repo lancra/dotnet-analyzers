@@ -1,1641 +1,1968 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2025-08-21T03:59:59.9511767-04:00",
+  "timestamp": "2025-08-25T06:18:00.6585319-04:00",
   "rules": [
     {
       "id": "CA1000",
       "title": "Do not declare static members on generic types",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1000",
       "category": "Design"
     },
     {
       "id": "CA1001",
       "title": "Types that own disposable fields should be disposable",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1001",
       "category": "Design"
     },
     {
       "id": "CA1002",
       "title": "Do not expose generic lists",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1002",
       "category": "Design"
     },
     {
       "id": "CA1003",
       "title": "Use generic event handler instances",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1003",
       "category": "Design"
     },
     {
       "id": "CA1005",
       "title": "Avoid excessive parameters on generic types",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1005",
       "category": "Design"
     },
     {
       "id": "CA1008",
       "title": "Enums should have zero value",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1008",
       "category": "Design"
     },
     {
       "id": "CA1010",
       "title": "Generic interface should also be implemented",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1010",
       "category": "Design"
     },
     {
       "id": "CA1012",
       "title": "Abstract types should not have public constructors",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1012",
       "category": "Design"
     },
     {
       "id": "CA1014",
       "title": "Mark assemblies with CLSCompliant",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1014",
       "category": "Design"
     },
     {
       "id": "CA1016",
       "title": "Mark assemblies with assembly version",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1016",
       "category": "Design"
     },
     {
       "id": "CA1017",
       "title": "Mark assemblies with ComVisible",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1017",
       "category": "Design"
     },
     {
       "id": "CA1018",
       "title": "Mark attributes with AttributeUsageAttribute",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1018",
       "category": "Design"
     },
     {
       "id": "CA1019",
       "title": "Define accessors for attribute arguments",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1019",
       "category": "Design"
     },
     {
       "id": "CA1021",
       "title": "Avoid out parameters",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1021",
       "category": "Design"
     },
     {
       "id": "CA1024",
       "title": "Use properties where appropriate",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1024",
       "category": "Design"
     },
     {
       "id": "CA1027",
       "title": "Mark enums with FlagsAttribute",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1027",
       "category": "Design"
     },
     {
       "id": "CA1028",
       "title": "Enum Storage should be Int32",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1028",
       "category": "Design"
     },
     {
       "id": "CA1030",
       "title": "Use events where appropriate",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1030",
       "category": "Design"
     },
     {
       "id": "CA1031",
       "title": "Do not catch general exception types",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1031",
       "category": "Design"
     },
     {
       "id": "CA1032",
       "title": "Implement standard exception constructors",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1032",
       "category": "Design"
     },
     {
       "id": "CA1033",
       "title": "Interface methods should be callable by child types",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1033",
       "category": "Design"
     },
     {
       "id": "CA1034",
       "title": "Nested types should not be visible",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1034",
       "category": "Design"
     },
     {
       "id": "CA1036",
       "title": "Override methods on comparable types",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1036",
       "category": "Design"
     },
     {
       "id": "CA1040",
       "title": "Avoid empty interfaces",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1040",
       "category": "Design"
     },
     {
       "id": "CA1041",
       "title": "Provide ObsoleteAttribute message",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1041",
       "category": "Design"
     },
     {
       "id": "CA1043",
       "title": "Use Integral Or String Argument For Indexers",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1043",
       "category": "Design"
     },
     {
       "id": "CA1044",
       "title": "Properties should not be write only",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1044",
       "category": "Design"
     },
     {
       "id": "CA1045",
       "title": "Do not pass types by reference",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1045",
       "category": "Design"
     },
     {
       "id": "CA1046",
       "title": "Do not overload equality operator on reference types",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1046",
       "category": "Design"
     },
     {
       "id": "CA1047",
       "title": "Do not declare protected member in sealed type",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1047",
       "category": "Design"
     },
     {
       "id": "CA1050",
       "title": "Declare types in namespaces",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1050",
       "category": "Design"
     },
     {
       "id": "CA1051",
       "title": "Do not declare visible instance fields",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1051",
       "category": "Design"
     },
     {
       "id": "CA1052",
       "title": "Static holder types should be Static or NotInheritable",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1052",
       "category": "Design"
     },
     {
       "id": "CA1054",
       "title": "URI-like parameters should not be strings",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1054",
       "category": "Design"
     },
     {
       "id": "CA1055",
       "title": "URI-like return values should not be strings",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1055",
       "category": "Design"
     },
     {
       "id": "CA1056",
       "title": "URI-like properties should not be strings",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1056",
       "category": "Design"
     },
     {
       "id": "CA1058",
       "title": "Types should not extend certain base types",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1058",
       "category": "Design"
     },
     {
       "id": "CA1060",
       "title": "Move pinvokes to native methods class",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1060",
       "category": "Design"
     },
     {
       "id": "CA1061",
       "title": "Do not hide base class methods",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1061",
       "category": "Design"
     },
     {
       "id": "CA1062",
       "title": "Validate arguments of public methods",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1062",
       "category": "Design"
     },
     {
       "id": "CA1063",
       "title": "Implement IDisposable Correctly",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1063",
       "category": "Design"
     },
     {
       "id": "CA1064",
       "title": "Exceptions should be public",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1064",
       "category": "Design"
     },
     {
       "id": "CA1065",
       "title": "Do not raise exceptions in unexpected locations",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1065",
       "category": "Design"
     },
     {
       "id": "CA1066",
       "title": "Implement IEquatable when overriding Object.Equals",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1066",
       "category": "Design"
     },
     {
       "id": "CA1067",
       "title": "Override Object.Equals(object) when implementing IEquatable<T>",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1067",
       "category": "Design"
     },
     {
       "id": "CA1068",
       "title": "CancellationToken parameters must come last",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1068",
       "category": "Design"
     },
     {
       "id": "CA1069",
       "title": "Enums values should not be duplicated",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1069",
       "category": "Design"
     },
     {
       "id": "CA1070",
       "title": "Do not declare event fields as virtual",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1070",
       "category": "Design"
     },
     {
       "id": "CA1200",
       "title": "Avoid using cref tags with a prefix",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1200",
       "category": "Documentation"
     },
     {
       "id": "CA1303",
       "title": "Do not pass literals as localized parameters",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1303",
       "category": "Globalization"
     },
     {
       "id": "CA1304",
       "title": "Specify CultureInfo",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1304",
       "category": "Globalization"
     },
     {
       "id": "CA1305",
       "title": "Specify IFormatProvider",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1305",
       "category": "Globalization"
     },
     {
       "id": "CA1307",
       "title": "Specify StringComparison for clarity",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1307",
       "category": "Globalization"
     },
     {
       "id": "CA1308",
       "title": "Normalize strings to uppercase",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1308",
       "category": "Globalization"
     },
     {
       "id": "CA1309",
       "title": "Use ordinal string comparison",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1309",
       "category": "Globalization"
     },
     {
       "id": "CA1310",
       "title": "Specify StringComparison for correctness",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1310",
       "category": "Globalization"
     },
     {
       "id": "CA1311",
       "title": "Specify a culture or use an invariant version",
-      "category": "Globalization"
-    },
-    {
-      "id": "CA2101",
-      "title": "Specify marshaling for P/Invoke string arguments",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1311",
       "category": "Globalization"
     },
     {
       "id": "CA1401",
       "title": "P/Invokes should not be visible",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1401",
       "category": "Interoperability"
     },
     {
       "id": "CA1416",
       "title": "Validate platform compatibility",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416",
       "category": "Interoperability"
     },
     {
       "id": "CA1417",
       "title": "Do not use 'OutAttribute' on string parameters for P/Invokes",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1417",
       "category": "Interoperability"
     },
     {
       "id": "CA1418",
       "title": "Use valid platform string",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1418",
       "category": "Interoperability"
     },
     {
       "id": "CA1419",
       "title": "Provide a parameterless constructor that is as visible as the containing type for concrete types derived from 'System.Runtime.InteropServices.SafeHandle'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1419",
       "category": "Interoperability"
     },
     {
       "id": "CA1420",
       "title": "Property, type, or attribute requires runtime marshalling",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1420",
       "category": "Interoperability"
     },
     {
       "id": "CA1421",
       "title": "This method uses runtime marshalling even when the 'DisableRuntimeMarshallingAttribute' is applied",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1421",
       "category": "Interoperability"
     },
     {
       "id": "CA1422",
       "title": "Validate platform compatibility",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1422",
       "category": "Interoperability"
     },
     {
       "id": "CA1501",
       "title": "Avoid excessive inheritance",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1501",
       "category": "Maintainability"
     },
     {
       "id": "CA1502",
       "title": "Avoid excessive complexity",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1502",
       "category": "Maintainability"
     },
     {
       "id": "CA1505",
       "title": "Avoid unmaintainable code",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1505",
       "category": "Maintainability"
     },
     {
       "id": "CA1506",
       "title": "Avoid excessive class coupling",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1506",
       "category": "Maintainability"
     },
     {
       "id": "CA1507",
       "title": "Use nameof to express symbol names",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1507",
       "category": "Maintainability"
     },
     {
       "id": "CA1508",
       "title": "Avoid dead conditional code",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1508",
       "category": "Maintainability"
     },
     {
       "id": "CA1509",
       "title": "Invalid entry in code metrics rule specification file",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1509",
       "category": "Maintainability"
     },
     {
       "id": "CA1510",
       "title": "Use ArgumentNullException throw helper",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1510",
       "category": "Maintainability"
     },
     {
       "id": "CA1511",
       "title": "Use ArgumentException throw helper",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1511",
       "category": "Maintainability"
     },
     {
       "id": "CA1512",
       "title": "Use ArgumentOutOfRangeException throw helper",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1512",
       "category": "Maintainability"
     },
     {
       "id": "CA1513",
       "title": "Use ObjectDisposedException throw helper",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1513",
       "category": "Maintainability"
     },
     {
       "id": "CA1514",
       "title": "Avoid redundant length argument",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1514",
       "category": "Maintainability"
     },
     {
       "id": "CA1515",
       "title": "Consider making public types internal",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1515",
       "category": "Maintainability"
     },
     {
       "id": "CA1516",
       "title": "Use cross-platform intrinsics",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1516",
       "category": "Maintainability"
     },
     {
       "id": "CA1700",
       "title": "Do not name enum values 'Reserved'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1700",
       "category": "Naming"
     },
     {
       "id": "CA1704",
       "title": "Identifiers should be spelled correctly",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1704",
       "category": "Naming"
     },
     {
       "id": "CA1707",
       "title": "Identifiers should not contain underscores",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1707",
       "category": "Naming"
     },
     {
       "id": "CA1708",
       "title": "Identifiers should differ by more than case",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1708",
       "category": "Naming"
     },
     {
       "id": "CA1710",
       "title": "Identifiers should have correct suffix",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1710",
       "category": "Naming"
     },
     {
       "id": "CA1711",
       "title": "Identifiers should not have incorrect suffix",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1711",
       "category": "Naming"
     },
     {
       "id": "CA1712",
       "title": "Do not prefix enum values with type name",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1712",
       "category": "Naming"
     },
     {
       "id": "CA1713",
       "title": "Events should not have 'Before' or 'After' prefix",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1713",
       "category": "Naming"
     },
     {
       "id": "CA1714",
       "title": "Flags enums should have plural names",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1714",
       "category": "Naming"
     },
     {
       "id": "CA1715",
       "title": "Identifiers should have correct prefix",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1715",
       "category": "Naming"
     },
     {
       "id": "CA1716",
       "title": "Identifiers should not match keywords",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1716",
       "category": "Naming"
     },
     {
       "id": "CA1717",
       "title": "Only FlagsAttribute enums should have plural names",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1717",
       "category": "Naming"
     },
     {
       "id": "CA1720",
       "title": "Identifier contains type name",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1720",
       "category": "Naming"
     },
     {
       "id": "CA1721",
       "title": "Property names should not match get methods",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1721",
       "category": "Naming"
     },
     {
       "id": "CA1724",
       "title": "Type names should not match namespaces",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1724",
       "category": "Naming"
     },
     {
       "id": "CA1725",
       "title": "Parameter names should match base declaration",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1725",
       "category": "Naming"
     },
     {
       "id": "CA1727",
       "title": "Use PascalCase for named placeholders",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1727",
       "category": "Naming"
     },
     {
       "id": "CA1802",
       "title": "Use literals where appropriate",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1802",
       "category": "Performance"
     },
     {
       "id": "CA1805",
       "title": "Do not initialize unnecessarily",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1805",
       "category": "Performance"
     },
     {
       "id": "CA1806",
       "title": "Do not ignore method results",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1806",
       "category": "Performance"
     },
     {
       "id": "CA1810",
       "title": "Initialize reference type static fields inline",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1810",
       "category": "Performance"
     },
     {
       "id": "CA1812",
       "title": "Avoid uninstantiated internal classes",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1812",
       "category": "Performance"
     },
     {
       "id": "CA1813",
       "title": "Avoid unsealed attributes",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1813",
       "category": "Performance"
     },
     {
       "id": "CA1814",
       "title": "Prefer jagged arrays over multidimensional",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1814",
       "category": "Performance"
     },
     {
       "id": "CA1815",
       "title": "Override equals and operator equals on value types",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1815",
       "category": "Performance"
+    },
+    {
+      "id": "CA1816",
+      "title": "Dispose methods should call SuppressFinalize",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1816",
+      "category": "Usage"
     },
     {
       "id": "CA1819",
       "title": "Properties should not return arrays",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1819",
       "category": "Performance"
     },
     {
       "id": "CA1820",
       "title": "Test for empty strings using string length",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1820",
       "category": "Performance"
     },
     {
       "id": "CA1821",
       "title": "Remove empty Finalizers",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1821",
       "category": "Performance"
     },
     {
       "id": "CA1822",
       "title": "Mark members as static",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1822",
       "category": "Performance"
     },
     {
       "id": "CA1823",
       "title": "Avoid unused private fields",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1823",
       "category": "Performance"
     },
     {
       "id": "CA1824",
       "title": "Mark assemblies with NeutralResourcesLanguageAttribute",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1824",
       "category": "Performance"
     },
     {
       "id": "CA1825",
       "title": "Avoid zero-length array allocations",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1825",
       "category": "Performance"
     },
     {
       "id": "CA1826",
       "title": "Do not use Enumerable methods on indexable collections",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1826",
       "category": "Performance"
     },
     {
       "id": "CA1827",
       "title": "Do not use Count() or LongCount() when Any() can be used",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1827",
       "category": "Performance"
     },
     {
       "id": "CA1828",
       "title": "Do not use CountAsync() or LongCountAsync() when AnyAsync() can be used",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1828",
       "category": "Performance"
     },
     {
       "id": "CA1829",
       "title": "Use Length/Count property instead of Count() when available",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1829",
       "category": "Performance"
     },
     {
       "id": "CA1830",
       "title": "Prefer strongly-typed Append and Insert method overloads on StringBuilder",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1830",
       "category": "Performance"
     },
     {
       "id": "CA1831",
       "title": "Use AsSpan or AsMemory instead of Range-based indexers when appropriate",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1831",
       "category": "Performance"
     },
     {
       "id": "CA1832",
       "title": "Use AsSpan or AsMemory instead of Range-based indexers when appropriate",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1832",
       "category": "Performance"
     },
     {
       "id": "CA1833",
       "title": "Use AsSpan or AsMemory instead of Range-based indexers when appropriate",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1833",
       "category": "Performance"
     },
     {
       "id": "CA1834",
       "title": "Consider using 'StringBuilder.Append(char)' when applicable",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1834",
       "category": "Performance"
     },
     {
       "id": "CA1835",
       "title": "Prefer the 'Memory'-based overloads for 'ReadAsync' and 'WriteAsync'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1835",
       "category": "Performance"
     },
     {
       "id": "CA1836",
       "title": "Prefer IsEmpty over Count",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1836",
       "category": "Performance"
     },
     {
       "id": "CA1837",
       "title": "Use 'Environment.ProcessId'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1837",
       "category": "Performance"
     },
     {
       "id": "CA1838",
       "title": "Avoid 'StringBuilder' parameters for P/Invokes",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1838",
       "category": "Performance"
     },
     {
       "id": "CA1839",
       "title": "Use 'Environment.ProcessPath'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1839",
       "category": "Performance"
     },
     {
       "id": "CA1840",
       "title": "Use 'Environment.CurrentManagedThreadId'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1840",
       "category": "Performance"
     },
     {
       "id": "CA1841",
       "title": "Prefer Dictionary.Contains methods",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1841",
       "category": "Performance"
     },
     {
       "id": "CA1842",
       "title": "Do not use 'WhenAll' with a single task",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1842",
       "category": "Performance"
     },
     {
       "id": "CA1843",
       "title": "Do not use 'WaitAll' with a single task",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1843",
       "category": "Performance"
     },
     {
       "id": "CA1844",
       "title": "Provide memory-based overrides of async methods when subclassing 'Stream'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1844",
       "category": "Performance"
     },
     {
       "id": "CA1845",
       "title": "Use span-based 'string.Concat'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1845",
       "category": "Performance"
     },
     {
       "id": "CA1846",
       "title": "Prefer 'AsSpan' over 'Substring'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1846",
       "category": "Performance"
     },
     {
       "id": "CA1847",
       "title": "Use char literal for a single character lookup",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1847",
       "category": "Performance"
     },
     {
       "id": "CA1848",
       "title": "Use the LoggerMessage delegates",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1848",
       "category": "Performance"
     },
     {
       "id": "CA1849",
       "title": "Call async methods when in an async method",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1849",
       "category": "Performance"
     },
     {
       "id": "CA1850",
       "title": "Prefer static 'HashData' method over 'ComputeHash'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1850",
       "category": "Performance"
     },
     {
       "id": "CA1851",
       "title": "Possible multiple enumerations of 'IEnumerable' collection",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1851",
       "category": "Performance"
     },
     {
       "id": "CA1852",
       "title": "Seal internal types",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1852",
       "category": "Performance"
     },
     {
       "id": "CA1853",
       "title": "Unnecessary call to 'Dictionary.ContainsKey(key)'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1853",
       "category": "Performance"
     },
     {
       "id": "CA1854",
       "title": "Prefer the 'IDictionary.TryGetValue(TKey, out TValue)' method",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1854",
       "category": "Performance"
     },
     {
       "id": "CA1855",
       "title": "Prefer 'Clear' over 'Fill'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1855",
       "category": "Performance"
     },
     {
       "id": "CA1856",
       "title": "Incorrect usage of ConstantExpected attribute",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1856",
       "category": "Performance"
     },
     {
       "id": "CA1857",
       "title": "A constant is expected for the parameter",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1857",
       "category": "Performance"
     },
     {
       "id": "CA1858",
       "title": "Use 'StartsWith' instead of 'IndexOf'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1858",
       "category": "Performance"
     },
     {
       "id": "CA1859",
       "title": "Use concrete types when possible for improved performance",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1859",
       "category": "Performance"
     },
     {
       "id": "CA1860",
       "title": "Avoid using 'Enumerable.Any()' extension method",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1860",
       "category": "Performance"
     },
     {
       "id": "CA1861",
       "title": "Avoid constant arrays as arguments",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1861",
       "category": "Performance"
     },
     {
       "id": "CA1862",
       "title": "Use the 'StringComparison' method overloads to perform case-insensitive string comparisons",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1862",
       "category": "Performance"
     },
     {
       "id": "CA1863",
       "title": "Use 'CompositeFormat'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1863",
       "category": "Performance"
     },
     {
       "id": "CA1864",
       "title": "Prefer the 'IDictionary.TryAdd(TKey, TValue)' method",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1864",
       "category": "Performance"
     },
     {
       "id": "CA1865",
       "title": "Use char overload",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1865",
       "category": "Performance"
     },
     {
       "id": "CA1866",
       "title": "Use char overload",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1866",
       "category": "Performance"
     },
     {
       "id": "CA1867",
       "title": "Use char overload",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1867",
       "category": "Performance"
     },
     {
       "id": "CA1868",
       "title": "Unnecessary call to 'Contains(item)'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1868",
       "category": "Performance"
     },
     {
       "id": "CA1869",
       "title": "Cache and reuse 'JsonSerializerOptions' instances",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1869",
       "category": "Performance"
     },
     {
       "id": "CA1870",
       "title": "Use a cached 'SearchValues' instance",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1870",
       "category": "Performance"
     },
     {
       "id": "CA1871",
       "title": "Do not pass a nullable struct to 'ArgumentNullException.ThrowIfNull'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1871",
       "category": "Performance"
     },
     {
       "id": "CA1872",
       "title": "Prefer 'Convert.ToHexString' and 'Convert.ToHexStringLower' over call chains based on 'BitConverter.ToString'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1872",
       "category": "Performance"
     },
     {
       "id": "CA1873",
       "title": "Avoid potentially expensive logging",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1873",
       "category": "Performance"
     },
     {
       "id": "CA1874",
       "title": "Use 'Regex.IsMatch'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1874",
       "category": "Performance"
     },
     {
       "id": "CA1875",
       "title": "Use 'Regex.Count'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1875",
       "category": "Performance"
     },
     {
       "id": "CA2000",
       "title": "Dispose objects before losing scope",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2000",
       "category": "Reliability"
     },
     {
       "id": "CA2002",
       "title": "Do not lock on objects with weak identity",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2002",
       "category": "Reliability"
     },
     {
       "id": "CA2007",
       "title": "Consider calling ConfigureAwait on the awaited task",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2007",
       "category": "Reliability"
     },
     {
       "id": "CA2008",
       "title": "Do not create tasks without passing a TaskScheduler",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2008",
       "category": "Reliability"
     },
     {
       "id": "CA2009",
       "title": "Do not call ToImmutableCollection on an ImmutableCollection value",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2009",
       "category": "Reliability"
     },
     {
       "id": "CA2011",
       "title": "Avoid infinite recursion",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2011",
       "category": "Reliability"
     },
     {
       "id": "CA2012",
       "title": "Use ValueTasks correctly",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2012",
       "category": "Reliability"
     },
     {
       "id": "CA2013",
       "title": "Do not use ReferenceEquals with value types",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2013",
       "category": "Reliability"
     },
     {
       "id": "CA2014",
       "title": "Do not use stackalloc in loops",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2014",
       "category": "Reliability"
     },
     {
       "id": "CA2015",
       "title": "Do not define finalizers for types derived from MemoryManager<T>",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2015",
       "category": "Reliability"
     },
     {
       "id": "CA2016",
       "title": "Forward the 'CancellationToken' parameter to methods",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2016",
       "category": "Reliability"
     },
     {
       "id": "CA2017",
       "title": "Parameter count mismatch",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2017",
       "category": "Reliability"
     },
     {
       "id": "CA2018",
       "title": "'Buffer.BlockCopy' expects the number of bytes to be copied for the 'count' argument",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2018",
       "category": "Reliability"
     },
     {
       "id": "CA2019",
       "title": "Improper 'ThreadStatic' field initialization",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2019",
       "category": "Reliability"
     },
     {
       "id": "CA2020",
       "title": "Prevent behavioral change",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2020",
       "category": "Reliability"
     },
     {
       "id": "CA2021",
       "title": "Do not call Enumerable.Cast<T> or Enumerable.OfType<T> with incompatible types",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2021",
       "category": "Reliability"
     },
     {
       "id": "CA2022",
       "title": "Avoid inexact read with 'Stream.Read'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2022",
       "category": "Reliability"
     },
     {
       "id": "CA2023",
       "title": "Invalid braces in message template",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2023",
       "category": "Reliability"
     },
     {
       "id": "CA2024",
       "title": "Do not use 'StreamReader.EndOfStream' in async methods",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2024",
       "category": "Reliability"
     },
     {
       "id": "CA2025",
       "title": "Do not pass 'IDisposable' instances into unawaited tasks",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2025",
       "category": "Reliability"
     },
     {
       "id": "CA2100",
       "title": "Review SQL queries for security vulnerabilities",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2100",
       "category": "Security"
+    },
+    {
+      "id": "CA2101",
+      "title": "Specify marshaling for P/Invoke string arguments",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2101",
+      "category": "Globalization"
     },
     {
       "id": "CA2119",
       "title": "Seal methods that satisfy private interfaces",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2119",
       "category": "Security"
     },
     {
       "id": "CA2153",
       "title": "Do Not Catch Corrupted State Exceptions",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2153",
       "category": "Security"
-    },
-    {
-      "id": "CA2300",
-      "title": "Do not use insecure deserializer BinaryFormatter",
-      "category": "Security"
-    },
-    {
-      "id": "CA2301",
-      "title": "Do not call BinaryFormatter.Deserialize without first setting BinaryFormatter.Binder",
-      "category": "Security"
-    },
-    {
-      "id": "CA2302",
-      "title": "Ensure BinaryFormatter.Binder is set before calling BinaryFormatter.Deserialize",
-      "category": "Security"
-    },
-    {
-      "id": "CA2305",
-      "title": "Do not use insecure deserializer LosFormatter",
-      "category": "Security"
-    },
-    {
-      "id": "CA2310",
-      "title": "Do not use insecure deserializer NetDataContractSerializer",
-      "category": "Security"
-    },
-    {
-      "id": "CA2311",
-      "title": "Do not deserialize without first setting NetDataContractSerializer.Binder",
-      "category": "Security"
-    },
-    {
-      "id": "CA2312",
-      "title": "Ensure NetDataContractSerializer.Binder is set before deserializing",
-      "category": "Security"
-    },
-    {
-      "id": "CA2315",
-      "title": "Do not use insecure deserializer ObjectStateFormatter",
-      "category": "Security"
-    },
-    {
-      "id": "CA2321",
-      "title": "Do not deserialize with JavaScriptSerializer using a SimpleTypeResolver",
-      "category": "Security"
-    },
-    {
-      "id": "CA2322",
-      "title": "Ensure JavaScriptSerializer is not initialized with SimpleTypeResolver before deserializing",
-      "category": "Security"
-    },
-    {
-      "id": "CA2326",
-      "title": "Do not use TypeNameHandling values other than None",
-      "category": "Security"
-    },
-    {
-      "id": "CA2327",
-      "title": "Do not use insecure JsonSerializerSettings",
-      "category": "Security"
-    },
-    {
-      "id": "CA2328",
-      "title": "Ensure that JsonSerializerSettings are secure",
-      "category": "Security"
-    },
-    {
-      "id": "CA2329",
-      "title": "Do not deserialize with JsonSerializer using an insecure configuration",
-      "category": "Security"
-    },
-    {
-      "id": "CA2330",
-      "title": "Ensure that JsonSerializer has a secure configuration when deserializing",
-      "category": "Security"
-    },
-    {
-      "id": "CA2350",
-      "title": "Do not use DataTable.ReadXml() with untrusted data",
-      "category": "Security"
-    },
-    {
-      "id": "CA2351",
-      "title": "Do not use DataSet.ReadXml() with untrusted data",
-      "category": "Security"
-    },
-    {
-      "id": "CA2352",
-      "title": "Unsafe DataSet or DataTable in serializable type can be vulnerable to remote code execution attacks",
-      "category": "Security"
-    },
-    {
-      "id": "CA2353",
-      "title": "Unsafe DataSet or DataTable in serializable type",
-      "category": "Security"
-    },
-    {
-      "id": "CA2354",
-      "title": "Unsafe DataSet or DataTable in deserialized object graph can be vulnerable to remote code execution attacks",
-      "category": "Security"
-    },
-    {
-      "id": "CA2355",
-      "title": "Unsafe DataSet or DataTable type found in deserializable object graph",
-      "category": "Security"
-    },
-    {
-      "id": "CA2356",
-      "title": "Unsafe DataSet or DataTable type in web deserializable object graph",
-      "category": "Security"
-    },
-    {
-      "id": "CA2361",
-      "title": "Ensure auto-generated class containing DataSet.ReadXml() is not used with untrusted data",
-      "category": "Security"
-    },
-    {
-      "id": "CA2362",
-      "title": "Unsafe DataSet or DataTable in auto-generated serializable type can be vulnerable to remote code execution attacks",
-      "category": "Security"
-    },
-    {
-      "id": "CA3001",
-      "title": "Review code for SQL injection vulnerabilities",
-      "category": "Security"
-    },
-    {
-      "id": "CA3002",
-      "title": "Review code for XSS vulnerabilities",
-      "category": "Security"
-    },
-    {
-      "id": "CA3003",
-      "title": "Review code for file path injection vulnerabilities",
-      "category": "Security"
-    },
-    {
-      "id": "CA3004",
-      "title": "Review code for information disclosure vulnerabilities",
-      "category": "Security"
-    },
-    {
-      "id": "CA3005",
-      "title": "Review code for LDAP injection vulnerabilities",
-      "category": "Security"
-    },
-    {
-      "id": "CA3006",
-      "title": "Review code for process command injection vulnerabilities",
-      "category": "Security"
-    },
-    {
-      "id": "CA3007",
-      "title": "Review code for open redirect vulnerabilities",
-      "category": "Security"
-    },
-    {
-      "id": "CA3008",
-      "title": "Review code for XPath injection vulnerabilities",
-      "category": "Security"
-    },
-    {
-      "id": "CA3009",
-      "title": "Review code for XML injection vulnerabilities",
-      "category": "Security"
-    },
-    {
-      "id": "CA3010",
-      "title": "Review code for XAML injection vulnerabilities",
-      "category": "Security"
-    },
-    {
-      "id": "CA3011",
-      "title": "Review code for DLL injection vulnerabilities",
-      "category": "Security"
-    },
-    {
-      "id": "CA3012",
-      "title": "Review code for regex injection vulnerabilities",
-      "category": "Security"
-    },
-    {
-      "id": "CA3061",
-      "title": "Do Not Add Schema By URL",
-      "category": "Security"
-    },
-    {
-      "id": "CA3075",
-      "title": "Insecure DTD processing in XML",
-      "category": "Security"
-    },
-    {
-      "id": "CA3076",
-      "title": "Insecure XSLT script processing",
-      "category": "Security"
-    },
-    {
-      "id": "CA3077",
-      "title": "Insecure Processing in API Design, XmlDocument and XmlTextReader",
-      "category": "Security"
-    },
-    {
-      "id": "CA3147",
-      "title": "Mark Verb Handlers With Validate Antiforgery Token",
-      "category": "Security"
-    },
-    {
-      "id": "CA5350",
-      "title": "Do Not Use Weak Cryptographic Algorithms",
-      "category": "Security"
-    },
-    {
-      "id": "CA5351",
-      "title": "Do Not Use Broken Cryptographic Algorithms",
-      "category": "Security"
-    },
-    {
-      "id": "CA5358",
-      "title": "Review cipher mode usage with cryptography experts",
-      "category": "Security"
-    },
-    {
-      "id": "CA5359",
-      "title": "Do Not Disable Certificate Validation",
-      "category": "Security"
-    },
-    {
-      "id": "CA5360",
-      "title": "Do Not Call Dangerous Methods In Deserialization",
-      "category": "Security"
-    },
-    {
-      "id": "CA5361",
-      "title": "Do Not Disable SChannel Use of Strong Crypto",
-      "category": "Security"
-    },
-    {
-      "id": "CA5362",
-      "title": "Potential reference cycle in deserialized object graph",
-      "category": "Security"
-    },
-    {
-      "id": "CA5363",
-      "title": "Do Not Disable Request Validation",
-      "category": "Security"
-    },
-    {
-      "id": "CA5364",
-      "title": "Do Not Use Deprecated Security Protocols",
-      "category": "Security"
-    },
-    {
-      "id": "CA5365",
-      "title": "Do Not Disable HTTP Header Checking",
-      "category": "Security"
-    },
-    {
-      "id": "CA5366",
-      "title": "Use XmlReader for 'DataSet.ReadXml()'",
-      "category": "Security"
-    },
-    {
-      "id": "CA5367",
-      "title": "Do Not Serialize Types With Pointer Fields",
-      "category": "Security"
-    },
-    {
-      "id": "CA5368",
-      "title": "Set ViewStateUserKey For Classes Derived From Page",
-      "category": "Security"
-    },
-    {
-      "id": "CA5369",
-      "title": "Use XmlReader for 'XmlSerializer.Deserialize()'",
-      "category": "Security"
-    },
-    {
-      "id": "CA5370",
-      "title": "Use XmlReader for XmlValidatingReader constructor",
-      "category": "Security"
-    },
-    {
-      "id": "CA5371",
-      "title": "Use XmlReader for 'XmlSchema.Read()'",
-      "category": "Security"
-    },
-    {
-      "id": "CA5372",
-      "title": "Use XmlReader for XPathDocument constructor",
-      "category": "Security"
-    },
-    {
-      "id": "CA5373",
-      "title": "Do not use obsolete key derivation function",
-      "category": "Security"
-    },
-    {
-      "id": "CA5374",
-      "title": "Do Not Use XslTransform",
-      "category": "Security"
-    },
-    {
-      "id": "CA5375",
-      "title": "Do Not Use Account Shared Access Signature",
-      "category": "Security"
-    },
-    {
-      "id": "CA5376",
-      "title": "Use SharedAccessProtocol HttpsOnly",
-      "category": "Security"
-    },
-    {
-      "id": "CA5377",
-      "title": "Use Container Level Access Policy",
-      "category": "Security"
-    },
-    {
-      "id": "CA5378",
-      "title": "Do not disable ServicePointManagerSecurityProtocols",
-      "category": "Security"
-    },
-    {
-      "id": "CA5379",
-      "title": "Ensure Key Derivation Function algorithm is sufficiently strong",
-      "category": "Security"
-    },
-    {
-      "id": "CA5380",
-      "title": "Do Not Add Certificates To Root Store",
-      "category": "Security"
-    },
-    {
-      "id": "CA5381",
-      "title": "Ensure Certificates Are Not Added To Root Store",
-      "category": "Security"
-    },
-    {
-      "id": "CA5382",
-      "title": "Use Secure Cookies In ASP.NET Core",
-      "category": "Security"
-    },
-    {
-      "id": "CA5383",
-      "title": "Ensure Use Secure Cookies In ASP.NET Core",
-      "category": "Security"
-    },
-    {
-      "id": "CA5384",
-      "title": "Do Not Use Digital Signature Algorithm (DSA)",
-      "category": "Security"
-    },
-    {
-      "id": "CA5385",
-      "title": "Use Rivest-Shamir-Adleman (RSA) Algorithm With Sufficient Key Size",
-      "category": "Security"
-    },
-    {
-      "id": "CA5386",
-      "title": "Avoid hardcoding SecurityProtocolType value",
-      "category": "Security"
-    },
-    {
-      "id": "CA5387",
-      "title": "Do Not Use Weak Key Derivation Function With Insufficient Iteration Count",
-      "category": "Security"
-    },
-    {
-      "id": "CA5388",
-      "title": "Ensure Sufficient Iteration Count When Using Weak Key Derivation Function",
-      "category": "Security"
-    },
-    {
-      "id": "CA5389",
-      "title": "Do Not Add Archive Item's Path To The Target File System Path",
-      "category": "Security"
-    },
-    {
-      "id": "CA5390",
-      "title": "Do not hard-code encryption key",
-      "category": "Security"
-    },
-    {
-      "id": "CA5391",
-      "title": "Use antiforgery tokens in ASP.NET Core MVC controllers",
-      "category": "Security"
-    },
-    {
-      "id": "CA5392",
-      "title": "Use DefaultDllImportSearchPaths attribute for P/Invokes",
-      "category": "Security"
-    },
-    {
-      "id": "CA5393",
-      "title": "Do not use unsafe DllImportSearchPath value",
-      "category": "Security"
-    },
-    {
-      "id": "CA5394",
-      "title": "Do not use insecure randomness",
-      "category": "Security"
-    },
-    {
-      "id": "CA5395",
-      "title": "Miss HttpVerb attribute for action methods",
-      "category": "Security"
-    },
-    {
-      "id": "CA5396",
-      "title": "Set HttpOnly to true for HttpCookie",
-      "category": "Security"
-    },
-    {
-      "id": "CA5397",
-      "title": "Do not use deprecated SslProtocols values",
-      "category": "Security"
-    },
-    {
-      "id": "CA5398",
-      "title": "Avoid hardcoded SslProtocols values",
-      "category": "Security"
-    },
-    {
-      "id": "CA5399",
-      "title": "HttpClients should enable certificate revocation list checks",
-      "category": "Security"
-    },
-    {
-      "id": "CA5400",
-      "title": "Ensure HttpClient certificate revocation list check is not disabled",
-      "category": "Security"
-    },
-    {
-      "id": "CA5401",
-      "title": "Do not use CreateEncryptor with non-default IV",
-      "category": "Security"
-    },
-    {
-      "id": "CA5402",
-      "title": "Use CreateEncryptor with the default IV",
-      "category": "Security"
-    },
-    {
-      "id": "CA5403",
-      "title": "Do not hard-code certificate",
-      "category": "Security"
-    },
-    {
-      "id": "CA5404",
-      "title": "Do not disable token validation checks",
-      "category": "Security"
-    },
-    {
-      "id": "CA5405",
-      "title": "Do not always skip token validation in delegates",
-      "category": "Security"
-    },
-    {
-      "id": "IL3000",
-      "title": "Avoid accessing Assembly file path when publishing as a single file",
-      "category": "SingleFile"
-    },
-    {
-      "id": "IL3001",
-      "title": "Avoid accessing Assembly file path when publishing as a single file",
-      "category": "SingleFile"
-    },
-    {
-      "id": "IL3002",
-      "title": "Avoid calling members annotated with 'RequiresAssemblyFilesAttribute' when publishing as a single file",
-      "category": "SingleFile"
-    },
-    {
-      "id": "IL3003",
-      "title": "'RequiresAssemblyFilesAttribute' annotations must match across all interface implementations or overrides.",
-      "category": "SingleFile"
-    },
-    {
-      "id": "IL3005",
-      "title": "RequiresAssemblyFilesAttribute cannot be placed directly on application entry point.",
-      "category": "SingleFile"
-    },
-    {
-      "id": "CA1816",
-      "title": "Dispose methods should call SuppressFinalize",
-      "category": "Usage"
     },
     {
       "id": "CA2200",
       "title": "Rethrow to preserve stack details",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2200",
       "category": "Usage"
     },
     {
       "id": "CA2201",
       "title": "Do not raise reserved exception types",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2201",
       "category": "Usage"
     },
     {
       "id": "CA2207",
       "title": "Initialize value type static fields inline",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2207",
       "category": "Usage"
     },
     {
       "id": "CA2208",
       "title": "Instantiate argument exceptions correctly",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2208",
       "category": "Usage"
     },
     {
       "id": "CA2211",
       "title": "Non-constant fields should not be visible",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2211",
       "category": "Usage"
     },
     {
       "id": "CA2213",
       "title": "Disposable fields should be disposed",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2213",
       "category": "Usage"
     },
     {
       "id": "CA2214",
       "title": "Do not call overridable methods in constructors",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2214",
       "category": "Usage"
     },
     {
       "id": "CA2215",
       "title": "Dispose methods should call base class dispose",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2215",
       "category": "Usage"
     },
     {
       "id": "CA2216",
       "title": "Disposable types should declare finalizer",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2216",
       "category": "Usage"
     },
     {
       "id": "CA2217",
       "title": "Do not mark enums with FlagsAttribute",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2217",
       "category": "Usage"
     },
     {
       "id": "CA2218",
       "title": "Override GetHashCode on overriding Equals",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2218",
       "category": "Usage"
     },
     {
       "id": "CA2219",
       "title": "Do not raise exceptions in finally clauses",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2219",
       "category": "Usage"
     },
     {
       "id": "CA2224",
       "title": "Override Equals on overloading operator equals",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2224",
       "category": "Usage"
     },
     {
       "id": "CA2225",
       "title": "Operator overloads have named alternates",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2225",
       "category": "Usage"
     },
     {
       "id": "CA2226",
       "title": "Operators should have symmetrical overloads",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2226",
       "category": "Usage"
     },
     {
       "id": "CA2227",
       "title": "Collection properties should be read only",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2227",
       "category": "Usage"
     },
     {
       "id": "CA2231",
       "title": "Overload operator equals on overriding value type Equals",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2231",
       "category": "Usage"
     },
     {
       "id": "CA2234",
       "title": "Pass system uri objects instead of strings",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2234",
       "category": "Usage"
     },
     {
       "id": "CA2235",
       "title": "Mark all non-serializable fields",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2235",
       "category": "Usage"
     },
     {
       "id": "CA2237",
       "title": "Mark ISerializable types with serializable",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2237",
       "category": "Usage"
     },
     {
       "id": "CA2241",
       "title": "Provide correct arguments to formatting methods",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2241",
       "category": "Usage"
     },
     {
       "id": "CA2242",
       "title": "Test for NaN correctly",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2242",
       "category": "Usage"
     },
     {
       "id": "CA2243",
       "title": "Attribute string literals should parse correctly",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2243",
       "category": "Usage"
     },
     {
       "id": "CA2244",
       "title": "Do not duplicate indexed element initializations",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2244",
       "category": "Usage"
     },
     {
       "id": "CA2245",
       "title": "Do not assign a property to itself",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2245",
       "category": "Usage"
     },
     {
       "id": "CA2246",
       "title": "Assigning symbol and its member in the same statement",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2246",
       "category": "Usage"
     },
     {
       "id": "CA2247",
       "title": "Argument passed to TaskCompletionSource constructor should be TaskCreationOptions enum instead of TaskContinuationOptions enum",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2247",
       "category": "Usage"
     },
     {
       "id": "CA2248",
       "title": "Provide correct 'enum' argument to 'Enum.HasFlag'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2248",
       "category": "Usage"
     },
     {
       "id": "CA2249",
       "title": "Consider using 'string.Contains' instead of 'string.IndexOf'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2249",
       "category": "Usage"
     },
     {
       "id": "CA2250",
       "title": "Use 'ThrowIfCancellationRequested'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2250",
       "category": "Usage"
     },
     {
       "id": "CA2251",
       "title": "Use 'string.Equals'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2251",
       "category": "Usage"
     },
     {
       "id": "CA2252",
       "title": "This API requires opting into preview features",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2252",
       "category": "Usage"
     },
     {
       "id": "CA2253",
       "title": "Named placeholders should not be numeric values",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2253",
       "category": "Usage"
     },
     {
       "id": "CA2254",
       "title": "Template should be a static expression",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2254",
       "category": "Usage"
     },
     {
       "id": "CA2255",
       "title": "The 'ModuleInitializer' attribute should not be used in libraries",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2255",
       "category": "Usage"
     },
     {
       "id": "CA2256",
       "title": "All members declared in parent interfaces must have an implementation in a DynamicInterfaceCastableImplementation-attributed interface",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2256",
       "category": "Usage"
     },
     {
       "id": "CA2257",
       "title": "Members defined on an interface with the 'DynamicInterfaceCastableImplementationAttribute' should be 'static'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2257",
       "category": "Usage"
     },
     {
       "id": "CA2258",
       "title": "Providing a 'DynamicInterfaceCastableImplementation' interface in Visual Basic is unsupported",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2258",
       "category": "Usage"
     },
     {
       "id": "CA2259",
       "title": "'ThreadStatic' only affects static fields",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2259",
       "category": "Usage"
     },
     {
       "id": "CA2260",
       "title": "Use correct type parameter",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2260",
       "category": "Usage"
     },
     {
       "id": "CA2261",
       "title": "Do not use ConfigureAwaitOptions.SuppressThrowing with Task<TResult>",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2261",
       "category": "Usage"
     },
     {
       "id": "CA2262",
       "title": "Set 'MaxResponseHeadersLength' properly",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2262",
       "category": "Usage"
     },
     {
       "id": "CA2263",
       "title": "Prefer generic overload when type is known",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2263",
       "category": "Usage"
     },
     {
       "id": "CA2264",
       "title": "Do not pass a non-nullable value to 'ArgumentNullException.ThrowIfNull'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2264",
       "category": "Usage"
     },
     {
       "id": "CA2265",
       "title": "Do not compare Span<T> to 'null' or 'default'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2265",
       "category": "Usage"
+    },
+    {
+      "id": "CA2300",
+      "title": "Do not use insecure deserializer BinaryFormatter",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2300",
+      "category": "Security"
+    },
+    {
+      "id": "CA2301",
+      "title": "Do not call BinaryFormatter.Deserialize without first setting BinaryFormatter.Binder",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2301",
+      "category": "Security"
+    },
+    {
+      "id": "CA2302",
+      "title": "Ensure BinaryFormatter.Binder is set before calling BinaryFormatter.Deserialize",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2302",
+      "category": "Security"
+    },
+    {
+      "id": "CA2305",
+      "title": "Do not use insecure deserializer LosFormatter",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2305",
+      "category": "Security"
+    },
+    {
+      "id": "CA2310",
+      "title": "Do not use insecure deserializer NetDataContractSerializer",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2310",
+      "category": "Security"
+    },
+    {
+      "id": "CA2311",
+      "title": "Do not deserialize without first setting NetDataContractSerializer.Binder",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2311",
+      "category": "Security"
+    },
+    {
+      "id": "CA2312",
+      "title": "Ensure NetDataContractSerializer.Binder is set before deserializing",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2312",
+      "category": "Security"
+    },
+    {
+      "id": "CA2315",
+      "title": "Do not use insecure deserializer ObjectStateFormatter",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2315",
+      "category": "Security"
+    },
+    {
+      "id": "CA2321",
+      "title": "Do not deserialize with JavaScriptSerializer using a SimpleTypeResolver",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2321",
+      "category": "Security"
+    },
+    {
+      "id": "CA2322",
+      "title": "Ensure JavaScriptSerializer is not initialized with SimpleTypeResolver before deserializing",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2322",
+      "category": "Security"
+    },
+    {
+      "id": "CA2326",
+      "title": "Do not use TypeNameHandling values other than None",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2326",
+      "category": "Security"
+    },
+    {
+      "id": "CA2327",
+      "title": "Do not use insecure JsonSerializerSettings",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2327",
+      "category": "Security"
+    },
+    {
+      "id": "CA2328",
+      "title": "Ensure that JsonSerializerSettings are secure",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2328",
+      "category": "Security"
+    },
+    {
+      "id": "CA2329",
+      "title": "Do not deserialize with JsonSerializer using an insecure configuration",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2329",
+      "category": "Security"
+    },
+    {
+      "id": "CA2330",
+      "title": "Ensure that JsonSerializer has a secure configuration when deserializing",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2330",
+      "category": "Security"
+    },
+    {
+      "id": "CA2350",
+      "title": "Do not use DataTable.ReadXml() with untrusted data",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2350",
+      "category": "Security"
+    },
+    {
+      "id": "CA2351",
+      "title": "Do not use DataSet.ReadXml() with untrusted data",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2351",
+      "category": "Security"
+    },
+    {
+      "id": "CA2352",
+      "title": "Unsafe DataSet or DataTable in serializable type can be vulnerable to remote code execution attacks",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2352",
+      "category": "Security"
+    },
+    {
+      "id": "CA2353",
+      "title": "Unsafe DataSet or DataTable in serializable type",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2353",
+      "category": "Security"
+    },
+    {
+      "id": "CA2354",
+      "title": "Unsafe DataSet or DataTable in deserialized object graph can be vulnerable to remote code execution attacks",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2354",
+      "category": "Security"
+    },
+    {
+      "id": "CA2355",
+      "title": "Unsafe DataSet or DataTable type found in deserializable object graph",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2355",
+      "category": "Security"
+    },
+    {
+      "id": "CA2356",
+      "title": "Unsafe DataSet or DataTable type in web deserializable object graph",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2356",
+      "category": "Security"
+    },
+    {
+      "id": "CA2361",
+      "title": "Ensure auto-generated class containing DataSet.ReadXml() is not used with untrusted data",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2361",
+      "category": "Security"
+    },
+    {
+      "id": "CA2362",
+      "title": "Unsafe DataSet or DataTable in auto-generated serializable type can be vulnerable to remote code execution attacks",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2362",
+      "category": "Security"
+    },
+    {
+      "id": "CA3001",
+      "title": "Review code for SQL injection vulnerabilities",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3001",
+      "category": "Security"
+    },
+    {
+      "id": "CA3002",
+      "title": "Review code for XSS vulnerabilities",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3002",
+      "category": "Security"
+    },
+    {
+      "id": "CA3003",
+      "title": "Review code for file path injection vulnerabilities",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3003",
+      "category": "Security"
+    },
+    {
+      "id": "CA3004",
+      "title": "Review code for information disclosure vulnerabilities",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3004",
+      "category": "Security"
+    },
+    {
+      "id": "CA3005",
+      "title": "Review code for LDAP injection vulnerabilities",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3005",
+      "category": "Security"
+    },
+    {
+      "id": "CA3006",
+      "title": "Review code for process command injection vulnerabilities",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3006",
+      "category": "Security"
+    },
+    {
+      "id": "CA3007",
+      "title": "Review code for open redirect vulnerabilities",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3007",
+      "category": "Security"
+    },
+    {
+      "id": "CA3008",
+      "title": "Review code for XPath injection vulnerabilities",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3008",
+      "category": "Security"
+    },
+    {
+      "id": "CA3009",
+      "title": "Review code for XML injection vulnerabilities",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3009",
+      "category": "Security"
+    },
+    {
+      "id": "CA3010",
+      "title": "Review code for XAML injection vulnerabilities",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3010",
+      "category": "Security"
+    },
+    {
+      "id": "CA3011",
+      "title": "Review code for DLL injection vulnerabilities",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3011",
+      "category": "Security"
+    },
+    {
+      "id": "CA3012",
+      "title": "Review code for regex injection vulnerabilities",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3012",
+      "category": "Security"
+    },
+    {
+      "id": "CA3061",
+      "title": "Do Not Add Schema By URL",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3061",
+      "category": "Security"
+    },
+    {
+      "id": "CA3075",
+      "title": "Insecure DTD processing in XML",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3075",
+      "category": "Security"
+    },
+    {
+      "id": "CA3076",
+      "title": "Insecure XSLT script processing",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3076",
+      "category": "Security"
+    },
+    {
+      "id": "CA3077",
+      "title": "Insecure Processing in API Design, XmlDocument and XmlTextReader",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3077",
+      "category": "Security"
+    },
+    {
+      "id": "CA3147",
+      "title": "Mark Verb Handlers With Validate Antiforgery Token",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3147",
+      "category": "Security"
+    },
+    {
+      "id": "CA5350",
+      "title": "Do Not Use Weak Cryptographic Algorithms",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5350",
+      "category": "Security"
+    },
+    {
+      "id": "CA5351",
+      "title": "Do Not Use Broken Cryptographic Algorithms",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5351",
+      "category": "Security"
+    },
+    {
+      "id": "CA5358",
+      "title": "Review cipher mode usage with cryptography experts",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5358",
+      "category": "Security"
+    },
+    {
+      "id": "CA5359",
+      "title": "Do Not Disable Certificate Validation",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5359",
+      "category": "Security"
+    },
+    {
+      "id": "CA5360",
+      "title": "Do Not Call Dangerous Methods In Deserialization",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5360",
+      "category": "Security"
+    },
+    {
+      "id": "CA5361",
+      "title": "Do Not Disable SChannel Use of Strong Crypto",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5361",
+      "category": "Security"
+    },
+    {
+      "id": "CA5362",
+      "title": "Potential reference cycle in deserialized object graph",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5362",
+      "category": "Security"
+    },
+    {
+      "id": "CA5363",
+      "title": "Do Not Disable Request Validation",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5363",
+      "category": "Security"
+    },
+    {
+      "id": "CA5364",
+      "title": "Do Not Use Deprecated Security Protocols",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5364",
+      "category": "Security"
+    },
+    {
+      "id": "CA5365",
+      "title": "Do Not Disable HTTP Header Checking",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5365",
+      "category": "Security"
+    },
+    {
+      "id": "CA5366",
+      "title": "Use XmlReader for 'DataSet.ReadXml()'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5366",
+      "category": "Security"
+    },
+    {
+      "id": "CA5367",
+      "title": "Do Not Serialize Types With Pointer Fields",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5367",
+      "category": "Security"
+    },
+    {
+      "id": "CA5368",
+      "title": "Set ViewStateUserKey For Classes Derived From Page",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5368",
+      "category": "Security"
+    },
+    {
+      "id": "CA5369",
+      "title": "Use XmlReader for 'XmlSerializer.Deserialize()'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5369",
+      "category": "Security"
+    },
+    {
+      "id": "CA5370",
+      "title": "Use XmlReader for XmlValidatingReader constructor",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5370",
+      "category": "Security"
+    },
+    {
+      "id": "CA5371",
+      "title": "Use XmlReader for 'XmlSchema.Read()'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5371",
+      "category": "Security"
+    },
+    {
+      "id": "CA5372",
+      "title": "Use XmlReader for XPathDocument constructor",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5372",
+      "category": "Security"
+    },
+    {
+      "id": "CA5373",
+      "title": "Do not use obsolete key derivation function",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5373",
+      "category": "Security"
+    },
+    {
+      "id": "CA5374",
+      "title": "Do Not Use XslTransform",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5374",
+      "category": "Security"
+    },
+    {
+      "id": "CA5375",
+      "title": "Do Not Use Account Shared Access Signature",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5375",
+      "category": "Security"
+    },
+    {
+      "id": "CA5376",
+      "title": "Use SharedAccessProtocol HttpsOnly",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5376",
+      "category": "Security"
+    },
+    {
+      "id": "CA5377",
+      "title": "Use Container Level Access Policy",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5377",
+      "category": "Security"
+    },
+    {
+      "id": "CA5378",
+      "title": "Do not disable ServicePointManagerSecurityProtocols",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5378",
+      "category": "Security"
+    },
+    {
+      "id": "CA5379",
+      "title": "Ensure Key Derivation Function algorithm is sufficiently strong",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5379",
+      "category": "Security"
+    },
+    {
+      "id": "CA5380",
+      "title": "Do Not Add Certificates To Root Store",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5380",
+      "category": "Security"
+    },
+    {
+      "id": "CA5381",
+      "title": "Ensure Certificates Are Not Added To Root Store",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5381",
+      "category": "Security"
+    },
+    {
+      "id": "CA5382",
+      "title": "Use Secure Cookies In ASP.NET Core",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5382",
+      "category": "Security"
+    },
+    {
+      "id": "CA5383",
+      "title": "Ensure Use Secure Cookies In ASP.NET Core",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5383",
+      "category": "Security"
+    },
+    {
+      "id": "CA5384",
+      "title": "Do Not Use Digital Signature Algorithm (DSA)",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5384",
+      "category": "Security"
+    },
+    {
+      "id": "CA5385",
+      "title": "Use Rivest-Shamir-Adleman (RSA) Algorithm With Sufficient Key Size",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5385",
+      "category": "Security"
+    },
+    {
+      "id": "CA5386",
+      "title": "Avoid hardcoding SecurityProtocolType value",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5386",
+      "category": "Security"
+    },
+    {
+      "id": "CA5387",
+      "title": "Do Not Use Weak Key Derivation Function With Insufficient Iteration Count",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5387",
+      "category": "Security"
+    },
+    {
+      "id": "CA5388",
+      "title": "Ensure Sufficient Iteration Count When Using Weak Key Derivation Function",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5388",
+      "category": "Security"
+    },
+    {
+      "id": "CA5389",
+      "title": "Do Not Add Archive Item's Path To The Target File System Path",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5389",
+      "category": "Security"
+    },
+    {
+      "id": "CA5390",
+      "title": "Do not hard-code encryption key",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5390",
+      "category": "Security"
+    },
+    {
+      "id": "CA5391",
+      "title": "Use antiforgery tokens in ASP.NET Core MVC controllers",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5391",
+      "category": "Security"
+    },
+    {
+      "id": "CA5392",
+      "title": "Use DefaultDllImportSearchPaths attribute for P/Invokes",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5392",
+      "category": "Security"
+    },
+    {
+      "id": "CA5393",
+      "title": "Do not use unsafe DllImportSearchPath value",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5393",
+      "category": "Security"
+    },
+    {
+      "id": "CA5394",
+      "title": "Do not use insecure randomness",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5394",
+      "category": "Security"
+    },
+    {
+      "id": "CA5395",
+      "title": "Miss HttpVerb attribute for action methods",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5395",
+      "category": "Security"
+    },
+    {
+      "id": "CA5396",
+      "title": "Set HttpOnly to true for HttpCookie",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5396",
+      "category": "Security"
+    },
+    {
+      "id": "CA5397",
+      "title": "Do not use deprecated SslProtocols values",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5397",
+      "category": "Security"
+    },
+    {
+      "id": "CA5398",
+      "title": "Avoid hardcoded SslProtocols values",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5398",
+      "category": "Security"
+    },
+    {
+      "id": "CA5399",
+      "title": "HttpClients should enable certificate revocation list checks",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5399",
+      "category": "Security"
+    },
+    {
+      "id": "CA5400",
+      "title": "Ensure HttpClient certificate revocation list check is not disabled",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5400",
+      "category": "Security"
+    },
+    {
+      "id": "CA5401",
+      "title": "Do not use CreateEncryptor with non-default IV",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5401",
+      "category": "Security"
+    },
+    {
+      "id": "CA5402",
+      "title": "Use CreateEncryptor with the default IV",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5402",
+      "category": "Security"
+    },
+    {
+      "id": "CA5403",
+      "title": "Do not hard-code certificate",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5403",
+      "category": "Security"
+    },
+    {
+      "id": "CA5404",
+      "title": "Do not disable token validation checks",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5404",
+      "category": "Security"
+    },
+    {
+      "id": "CA5405",
+      "title": "Do not always skip token validation in delegates",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5405",
+      "category": "Security"
+    },
+    {
+      "id": "IL3000",
+      "title": "Avoid accessing Assembly file path when publishing as a single file",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/warnings/il3000",
+      "category": "SingleFile"
+    },
+    {
+      "id": "IL3001",
+      "title": "Avoid accessing Assembly file path when publishing as a single file",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/warnings/il3001",
+      "category": "SingleFile"
+    },
+    {
+      "id": "IL3002",
+      "title": "Avoid calling members annotated with 'RequiresAssemblyFilesAttribute' when publishing as a single file",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/warnings/il3002",
+      "category": "SingleFile"
+    },
+    {
+      "id": "IL3003",
+      "title": "'RequiresAssemblyFilesAttribute' annotations must match across all interface implementations or overrides.",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/warnings/il3003",
+      "category": "SingleFile"
+    },
+    {
+      "id": "IL3005",
+      "title": "RequiresAssemblyFilesAttribute cannot be placed directly on application entry point.",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/warnings/il3005",
+      "category": "SingleFile"
     }
   ]
 }

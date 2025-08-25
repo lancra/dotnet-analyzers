@@ -1,10 +1,11 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2025-08-23T06:26:51.2817299-04:00",
+  "timestamp": "2025-08-25T06:18:07.3249897-04:00",
   "rules": [
     {
       "id": "xUnit1000",
       "title": "Test classes must be public",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1000",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -15,6 +16,7 @@
     {
       "id": "xUnit1001",
       "title": "Fact methods cannot have parameters",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1001",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -25,6 +27,7 @@
     {
       "id": "xUnit1002",
       "title": "Test methods cannot have multiple Fact or Theory attributes",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1002",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -35,6 +38,7 @@
     {
       "id": "xUnit1003",
       "title": "Theory methods must have test data",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1003",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -45,6 +49,7 @@
     {
       "id": "xUnit1004",
       "title": "Test methods should not be skipped",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1004",
       "category": "Usage",
       "default": "Info",
       "versions": {
@@ -55,6 +60,7 @@
     {
       "id": "xUnit1005",
       "title": "Fact methods should not have test data",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1005",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -65,6 +71,7 @@
     {
       "id": "xUnit1006",
       "title": "Theory methods should have parameters",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1006",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -75,6 +82,7 @@
     {
       "id": "xUnit1007",
       "title": "ClassData must point at a valid class",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1007",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -85,6 +93,7 @@
     {
       "id": "xUnit1008",
       "title": "Test data attribute should only be used on a Theory",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1008",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -95,6 +104,7 @@
     {
       "id": "xUnit1009",
       "title": "InlineData values must match the number of method parameters",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1009",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -105,6 +115,7 @@
     {
       "id": "xUnit1010",
       "title": "The value is not convertible to the method parameter type",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1010",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -115,6 +126,7 @@
     {
       "id": "xUnit1011",
       "title": "There is no matching method parameter",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1011",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -125,6 +137,7 @@
     {
       "id": "xUnit1012",
       "title": "Null should not be used for value type parameters",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1012",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -135,6 +148,7 @@
     {
       "id": "xUnit1013",
       "title": "Public method should be marked as test",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1013",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -145,6 +159,7 @@
     {
       "id": "xUnit1014",
       "title": "MemberData should use nameof operator for member name",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1014",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -155,6 +170,7 @@
     {
       "id": "xUnit1015",
       "title": "MemberData must reference an existing member",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1015",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -165,6 +181,7 @@
     {
       "id": "xUnit1016",
       "title": "MemberData must reference a public member",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1016",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -175,6 +192,7 @@
     {
       "id": "xUnit1017",
       "title": "MemberData must reference a static member",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1017",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -185,6 +203,7 @@
     {
       "id": "xUnit1018",
       "title": "MemberData must reference a valid member kind",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1018",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -195,6 +214,7 @@
     {
       "id": "xUnit1019",
       "title": "MemberData must reference a member providing a valid data type",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1019",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -205,6 +225,7 @@
     {
       "id": "xUnit1020",
       "title": "MemberData must reference a property with a getter",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1020",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -215,6 +236,7 @@
     {
       "id": "xUnit1021",
       "title": "MemberData should not have parameters if the referenced member is not a method",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1021",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -225,6 +247,7 @@
     {
       "id": "xUnit1022",
       "title": "Theory methods cannot have a parameter array",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1022",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -235,6 +258,7 @@
     {
       "id": "xUnit1023",
       "title": "Theory methods cannot have default parameter values",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1023",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -245,6 +269,7 @@
     {
       "id": "xUnit1024",
       "title": "Test methods cannot have overloads",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1024",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -255,6 +280,7 @@
     {
       "id": "xUnit1025",
       "title": "InlineData should be unique within the Theory it belongs to",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1025",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -265,6 +291,7 @@
     {
       "id": "xUnit1026",
       "title": "Theory methods should use all of their parameters",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1026",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -275,6 +302,7 @@
     {
       "id": "xUnit1027",
       "title": "Collection definition classes must be public",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1027",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -285,6 +313,7 @@
     {
       "id": "xUnit1028",
       "title": "Test method must have valid return type",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1028",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -295,6 +324,7 @@
     {
       "id": "xUnit1029",
       "title": "Local functions cannot be test functions",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1029",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -305,6 +335,7 @@
     {
       "id": "xUnit1030",
       "title": "Do not call ConfigureAwait in test method",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1030",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -315,6 +346,7 @@
     {
       "id": "xUnit1031",
       "title": "Do not use blocking task operations in test method",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1031",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -325,6 +357,7 @@
     {
       "id": "xUnit1032",
       "title": "Test classes cannot be nested within a generic class",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1032",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -335,6 +368,7 @@
     {
       "id": "xUnit1033",
       "title": "Test classes decorated with 'Xunit.IClassFixture<TFixture>' or 'Xunit.ICollectionFixture<TFixture>' should add a constructor argument of type TFixture",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1033",
       "category": "Usage",
       "default": "Info",
       "versions": {
@@ -345,6 +379,7 @@
     {
       "id": "xUnit1034",
       "title": "Null should only be used for nullable parameters",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1034",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -355,6 +390,7 @@
     {
       "id": "xUnit1035",
       "title": "The value is not convertible to the method parameter type",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1035",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -365,6 +401,7 @@
     {
       "id": "xUnit1036",
       "title": "There is no matching method parameter",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1036",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -375,6 +412,7 @@
     {
       "id": "xUnit1037",
       "title": "There are fewer theory data type arguments than required by the parameters of the test method",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1037",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -385,6 +423,7 @@
     {
       "id": "xUnit1038",
       "title": "There are more theory data type arguments than allowed by the parameters of the test method",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1038",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -395,6 +434,7 @@
     {
       "id": "xUnit1039",
       "title": "The type argument to theory data is not compatible with the type of the corresponding test method parameter",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1039",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -405,6 +445,7 @@
     {
       "id": "xUnit1040",
       "title": "The type argument to theory data is nullable, while the type of the corresponding test method parameter is not",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1040",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -415,6 +456,7 @@
     {
       "id": "xUnit1041",
       "title": "Fixture arguments to test classes must have fixture sources",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1041",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -425,6 +467,7 @@
     {
       "id": "xUnit1042",
       "title": "The member referenced by the MemberData attribute returns untyped data rows",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1042",
       "category": "Usage",
       "default": "Info",
       "versions": {
@@ -435,6 +478,7 @@
     {
       "id": "xUnit1043",
       "title": "Constructors on classes derived from FactAttribute must be public when used on test methods",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1043",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -445,6 +489,7 @@
     {
       "id": "xUnit1044",
       "title": "Avoid using TheoryData type arguments that are not serializable",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1044",
       "category": "Usage",
       "default": "Info",
       "versions": {
@@ -455,6 +500,7 @@
     {
       "id": "xUnit1045",
       "title": "Avoid using TheoryData type arguments that might not be serializable",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1045",
       "category": "Usage",
       "default": "Info",
       "versions": {
@@ -465,6 +511,7 @@
     {
       "id": "xUnit1046",
       "title": "Avoid using TheoryDataRow arguments that are not serializable",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1046",
       "category": "Usage",
       "default": "Info",
       "versions": {
@@ -475,6 +522,7 @@
     {
       "id": "xUnit1047",
       "title": "Avoid using TheoryDataRow arguments that might not be serializable",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1047",
       "category": "Usage",
       "default": "Info",
       "versions": {
@@ -485,6 +533,7 @@
     {
       "id": "xUnit1048",
       "title": "Avoid using 'async void' for test methods as it is deprecated in xUnit.net v3",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1048",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -495,6 +544,7 @@
     {
       "id": "xUnit1049",
       "title": "Do not use 'async void' for test methods as it is no longer supported",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1049",
       "category": "Usage",
       "default": "Error",
       "versions": {
@@ -505,6 +555,7 @@
     {
       "id": "xUnit1050",
       "title": "The class referenced by the ClassData attribute returns untyped data rows",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1050",
       "category": "Usage",
       "default": "Info",
       "versions": {
@@ -515,6 +566,7 @@
     {
       "id": "xUnit1051",
       "title": "Calls to methods which accept CancellationToken should use TestContext.Current.CancellationToken",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1051",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -525,6 +577,7 @@
     {
       "id": "xUnit1052",
       "title": "Avoid using 'TheoryData<...>' with types that implement 'ITheoryDataRow'",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1052",
       "category": "Usage",
       "default": "Warning",
       "versions": {
@@ -535,6 +588,7 @@
     {
       "id": "xUnit2000",
       "title": "Constants and literals should be the expected argument",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2000",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -545,6 +599,7 @@
     {
       "id": "xUnit2001",
       "title": "Do not use invalid equality check",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2001",
       "category": "Assertion",
       "default": "Hidden",
       "versions": {
@@ -555,6 +610,7 @@
     {
       "id": "xUnit2002",
       "title": "Do not use null check on value type",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2002",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -565,6 +621,7 @@
     {
       "id": "xUnit2003",
       "title": "Do not use equality check to test for null value",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2003",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -575,6 +632,7 @@
     {
       "id": "xUnit2004",
       "title": "Do not use equality check to test for boolean conditions",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2004",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -585,6 +643,7 @@
     {
       "id": "xUnit2005",
       "title": "Do not use identity check on value type",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2005",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -595,6 +654,7 @@
     {
       "id": "xUnit2006",
       "title": "Do not use invalid string equality check",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2006",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -605,6 +665,7 @@
     {
       "id": "xUnit2007",
       "title": "Do not use typeof expression to check the type",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2007",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -615,6 +676,7 @@
     {
       "id": "xUnit2008",
       "title": "Do not use boolean check to match on regular expressions",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2008",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -625,6 +687,7 @@
     {
       "id": "xUnit2009",
       "title": "Do not use boolean check to check for substrings",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2009",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -635,6 +698,7 @@
     {
       "id": "xUnit2010",
       "title": "Do not use boolean check to check for string equality",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2010",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -645,6 +709,7 @@
     {
       "id": "xUnit2011",
       "title": "Do not use empty collection check",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2011",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -655,6 +720,7 @@
     {
       "id": "xUnit2012",
       "title": "Do not use Enumerable.Any() to check if a value exists in a collection",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2012",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -665,6 +731,7 @@
     {
       "id": "xUnit2013",
       "title": "Do not use equality check to check for collection size.",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2013",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -675,6 +742,7 @@
     {
       "id": "xUnit2014",
       "title": "Do not use throws check to check for asynchronously thrown exception",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2014",
       "category": "Assertion",
       "default": "Error",
       "versions": {
@@ -685,6 +753,7 @@
     {
       "id": "xUnit2015",
       "title": "Do not use typeof expression to check the exception type",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2015",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -695,6 +764,7 @@
     {
       "id": "xUnit2016",
       "title": "Keep precision in the allowed range when asserting equality of doubles or decimals.",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2016",
       "category": "Assertion",
       "default": "Error",
       "versions": {
@@ -705,6 +775,7 @@
     {
       "id": "xUnit2017",
       "title": "Do not use Contains() to check if a value exists in a collection",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2017",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -715,6 +786,7 @@
     {
       "id": "xUnit2018",
       "title": "Do not compare an object's exact type to an abstract class or interface",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2018",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -725,6 +797,7 @@
     {
       "id": "xUnit2019",
       "title": "Do not use obsolete throws check to check for asynchronously thrown exception",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2019",
       "category": "Assertion",
       "default": "Hidden",
       "versions": {
@@ -735,6 +808,7 @@
     {
       "id": "xUnit2020",
       "title": "Do not use always-failing boolean assertion to fail a test",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2020",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -745,6 +819,7 @@
     {
       "id": "xUnit2021",
       "title": "Async assertions should be awaited",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2021",
       "category": "Assertion",
       "default": "Error",
       "versions": {
@@ -755,6 +830,7 @@
     {
       "id": "xUnit2022",
       "title": "Boolean assertions should not be negated",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2022",
       "category": "Assertion",
       "default": "Info",
       "versions": {
@@ -765,6 +841,7 @@
     {
       "id": "xUnit2023",
       "title": "Do not use collection methods for single-item collections",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2023",
       "category": "Assertion",
       "default": "Info",
       "versions": {
@@ -775,6 +852,7 @@
     {
       "id": "xUnit2024",
       "title": "Do not use boolean asserts for simple equality tests",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2024",
       "category": "Assertion",
       "default": "Info",
       "versions": {
@@ -785,6 +863,7 @@
     {
       "id": "xUnit2025",
       "title": "The boolean assertion statement can be simplified",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2025",
       "category": "Assertion",
       "default": "Info",
       "versions": {
@@ -795,6 +874,7 @@
     {
       "id": "xUnit2026",
       "title": "Comparison of sets must be done with IEqualityComparer",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2026",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -805,6 +885,7 @@
     {
       "id": "xUnit2027",
       "title": "Comparison of sets to linear containers have undefined results",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2027",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -815,6 +896,7 @@
     {
       "id": "xUnit2028",
       "title": "Do not use Assert.Empty or Assert.NotEmpty with problematic types",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2028",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -825,6 +907,7 @@
     {
       "id": "xUnit2029",
       "title": "Do not use Assert.Empty to check if a value does not exist in a collection",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2029",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -835,6 +918,7 @@
     {
       "id": "xUnit2030",
       "title": "Do not use Assert.NotEmpty to check if a value exists in a collection",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2030",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -845,6 +929,7 @@
     {
       "id": "xUnit2031",
       "title": "Do not use Where clause with Assert.Single",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2031",
       "category": "Assertion",
       "default": "Warning",
       "versions": {
@@ -855,6 +940,7 @@
     {
       "id": "xUnit2032",
       "title": "Type assertions based on 'assignable from' are confusingly named",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2032",
       "category": "Assertion",
       "default": "Info",
       "versions": {
@@ -865,6 +951,7 @@
     {
       "id": "xUnit3000",
       "title": "Classes which cross AppDomain boundaries must derive directly or indirectly from LongLivedMarshalByRefObject",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit3000",
       "category": "Extensibility",
       "default": "Error",
       "versions": {
@@ -875,6 +962,7 @@
     {
       "id": "xUnit3001",
       "title": "Classes that are marked as serializable (or created by the test framework at runtime) must have a public parameterless constructor",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit3001",
       "category": "Extensibility",
       "default": "Error",
       "versions": {
@@ -885,6 +973,7 @@
     {
       "id": "xUnit3002",
       "title": "Classes which are JSON serializable should not be tested for their concrete type",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit3002",
       "category": "Extensibility",
       "default": "Warning",
       "versions": {
@@ -895,6 +984,7 @@
     {
       "id": "xUnit3003",
       "title": "Classes which extend FactAttribute (directly or indirectly) should provide a public constructor for source information",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit3003",
       "category": "Extensibility",
       "default": "Warning",
       "versions": {

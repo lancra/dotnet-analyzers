@@ -27,6 +27,8 @@ function Get-RegexMatch {
     }
 }
 
+$ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
+
 enum RuleParserState {
     HeadingSearch # Searching for an analyzer category heading.
     HeaderSearch # Searching for an analyzer table header.
@@ -69,14 +71,17 @@ $currentCategory = $null
 
         $segments = $_.Substring(2) -split '\|' |
             ForEach-Object { $_.Trim() }
+        $id = Get-RegexMatch -Text $segments[0] -Pattern '\[(?<{0}>.*?)\]\(.*\)'
 
-        $rule = [ordered]@{}
-        $rule.id = Get-RegexMatch -Text $segments[0] -Pattern '\[(?<{0}>.*?)\]\(.*\)'
-        $rule.title = $segments[3]
-        $rule.category = $currentCategory
-        $rule.default = Get-RegexMatch -Text $segments[2] -Pattern '::(?<{0}>.*?)::.*'
+        $rule = [PSCustomObject]@{
+            id = $id
+            title = $segments[3]
+            helpUri = $ruleSet.HelpUriFormat -f $id
+            category = $currentCategory
+            default = Get-RegexMatch -Text $segments[2] -Pattern '::(?<{0}>.*?)::.*'
+            versions = [ordered]@{}
+        }
 
-        $rule.versions = [ordered]@{}
         $versionIdGroupName = 'name'
         $versionValueGroupName = 'value'
         $segments[1] |
@@ -100,10 +105,12 @@ $currentCategory = $null
 
 $path = Join-Path -Path $PSScriptRoot -ChildPath 'rules.json'
 
-$output = [ordered]@{}
-$output.'$schema' = $env:DOTNET_ANALYZERS_SCHEMA
-$output.timestamp = (Get-Date -Format 'o')
-$output.rules = $rules
+$output = [ordered]@{
+    '$schema' = $env:DOTNET_ANALYZERS_SCHEMA
+    timestamp = Get-Date -Format 'o'
+    rules = $rules |
+        Sort-Object -Property 'id'
+}
 
 $jsonDepth = 3
 if (Test-RuleSetDifference -Path $path -Json ($output.rules | ConvertTo-Json -Depth $jsonDepth)) {

@@ -10,6 +10,8 @@ $categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/categories.csv" 
 $categoryUrlFormat = 'https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/documentation/{0}Rules.md'
 $tableTitleHeader = 'Identifier | Name | Description'
 
+$ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
+
 enum RuleParserState {
     Search # Looking for a table title header in the document
     Header # Skipping the table alignment header
@@ -41,10 +43,13 @@ $categories |
 
                 $rowValues = ((Format-Plaintext $_) -split '\|').Trim()
 
-                $rule = [ordered]@{}
-                $rule.id = $rowValues[0]
-                $rule.title = $rowValues[2]
-                $rule.category = $category
+                $rule = [PSCustomObject]@{
+                    id = $rowValues[0]
+                    title = $rowValues[2]
+                    helpUri = $ruleSet.HelpUriFormat -f "$($rowValues[0]).md"
+                    category = $category
+                }
+
                 $rules += $rule
             }
 
@@ -53,10 +58,12 @@ $categories |
 
 $path = Join-Path -Path $PSScriptRoot -ChildPath 'rules.json'
 
-$output = [ordered]@{}
-$output.'$schema' = $env:DOTNET_ANALYZERS_SCHEMA
-$output.timestamp = (Get-Date -Format 'o')
-$output.rules = $rules
+$output = [ordered]@{
+    '$schema' = $env:DOTNET_ANALYZERS_SCHEMA
+    timestamp = Get-Date -Format 'o'
+    rules = $rules |
+        Sort-Object -Property 'id'
+}
 
 if (Test-RuleSetDifference -Path $path -Json ($output.rules | ConvertTo-Json)) {
     $output | ConvertTo-Json > $path

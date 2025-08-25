@@ -10,7 +10,7 @@ $jqQuery = '.runs[] | ' +
     'map({ value: .value }) | ' +
     'map(. + .value | del(.value)) | ' +
     'map(. + .properties | del(.properties)) | ' +
-    'map({ id, title: .shortDescription, category })'
+    'map({ id, title: .shortDescription, helpUri, category })'
 
 $netAnalyzerUrl = 'https://raw.githubusercontent.com/dotnet/roslyn-analyzers/main/src/NetAnalyzers/Microsoft.CodeAnalysis.NetAnalyzers.sarif'
 $rules = & curl --silent $netAnalyzerUrl |
@@ -27,6 +27,8 @@ $rules += & curl --silent $textAnalyzerUrl |
 
 $singleFileUrl = 'https://raw.githubusercontent.com/dotnet/docs/main/docs/core/deploying/single-file/warnings/overview.md'
 $tableTitleHeader = '|Rule|Description|'
+
+$ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
 
 enum RuleParserState {
     Search # Looking for a table title header in the document
@@ -60,6 +62,7 @@ $state = [RuleParserState]::Search
         $rule = [PSCustomObject]@{
             id = $id
             title = $rowValues[1]
+            helpUri = $ruleSet.HelpUriFormat -f $id.ToLower()
             category = 'SingleFile'
         }
         $rules += $rule
@@ -67,10 +70,12 @@ $state = [RuleParserState]::Search
 
 $path = Join-Path -Path $PSScriptRoot -ChildPath 'rules.json'
 
-$output = [ordered]@{}
-$output.'$schema' = $env:DOTNET_ANALYZERS_SCHEMA
-$output.timestamp = (Get-Date -Format 'o')
-$output.rules = $rules | Sort-Object -Property @('category', 'id')
+$output = [ordered]@{
+    '$schema' = $env:DOTNET_ANALYZERS_SCHEMA
+    timestamp = Get-Date -Format 'o'
+    rules = $rules |
+        Sort-Object -Property 'id'
+}
 
 if (Test-RuleSetDifference -Path $path -Json ($output.rules | ConvertTo-Json)) {
     $output | ConvertTo-Json > $path

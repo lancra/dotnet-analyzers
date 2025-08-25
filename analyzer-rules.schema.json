@@ -60,6 +60,11 @@
           "description": "A short description of the rule.",
           "type": "string"
         },
+        "helpUri": {
+          "description": "The URI which provides help documentation for the rule.",
+          "type": "string",
+          "format": "uri"
+        },
         "category": {
           "description": "The sub-group organizational parent.",
           "type": "string"
@@ -76,7 +81,7 @@
           }
         }
       },
-      "required": ["id", "title"]
+      "required": ["id", "title", "helpUri"]
     }
   },
   "type": "object",

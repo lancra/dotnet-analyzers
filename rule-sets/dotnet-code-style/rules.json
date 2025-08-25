@@ -1,20 +1,23 @@
 {
   "$schema": "../../analyzer-rules.schema.json",
-  "timestamp": "2025-08-21T04:00:02.7716903-04:00",
+  "timestamp": "2025-08-25T06:18:05.3936015-04:00",
   "rules": [
     {
       "id": "IDE0001",
       "title": "Simplify name",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0001",
       "options": []
     },
     {
       "id": "IDE0002",
       "title": "Simplify member access",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0002",
       "options": []
     },
     {
       "id": "IDE0003",
       "title": "Remove this or Me qualification",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0003-ide0009",
       "options": [
         {
           "name": "dotnet_style_qualification_for_field",
@@ -77,16 +80,19 @@
     {
       "id": "IDE0004",
       "title": "Remove unnecessary cast",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0004",
       "options": []
     },
     {
       "id": "IDE0005",
       "title": "Remove unnecessary import",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0005",
       "options": []
     },
     {
       "id": "IDE0007",
       "title": "Use var instead of explicit type",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0007-ide0008",
       "options": [
         {
           "name": "csharp_style_var_for_built_in_types",
@@ -135,6 +141,7 @@
     {
       "id": "IDE0008",
       "title": "Use explicit type instead of var",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0007-ide0008",
       "options": [
         {
           "name": "csharp_style_var_for_built_in_types",
@@ -183,6 +190,7 @@
     {
       "id": "IDE0009",
       "title": "Add this or Me qualification",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0003-ide0009",
       "options": [
         {
           "name": "dotnet_style_qualification_for_field",
@@ -245,11 +253,13 @@
     {
       "id": "IDE0010",
       "title": "Add missing cases to switch statement",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0010",
       "options": []
     },
     {
       "id": "IDE0011",
       "title": "Add braces",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0011",
       "options": [
         {
           "name": "csharp_prefer_braces",
@@ -274,6 +284,7 @@
     {
       "id": "IDE0016",
       "title": "Use throw expression",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0016",
       "options": [
         {
           "name": "csharp_style_throw_expression",
@@ -294,6 +305,7 @@
     {
       "id": "IDE0017",
       "title": "Use object initializers",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0017",
       "options": [
         {
           "name": "dotnet_style_object_initializer",
@@ -314,6 +326,7 @@
     {
       "id": "IDE0018",
       "title": "Inline variable declaration",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0018",
       "options": [
         {
           "name": "csharp_style_inlined_variable_declaration",
@@ -334,6 +347,7 @@
     {
       "id": "IDE0019",
       "title": "Use pattern matching to avoid as followed by a null check",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0019",
       "options": [
         {
           "name": "csharp_style_pattern_matching_over_as_with_null_check",
@@ -354,6 +368,7 @@
     {
       "id": "IDE0020",
       "title": "Use pattern matching to avoid is check followed by a cast (with variable)",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0020-ide0038",
       "options": [
         {
           "name": "csharp_style_pattern_matching_over_is_with_cast_check",
@@ -374,6 +389,7 @@
     {
       "id": "IDE0021",
       "title": "Use expression body for constructors",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0021",
       "options": [
         {
           "name": "csharp_style_expression_bodied_constructors",
@@ -398,6 +414,7 @@
     {
       "id": "IDE0022",
       "title": "Use expression body for methods",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0022",
       "options": [
         {
           "name": "csharp_style_expression_bodied_methods",
@@ -422,6 +439,7 @@
     {
       "id": "IDE0023",
       "title": "Use expression body for conversion operators",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0023-ide0024",
       "options": [
         {
           "name": "csharp_style_expression_bodied_operators",
@@ -446,6 +464,7 @@
     {
       "id": "IDE0024",
       "title": "Use expression body for operators",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0023-ide0024",
       "options": [
         {
           "name": "csharp_style_expression_bodied_operators",
@@ -470,6 +489,7 @@
     {
       "id": "IDE0025",
       "title": "Use expression body for properties",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0025",
       "options": [
         {
           "name": "csharp_style_expression_bodied_properties",
@@ -494,6 +514,7 @@
     {
       "id": "IDE0026",
       "title": "Use expression body for indexers",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0026",
       "options": [
         {
           "name": "csharp_style_expression_bodied_indexers",
@@ -518,6 +539,7 @@
     {
       "id": "IDE0027",
       "title": "Use expression body for accessors",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0027",
       "options": [
         {
           "name": "csharp_style_expression_bodied_accessors",
@@ -542,6 +564,7 @@
     {
       "id": "IDE0028",
       "title": "Use collection initializers",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0028",
       "options": [
         {
           "name": "dotnet_style_collection_initializer",
@@ -583,6 +606,7 @@
     {
       "id": "IDE0029",
       "title": "Null check can be simplified",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0029-ide0030-ide0270",
       "options": [
         {
           "name": "dotnet_style_coalesce_expression",
@@ -603,6 +627,7 @@
     {
       "id": "IDE0030",
       "title": "Null check can be simplified",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0029-ide0030-ide0270",
       "options": [
         {
           "name": "dotnet_style_coalesce_expression",
@@ -623,6 +648,7 @@
     {
       "id": "IDE0031",
       "title": "Use null propagation",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0031",
       "options": [
         {
           "name": "dotnet_style_null_propagation",
@@ -643,6 +669,7 @@
     {
       "id": "IDE0032",
       "title": "Use auto property",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0032",
       "options": [
         {
           "name": "dotnet_style_prefer_auto_properties",
@@ -663,6 +690,7 @@
     {
       "id": "IDE0033",
       "title": "Use explicitly provided tuple name",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0033",
       "options": [
         {
           "name": "dotnet_style_explicit_tuple_names",
@@ -683,6 +711,7 @@
     {
       "id": "IDE0034",
       "title": "Simplify default expression",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0034",
       "options": [
         {
           "name": "csharp_prefer_simple_default_expression",
@@ -703,11 +732,13 @@
     {
       "id": "IDE0035",
       "title": "Remove unreachable code",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0035",
       "options": []
     },
     {
       "id": "IDE0036",
       "title": "Order modifiers",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0036",
       "options": [
         {
           "name": "csharp_preferred_modifier_order",
@@ -736,6 +767,7 @@
     {
       "id": "IDE0037",
       "title": "Use inferred member name",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0037",
       "options": [
         {
           "name": "dotnet_style_prefer_inferred_tuple_names",
@@ -770,6 +802,7 @@
     {
       "id": "IDE0038",
       "title": "Use pattern matching to avoid is check followed by a cast (without variable)",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0020-ide0038",
       "options": [
         {
           "name": "csharp_style_pattern_matching_over_is_with_cast_check",
@@ -790,6 +823,7 @@
     {
       "id": "IDE0039",
       "title": "Use local function instead of lambda",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0039",
       "options": [
         {
           "name": "csharp_style_prefer_local_over_anonymous_function",
@@ -810,6 +844,7 @@
     {
       "id": "IDE0040",
       "title": "Add accessibility modifiers",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0040",
       "options": [
         {
           "name": "dotnet_style_require_accessibility_modifiers",
@@ -838,6 +873,7 @@
     {
       "id": "IDE0041",
       "title": "Use is null check",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0041",
       "options": [
         {
           "name": "dotnet_style_prefer_is_null_check_over_reference_equality_method",
@@ -858,6 +894,7 @@
     {
       "id": "IDE0042",
       "title": "Deconstruct variable declaration",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0042",
       "options": [
         {
           "name": "csharp_style_deconstructed_variable_declaration",
@@ -878,6 +915,7 @@
     {
       "id": "IDE0044",
       "title": "Add readonly modifier",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0044",
       "options": [
         {
           "name": "dotnet_style_readonly_field",
@@ -898,6 +936,7 @@
     {
       "id": "IDE0045",
       "title": "Use conditional expression for assignment",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0045",
       "options": [
         {
           "name": "dotnet_style_prefer_conditional_expression_over_assignment",
@@ -918,6 +957,7 @@
     {
       "id": "IDE0046",
       "title": "Use conditional expression for return",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0046",
       "options": [
         {
           "name": "dotnet_style_prefer_conditional_expression_over_return",
@@ -938,6 +978,7 @@
     {
       "id": "IDE0047",
       "title": "Remove unnecessary parentheses",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0047-ide0048",
       "options": [
         {
           "name": "dotnet_style_parentheses_in_arithmetic_binary_operators",
@@ -1000,6 +1041,7 @@
     {
       "id": "IDE0048",
       "title": "Add parentheses for clarity",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0047-ide0048",
       "options": [
         {
           "name": "dotnet_style_parentheses_in_arithmetic_binary_operators",
@@ -1062,6 +1104,7 @@
     {
       "id": "IDE0049",
       "title": "Use language keywords instead of framework type names for type references",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0049",
       "options": [
         {
           "name": "dotnet_style_predefined_type_for_locals_parameters_members",
@@ -1096,21 +1139,25 @@
     {
       "id": "IDE0050",
       "title": "Convert anonymous type to tuple",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0050",
       "options": []
     },
     {
       "id": "IDE0051",
       "title": "Remove unused private member",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0051",
       "options": []
     },
     {
       "id": "IDE0052",
       "title": "Remove unread private member",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0052",
       "options": []
     },
     {
       "id": "IDE0053",
       "title": "Use expression body for lambdas",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0053",
       "options": [
         {
           "name": "csharp_style_expression_bodied_lambdas",
@@ -1135,6 +1182,7 @@
     {
       "id": "IDE0054",
       "title": "Use compound assignment",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0054-ide0074",
       "options": [
         {
           "name": "dotnet_style_prefer_compound_assignment",
@@ -1155,6 +1203,7 @@
     {
       "id": "IDE0055",
       "title": "Fix formatting",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0055",
       "options": [
         {
           "name": "csharp_new_line_before_open_brace",
@@ -1729,6 +1778,7 @@
     {
       "id": "IDE0056",
       "title": "Use index operator",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0056",
       "options": [
         {
           "name": "csharp_style_prefer_index_operator",
@@ -1749,6 +1799,7 @@
     {
       "id": "IDE0057",
       "title": "Use range operator",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0057",
       "options": [
         {
           "name": "csharp_style_prefer_range_operator",
@@ -1769,6 +1820,7 @@
     {
       "id": "IDE0058",
       "title": "Remove unused expression value",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0058",
       "options": [
         {
           "name": "csharp_style_unused_value_expression_statement_preference",
@@ -1799,6 +1851,7 @@
     {
       "id": "IDE0059",
       "title": "Remove unnecessary value assignment",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0059",
       "options": [
         {
           "name": "csharp_style_unused_value_assignment_preference",
@@ -1829,6 +1882,7 @@
     {
       "id": "IDE0060",
       "title": "Remove unused parameter",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0060",
       "options": [
         {
           "name": "dotnet_code_quality_unused_parameters",
@@ -1849,6 +1903,7 @@
     {
       "id": "IDE0061",
       "title": "Use expression body for local functions",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0061",
       "options": [
         {
           "name": "csharp_style_expression_bodied_local_functions",
@@ -1873,6 +1928,7 @@
     {
       "id": "IDE0062",
       "title": "Make local function static",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0062",
       "options": [
         {
           "name": "csharp_prefer_static_local_function",
@@ -1893,6 +1949,7 @@
     {
       "id": "IDE0063",
       "title": "Use simple using statement",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0063",
       "options": [
         {
           "name": "csharp_prefer_simple_using_statement",
@@ -1913,11 +1970,13 @@
     {
       "id": "IDE0064",
       "title": "Make struct fields writable",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0064",
       "options": []
     },
     {
       "id": "IDE0065",
       "title": "using directive placement",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0065",
       "options": [
         {
           "name": "csharp_using_directive_placement",
@@ -1938,6 +1997,7 @@
     {
       "id": "IDE0066",
       "title": "Use switch expression",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0066",
       "options": [
         {
           "name": "csharp_style_prefer_switch_expression",
@@ -1958,11 +2018,13 @@
     {
       "id": "IDE0070",
       "title": "Use <xref:System.HashCode.Combine%2A?displayProperty=fullName>",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0070",
       "options": []
     },
     {
       "id": "IDE0071",
       "title": "Simplify interpolation",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0071",
       "options": [
         {
           "name": "dotnet_style_prefer_simplified_interpolation",
@@ -1983,11 +2045,13 @@
     {
       "id": "IDE0072",
       "title": "Add missing cases to switch expression",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0072",
       "options": []
     },
     {
       "id": "IDE0073",
       "title": "Use file header",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0073",
       "options": [
         {
           "name": "file_header_template",
@@ -2010,6 +2074,7 @@
     {
       "id": "IDE0074",
       "title": "Use coalesce compound assignment",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0054-ide0074",
       "options": [
         {
           "name": "dotnet_style_prefer_compound_assignment",
@@ -2030,6 +2095,7 @@
     {
       "id": "IDE0075",
       "title": "Simplify conditional expression",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0075",
       "options": [
         {
           "name": "dotnet_style_prefer_simplified_boolean_expressions",
@@ -2050,16 +2116,19 @@
     {
       "id": "IDE0076",
       "title": "Remove invalid global SuppressMessageAttribute",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0076",
       "options": []
     },
     {
       "id": "IDE0077",
       "title": "Avoid legacy format target in global SuppressMessageAttribute",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0077",
       "options": []
     },
     {
       "id": "IDE0078",
       "title": "Use pattern matching",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0078-ide0260",
       "options": [
         {
           "name": "csharp_style_prefer_pattern_matching",
@@ -2094,6 +2163,7 @@
     {
       "id": "IDE0079",
       "title": "Remove unnecessary suppression",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0079",
       "options": [
         {
           "name": "dotnet_remove_unnecessary_suppression_exclusions",
@@ -2119,21 +2189,25 @@
     {
       "id": "IDE0080",
       "title": "Remove unnecessary suppression operator",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0080",
       "options": []
     },
     {
       "id": "IDE0081",
       "title": "Remove ByVal",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0081",
       "options": []
     },
     {
       "id": "IDE0082",
       "title": "Convert typeof to nameof",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0082",
       "options": []
     },
     {
       "id": "IDE0083",
       "title": "Use pattern matching (not operator)",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0083",
       "options": [
         {
           "name": "csharp_style_prefer_not_pattern",
@@ -2154,6 +2228,7 @@
     {
       "id": "IDE0084",
       "title": "Use pattern matching (IsNot operator)",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0084",
       "options": [
         {
           "name": "visual_basic_style_prefer_isnot_expression",
@@ -2174,6 +2249,7 @@
     {
       "id": "IDE0090",
       "title": "Simplify new expression",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0090",
       "options": [
         {
           "name": "csharp_style_implicit_object_creation_when_type_is_apparent",
@@ -2194,26 +2270,31 @@
     {
       "id": "IDE0100",
       "title": "Remove unnecessary equality operator",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0100",
       "options": []
     },
     {
       "id": "IDE0110",
       "title": "Remove unnecessary discard",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0110",
       "options": []
     },
     {
       "id": "IDE0120",
       "title": "Simplify LINQ expression",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0120",
       "options": []
     },
     {
       "id": "IDE0121",
       "title": "Simplify LINQ type check and cast",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0121",
       "options": []
     },
     {
       "id": "IDE0130",
       "title": "Namespace does not match folder structure",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0130",
       "options": [
         {
           "name": "dotnet_style_namespace_match_folder",
@@ -2234,6 +2315,7 @@
     {
       "id": "IDE0140",
       "title": "Simplify object creation",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0140",
       "options": [
         {
           "name": "visual_basic_style_prefer_simplified_object_creation",
@@ -2254,6 +2336,7 @@
     {
       "id": "IDE0150",
       "title": "Prefer null check over type check",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0150",
       "options": [
         {
           "name": "csharp_style_prefer_null_check_over_type_check",
@@ -2274,6 +2357,7 @@
     {
       "id": "IDE0160",
       "title": "Use block-scoped namespace",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0160-ide0161",
       "options": [
         {
           "name": "csharp_style_namespace_declarations",
@@ -2294,6 +2378,7 @@
     {
       "id": "IDE0161",
       "title": "Use file-scoped namespace",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0160-ide0161",
       "options": [
         {
           "name": "csharp_style_namespace_declarations",
@@ -2314,6 +2399,7 @@
     {
       "id": "IDE0170",
       "title": "Simplify property pattern",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0170",
       "options": [
         {
           "name": "csharp_style_prefer_extended_property_pattern",
@@ -2334,6 +2420,7 @@
     {
       "id": "IDE0180",
       "title": "Use tuple to swap values",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0180",
       "options": [
         {
           "name": "csharp_style_prefer_tuple_swap",
@@ -2354,6 +2441,7 @@
     {
       "id": "IDE0200",
       "title": "Remove unnecessary lambda expression",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0200",
       "options": [
         {
           "name": "csharp_style_prefer_method_group_conversion",
@@ -2374,6 +2462,7 @@
     {
       "id": "IDE0210",
       "title": "Convert to top-level statements",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0210",
       "options": [
         {
           "name": "csharp_style_prefer_top_level_statements",
@@ -2394,6 +2483,7 @@
     {
       "id": "IDE0211",
       "title": "Convert to 'Program.Main' style program",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0211",
       "options": [
         {
           "name": "csharp_style_prefer_top_level_statements",
@@ -2414,6 +2504,7 @@
     {
       "id": "IDE0220",
       "title": "Add explicit cast in foreach loop",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0220",
       "options": [
         {
           "name": "dotnet_style_prefer_foreach_explicit_cast_in_source",
@@ -2434,6 +2525,7 @@
     {
       "id": "IDE0230",
       "title": "Use UTF-8 string literal",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0230",
       "options": [
         {
           "name": "csharp_style_prefer_utf8_string_literals",
@@ -2454,16 +2546,19 @@
     {
       "id": "IDE0240",
       "title": "Nullable directive is redundant",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0240",
       "options": []
     },
     {
       "id": "IDE0241",
       "title": "Nullable directive is unnecessary",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0241",
       "options": []
     },
     {
       "id": "IDE0250",
       "title": "Struct can be made 'readonly'",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0250",
       "options": [
         {
           "name": "csharp_style_prefer_readonly_struct",
@@ -2484,6 +2579,7 @@
     {
       "id": "IDE0251",
       "title": "Member can be made 'readonly'",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0251",
       "options": [
         {
           "name": "csharp_style_prefer_readonly_struct_member",
@@ -2504,6 +2600,7 @@
     {
       "id": "IDE0260",
       "title": "Use pattern matching",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0078-ide0260",
       "options": [
         {
           "name": "csharp_style_prefer_pattern_matching",
@@ -2538,6 +2635,7 @@
     {
       "id": "IDE0270",
       "title": "Null check can be simplified",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0029-ide0030-ide0270",
       "options": [
         {
           "name": "dotnet_style_coalesce_expression",
@@ -2558,11 +2656,13 @@
     {
       "id": "IDE0280",
       "title": "Use nameof",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0280",
       "options": []
     },
     {
       "id": "IDE0290",
       "title": "Use primary constructor",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0290",
       "options": [
         {
           "name": "csharp_style_prefer_primary_constructors",
@@ -2583,6 +2683,7 @@
     {
       "id": "IDE0300",
       "title": "Use collection expression for array",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0300",
       "options": [
         {
           "name": "dotnet_style_prefer_collection_expression",
@@ -2610,6 +2711,7 @@
     {
       "id": "IDE0301",
       "title": "Use collection expression for empty",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0301",
       "options": [
         {
           "name": "dotnet_style_prefer_collection_expression",
@@ -2637,6 +2739,7 @@
     {
       "id": "IDE0302",
       "title": "Use collection expression for stackalloc",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0302",
       "options": [
         {
           "name": "dotnet_style_prefer_collection_expression",
@@ -2664,6 +2767,7 @@
     {
       "id": "IDE0303",
       "title": "Use collection expression for Create()",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0303",
       "options": [
         {
           "name": "dotnet_style_prefer_collection_expression",
@@ -2691,6 +2795,7 @@
     {
       "id": "IDE0304",
       "title": "Use collection expression for builder",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0304",
       "options": [
         {
           "name": "dotnet_style_prefer_collection_expression",
@@ -2718,6 +2823,7 @@
     {
       "id": "IDE0305",
       "title": "Use collection expression for fluent",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0305",
       "options": [
         {
           "name": "dotnet_style_prefer_collection_expression",
@@ -2745,6 +2851,7 @@
     {
       "id": "IDE0306",
       "title": "Use collection expression for new",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0306",
       "options": [
         {
           "name": "dotnet_style_prefer_collection_expression",
@@ -2772,6 +2879,7 @@
     {
       "id": "IDE0320",
       "title": "Make anonymous function static",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0320",
       "options": [
         {
           "name": "csharp_prefer_static_anonymous_function",
@@ -2792,6 +2900,7 @@
     {
       "id": "IDE0330",
       "title": "Prefer 'System.Threading.Lock'",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0330",
       "options": [
         {
           "name": "csharp_prefer_system_threading_lock",
@@ -2812,6 +2921,7 @@
     {
       "id": "IDE0340",
       "title": "Use unbound generic type",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0340",
       "options": [
         {
           "name": "csharp_style_prefer_unbound_generic_type_in_nameof",
@@ -2832,6 +2942,7 @@
     {
       "id": "IDE0350",
       "title": "Use implicitly typed lambda",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0350",
       "options": [
         {
           "name": "csharp_style_prefer_implicitly_typed_lambda_expression",
@@ -2852,6 +2963,7 @@
     {
       "id": "IDE1005",
       "title": "Use conditional delegate call",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide1005",
       "options": [
         {
           "name": "csharp_style_conditional_delegate_call",
@@ -2872,11 +2984,13 @@
     {
       "id": "IDE1006",
       "title": "Naming styles",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/naming-rules",
       "options": []
     },
     {
       "id": "IDE2000",
       "title": "Avoid multiple blank lines",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide2000",
       "options": [
         {
           "name": "dotnet_style_allow_multiple_blank_lines_experimental",
@@ -2897,6 +3011,7 @@
     {
       "id": "IDE2001",
       "title": "Embedded statements must be on their own line",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide2001",
       "options": [
         {
           "name": "csharp_style_allow_embedded_statements_on_same_line_experimental",
@@ -2917,6 +3032,7 @@
     {
       "id": "IDE2002",
       "title": "Consecutive braces must not have blank line between them",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide2002",
       "options": [
         {
           "name": "csharp_style_allow_blank_lines_between_consecutive_braces_experimental",
@@ -2937,6 +3053,7 @@
     {
       "id": "IDE2003",
       "title": "Blank line required between block and subsequent statement",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide2003",
       "options": [
         {
           "name": "dotnet_style_allow_statement_immediately_after_block_experimental",
@@ -2957,6 +3074,7 @@
     {
       "id": "IDE2004",
       "title": "Blank line not allowed after constructor initializer colon",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide2004",
       "options": [
         {
           "name": "csharp_style_allow_blank_line_after_colon_in_constructor_initializer_experimental",
@@ -2977,6 +3095,7 @@
     {
       "id": "IDE2005",
       "title": "Blank line not allowed after conditional expression token",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide2005",
       "options": [
         {
           "name": "csharp_style_allow_blank_line_after_token_in_conditional_expression_experimental",
@@ -2997,6 +3116,7 @@
     {
       "id": "IDE2006",
       "title": "Blank line not allowed after arrow expression clause token",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide2006",
       "options": [
         {
           "name": "csharp_style_allow_blank_line_after_token_in_arrow_expression_clause_experimental",
@@ -3017,6 +3137,7 @@
     {
       "id": "IDE3000",
       "title": "Implement with Copilot",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide3000",
       "options": []
     }
   ]
