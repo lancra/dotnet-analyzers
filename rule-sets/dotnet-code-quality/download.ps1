@@ -4,26 +4,55 @@ param ()
 . "$env:DOTNET_ANALYZERS_FUNCTIONS/Format-Plaintext.ps1"
 . "$env:DOTNET_ANALYZERS_FUNCTIONS/Test-RuleSetDifference.ps1"
 
-$jqQuery = '.runs[] | ' +
-    '.rules | ' +
-    'to_entries | ' +
-    'map({ value: .value }) | ' +
-    'map(. + .value | del(.value)) | ' +
-    'map(. + .properties | del(.properties)) | ' +
-    'map({ id, title: .shortDescription, helpUri, category })'
+function Get-Rule {
+    [CmdletBinding()]
+    [OutputType([PSCustomObject[]])]
+    param(
+        [Parameter(Mandatory)]
+        [uri] $Uri
+    )
+    begin {
+        $ruleProperties = @(
+            'id'
+            'helpUri'
+            @{ Name = 'title'; Expression = { $_.shortDescription } },
+            @{ Name = 'category'; Expression = { $_.properties.category } }
+        )
+    }
+    process {
+        $rules = @()
 
-$netAnalyzerUrl = 'https://raw.githubusercontent.com/dotnet/roslyn-analyzers/main/src/NetAnalyzers/Microsoft.CodeAnalysis.NetAnalyzers.sarif'
-$rules = & curl --silent $netAnalyzerUrl |
-    jq $jqQuery |
-    jq -s 'add' |
-    jq '[.[]] | unique_by(.id)' |
-    ConvertFrom-Json
+        @(
+            'curl',
+            '--silent',
+            # Skip the UTF byte order mark included from GitHub, since it interferes with PowerShell JSON deserialization.
+            '--range 3-',
+            $Uri
+        ) -join ' ' |
+            Invoke-Expression |
+            ConvertFrom-Json |
+            Select-Object -ExpandProperty 'runs' |
+            Select-Object -ExpandProperty 'rules' |
+            ForEach-Object {
+                $_.PSObject.Properties |
+                    ForEach-Object {
+                        $rule = $_.Value |
+                            Select-Object -Property $ruleProperties
 
-$textAnalyzerUrl = 'https://raw.githubusercontent.com/dotnet/roslyn/refs/heads/main/src/RoslynAnalyzers/Text.Analyzers/Text.Analyzers.sarif'
-$rules += & curl --silent $textAnalyzerUrl |
-    jq $jqQuery |
-    jq -s 'add' |
-    ConvertFrom-Json
+                        if (-not ($rules |
+                            Where-Object -Property id -EQ $rule.id)) {
+                                $rules += ,$rule
+                            }
+                    }
+            }
+
+        return $rules
+    }
+}
+
+$rules = @()
+$rules += Get-Rule -Uri 'https://raw.githubusercontent.com/dotnet/sdk/main/src/Microsoft.CodeAnalysis.NetAnalyzers/src/Microsoft.CodeAnalysis.NetAnalyzers.sarif'
+$rules += Get-Rule -Uri 'https://raw.githubusercontent.com/dotnet/roslyn/main/src/RoslynAnalyzers/Text.Analyzers/Text.Analyzers.sarif'
 
 $singleFileUrl = 'https://raw.githubusercontent.com/dotnet/docs/main/docs/core/deploying/single-file/warnings/overview.md'
 $tableTitleHeader = '|Rule|Description|'
