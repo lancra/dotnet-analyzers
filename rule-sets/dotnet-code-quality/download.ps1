@@ -54,9 +54,6 @@ $rules = @()
 $rules += Get-Rule -Uri 'https://raw.githubusercontent.com/dotnet/sdk/main/src/Microsoft.CodeAnalysis.NetAnalyzers/src/Microsoft.CodeAnalysis.NetAnalyzers.sarif'
 $rules += Get-Rule -Uri 'https://raw.githubusercontent.com/dotnet/roslyn/main/src/RoslynAnalyzers/Text.Analyzers/Text.Analyzers.sarif'
 
-$singleFileUrl = 'https://raw.githubusercontent.com/dotnet/docs/main/docs/core/deploying/single-file/warnings/overview.md'
-$tableTitleHeader = '|Rule|Description|'
-
 $ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
 
 enum RuleParserState {
@@ -66,10 +63,10 @@ enum RuleParserState {
 }
 $state = [RuleParserState]::Search
 
-& curl --silent $singleFileUrl |
+& curl --silent 'https://raw.githubusercontent.com/dotnet/docs/main/docs/core/deploying/single-file/warnings/overview.md' |
     ForEach-Object {
         if ($state -eq [RuleParserState]::Search) {
-            if ($_ -eq $tableTitleHeader) {
+            if ($_ -eq '|Rule|Description|') {
                 $state = [RuleParserState]::Header
             }
 
