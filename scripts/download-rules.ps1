@@ -1,7 +1,20 @@
+<#
+.SYNOPSIS
+Downloads configured ruleset metadata from their remote sources.
+
+.DESCRIPTION
+Executes the download script for all rulesets provided in the dataset file, or
+the selected ruleset if provided as a parameter. Rulesets are stored as JSON
+within their respective directories.
+
+.PARAMETER RuleSet
+Specifies the ruleset to download metadata for. Metadata is downloaded for all
+rulesets when this is not provided.
+#>
 [CmdletBinding()]
 param (
     [Parameter()]
-    [string]$RuleSet
+    [string] $RuleSet
 )
 
 . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-RuleSet.ps1"
