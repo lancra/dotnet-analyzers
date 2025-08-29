@@ -89,11 +89,11 @@ $ruleSetDirectoryPath = $PSScriptRoot
             return
         }
 
-        $rawLine = $_.Substring($tableRowPrefix.Length, $_.Length - ($tableRowPrefix.Length + $tableRowSuffix.Length))
-        $links = Read-Link $rawLine
+        $lineContent = $_.Substring($tableRowPrefix.Length, $_.Length - ($tableRowPrefix.Length + $tableRowSuffix.Length))
+        $links = Read-Link $lineContent
 
-        $rawLine = Format-Plaintext $rawLine
-        $rowValues = ($rawLine -split '\|').Trim()
+        $formattedLineContent = Format-Plaintext -Text $lineContent
+        $rowValues = ($formattedLineContent -split '\|').Trim()
 
         $rule = [PSCustomObject]@{
             id = $rowValues[0]
