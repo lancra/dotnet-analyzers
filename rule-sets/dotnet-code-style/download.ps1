@@ -45,7 +45,9 @@ $ruleIndexUrl = Get-DocumentationUri -Document 'index.md'
 # documents linked from the Option column.
 $optionsOutlierRuleId = 'IDE0055'
 
-$tableTitleHeader = '> | Rule ID | Title | Option |'
+$tableRowPrefix = '> | '
+$tableRowSuffix = ' |'
+$tableTitleHeader = "${tableRowPrefix}Rule ID | Title | Option$tableRowSuffix"
 
 $ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
 
@@ -87,8 +89,7 @@ $ruleSetDirectoryPath = $PSScriptRoot
             return
         }
 
-        # Remove '> | ' from the beginning of the line and ' |' from the end.
-        $rawLine = $_.Substring(4, $_.Length - 6)
+        $rawLine = $_.Substring($tableRowPrefix.Length, $_.Length - ($tableRowPrefix.Length + $tableRowSuffix.Length))
         $links = Read-Link $rawLine
 
         $rawLine = Format-Plaintext $rawLine
