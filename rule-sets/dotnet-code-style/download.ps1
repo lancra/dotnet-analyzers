@@ -1,3 +1,11 @@
+<#
+.SYNOPSIS
+Downloads .NET Code Style rules and options.
+
+.DESCRIPTION
+The complete list of rules is compiled by parsing the Markdown index. Then,
+using the rule Markdown document, the options are parsed for each in parallel.
+#>
 [CmdletBinding()]
 param ()
 
