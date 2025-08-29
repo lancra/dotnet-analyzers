@@ -40,8 +40,10 @@ function Read-Link {
 }
 
 $ruleIndexUrl = Get-DocumentationUri -Document 'index.md'
-$csharpFormattingUrl = Get-DocumentationUri -Document 'csharp-formatting-options.md'
-$dotnetFormattingUrl = Get-DocumentationUri -Document 'dotnet-formatting-options.md'
+
+# The Markdown document for this rule does not contain the relevant options. They are instead located within a couple separate
+# documents linked from the Option column.
+$optionsOutlierRuleId = 'IDE0055'
 
 $tableTitleHeader = '> | Rule ID | Title | Option |'
 
@@ -102,9 +104,15 @@ $ruleSetDirectoryPath = $PSScriptRoot
         $urls = @()
 
         $optionsText = $rowValues[2]
-        if ($rule.id -eq 'IDE0055') {
-            $urls += ,$csharpFormattingUrl
-            $urls += ,$dotnetFormattingUrl
+        if ($rule.id -eq $optionsOutlierRuleId) {
+            $links.GetEnumerator() |
+                ForEach-Object {
+                    if ($_.Name -eq $optionsOutlierRuleId) {
+                        return
+                    }
+
+                    $urls += (Get-DocumentationUri -Document $_.Value)
+                }
         } elseif ($optionsText) {
             $urls += (Get-DocumentationUri -Document $links[$rule.id])
         }
