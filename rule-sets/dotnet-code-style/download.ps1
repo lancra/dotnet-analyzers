@@ -40,10 +40,14 @@ function Read-Link {
 }
 
 $ruleIndexUrl = Get-DocumentationUri -Document 'index.md'
-$csharpFormattingUrl = Get-DocumentationUri -Document 'csharp-formatting-options.md'
-$dotnetFormattingUrl = Get-DocumentationUri -Document 'dotnet-formatting-options.md'
 
-$tableTitleHeader = '> | Rule ID | Title | Option |'
+# The Markdown document for this rule does not contain the relevant options. They are instead located within a couple separate
+# documents linked from the Option column.
+$optionsOutlierRuleId = 'IDE0055'
+
+$tableRowPrefix = '> | '
+$tableRowSuffix = ' |'
+$tableTitleHeader = "${tableRowPrefix}Rule ID | Title | Option$tableRowSuffix"
 
 $ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
 
@@ -85,12 +89,11 @@ $ruleSetDirectoryPath = $PSScriptRoot
             return
         }
 
-        # Remove '> | ' from the beginning of the line and ' |' from the end.
-        $rawLine = $_.Substring(4, $_.Length - 6)
-        $links = Read-Link $rawLine
+        $lineContent = $_.Substring($tableRowPrefix.Length, $_.Length - ($tableRowPrefix.Length + $tableRowSuffix.Length))
+        $links = Read-Link $lineContent
 
-        $rawLine = Format-Plaintext $rawLine
-        $rowValues = ($rawLine -split '\|').Trim()
+        $formattedLineContent = Format-Plaintext -Text $lineContent
+        $rowValues = ($formattedLineContent -split '\|').Trim()
 
         $rule = [PSCustomObject]@{
             id = $rowValues[0]
@@ -102,9 +105,15 @@ $ruleSetDirectoryPath = $PSScriptRoot
         $urls = @()
 
         $optionsText = $rowValues[2]
-        if ($rule.id -eq 'IDE0055') {
-            $urls += ,$csharpFormattingUrl
-            $urls += ,$dotnetFormattingUrl
+        if ($rule.id -eq $optionsOutlierRuleId) {
+            $links.GetEnumerator() |
+                ForEach-Object {
+                    if ($_.Name -eq $optionsOutlierRuleId) {
+                        return
+                    }
+
+                    $urls += (Get-DocumentationUri -Document $_.Value)
+                }
         } elseif ($optionsText) {
             $urls += (Get-DocumentationUri -Document $links[$rule.id])
         }
