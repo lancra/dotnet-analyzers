@@ -1,3 +1,11 @@
+<#
+.SYNOPSIS
+Downloads StyleCop rules.
+
+.DESCRIPTION
+For each category defined for the rule set, the applicable rules are parsed from
+the relevant Markdown index.
+#>
 [CmdletBinding()]
 param ()
 

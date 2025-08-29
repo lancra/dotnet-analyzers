@@ -1,3 +1,10 @@
+<#
+.SYNOPSIS
+Downloads xUnit rules.
+
+.DESCRIPTION
+Uses the Markdown index to parse the complete list of rules.
+#>
 [CmdletBinding()]
 param ()
 

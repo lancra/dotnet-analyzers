@@ -1,3 +1,12 @@
+<#
+.SYNOPSIS
+Downloads .NET Code Quality rules.
+
+.DESCRIPTION
+Uses two approaches for downloading the complete list of rules. The generic
+rules and text rules are parsed from SARIF files, and the single file rules are
+parsed from the relevant Markdown index.
+#>
 [CmdletBinding()]
 param ()
 
