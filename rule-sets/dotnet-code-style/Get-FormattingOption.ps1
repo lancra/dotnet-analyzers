@@ -10,6 +10,8 @@ function Get-FormattingOption {
     )
     begin {
         . "$Directory/Get-DocumentationUri.ps1"
+
+        # Since this script is executed within parallel thread jobs, the global dot sources within the build script are inapplicable.
         . "$env:DOTNET_ANALYZERS_FUNCTIONS/Format-Plaintext.ps1"
 
         enum OptionParserState {

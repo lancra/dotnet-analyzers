@@ -1,9 +1,6 @@
 [CmdletBinding()]
 param ()
 
-. "$env:DOTNET_ANALYZERS_FUNCTIONS/Format-Plaintext.ps1"
-. "$env:DOTNET_ANALYZERS_FUNCTIONS/Test-RuleSetDifference.ps1"
-
 $categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/categories.csv" |
     Where-Object -Property 'RuleSet' -EQ 'StyleCop' |
     Select-Object -ExpandProperty 'Category'

@@ -5,9 +5,6 @@ function New-RuleConfiguration {
         [switch]$IncludeVersion
     )
     begin {
-        . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-RuleSet.ps1"
-        . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-Version.ps1"
-
         $severities = @{}
         Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/severities.csv" |
             ForEach-Object { $severities[$_.Name] = $_.Configuration }
