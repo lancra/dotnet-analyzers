@@ -9,13 +9,13 @@ the relevant Markdown index.
 [CmdletBinding()]
 param ()
 
-$categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/categories.csv" |
-    Where-Object -Property 'RuleSet' -EQ 'StyleCop' |
-    Select-Object -ExpandProperty 'Category'
 $categoryUrlFormat = 'https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/documentation/{0}Rules.md'
 $tableTitleHeader = 'Identifier | Name | Description'
 
 $ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
+$categories = $ruleSet |
+    Select-Object -ExpandProperty Categories |
+    Select-Object -ExpandProperty Name
 
 enum RuleParserState {
     Search # Looking for a table title header in the document
