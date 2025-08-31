@@ -20,6 +20,10 @@ process {
         Where-Object -Property 'id' -EQ 'xunit' |
         Select-Object -ExpandProperty 'properties'
 
+    if (-not $ruleSetProperties.versionFilter) {
+        return $true
+    }
+
     $script:include = $false
     $ruleSetProperties.PSObject.Properties |
         ForEach-Object {
