@@ -35,6 +35,7 @@ param (
 . "$PSScriptRoot/functions/Format-Plaintext.ps1"
 . "$PSScriptRoot/functions/Get-RuleSet.ps1"
 . "$PSScriptRoot/functions/Get-Setting.ps1"
+. "$PSScriptRoot/functions/Get-Severity.ps1"
 . "$PSScriptRoot/functions/Get-Version.ps1"
 . "$PSScriptRoot/functions/Merge-OptionSetting.ps1"
 . "$PSScriptRoot/functions/Merge-RuleSetting.ps1"

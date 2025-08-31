@@ -1,7 +1,0 @@
-Name,Configuration,Description
-Error,error,Violations appear as build errors and cause builds to fail.
-Warning,warning,Violations appear as build warnings but do not cause builds to fail (unless you have an option set to treat warnings as errors).
-Info,suggestion,Violations appear as build messages and as suggestions in the Visual Studio IDE.
-Disabled,none,Violations aren't visible to the user.
-Hidden,silent,Rule is suppressed completely.
-Default,default,The default severity of the rule is used.

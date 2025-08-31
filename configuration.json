@@ -131,5 +131,37 @@
         "v3": true
       }
     }
+  ],
+  "severities": [
+    {
+      "id": "error",
+      "name": "Error",
+      "description": "Violations appear as build errors and cause builds to fail."
+    },
+    {
+      "id": "warning",
+      "name": "Warning",
+      "description": "Violations appear as build warnings but do not cause builds to fail (unless you have an option set to treat warnings as errors)."
+    },
+    {
+      "id": "suggestion",
+      "name": "Info",
+      "description": "Violations appear as build messages and as suggestions in the Visual Studio IDE."
+    },
+    {
+      "id": "none",
+      "name": "Disabled",
+      "description": "Violations aren't visible to the user."
+    },
+    {
+      "id": "silent",
+      "name": "Hidden",
+      "description": "Rule is suppressed completely."
+    },
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "The default severity of the rule is used."
+    }
   ]
 }

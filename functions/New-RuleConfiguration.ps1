@@ -6,8 +6,10 @@ function New-RuleConfiguration {
     )
     begin {
         $severities = @{}
-        Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/severities.csv" |
-            ForEach-Object { $severities[$_.Name] = $_.Configuration }
+        Get-Severity |
+            ForEach-Object {
+                $severities[$_.Name] = $_.Id
+            }
 
         $enabledRuleSets = Get-RuleSet -Enabled
 

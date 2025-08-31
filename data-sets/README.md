@@ -18,7 +18,3 @@ Provides the complete list of downloaded analyzer rules along with the user-spec
 ## Rule Sets
 
 Provides the available rule sets and their directory names.
-
-## Severities
-
-Provides mappings between documented rule severities and the values used for configuration.
