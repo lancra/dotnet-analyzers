@@ -4,24 +4,127 @@
       "id": "dotnet-code-quality",
       "name": ".NET Quality",
       "helpUriFormat": "https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/warnings/{0}",
-      "enabled": true
+      "categories": [
+        {
+          "name": "Design",
+          "indexUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/design-warnings"
+        },
+        {
+          "name": "Documentation",
+          "indexUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/documentation-warnings"
+        },
+        {
+          "name": "Globalization",
+          "indexUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/globalization-warnings"
+        },
+        {
+          "name": "Interoperability",
+          "indexUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/interoperability-warnings"
+        },
+        {
+          "name": "Maintainability",
+          "indexUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/maintainability-warnings"
+        },
+        {
+          "name": "Naming",
+          "indexUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/naming-warnings"
+        },
+        {
+          "name": "Performance",
+          "indexUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/performance-warnings"
+        },
+        {
+          "name": "Reliability",
+          "indexUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/reliability-warnings"
+        },
+        {
+          "name": "Security",
+          "indexUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/security-warnings"
+        },
+        {
+          "name": "SingleFile",
+          "indexUri": "https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/warnings/overview"
+        },
+        {
+          "name": "Usage",
+          "indexUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/usage-warnings"
+        }
+      ],
+      "enabled": true,
+      "properties": {}
     },
     {
       "id": "dotnet-code-style",
       "name": ".NET Style",
+      "indexUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/",
       "helpUriFormat": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/{0}",
-      "enabled": true
+      "categories": [],
+      "enabled": true,
+      "properties": {}
     },
     {
       "id": "stylecop",
       "name": "StyleCop",
       "helpUriFormat": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/{0}",
-      "enabled": true
+      "categories": [
+        {
+          "name": "Alternative",
+          "indexUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/AlternativeRules.md"
+        },
+        {
+          "name": "Documentation",
+          "indexUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/DocumentationRules.md"
+        },
+        {
+          "name": "Layout",
+          "indexUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/LayoutRules.md"
+        },
+        {
+          "name": "Maintainability",
+          "indexUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/MaintainabilityRules.md"
+        },
+        {
+          "name": "Naming",
+          "indexUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/NamingRules.md"
+        },
+        {
+          "name": "Ordering",
+          "indexUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/OrderingRules.md"
+        },
+        {
+          "name": "Readability",
+          "indexUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/ReadabilityRules.md"
+        },
+        {
+          "name": "Spacing",
+          "indexUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SpacingRules.md"
+        },
+        {
+          "name": "Special",
+          "indexUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SpecialRules.md"
+        }
+      ],
+      "enabled": true,
+      "properties": {}
     },
     {
       "id": "xunit",
       "name": "xUnit",
       "helpUriFormat": "https://xunit.net/xunit.analyzers/rules/{0}",
+      "categories": [
+        {
+          "name": "Assertion",
+          "indexUri": "https://xunit.net/xunit.analyzers/rules/#assertion-analyzers-2xxx"
+        },
+        {
+          "name": "Extensibility",
+          "indexUri": "https://xunit.net/xunit.analyzers/rules/#extensibility-analyzers-3xxx"
+        },
+        {
+          "name": "Usage",
+          "indexUri": "https://xunit.net/xunit.analyzers/rules/#usage-analyzers-1xxx"
+        }
+      ],
       "enabled": true,
       "properties": {
         "v2": true,

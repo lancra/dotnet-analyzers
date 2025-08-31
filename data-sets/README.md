@@ -2,10 +2,6 @@
 
 Spreadsheets of data used for building the analyzer configuration files.
 
-## Categories
-
-Provides the categories for each rule set, along with a URL for reference. Used for downloading or outputting rules by category.
-
 ## Option Settings
 
 Provides the complete list of downloaded analyzer options along with the user-specified setting for configuration generation.

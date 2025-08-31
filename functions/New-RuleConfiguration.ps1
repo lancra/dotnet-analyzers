@@ -11,11 +11,24 @@ function New-RuleConfiguration {
 
         $enabledRuleSets = Get-RuleSet -Enabled
 
-        $categories = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/categories.csv" |
-            Where-Object {
-                $categoryRuleSet = $_.RuleSet
-                $enabledRuleSets |
-                    Where-Object -Property Name -EQ $categoryRuleSet
+        $categories = $enabledRuleSets |
+            ForEach-Object {
+                $ruleSet = $_
+
+                if ($_.Categories.Length -gt 0) {
+                    $_ |
+                        Select-Object -ExpandProperty Categories |
+                        ForEach-Object {
+                            $_ | Add-Member -MemberType NoteProperty -Name 'RuleSet' -Value $ruleSet.Name
+                            $_
+                        }
+                } else {
+                    [PSCustomObject]@{
+                        Name = ''
+                        IndexUri = $ruleSet.IndexUri
+                        RuleSet = $ruleSet.Name
+                    }
+                }
             }
 
         $ruleSettings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-settings.csv" |
@@ -64,10 +77,11 @@ function New-RuleConfiguration {
 
         $categories |
             ForEach-Object -Begin { $script:i = 0 } -Process {
-                $lastRuleSet = -not ($i -lt $categories.Length - 1)
+                $category = $_
+                $lastCategory = -not ($i -lt $categories.Length - 1)
 
                 $ruleSet = $enabledRuleSets |
-                    Where-Object -Property Name -EQ $_.RuleSet
+                    Where-Object -Property Name -EQ $category.RuleSet
 
                 $inclusionScriptPathArguments = @{
                     Path = $PSScriptRoot
@@ -78,21 +92,21 @@ function New-RuleConfiguration {
                 $hasInclusionScript = Test-Path -Path $inclusionScriptPath
 
                 [void]$builder.Append('# ')
-                [void]$builder.Append($_.RuleSet)
+                [void]$builder.Append($category.RuleSet)
                 [void]$builder.Append(': ')
 
-                if ($_.Category) {
-                    [void]$builder.Append($_.Category)
+                if ($category.Name) {
+                    [void]$builder.Append($category.Name)
                     [void]$builder.Append(' ')
                 }
 
                 [void]$builder.Append('<')
-                [void]$builder.Append($_.Url)
+                [void]$builder.Append($category.IndexUri)
                 [void]$builder.AppendLine('>')
 
                 $ruleSettingLines = $ruleSettings |
-                    Where-Object -Property RuleSet -EQ $_.RuleSet |
-                    Where-Object -Property Category -EQ $_.Category |
+                    Where-Object -Property RuleSet -EQ $category.RuleSet |
+                    Where-Object -Property Category -EQ $category.Name |
                     ForEach-Object {
                         if ($hasInclusionScript) {
                             $include = & $inclusionScriptPath -Id $_.Id
@@ -108,8 +122,8 @@ function New-RuleConfiguration {
 
                 if ($IncludeOption) {
                     $optionSettingLines = $optionSettings |
-                        Where-Object -Property RuleSet -EQ $_.RuleSet |
-                        Where-Object -Property Category -EQ $_.Category |
+                        Where-Object -Property RuleSet -EQ $category.RuleSet |
+                        Where-Object -Property Category -EQ $category.Name |
                         ForEach-Object { $optionSettingFormat -f $_.Name, $_.Value, $_.Id }
 
                     if ($optionSettingLines) {
@@ -123,7 +137,7 @@ function New-RuleConfiguration {
 
                         [void]$builder.Append($_)
 
-                        if (-not ($lastRuleSet -and $lastSetting)) {
+                        if (-not ($lastCategory -and $lastSetting)) {
                             [void]$builder.AppendLine()
                         }
 
@@ -133,7 +147,7 @@ function New-RuleConfiguration {
                 # Script scope required due to https://github.com/PowerShell/PSScriptAnalyzer/issues/1163
                 $j = 0
 
-                if (-not $lastRuleSet) {
+                if (-not $lastCategory) {
                     [void]$builder.AppendLine()
                 }
 
