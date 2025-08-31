@@ -127,6 +127,7 @@
       ],
       "enabled": true,
       "properties": {
+        "versionFilter": false,
         "v2": true,
         "v3": true
       }
