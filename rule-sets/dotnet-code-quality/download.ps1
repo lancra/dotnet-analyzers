@@ -20,8 +20,8 @@ function Get-Rule {
     begin {
         $ruleProperties = @(
             'id'
+            @{ Name = 'title'; Expression = { $_.shortDescription } }
             'helpUri'
-            @{ Name = 'title'; Expression = { $_.shortDescription } },
             @{ Name = 'category'; Expression = { $_.properties.category } }
         )
     }
