@@ -77,10 +77,11 @@ function New-RuleConfiguration {
 
         $categories |
             ForEach-Object -Begin { $script:i = 0 } -Process {
+                $category = $_
                 $lastCategory = -not ($i -lt $categories.Length - 1)
 
                 $ruleSet = $enabledRuleSets |
-                    Where-Object -Property Name -EQ $_.RuleSet
+                    Where-Object -Property Name -EQ $category.RuleSet
 
                 $inclusionScriptPathArguments = @{
                     Path = $PSScriptRoot
@@ -91,21 +92,21 @@ function New-RuleConfiguration {
                 $hasInclusionScript = Test-Path -Path $inclusionScriptPath
 
                 [void]$builder.Append('# ')
-                [void]$builder.Append($_.RuleSet)
+                [void]$builder.Append($category.RuleSet)
                 [void]$builder.Append(': ')
 
-                if ($_.Name) {
-                    [void]$builder.Append($_.Name)
+                if ($category.Name) {
+                    [void]$builder.Append($category.Name)
                     [void]$builder.Append(' ')
                 }
 
                 [void]$builder.Append('<')
-                [void]$builder.Append($_.IndexUri)
+                [void]$builder.Append($category.IndexUri)
                 [void]$builder.AppendLine('>')
 
                 $ruleSettingLines = $ruleSettings |
-                    Where-Object -Property RuleSet -EQ $_.RuleSet |
-                    Where-Object -Property Category -EQ $_.Name |
+                    Where-Object -Property RuleSet -EQ $category.RuleSet |
+                    Where-Object -Property Category -EQ $category.Name |
                     ForEach-Object {
                         if ($hasInclusionScript) {
                             $include = & $inclusionScriptPath -Id $_.Id
@@ -121,8 +122,8 @@ function New-RuleConfiguration {
 
                 if ($IncludeOption) {
                     $optionSettingLines = $optionSettings |
-                        Where-Object -Property RuleSet -EQ $_.RuleSet |
-                        Where-Object -Property Category -EQ $_.Name |
+                        Where-Object -Property RuleSet -EQ $category.RuleSet |
+                        Where-Object -Property Category -EQ $category.Name |
                         ForEach-Object { $optionSettingFormat -f $_.Name, $_.Value, $_.Id }
 
                     if ($optionSettingLines) {
