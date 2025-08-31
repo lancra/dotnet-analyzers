@@ -26,6 +26,15 @@ configuration files.
 [CmdletBinding(SupportsShouldProcess)]
 param (
     [Parameter()]
+    [ValidateScript(
+        {
+            $ruleSetIds = Get-Content -Path $PSScriptRoot/configuration.json |
+                ConvertFrom-Json |
+                Select-Object -ExpandProperty 'ruleSets' |
+                Select-Object -ExpandProperty 'id'
+            $_ -in $ruleSetIds
+        },
+        ErrorMessage = 'Rule set not found.')]
     [string] $RuleSet,
     [switch] $SkipDownload,
     [switch] $MergeConfiguration,
