@@ -1206,6 +1206,34 @@
       "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0055",
       "options": [
         {
+          "name": "dotnet_sort_system_directives_first",
+          "values": [
+            {
+              "value": "true",
+              "description": "Sort System.* using directives alphabetically, and place them before other using directives."
+            },
+            {
+              "value": "false",
+              "description": "Do not place System.* using directives before other using directives."
+            }
+          ],
+          "default": "true"
+        },
+        {
+          "name": "dotnet_separate_import_directive_groups",
+          "values": [
+            {
+              "value": "true",
+              "description": "Place a blank line between using directive groups."
+            },
+            {
+              "value": "false",
+              "description": "Do not place a blank line between using directive groups."
+            }
+          ],
+          "default": "false"
+        },
+        {
           "name": "csharp_new_line_before_open_brace",
           "values": [
             {
@@ -1744,34 +1772,6 @@
             }
           ],
           "default": "true"
-        },
-        {
-          "name": "dotnet_sort_system_directives_first",
-          "values": [
-            {
-              "value": "true",
-              "description": "Sort System.* using directives alphabetically, and place them before other using directives."
-            },
-            {
-              "value": "false",
-              "description": "Do not place System.* using directives before other using directives."
-            }
-          ],
-          "default": "true"
-        },
-        {
-          "name": "dotnet_separate_import_directive_groups",
-          "values": [
-            {
-              "value": "true",
-              "description": "Place a blank line between using directive groups."
-            },
-            {
-              "value": "false",
-              "description": "Do not place a blank line between using directive groups."
-            }
-          ],
-          "default": "false"
         }
       ]
     },
