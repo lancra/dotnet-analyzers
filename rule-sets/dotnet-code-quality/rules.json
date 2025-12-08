@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/analyzer-rules.schema.json",
-  "timestamp": "2025-08-25T06:18:00.6585319-04:00",
+  "timestamp": "2025-12-08T06:09:23.4132560-05:00",
   "rules": [
     {
       "id": "CA1000",
@@ -474,6 +474,12 @@
       "id": "CA1516",
       "title": "Use cross-platform intrinsics",
       "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1516",
+      "category": "Maintainability"
+    },
+    {
+      "id": "CA1517",
+      "title": "Use 'ReadOnlySpan<T>' or 'ReadOnlyMemory<T>' instead of 'Span<T>' or 'Memory<T>'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1517",
       "category": "Maintainability"
     },
     {
@@ -975,6 +981,18 @@
       "category": "Performance"
     },
     {
+      "id": "CA1876",
+      "title": "Do not use 'AsParallel' in 'foreach'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1876",
+      "category": "Performance"
+    },
+    {
+      "id": "CA1877",
+      "title": "Collapse consecutive Path.Combine or Path.Join operations",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1877",
+      "category": "Performance"
+    },
+    {
       "id": "CA2000",
       "title": "Dispose objects before losing scope",
       "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2000",
@@ -1092,6 +1110,18 @@
       "id": "CA2025",
       "title": "Do not pass 'IDisposable' instances into unawaited tasks",
       "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2025",
+      "category": "Reliability"
+    },
+    {
+      "id": "CA2026",
+      "title": "Prefer JsonElement.Parse over JsonDocument.Parse().RootElement",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2026",
+      "category": "Reliability"
+    },
+    {
+      "id": "CA2027",
+      "title": "Cancel Task.Delay after Task.WhenAny completes",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2027",
       "category": "Reliability"
     },
     {
