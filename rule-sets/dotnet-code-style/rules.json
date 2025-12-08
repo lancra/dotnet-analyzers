@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/analyzer-rules.schema.json",
-  "timestamp": "2025-08-25T06:18:05.3936015-04:00",
+  "timestamp": "2025-12-08T06:09:28.5328025-05:00",
   "rules": [
     {
       "id": "IDE0001",
@@ -2959,6 +2959,39 @@
           "default": "true"
         }
       ]
+    },
+    {
+      "id": "IDE0360",
+      "title": "Simplify property accessor",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0360",
+      "options": [
+        {
+          "name": "csharp_style_prefer_simple_property_accessors",
+          "values": [
+            {
+              "value": "true",
+              "description": "Prefer simplified property accessors"
+            },
+            {
+              "value": "false",
+              "description": "Disables the rule"
+            }
+          ],
+          "default": "true"
+        }
+      ]
+    },
+    {
+      "id": "IDE0370",
+      "title": "Remove unnecessary suppression",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0370",
+      "options": []
+    },
+    {
+      "id": "IDE0380",
+      "title": "Remove unnecessary 'unsafe' modifier",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0380",
+      "options": []
     },
     {
       "id": "IDE1005",
