@@ -107,7 +107,9 @@
       "helpUriFormat": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/{0}",
       "categories": [],
       "enabled": true,
-      "properties": {}
+      "properties": {
+        "includeNaming": true
+      }
     },
     {
       "id": "stylecop",

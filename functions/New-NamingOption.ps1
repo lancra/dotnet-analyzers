@@ -4,6 +4,11 @@ function New-NamingOption {
     param()
     begin {
         $configurationPath = Join-Path -Path $PSScriptRoot -ChildPath '..' -AdditionalChildPath 'configuration.json'
+        $ruleSetProperties = Get-Content -Path $configurationPath |
+            ConvertFrom-Json |
+            Select-Object -ExpandProperty 'ruleSets' |
+            Where-Object -Property 'id' -EQ 'dotnet-code-style' |
+            Select-Object -ExpandProperty 'properties'
 
         function Write-ValidationFailure {
             [CmdletBinding()]
@@ -197,6 +202,9 @@ function New-NamingOption {
     }
     process {
         $messages = @()
+        if (-not $ruleSetProperties.includeNaming) {
+            return $messages
+        }
 
         $styleKind = 'style'
         $styles = Get-Source -FileName 'styles.csv'
