@@ -1,1 +1,2 @@
 Name,Kinds,Accessibilities,Modifiers
+async_methods,"local_function,method",*,async
