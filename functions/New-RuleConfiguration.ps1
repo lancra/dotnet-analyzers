@@ -130,6 +130,11 @@ function New-RuleConfiguration {
 
                     if ($optionSettingLines) {
                         $lines += ,'' + $optionSettingLines
+
+                        $namingSettingLines = New-NamingOption
+                        if ($namingSettingLines) {
+                            $lines += ,'' + $namingSettingLines
+                        }
                     }
                 }
 
