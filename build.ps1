@@ -57,6 +57,7 @@ param (
 . "$PSScriptRoot/functions/Get-Version.ps1"
 . "$PSScriptRoot/functions/Merge-OptionSetting.ps1"
 . "$PSScriptRoot/functions/Merge-RuleSetting.ps1"
+. "$PSScriptRoot/functions/New-NamingOption.ps1"
 . "$PSScriptRoot/functions/New-OptionConfiguration.ps1"
 . "$PSScriptRoot/functions/New-RuleConfiguration.ps1"
 . "$PSScriptRoot/functions/Switch-Environment.ps1"
