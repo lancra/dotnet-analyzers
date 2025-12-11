@@ -42,6 +42,7 @@ function New-NamingOption {
             [OutputType([string[]])]
             param(
                 [Parameter(Mandatory)]
+                [AllowEmptyCollection()]
                 [pscustomobject[]] $Object,
 
                 [Parameter(Mandatory)]
@@ -68,6 +69,7 @@ function New-NamingOption {
             [OutputType([string[]])]
             param(
                 [Parameter(Mandatory)]
+                [AllowEmptyCollection()]
                 [pscustomobject[]] $Object,
 
                 [Parameter(Mandatory)]
@@ -101,6 +103,7 @@ function New-NamingOption {
             [OutputType([string[]])]
             param(
                 [Parameter(Mandatory)]
+                [AllowEmptyCollection()]
                 [pscustomobject[]] $Object,
 
                 [Parameter(Mandatory)]
@@ -161,6 +164,7 @@ function New-NamingOption {
             [OutputType([string[]])]
             param(
                 [Parameter(Mandatory)]
+                [AllowEmptyCollection()]
                 [pscustomobject[]] $Object,
 
                 [Parameter(Mandatory)]
@@ -224,7 +228,8 @@ function New-NamingOption {
         $messages += Test-Lookup -Object $symbols -Kind $symbolKind -Property 'Modifiers' -Lookup 'modifiers' -Multiple
 
         $ruleKind = 'rule'
-        $rules = Get-Source -FileName 'rules.csv'
+        $rules = @(Get-Source -FileName 'rules.csv' |
+            Where-Object { [bool]::Parse($_.Enabled) })
         $messages += Test-Required -Object $rules -Kind $ruleKind -Property 'Name'
         $messages += Test-Required -Object $rules -Kind $ruleKind -Property 'Symbol'
         $messages += Test-Required -Object $rules -Kind $ruleKind -Property 'Style'

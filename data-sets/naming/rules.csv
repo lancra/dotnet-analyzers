@@ -1,2 +1,2 @@
-Name,Symbol,Style,Severity
-async_methods_must_have_suffix,async_methods,async_method_suffix,warning
+Name,Symbol,Style,Severity,Enabled
+async_methods_must_have_suffix,async_methods,async_method_suffix,warning,true
