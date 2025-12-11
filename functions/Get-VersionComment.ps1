@@ -3,6 +3,7 @@ function Get-VersionComment {
     param ()
     process {
         $commitId = & git rev-parse HEAD
-        "# lancra/dotnet-analyzers@$commitId"
+        $remoteUrl = (& git remote get-url origin).TrimEnd('.git')
+        "# Source: $remoteUrl/tree/$commitId"
     }
 }
