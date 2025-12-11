@@ -64,7 +64,12 @@ param (
 . "$PSScriptRoot/functions/Test-RuleSetDifference.ps1"
 
 try {
-    New-Item -ItemType Directory -Path "$PSScriptRoot/artifacts" -Force | Out-Null
+    $artifactsDirectory = Join-Path -Path $PSScriptRoot -ChildPath 'artifacts'
+    New-Item -ItemType Directory -Path $artifactsDirectory -Force |
+        Out-Null
+
+    $artifactsDirectoryContents = Join-Path -Path $artifactsDirectory -ChildPath '*'
+    Remove-Item -Path $artifactsDirectoryContents
 
     Switch-Environment
 
