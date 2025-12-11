@@ -48,6 +48,24 @@ function New-OptionConfiguration {
                 $i++
             }
 
+        $namingSettings = New-NamingOption
+        if ($namingSettings) {
+            [void]$builder.AppendLine()
+            [void]$builder.AppendLine()
+
+            $namingSettings |
+                ForEach-Object -Begin { $script:j = 0 } -Process {
+                    $lastSetting = -not ($j -lt $namingSettings.Length - 1)
+                    [void]$builder.Append($_)
+
+                    if (-not $lastSetting) {
+                        [void]$builder.AppendLine()
+                    }
+
+                    $j++
+                }
+        }
+
         $artifactsDirectory = "$env:DOTNET_ANALYZERS_ROOT/artifacts"
         New-Item -ItemType Directory -Path $artifactsDirectory -Force | Out-Null
 

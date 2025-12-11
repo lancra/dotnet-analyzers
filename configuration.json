@@ -1,4 +1,51 @@
 {
+  "naming": {
+    "accessibilities": [
+      "*",
+      "friend",
+      "internal",
+      "local",
+      "private",
+      "private_protected",
+      "protected",
+      "protected_friend",
+      "protected_internal",
+      "public"
+    ],
+    "capitalizations": [
+      "all_lower",
+      "all_upper",
+      "camel_case",
+      "first_word_upper",
+      "pascal_case"
+    ],
+    "modifiers": [
+      "abstract",
+      "async",
+      "const",
+      "must_inherit",
+      "readonly",
+      "shared",
+      "static"
+    ],
+    "symbols": [
+      "*",
+      "class",
+      "delegate",
+      "enum",
+      "event",
+      "field",
+      "interface",
+      "local",
+      "local_function",
+      "method",
+      "namespace",
+      "parameter",
+      "property",
+      "struct",
+      "type_parameter"
+    ]
+  },
   "ruleSets": [
     {
       "id": "dotnet-code-quality",
@@ -60,7 +107,9 @@
       "helpUriFormat": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/{0}",
       "categories": [],
       "enabled": true,
-      "properties": {}
+      "properties": {
+        "includeNaming": true
+      }
     },
     {
       "id": "stylecop",
