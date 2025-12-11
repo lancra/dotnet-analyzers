@@ -159,6 +159,7 @@ function New-NamingOption {
             }
         }
 
+        $referenceCounter = @{}
         function Test-Reference {
             [CmdletBinding()]
             [OutputType([string[]])]
@@ -188,11 +189,17 @@ function New-NamingOption {
                             return
                         }
 
+                        $referenceKey = "${ReferenceKind}:$referenceName"
+                        if (-not $referenceCounter.ContainsKey($referenceKey)) {
+                            $referenceCounter[$referenceKey] = 0
+                        }
+
                         $referenceCount = $ReferenceObject |
                             Where-Object -Property Name -EQ $referenceName |
                             Measure-Object |
                             Select-Object -ExpandProperty Count
                         if ($referenceCount -gt 0) {
+                            $referenceCounter[$referenceKey]++
                             return
                         }
 
@@ -252,6 +259,12 @@ function New-NamingOption {
 
         $lines += $symbols |
             ForEach-Object {
+                $referenceKey = "${symbolKind}:$($_.Name)"
+                $referenceCount = $referenceCounter[$referenceKey] ?? 0
+                if ($referenceCount -eq 0) {
+                    return
+                }
+
                 $prefix = "dotnet_naming_symbols.$($_.Name)"
                 $symbolLines = @(
                     "$prefix.applicable_kinds = $($_.Kinds)",
@@ -267,6 +280,12 @@ function New-NamingOption {
 
         $lines += $styles |
             ForEach-Object {
+                $referenceKey = "${styleKind}:$($_.Name)"
+                $referenceCount = $referenceCounter[$referenceKey] ?? 0
+                if ($referenceCount -eq 0) {
+                    return
+                }
+
                 $prefix = "dotnet_naming_style.$($_.Name)"
                 $styleLines = @("$prefix.capitalization = $($_.Capitalization)")
 
