@@ -24,8 +24,8 @@ function New-OptionConfiguration {
     }
     process {
         if ($IncludeVersion) {
-            $version = Get-Version
-            [void]$builder.AppendLine("# $version")
+            $versionComment = Get-VersionComment
+            [void]$builder.AppendLine($versionComment)
         }
 
         [void]$builder.AppendLine('root = true')

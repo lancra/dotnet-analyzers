@@ -54,7 +54,7 @@ param (
 . "$PSScriptRoot/functions/Get-RuleSet.ps1"
 . "$PSScriptRoot/functions/Get-Setting.ps1"
 . "$PSScriptRoot/functions/Get-Severity.ps1"
-. "$PSScriptRoot/functions/Get-Version.ps1"
+. "$PSScriptRoot/functions/Get-VersionComment.ps1"
 . "$PSScriptRoot/functions/Merge-OptionSetting.ps1"
 . "$PSScriptRoot/functions/Merge-RuleSetting.ps1"
 . "$PSScriptRoot/functions/New-NamingOption.ps1"
