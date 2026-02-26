@@ -26,3 +26,9 @@ The download step can be skipped by providing the associated switch.
 ```powershell
 ./build.ps1 -SkipDownload
 ```
+
+The download step can also be executed in isolation, which is useful to check for any new rules or options.
+
+```powershell
+./build.ps1 -DownloadOnly
+```

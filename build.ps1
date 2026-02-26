@@ -14,6 +14,9 @@ rulesets when this is not provided.
 .PARAMETER SkipDownload
 Specifies that the remote metadata download should not be executed.
 
+.PARAMETER DownloadOnly
+Specifies that only the remote metadata download should be executed.
+
 .PARAMETER MergeConfiguration
 Specifies that the resulting configuration should be represented by a single
 globalconfig file. The default is to place rule configurations in the
@@ -46,6 +49,7 @@ param (
         })]
     [string] $RuleSet,
     [switch] $SkipDownload,
+    [switch] $DownloadOnly,
     [switch] $MergeConfiguration,
     [switch] $IncludeVersion
 )
@@ -77,11 +81,13 @@ try {
         & "$PSScriptRoot/scripts/download-rules.ps1" -RuleSet $RuleSet
     }
 
-    & "$PSScriptRoot/scripts/generate-settings.ps1"
+    if (-not $DownloadOnly) {
+        & "$PSScriptRoot/scripts/generate-settings.ps1"
 
-    & "$PSScriptRoot/scripts/generate-configurations.ps1" `
-        -MergeConfiguration:$MergeConfiguration `
-        -IncludeVersion:$IncludeVersion
+        & "$PSScriptRoot/scripts/generate-configurations.ps1" `
+            -MergeConfiguration:$MergeConfiguration `
+            -IncludeVersion:$IncludeVersion
+    }
 }
 finally {
     Switch-Environment
