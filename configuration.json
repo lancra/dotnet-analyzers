@@ -157,6 +157,47 @@
       "properties": {}
     },
     {
+      "id": "tunit",
+      "name": "TUnit",
+      "helpUriFormat": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md",
+      "categories": [
+        {
+          "name": "AOT Compatibility",
+          "indexUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#aot-compatibility-rules"
+        },
+        {
+          "name": "Async and Execution",
+          "indexUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#async-and-execution-rules"
+        },
+        {
+          "name": "Attribute and Metadata",
+          "indexUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#attribute-and-metadata-rules"
+        },
+        {
+          "name": "Best Practices and Warnings",
+          "indexUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#best-practices-and-warnings"
+        },
+        {
+          "name": "Data Source and Parameter",
+          "indexUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules"
+        },
+        {
+          "name": "Hook and Lifecycle",
+          "indexUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#hook-and-lifecycle-rules"
+        },
+        {
+          "name": "Migration and Legacy Support",
+          "indexUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#migration-and-legacy-support"
+        },
+        {
+          "name": "Test Method and Structure",
+          "indexUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#test-method-and-structure-rules"
+        }
+      ],
+      "enabled": true,
+      "properties": {}
+    },
+    {
       "id": "xunit",
       "name": "xUnit",
       "helpUriFormat": "https://xunit.net/xunit.analyzers/rules/{0}",
