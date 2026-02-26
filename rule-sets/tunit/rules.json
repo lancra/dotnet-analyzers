@@ -1,0 +1,370 @@
+{
+  "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/analyzer-rules.schema.json",
+  "timestamp": "2026-02-26T06:01:18.4548613-05:00",
+  "rules": [
+    {
+      "id": "TUnit0001",
+      "title": "Test argument types don't match method parameters",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#test-method-and-structure-rules",
+      "category": "Test Method and Structure",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0002",
+      "title": "No data provided for test",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#test-method-and-structure-rules",
+      "category": "Test Method and Structure",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0004",
+      "title": "Data source method not found",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0005",
+      "title": "Nullable parameter has non-nullable argument - consider making the argument nullable",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Warning"
+    },
+    {
+      "id": "TUnit0007",
+      "title": "Data source method must be static",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0008",
+      "title": "Data source method must be public",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0009",
+      "title": "Data source method cannot be abstract",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0010",
+      "title": "Data source method must be parameterless",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0011",
+      "title": "Data source method must return data (IEnumerable or Task<IEnumerable>)",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0013",
+      "title": "Test has more arguments than method parameters",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#test-method-and-structure-rules",
+      "category": "Test Method and Structure",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0014",
+      "title": "Public test method missing [Test] attribute - add attribute or make method private/protected",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#test-method-and-structure-rules",
+      "category": "Test Method and Structure",
+      "default": "Warning"
+    },
+    {
+      "id": "TUnit0015",
+      "title": "Methods with [Timeout] must have a CancellationToken parameter",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#async-and-execution-rules",
+      "category": "Async and Execution",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0016",
+      "title": "Hook methods must not be static",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#hook-and-lifecycle-rules",
+      "category": "Hook and Lifecycle",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0017",
+      "title": "[Explicit] attribute cannot be on both method and class - choose one location",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#attribute-and-metadata-rules",
+      "category": "Attribute and Metadata",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0018",
+      "title": "Test methods should not assign instance fields/properties - consider using static fields or [NotInParallel]",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#best-practices-and-warnings",
+      "category": "Best Practices and Warnings",
+      "default": "Warning"
+    },
+    {
+      "id": "TUnit0019",
+      "title": "Test method missing [Test] attribute",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#test-method-and-structure-rules",
+      "category": "Test Method and Structure",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0023",
+      "title": "Disposable fields/properties should be disposed in cleanup methods ([After(Test)] or [After(Class)])",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#best-practices-and-warnings",
+      "category": "Best Practices and Warnings",
+      "default": "Warning"
+    },
+    {
+      "id": "TUnit0027",
+      "title": "Hook method has incorrect parameters - check expected parameter types for this hook",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#hook-and-lifecycle-rules",
+      "category": "Hook and Lifecycle",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0028",
+      "title": "Do not override TUnit's AttributeUsage settings",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#attribute-and-metadata-rules",
+      "category": "Attribute and Metadata",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0029",
+      "title": "Duplicate attribute where only one is allowed",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#attribute-and-metadata-rules",
+      "category": "Attribute and Metadata",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0030",
+      "title": "Test class doesn't inherit base class tests - add [InheritsTests] to include them",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#attribute-and-metadata-rules",
+      "category": "Attribute and Metadata",
+      "default": "Warning"
+    },
+    {
+      "id": "TUnit0031",
+      "title": "Async void methods and lambdas not allowed - return Task instead",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#async-and-execution-rules",
+      "category": "Async and Execution",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0032",
+      "title": "[DependsOn] and [NotInParallel] attributes conflict - tests with dependencies must support parallel execution",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#attribute-and-metadata-rules",
+      "category": "Attribute and Metadata",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0033",
+      "title": "Circular or conflicting test dependencies detected",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#attribute-and-metadata-rules",
+      "category": "Attribute and Metadata",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0034",
+      "title": "Do not declare a Main method in test projects - TUnit provides its own entry point",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#best-practices-and-warnings",
+      "category": "Best Practices and Warnings",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0038",
+      "title": "Property with data attribute must have a data source attribute",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0039",
+      "title": "Test hook methods require single TestContext parameter",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#hook-and-lifecycle-rules",
+      "category": "Hook and Lifecycle",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0040",
+      "title": "Class hook methods require single ClassHookContext parameter",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#hook-and-lifecycle-rules",
+      "category": "Hook and Lifecycle",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0041",
+      "title": "Assembly hook methods require single AssemblyHookContext parameter",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#hook-and-lifecycle-rules",
+      "category": "Hook and Lifecycle",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0042",
+      "title": "Global hooks should be in separate classes from tests for clarity",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#hook-and-lifecycle-rules",
+      "category": "Hook and Lifecycle",
+      "default": "Warning"
+    },
+    {
+      "id": "TUnit0043",
+      "title": "Properties with data attributes must use 'required' keyword",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0044",
+      "title": "Properties with data attributes must have a setter",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0045",
+      "title": "Property has multiple data source attributes - use only one",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0046",
+      "title": "Data source should return Func<T> for reference types to ensure test isolation",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Warning"
+    },
+    {
+      "id": "TUnit0047",
+      "title": "AsyncLocal values from BeforeTest hooks require context.AddAsyncLocalValue() to flow to tests",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#hook-and-lifecycle-rules",
+      "category": "Hook and Lifecycle",
+      "default": "Warning"
+    },
+    {
+      "id": "TUnit0048",
+      "title": "Test methods in non-static classes must not be static",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#test-method-and-structure-rules",
+      "category": "Test Method and Structure",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0049",
+      "title": "[Matrix] parameters require [MatrixDataSource] attribute on the test method",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0050",
+      "title": "Too many test arguments provided",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0051",
+      "title": "Test class must be public",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#test-method-and-structure-rules",
+      "category": "Test Method and Structure",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0052",
+      "title": "Multiple constructors found without [TestConstructor] attribute",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#test-method-and-structure-rules",
+      "category": "Test Method and Structure",
+      "default": "Warning"
+    },
+    {
+      "id": "TUnit0055",
+      "title": "Do not overwrite Console.Out/Error - it breaks TUnit logging",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#best-practices-and-warnings",
+      "category": "Best Practices and Warnings",
+      "default": "Warning"
+    },
+    {
+      "id": "TUnit0056",
+      "title": "Instance data source methods must use [InstanceMethodDataSource] attribute",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0057",
+      "title": "Hook context parameter available - consider adding for additional context information",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#hook-and-lifecycle-rules",
+      "category": "Hook and Lifecycle",
+      "default": "Info"
+    },
+    {
+      "id": "TUnit0058",
+      "title": "Hook method has unknown parameters - check expected parameter types for this hook",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#hook-and-lifecycle-rules",
+      "category": "Hook and Lifecycle",
+      "default": "Error"
+    },
+    {
+      "id": "TUnit0059",
+      "title": "Abstract test class with data sources requires [InheritsTests] on concrete class to execute tests",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#attribute-and-metadata-rules",
+      "category": "Attribute and Metadata",
+      "default": "Warning"
+    },
+    {
+      "id": "TUnit0060",
+      "title": "Data source may produce no tests - ensure it provides at least one test case",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#data-source-and-parameter-rules",
+      "category": "Data Source and Parameter",
+      "default": "Info"
+    },
+    {
+      "id": "TUnit0300",
+      "title": "Generic types may not be AOT-compatible - ensure all combinations are known at compile time",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#aot-compatibility-rules",
+      "category": "AOT Compatibility",
+      "default": "Warning"
+    },
+    {
+      "id": "TUnit0301",
+      "title": "Tuple usage may not be AOT-compatible - consider using concrete types",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#aot-compatibility-rules",
+      "category": "AOT Compatibility",
+      "default": "Warning"
+    },
+    {
+      "id": "TUnit0302",
+      "title": "Custom conversion operators may not be AOT-compatible - use explicit casting",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#aot-compatibility-rules",
+      "category": "AOT Compatibility",
+      "default": "Warning"
+    },
+    {
+      "id": "TUMS0001",
+      "title": "MSTest code can be migrated to TUnit",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#migration-and-legacy-support",
+      "category": "Migration and Legacy Support",
+      "default": "Info"
+    },
+    {
+      "id": "TUNU0001",
+      "title": "NUnit code can be migrated to TUnit",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#migration-and-legacy-support",
+      "category": "Migration and Legacy Support",
+      "default": "Info"
+    },
+    {
+      "id": "TUXU0001",
+      "title": "XUnit code can be migrated to TUnit",
+      "helpUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#migration-and-legacy-support",
+      "category": "Migration and Legacy Support",
+      "default": "Info"
+    }
+  ]
+}
