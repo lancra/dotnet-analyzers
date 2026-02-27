@@ -24,6 +24,24 @@ function New-PreferenceSpecification {
                     Select-Object -ExpandProperty Name
             }
         }
+
+        function New-PropertyValue {
+            [CmdletBinding()]
+            [OutputType([object])]
+            param(
+                [Parameter(Mandatory)]
+                [string] $Type
+            )
+            process {
+                switch ($Type) {
+                    'array' { New-Object System.Collections.ArrayList }
+                    'bool' { $false }
+                    'object' { [pscustomobject]@{} }
+                    'string' { '' }
+                    default { throw "Unrecognized property type '$Type'." }
+                }
+            }
+        }
     }
     process {
         $preferences = $hasPreferences ? $getPreferences.Invoke() : [pscustomobject]@{}
@@ -69,7 +87,7 @@ function New-PreferenceSpecification {
                             $existingRuleSet.properties.PSObject.Properties.Remove($name)
                         } elseif ($isNew) {
                             $script:hasChanges = $true
-                            $value = $newRuleSet.properties.$name
+                            $value = New-PropertyValue -Type $newRuleSet.properties.$name.type
                             $existingRuleSet.properties |
                                 Add-Member -MemberType NoteProperty -Name $name -Value $value
                         }

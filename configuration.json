@@ -106,7 +106,10 @@
       "helpUriFormat": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/{0}",
       "categories": [],
       "properties": {
-        "includeNaming": true
+        "includeNaming": {
+          "description": "Determines whether custom naming rules should be included in the option configuration.",
+          "type": "bool"
+        }
       }
     },
     {
@@ -212,9 +215,18 @@
         }
       ],
       "properties": {
-        "versionFilter": false,
-        "v2": true,
-        "v3": true
+        "versionFilter": {
+          "description": "Determines whether the rules should be filtered by the specified xUnit product versions.",
+          "type": "bool"
+        },
+        "v2": {
+          "description": "Denotes that the V2 rules should be included when version filtering is enabled.",
+          "type": "bool"
+        },
+        "v3": {
+          "description": "Denotes that the V3 rules should be included when version filtering is enabled.",
+          "type": "bool"
+        }
       }
     }
   ],
