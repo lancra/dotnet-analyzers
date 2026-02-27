@@ -63,6 +63,7 @@ param (
 . "$PSScriptRoot/functions/Merge-RuleSetting.ps1"
 . "$PSScriptRoot/functions/New-NamingOption.ps1"
 . "$PSScriptRoot/functions/New-OptionConfiguration.ps1"
+. "$PSScriptRoot/functions/New-PreferenceSpecification.ps1"
 . "$PSScriptRoot/functions/New-RuleConfiguration.ps1"
 . "$PSScriptRoot/functions/Switch-Environment.ps1"
 . "$PSScriptRoot/functions/Test-RuleSetDifference.ps1"
@@ -76,6 +77,12 @@ try {
     Remove-Item -Path $artifactsDirectoryContents
 
     Switch-Environment
+
+    $preferencesChanged = New-PreferenceSpecification
+    if ($preferencesChanged) {
+        Write-Output "`e[33mPreferences have been modified from the configuration. Review the settings and re-execute the build.`e[39m"
+        return
+    }
 
     if (-not $SkipDownload) {
         & "$PSScriptRoot/scripts/download-rules.ps1" -RuleSet $RuleSet

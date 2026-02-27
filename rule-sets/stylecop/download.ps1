@@ -12,7 +12,7 @@ param ()
 $categoryUrlFormat = 'https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/documentation/{0}Rules.md'
 $tableTitleHeader = 'Identifier | Name | Description'
 
-$ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
+$ruleSet = Get-RuleSet -CurrentDirectory
 $categories = $ruleSet |
     Select-Object -ExpandProperty Categories |
     Select-Object -ExpandProperty Name

@@ -4,11 +4,7 @@ function New-NamingOption {
     param()
     begin {
         $configurationPath = Join-Path -Path $PSScriptRoot -ChildPath '..' -AdditionalChildPath 'configuration.json'
-        $ruleSetProperties = Get-Content -Path $configurationPath |
-            ConvertFrom-Json |
-            Select-Object -ExpandProperty 'ruleSets' |
-            Where-Object -Property 'id' -EQ 'dotnet-code-style' |
-            Select-Object -ExpandProperty 'properties'
+        $ruleSet = Get-RuleSet -Id 'dotnet-code-style'
 
         function Write-ValidationFailure {
             [CmdletBinding()]
@@ -213,7 +209,7 @@ function New-NamingOption {
     }
     process {
         $messages = @()
-        if (-not $ruleSetProperties.includeNaming) {
+        if (-not $ruleSet.Properties.includeNaming) {
             return $messages
         }
 

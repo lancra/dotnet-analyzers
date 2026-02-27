@@ -97,7 +97,6 @@
           "indexUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/usage-warnings"
         }
       ],
-      "enabled": true,
       "properties": {}
     },
     {
@@ -106,9 +105,11 @@
       "indexUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/",
       "helpUriFormat": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/{0}",
       "categories": [],
-      "enabled": true,
       "properties": {
-        "includeNaming": true
+        "includeNaming": {
+          "description": "Determines whether custom naming rules should be included in the option configuration.",
+          "type": "bool"
+        }
       }
     },
     {
@@ -153,7 +154,6 @@
           "indexUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SpecialRules.md"
         }
       ],
-      "enabled": true,
       "properties": {}
     },
     {
@@ -194,7 +194,6 @@
           "indexUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#test-method-and-structure-rules"
         }
       ],
-      "enabled": true,
       "properties": {}
     },
     {
@@ -215,11 +214,19 @@
           "indexUri": "https://xunit.net/xunit.analyzers/rules/#usage-analyzers-1xxx"
         }
       ],
-      "enabled": true,
       "properties": {
-        "versionFilter": false,
-        "v2": true,
-        "v3": true
+        "versionFilter": {
+          "description": "Determines whether the rules should be filtered by the specified xUnit product versions.",
+          "type": "bool"
+        },
+        "v2": {
+          "description": "Denotes that the V2 rules should be included when version filtering is enabled.",
+          "type": "bool"
+        },
+        "v3": {
+          "description": "Denotes that the V3 rules should be included when version filtering is enabled.",
+          "type": "bool"
+        }
       }
     }
   ],

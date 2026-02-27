@@ -12,7 +12,7 @@ $indexUri = 'https://raw.githubusercontent.com/thomhurst/TUnit/refs/heads/main/T
 $headerPrefix = [string]::new('#', 4) + ' '
 $headerSuffix = ' Rules'
 
-$ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
+$ruleSet = Get-RuleSet -CurrentDirectory
 $categories = $ruleSet |
     Select-Object -ExpandProperty Categories
 
