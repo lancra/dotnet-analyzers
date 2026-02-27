@@ -7,7 +7,22 @@ function Get-RuleSet {
         [switch] $Enabled
     )
     process {
-        $configurationPath = Join-Path -Path $PSScriptRoot -ChildPath '..' -AdditionalChildPath 'configuration.json'
+        $rootDirectoryPath = Join-Path -Path $PSScriptRoot -ChildPath '..'
+        $configurationPath = Join-Path -Path $rootDirectoryPath -ChildPath 'configuration.json'
+        $preferencesPath = Join-Path -Path $rootDirectoryPath -ChildPath '.preferences.json'
+
+        $preferencesSpecification = Get-Content -Path $preferencesPath |
+            ConvertFrom-Json
+        $preferences = $preferencesSpecification.PSObject.Properties |
+            Where-Object { -not $Id -or $_.Name -eq $Id } |
+            ForEach-Object {
+                [pscustomobject]@{
+                    Id = $_.Name
+                    Enabled = $_.Value.enabled
+                    Properties = $_.Value.properties
+                }
+            }
+
         $categoryProperties = @(
             @{ Name = 'Name'; Expression = { $_.name } },
             @{ Name = 'IndexUri'; Expression = { $_.indexUri } }
@@ -24,8 +39,22 @@ function Get-RuleSet {
                         Select-Object -Property $categoryProperties
                 }
             },
-            @{ Name = 'Enabled'; Expression = { $_.enabled } },
-            @{ Name = 'Properties'; Expression = { $_.properties } }
+            @{
+                Name = 'Enabled'
+                Expression = {
+                    $preferences |
+                        Where-Object -Property Id -EQ $_.id |
+                        Select-Object -ExpandProperty Enabled
+                }
+            },
+            @{
+                Name = 'Properties'
+                Expression = {
+                    $preferences |
+                        Where-Object -Property Id -EQ $_.id |
+                        Select-Object -ExpandProperty Properties
+                }
+            }
         )
 
         Get-Content -Path $configurationPath |
