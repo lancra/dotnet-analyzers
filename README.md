@@ -11,6 +11,8 @@ the lists up-to-date and to generate the configuration files to apply the settin
 
 - [StyleCop](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/StyleCop.Analyzers/StyleCop.Analyzers.CodeFixes/rulesets/StyleCopAnalyzersDefault.ruleset)
 
+- [TUnit](https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md)
+
 - [xUnit](https://xunit.net/xunit.analyzers/rules/)
 
 ## Usage
