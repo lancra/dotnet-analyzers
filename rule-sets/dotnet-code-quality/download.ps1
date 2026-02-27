@@ -60,7 +60,7 @@ $rules = @()
 $rules += Get-Rule -Uri 'https://raw.githubusercontent.com/dotnet/sdk/main/src/Microsoft.CodeAnalysis.NetAnalyzers/src/Microsoft.CodeAnalysis.NetAnalyzers.sarif'
 $rules += Get-Rule -Uri 'https://raw.githubusercontent.com/dotnet/roslyn/main/src/RoslynAnalyzers/Text.Analyzers/Text.Analyzers.sarif'
 
-$ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
+$ruleSet = Get-RuleSet -CurrentDirectory
 
 enum RuleParserState {
     Search # Looking for a table title header in the document

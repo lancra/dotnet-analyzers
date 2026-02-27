@@ -32,7 +32,7 @@ function Get-RegexMatch {
     }
 }
 
-$ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
+$ruleSet = Get-RuleSet -CurrentDirectory
 
 enum RuleParserState {
     HeadingSearch # Searching for an analyzer category heading.

@@ -4,12 +4,29 @@ function Get-RuleSet {
         [Parameter()]
         [string] $Id,
 
+        [switch] $CurrentDirectory,
         [switch] $Enabled
     )
+    begin {
+        if ($Id -and $CurrentDirectory) {
+            Write-Error "The Id and CurrentDirectory parameters are mutually exclusive. The latter will take precedence."
+        }
+    }
     process {
         $rootDirectoryPath = Join-Path -Path $PSScriptRoot -ChildPath '..'
         $configurationPath = Join-Path -Path $rootDirectoryPath -ChildPath 'configuration.json'
         $preferencesPath = Join-Path -Path $rootDirectoryPath -ChildPath '.preferences.json'
+
+        if ($CurrentDirectory) {
+            $callStackFrames = Get-PSCallStack
+            if (-not $callStackFrames -or -not $callStackFrames -is [array] -or $callStackFrames.Length -le 1) {
+                throw "Unable to find the executing script from the current call stack."
+            }
+
+            $callingPath = $callStackFrames[1].ScriptName
+            $callingDirectory = [System.IO.Path]::GetDirectoryName($callingPath)
+            $Id = ([uri]$callingDirectory).Segments[-1]
+        }
 
         $preferencesSpecification = Get-Content -Path $preferencesPath |
             ConvertFrom-Json

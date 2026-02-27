@@ -49,7 +49,7 @@ $tableRowPrefix = '> | '
 $tableRowSuffix = ' |'
 $tableTitleHeader = "${tableRowPrefix}Rule ID | Title | Option$tableRowSuffix"
 
-$ruleSet = Get-RuleSet -Id ([uri]::new($PSScriptRoot).Segments[-1])
+$ruleSet = Get-RuleSet -CurrentDirectory
 
 enum RuleParserState {
     Search # Looking for a table title header in the document
