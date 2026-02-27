@@ -97,7 +97,6 @@
           "indexUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/usage-warnings"
         }
       ],
-      "enabled": true,
       "properties": {}
     },
     {
@@ -106,7 +105,6 @@
       "indexUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/",
       "helpUriFormat": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/{0}",
       "categories": [],
-      "enabled": true,
       "properties": {
         "includeNaming": true
       }
@@ -153,7 +151,6 @@
           "indexUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SpecialRules.md"
         }
       ],
-      "enabled": true,
       "properties": {}
     },
     {
@@ -194,7 +191,6 @@
           "indexUri": "https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md#test-method-and-structure-rules"
         }
       ],
-      "enabled": true,
       "properties": {}
     },
     {
@@ -215,7 +211,6 @@
           "indexUri": "https://xunit.net/xunit.analyzers/rules/#usage-analyzers-1xxx"
         }
       ],
-      "enabled": true,
       "properties": {
         "versionFilter": false,
         "v2": true,
