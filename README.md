@@ -17,7 +17,12 @@ the lists up-to-date and to generate the configuration files to apply the settin
 
 ## Usage
 
-Run the build script to download rule sets, merge the results with local settings, and output configuration files.
+Execution of the build script performs the following steps:
+
+1. Update user preferences from the latest rule set configuration.
+1. Download rule sets from their sources.
+1. Merge rules and options with local settings.
+1. Create configuration artifacts.
 
 ```powershell
 ./build.ps1
