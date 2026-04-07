@@ -220,11 +220,15 @@
           "type": "bool"
         },
         "v2": {
-          "description": "Denotes that the V2 rules should be included when version filtering is enabled.",
+          "description": "Denotes that the V2 rules for reflection mode should be included when version filtering is enabled.",
           "type": "bool"
         },
         "v3": {
-          "description": "Denotes that the V3 rules should be included when version filtering is enabled.",
+          "description": "Denotes that the V3 rules for reflection mode should be included when version filtering is enabled.",
+          "type": "bool"
+        },
+        "AOT": {
+          "description": "Denotes that the V3 rules for native AOT mode should be included when version filtering is enabled.",
           "type": "bool"
         }
       }
