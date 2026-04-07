@@ -51,6 +51,12 @@ $currentCategory = $null
         if ($state -eq [RuleParserState]::HeadingSearch) {
             if ($_.StartsWith('##')) {
                 $currentCategory = Get-RegexMatch -Text $_ -Pattern '## (?<{0}>.*?) Analyzers \(\dxxx\)'
+
+                # Ignore second-level headers that do not denote a category.
+                if ($null -eq $currentCategory) {
+                    return
+                }
+
                 $state = [RuleParserState]::HeaderSearch
             }
 
