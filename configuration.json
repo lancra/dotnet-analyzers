@@ -220,11 +220,15 @@
           "type": "bool"
         },
         "v2": {
-          "description": "Denotes that the V2 rules should be included when version filtering is enabled.",
+          "description": "Denotes that the V2 rules for reflection mode should be included when version filtering is enabled.",
           "type": "bool"
         },
         "v3": {
-          "description": "Denotes that the V3 rules should be included when version filtering is enabled.",
+          "description": "Denotes that the V3 rules for reflection mode should be included when version filtering is enabled.",
+          "type": "bool"
+        },
+        "AOT": {
+          "description": "Denotes that the V3 rules for native AOT mode should be included when version filtering is enabled.",
           "type": "bool"
         }
       }
@@ -234,31 +238,37 @@
     {
       "id": "error",
       "name": "Error",
+      "letter": "E",
       "description": "Violations appear as build errors and cause builds to fail."
     },
     {
       "id": "warning",
       "name": "Warning",
+      "letter": "W",
       "description": "Violations appear as build warnings but do not cause builds to fail (unless you have an option set to treat warnings as errors)."
     },
     {
       "id": "suggestion",
       "name": "Info",
+      "letter": "I",
       "description": "Violations appear as build messages and as suggestions in the Visual Studio IDE."
     },
     {
       "id": "none",
       "name": "Disabled",
+      "letter": "X",
       "description": "Violations aren't visible to the user."
     },
     {
       "id": "silent",
       "name": "Hidden",
+      "letter": "H",
       "description": "Rule is suppressed completely."
     },
     {
       "id": "default",
       "name": "Default",
+      "letter": "D",
       "description": "The default severity of the rule is used."
     }
   ]

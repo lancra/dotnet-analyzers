@@ -33,6 +33,7 @@ function Get-RegexMatch {
 }
 
 $ruleSet = Get-RuleSet -CurrentDirectory
+$severities = Get-Severity
 
 enum RuleParserState {
     HeadingSearch # Searching for an analyzer category heading.
@@ -50,6 +51,12 @@ $currentCategory = $null
         if ($state -eq [RuleParserState]::HeadingSearch) {
             if ($_.StartsWith('##')) {
                 $currentCategory = Get-RegexMatch -Text $_ -Pattern '## (?<{0}>.*?) Analyzers \(\dxxx\)'
+
+                # Ignore second-level headers that do not denote a category.
+                if ($null -eq $currentCategory) {
+                    return
+                }
+
                 $state = [RuleParserState]::HeaderSearch
             }
 
@@ -78,12 +85,16 @@ $currentCategory = $null
             ForEach-Object { $_.Trim() }
         $id = Get-RegexMatch -Text $segments[0] -Pattern '\[(?<{0}>.*?)\]\(.*\)'
 
+        $defaultSeverityLetter = Get-RegexMatch -Text $segments[2] -Pattern '::(?<{0}>.*?)::.*'
+        $defaultSeverity = $severities |
+            Where-Object -Property Letter -EQ $defaultSeverityLetter
+
         $rule = [PSCustomObject]@{
             id = $id
             title = $segments[3]
             helpUri = $ruleSet.HelpUriFormat -f $id
             category = $currentCategory
-            default = Get-RegexMatch -Text $segments[2] -Pattern '::(?<{0}>.*?)::.*'
+            default = $defaultSeverity.Name
             versions = [ordered]@{}
         }
 

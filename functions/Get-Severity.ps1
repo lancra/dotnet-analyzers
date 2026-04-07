@@ -6,6 +6,7 @@ function Get-Severity {
         $properties = @(
             @{ Name = 'Id'; Expression = { $_.id } },
             @{ Name = 'Name'; Expression = { $_.name } },
+            @{ Name = 'Letter'; Expression = { $_.letter } },
             @{ Name = 'Description'; Expression = { $_.description } }
         )
 
