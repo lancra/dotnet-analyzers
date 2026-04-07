@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/analyzer-rules.schema.json",
-  "timestamp": "2025-08-25T06:18:07.3249897-04:00",
+  "timestamp": "2026-04-07T06:43:12.2701597-04:00",
   "rules": [
     {
       "id": "xUnit1000",
@@ -582,6 +582,17 @@
       "default": "Warning",
       "versions": {
         "v2": false,
+        "v3": true
+      }
+    },
+    {
+      "id": "xUnit1053",
+      "title": "The static member used as theory data must be statically initialized",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1053",
+      "category": "Usage",
+      "default": "Warning",
+      "versions": {
+        "v2": true,
         "v3": true
       }
     },
