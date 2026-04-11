@@ -47,7 +47,6 @@ function Merge-RuleSetting {
         $ids += $onlineRules | Select-Object -ExpandProperty $idProperty
         $ids += $localRules | Select-Object -ExpandProperty $idProperty
 
-        $script:atLeastOneAction = $false
         $mergedRules = $ids |
             Select-Object -Unique |
             ForEach-Object {
@@ -64,23 +63,22 @@ function Merge-RuleSetting {
                 }
 
                 if (-not ($rule.PSObject.Properties | Where-Object -Property Name -EQ $actionProperty)) {
-                    $rule | Add-Member -MemberType NoteProperty -Name $actionProperty -Value ''
+                    $rule | Add-Member -MemberType NoteProperty -Name $actionProperty -Value 'None'
                 }
 
                 if ($localRule) {
                     if (-not $onlineRule) {
                         $rule.$actionProperty = 'Removed'
-                        $script:atLeastOneAction = $true
                     }
                 } else {
                     $rule.$actionProperty = 'New'
-                    $script:atLeastOneAction = $true
                 }
 
                 $rule
             }
 
         $outputProperties = @(
+            $actionProperty,
             $idProperty,
             $titleProperty,
             $ruleSetProperty,
@@ -88,12 +86,10 @@ function Merge-RuleSetting {
             $severityProperty,
             $reasoningProperty
         )
-        if ($script:atLeastOneAction) {
-            $outputProperties = ,$actionProperty + $outputProperties
-        }
 
         $mergedRules |
             Select-Object -Property $outputProperties |
+            Sort-Object -Property $ruleSetProperty, $categoryProperty, $idProperty |
             Export-Csv -Path $settingsPath -UseQuotes AsNeeded
 
     }

@@ -50,7 +50,6 @@ function Merge-OptionSetting {
         $names += $onlineOptions | Select-Object -ExpandProperty $nameProperty
         $names += $localOptions | Select-Object -ExpandProperty $nameProperty
 
-        $script:atLeastOneAction = $false
         $mergedOptions = $names |
             Select-Object -Unique |
             Sort-Object |
@@ -76,23 +75,22 @@ function Merge-OptionSetting {
                 }
 
                 if (-not ($option.PSObject.Properties | Where-Object -Property Name -EQ $actionProperty)) {
-                    $option | Add-Member -MemberType NoteProperty -Name $actionProperty -Value ''
+                    $option | Add-Member -MemberType NoteProperty -Name $actionProperty -Value 'None'
                 }
 
                 if ($localOption) {
                     if (-not $onlineOption) {
                         $option.$actionProperty = 'Removed'
-                        $script:atLeastOneAction = $true
                     }
                 } else {
                     $option.$actionProperty = 'New'
-                    $script:atLeastOneAction = $true
                 }
 
                 $option
             }
 
         $outputProperties = @(
+            $actionProperty,
             $nameProperty,
             $idProperty,
             $ruleSetProperty,
@@ -101,12 +99,10 @@ function Merge-OptionSetting {
             $valueProperty,
             $reasoningProperty
         )
-        if ($script:atLeastOneAction) {
-            $outputProperties = ,$actionProperty + $outputProperties
-        }
 
         $mergedOptions |
             Select-Object -Property $outputProperties |
+            Sort-Object -Property $nameProperty |
             Export-Csv -Path $settingsPath -UseQuotes AsNeeded
     }
 }
