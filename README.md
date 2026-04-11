@@ -6,13 +6,10 @@ the lists up-to-date and to generate the configuration files to apply the settin
 ## Rule Sets
 
 - [.NET Code Quality](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules)
-
 - [.NET Code Style](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules)
-
 - [StyleCop](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/StyleCop.Analyzers/StyleCop.Analyzers.CodeFixes/rulesets/StyleCopAnalyzersDefault.ruleset)
-
 - [TUnit](https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md)
-
+- [Visual Studio Threading](https://microsoft.github.io/vs-threading/analyzers/index.html)
 - [xUnit](https://xunit.net/xunit.analyzers/rules/)
 
 ## Usage
