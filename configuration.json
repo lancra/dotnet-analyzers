@@ -197,6 +197,14 @@
       "properties": {}
     },
     {
+      "id": "vs-threading",
+      "name": "Visual Studio Threading",
+      "indexUri": "https://microsoft.github.io/vs-threading/analyzers/index.html",
+      "helpUriFormat": "https://microsoft.github.io/vs-threading/analyzers/{0}.html",
+      "categories": [],
+      "properties": {}
+    },
+    {
       "id": "xunit",
       "name": "xUnit",
       "helpUriFormat": "https://xunit.net/xunit.analyzers/rules/{0}",
