@@ -17,12 +17,13 @@ function Format-Plaintext {
         $textGroupReplace = '${Text}'
     }
     process {
-        $Text -replace $linkSearch, $textGroupReplace `
+        $plaintext = $Text -replace $linkSearch, $textGroupReplace `
             -replace $boldItalicSearch, $textGroupReplace `
             -replace $codeSearch, $textGroupReplace `
             -replace $htmlLineBreakSearch, ' ' `
             -replace $htmlLineBreakAlternateSearch, ' ' `
             -replace $footnoteSearch, '' `
             -creplace $emojiSearch
+        $plaintext.Trim()
     }
 }
