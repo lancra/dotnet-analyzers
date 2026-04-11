@@ -1,0 +1,150 @@
+{
+  "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/analyzer-rules.schema.json",
+  "timestamp": "2026-04-11T06:56:15.1288425-04:00",
+  "rules": [
+    {
+      "id": "VSTHRD001",
+      "title": "Avoid legacy thread switching methods",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD001.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD002",
+      "title": "Avoid problematic synchronous waits",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD002.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD003",
+      "title": "Avoid awaiting foreign Tasks",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD003.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD004",
+      "title": "Await SwitchToMainThreadAsync",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD004.html",
+      "default": "Error"
+    },
+    {
+      "id": "VSTHRD010",
+      "title": "Invoke single-threaded types on Main thread",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD010.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD011",
+      "title": "Use AsyncLazy<T>",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD011.html",
+      "default": "Error"
+    },
+    {
+      "id": "VSTHRD012",
+      "title": "Provide JoinableTaskFactory where allowed",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD012.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD100",
+      "title": "Avoid async void methods",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD100.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD101",
+      "title": "Avoid unsupported async delegates",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD101.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD102",
+      "title": "Implement internal logic asynchronously",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD102.html",
+      "default": "Info"
+    },
+    {
+      "id": "VSTHRD103",
+      "title": "Call async methods when in an async method",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD103.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD104",
+      "title": "Offer async option",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD104.html",
+      "default": "Info"
+    },
+    {
+      "id": "VSTHRD105",
+      "title": "Avoid method overloads that assume TaskScheduler.Current",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD105.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD106",
+      "title": "Use InvokeAsync to raise async events",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD106.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD107",
+      "title": "Await Task within using expression",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD107.html",
+      "default": "Error"
+    },
+    {
+      "id": "VSTHRD108",
+      "title": "Assert thread affinity unconditionally",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD108.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD109",
+      "title": "Switch instead of assert in async methods",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD109.html",
+      "default": "Error"
+    },
+    {
+      "id": "VSTHRD110",
+      "title": "Observe result of async calls",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD110.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD111",
+      "title": "Use .ConfigureAwait(bool)",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD111.html",
+      "default": "Hidden"
+    },
+    {
+      "id": "VSTHRD112",
+      "title": "Implement System.IAsyncDisposable",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD112.html",
+      "default": "Info"
+    },
+    {
+      "id": "VSTHRD113",
+      "title": "Check for System.IAsyncDisposable",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD113.html",
+      "default": "Info"
+    },
+    {
+      "id": "VSTHRD114",
+      "title": "Avoid returning null from a Task-returning method.",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD114.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD115",
+      "title": "Avoid creating a JoinableTaskContext with an explicit null SynchronizationContext",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD115.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD200",
+      "title": "Use Async naming convention",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD200.html",
+      "default": "Warning"
+    }
+  ]
+}
