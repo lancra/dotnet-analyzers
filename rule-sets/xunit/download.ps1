@@ -83,7 +83,7 @@ $currentCategory = $null
 
         $segments = $_.Substring(2) -split '\|' |
             ForEach-Object { $_.Trim() }
-        $id = Get-RegexMatch -Text $segments[0] -Pattern '\[(?<{0}>.*?)\]\(.*\)'
+        $id = Format-Plaintext -Text $segments[0]
 
         $defaultSeverityLetter = Get-RegexMatch -Text $segments[2] -Pattern '::(?<{0}>.*?)::.*'
         $defaultSeverity = $severities |
