@@ -12,6 +12,7 @@ function Format-Plaintext {
         $htmlLineBreakSearch = '<br\s*?\/>'
         $htmlLineBreakAlternateSearch = '<\/br>'
         $footnoteSearch = '†'
+        $emojiSearch = '[\uD800-\uDFFF]'
 
         $textGroupReplace = '${Text}'
     }
@@ -21,6 +22,7 @@ function Format-Plaintext {
             -replace $codeSearch, $textGroupReplace `
             -replace $htmlLineBreakSearch, ' ' `
             -replace $htmlLineBreakAlternateSearch, ' ' `
-            -replace $footnoteSearch, ''
+            -replace $footnoteSearch, '' `
+            -creplace $emojiSearch
     }
 }
