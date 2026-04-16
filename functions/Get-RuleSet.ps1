@@ -42,7 +42,7 @@ function Get-RuleSet {
 
         $categoryProperties = @(
             @{ Name = 'Name'; Expression = { $_.name } },
-            @{ Name = 'IndexUri'; Expression = { $_.indexUri } }
+            @{ Name = 'IndexUri'; Expression = { $_.indexUri ?? $_.ruleSetIndexUri } }
         )
         $ruleSetProperties = @(
             @{ Name = 'Id'; Expression = { $_.id } },
@@ -52,7 +52,14 @@ function Get-RuleSet {
             @{
                 Name = 'Categories'
                 Expression = {
-                    $_.categories |
+                    $ruleSet = $_
+                    $ruleSet.categories |
+                        ForEach-Object {
+                            $_ |
+                                Add-Member -MemberType NoteProperty -Name 'ruleSetIndexUri' -Value $ruleSet.IndexUri
+                        }
+
+                    $ruleSet.categories |
                         Select-Object -Property $categoryProperties
                 }
             },
