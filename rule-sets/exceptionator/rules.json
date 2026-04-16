@@ -1,0 +1,188 @@
+{
+  "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/analyzer-rules.schema.json",
+  "timestamp": "2026-04-16T09:26:04.4150279-04:00",
+  "rules": [
+    {
+      "id": "EX001",
+      "title": "Exception should include a message",
+      "category": "Usage",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex001-exception-should-include-a-message",
+      "default": "Warning"
+    },
+    {
+      "id": "EX002",
+      "title": "Avoid throwing base exceptions",
+      "category": "Usage",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex002-avoid-throwing-base-exceptions",
+      "default": "Warning"
+    },
+    {
+      "id": "EX003",
+      "title": "Missing inner exception",
+      "category": "Usage",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex003-missing-inner-exception",
+      "default": "Warning"
+    },
+    {
+      "id": "EX004",
+      "title": "Use 'throw;' instead of 'throw ex;'",
+      "category": "Usage",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex004-use-throw-instead-of-throw-ex",
+      "default": "Warning"
+    },
+    {
+      "id": "EX005",
+      "title": "Exception variable is unused",
+      "category": "Usage",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex005-exception-variable-is-unused",
+      "default": "Info"
+    },
+    {
+      "id": "EX006",
+      "title": "Unreachable code after throw",
+      "category": "CodeQuality",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex006-unreachable-code-after-throw",
+      "default": "Warning"
+    },
+    {
+      "id": "EX007",
+      "title": "Pointless try/catch block",
+      "category": "CodeQuality",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex007-pointless-trycatch-block",
+      "default": "Info"
+    },
+    {
+      "id": "EX008",
+      "title": "ThreadAbortException must not be swallowed",
+      "category": "Correctness",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex008-threadabortexception-must-not-be-swallowed",
+      "default": "Warning"
+    },
+    {
+      "id": "EX009",
+      "title": "Empty try block with catch",
+      "category": "CodeQuality",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex009-empty-try-block-with-catch",
+      "default": "Warning"
+    },
+    {
+      "id": "EX010",
+      "title": "Task.WaitAll should be wrapped with AggregateException catch",
+      "category": "ExceptionHandling",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex010-taskwaitall-should-be-wrapped-with-aggregateexception-catch",
+      "default": "Warning"
+    },
+    {
+      "id": "EX011",
+      "title": "Empty catch block",
+      "category": "ExceptionHandling",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex011-empty-catch-block",
+      "default": "Warning"
+    },
+    {
+      "id": "EX012",
+      "title": "Don't throw exceptions from property getters",
+      "category": "ExceptionHandling",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex012-dont-throw-exceptions-from-property-getters",
+      "default": "Warning"
+    },
+    {
+      "id": "EX013",
+      "title": "Avoid throwing ex.InnerException",
+      "category": "ExceptionHandling",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex013-avoid-throwing-exinnerexception",
+      "default": "Warning"
+    },
+    {
+      "id": "EX014",
+      "title": "Avoid logging only ex.Message",
+      "category": "ExceptionHandling",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex014-avoid-logging-only-exmessage",
+      "default": "Warning"
+    },
+    {
+      "id": "EX015",
+      "title": "Avoid logging ex.ToString()",
+      "category": "ExceptionHandling",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex015-avoid-logging-extostring",
+      "default": "Warning"
+    },
+    {
+      "id": "EX016",
+      "title": "Don't throw null",
+      "category": "ExceptionHandling",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex016-avoid-throwing-null--use-a-specific-exception-type-instead",
+      "default": "Warning"
+    },
+    {
+      "id": "EX017",
+      "title": "Catch 'when' clause always true",
+      "category": "CodeQuality",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex017-avoid-when-clauses-that-always-evaluate-to-true",
+      "default": "Info"
+    },
+    {
+      "id": "EX018",
+      "title": "Filter exceptions using catch when or specific types",
+      "category": "ExceptionHandling",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex018-filter-exceptions-manually-inside-catch",
+      "default": "Info"
+    },
+    {
+      "id": "EX019",
+      "title": "NotImplementedException left in code",
+      "category": "Usage",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex019-notimplementedexception-left-in-code",
+      "default": "Warning"
+    },
+    {
+      "id": "EX020",
+      "title": "Exception class should be public",
+      "category": "Design",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex020-exception-class-should-be-public",
+      "default": "Warning"
+    },
+    {
+      "id": "EX021",
+      "title": "Exception must implement standard constructors",
+      "category": "Usage",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex021-missing-expected-constructors-on-custom-exception",
+      "default": "Warning"
+    },
+    {
+      "id": "EX022",
+      "title": "Exception constructor must call base constructor correctly",
+      "category": "ExceptionHandling",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex022-exception-constructors-must-call-base",
+      "default": "Warning"
+    },
+    {
+      "id": "EX023",
+      "title": "Exception class name must end with 'Exception'",
+      "category": "Naming",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex023-exception-class-name-must-end-with-exception",
+      "default": "Warning"
+    },
+    {
+      "id": "EX024",
+      "title": "Avoid catching fatal exceptions",
+      "category": "Correctness",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex024-avoid-catching-fatal-exceptions-like-stackoverflowexception-or-executionengineexception",
+      "default": "Warning"
+    },
+    {
+      "id": "EX025",
+      "title": "Handle documented exceptions",
+      "category": "Usage",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex025-handle-documented-exceptions-or-propagate-them-explicitly",
+      "default": "Info"
+    },
+    {
+      "id": "EX026",
+      "title": "Document explicitly thrown exceptions",
+      "category": "Documentation",
+      "helpUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md#ex026-document-all-explicitly-thrown-exceptions-when-using-exception-tags",
+      "default": "Info"
+    }
+  ]
+}
