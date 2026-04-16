@@ -56,6 +56,7 @@ param (
 
 . "$PSScriptRoot/functions/Format-MarkdownAnchor.ps1"
 . "$PSScriptRoot/functions/Format-Plaintext.ps1"
+. "$PSScriptRoot/functions/Get-GitHubFileLine.ps1"
 . "$PSScriptRoot/functions/Get-RuleSet.ps1"
 . "$PSScriptRoot/functions/Get-Setting.ps1"
 . "$PSScriptRoot/functions/Get-Severity.ps1"
