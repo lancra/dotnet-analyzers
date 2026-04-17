@@ -11,6 +11,7 @@ function Format-Plaintext {
         $linkSearch = "\[(?<$groupName>.+?)\]\((?<Url>.+?)\)"
         $boldItalicSearch = "\*(?<$groupName>.*?)\*"
         $codeSearch = "``(?<$groupName>.*?)``"
+        $crossReferenceSearch = "<xref:(?<$groupName>.*?)\*.*?>"
 
         $htmlLineBreakSearch = '<br\s*?\/>'
         $htmlLineBreakAlternateSearch = '<\/br>'
@@ -24,6 +25,7 @@ function Format-Plaintext {
         $plaintext = $Text -replace $linkSearch, $textGroupReplace `
             -replace $boldItalicSearch, $textGroupReplace `
             -replace $codeSearch, $textGroupReplace `
+            -replace $crossReferenceSearch, $textGroupReplace `
             -replace $htmlLineBreakSearch, ' ' `
             -replace $htmlLineBreakAlternateSearch, ' ' `
             -replace $footnoteSearch, '' `

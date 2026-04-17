@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/analyzer-rules.schema.json",
-  "timestamp": "2026-04-07T06:52:08.5168168-04:00",
+  "timestamp": "2026-04-17T05:51:14.3845943-04:00",
   "rules": [
     {
       "id": "IDE0001",
@@ -2017,7 +2017,7 @@
     },
     {
       "id": "IDE0070",
-      "title": "Use <xref:System.HashCode.Combine*?displayProperty=fullName>",
+      "title": "Use System.HashCode.Combine",
       "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0070",
       "options": []
     },
