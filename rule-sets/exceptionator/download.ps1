@@ -13,6 +13,7 @@ $readmeLines = Get-GitHubFileLine -Uri $readmeFileUri
 
 $ruleJobs = @()
 $ruleFunctionDefinition = ${function:Get-Rule}.ToString()
+$ruleSetDirectoryPath = $PSScriptRoot
 
 $rules = @()
 
@@ -28,7 +29,14 @@ $ruleFilesUri = $repositoryContentsUriFormat -f 'src/ExceptionAnalyzer'
             )
 
             ${function:Get-Rule} = $using:ruleFunctionDefinition
-            return Get-Rule -Uri $Uri -HelpUriFormat $using:helpUriFormat -ReadmeLine $using:readmeLines
+
+            $getRuleArguments = @{
+                Uri = $Uri
+                HelpUriFormat = $using:helpUriFormat
+                Directory = $using:ruleSetDirectoryPath
+                ReadmeLine = $using:readmeLines
+            }
+            return Get-Rule @getRuleArguments
         } -ArgumentList (,$_.url)
         $ruleJobs += $ruleJob
     }
