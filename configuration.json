@@ -113,6 +113,36 @@
       }
     },
     {
+      "id": "exceptionator",
+      "name": "Exceptionator",
+      "indexUri": "https://github.com/elmahio/Exceptionator/blob/main/README.md",
+      "helpUriFormat": "https://github.com/elmahio/Exceptionator/blob/main/README.md#{0}",
+      "categories": [
+        {
+          "name": "CodeQuality"
+        },
+        {
+          "name": "Correctness"
+        },
+        {
+          "name": "Design"
+        },
+        {
+          "name": "Documentation"
+        },
+        {
+          "name": "ExceptionHandling"
+        },
+        {
+          "name": "Naming"
+        },
+        {
+          "name": "Usage"
+        }
+      ],
+      "properties": {}
+    },
+    {
       "id": "stylecop",
       "name": "StyleCop",
       "helpUriFormat": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/{0}",
