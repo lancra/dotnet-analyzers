@@ -140,7 +140,6 @@ $ruleSetDirectoryPath = $PSScriptRoot
         $rules += $rule
     }
 
-$jsonDepth = 6
 Wait-Job $optionsJobs | Out-Null
 $optionsJobs |
     ForEach-Object {
@@ -150,21 +149,10 @@ $optionsJobs |
             Select-Object -First 1
 
         $rule.options = @($options |
-            ConvertTo-Json -Depth $jsonDepth |
+            ConvertTo-Json -Depth 10 |
             ConvertFrom-Json)
 
         Remove-Job -Job $_
     }
 
-$path = Join-Path -Path $PSScriptRoot -ChildPath 'rules.json'
-
-$output = [ordered]@{
-    '$schema' = $env:DOTNET_ANALYZERS_SCHEMA
-    timestamp = Get-Date -Format 'o'
-    rules = $rules |
-        Sort-Object -Property 'id'
-}
-
-if (Test-RuleSetDifference -Path $path -Json ($output.rules | ConvertTo-Json -Depth $jsonDepth)) {
-    $output | ConvertTo-Json -Depth $jsonDepth > $path
-}
+New-RuleSpecification -Rule $rules

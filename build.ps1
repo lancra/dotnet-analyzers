@@ -69,6 +69,7 @@ param (
 . "$PSScriptRoot/functions/New-OptionConfiguration.ps1"
 . "$PSScriptRoot/functions/New-PreferenceSpecification.ps1"
 . "$PSScriptRoot/functions/New-RuleConfiguration.ps1"
+. "$PSScriptRoot/functions/New-RuleSpecification.ps1"
 . "$PSScriptRoot/functions/Switch-Environment.ps1"
 . "$PSScriptRoot/functions/Test-RuleSetDifference.ps1"
 
