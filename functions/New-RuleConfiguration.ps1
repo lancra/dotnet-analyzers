@@ -163,7 +163,7 @@ function New-RuleConfiguration {
                 $i++
             }
 
-        $artifactsDirectory = "$env:DOTNET_ANALYZERS_ROOT/artifacts"
+        $artifactsDirectory = "$PSScriptRoot/../artifacts"
         New-Item -ItemType Directory -Path $artifactsDirectory -Force | Out-Null
 
         $configurationPath = "$artifactsDirectory/.globalconfig"

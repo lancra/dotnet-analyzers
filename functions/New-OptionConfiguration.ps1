@@ -67,7 +67,7 @@ function New-OptionConfiguration {
                 }
         }
 
-        $artifactsDirectory = "$env:DOTNET_ANALYZERS_ROOT/artifacts"
+        $artifactsDirectory = "$PSScriptRoot/../artifacts"
         New-Item -ItemType Directory -Path $artifactsDirectory -Force | Out-Null
 
         $configurationPath = "$artifactsDirectory/partial.editorconfig"
