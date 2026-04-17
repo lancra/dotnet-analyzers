@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/analyzer-rules.schema.json",
-  "timestamp": "2026-04-07T06:52:08.5168168-04:00",
+  "timestamp": "2026-04-17T05:51:14.3845943-04:00",
   "rules": [
     {
       "id": "IDE0001",
@@ -2017,9 +2017,24 @@
     },
     {
       "id": "IDE0070",
-      "title": "Use <xref:System.HashCode.Combine*?displayProperty=fullName>",
+      "title": "Use System.HashCode.Combine",
       "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0070",
-      "options": []
+      "options": [
+        {
+          "name": "dotnet_prefer_system_hash_code",
+          "values": [
+            {
+              "value": "true",
+              "description": "Prefer to use System.HashCode.Combine for hash code computation."
+            },
+            {
+              "value": "false",
+              "description": "Don't prefer to use System.HashCode.Combine for hash code computation."
+            }
+          ],
+          "default": "true"
+        }
+      ]
     },
     {
       "id": "IDE0071",
@@ -2519,6 +2534,27 @@
             }
           ],
           "default": "when_strongly_typed"
+        }
+      ]
+    },
+    {
+      "id": "IDE0221",
+      "title": "Add explicit cast",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0221",
+      "options": [
+        {
+          "name": "dotnet_style_prefer_non_hidden_explicit_cast_in_source",
+          "values": [
+            {
+              "value": "true",
+              "description": "Prefer to make all intermediate explicit casts visible in source code."
+            },
+            {
+              "value": "false",
+              "description": "Don't prefer to make all intermediate explicit casts visible in source code."
+            }
+          ],
+          "default": "true"
         }
       ]
     },

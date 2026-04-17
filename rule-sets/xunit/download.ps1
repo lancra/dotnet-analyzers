@@ -84,14 +84,14 @@ $currentCategory = $null
         $segments = $_.Substring(2) -split '\|' |
             ForEach-Object { $_.Trim() }
         $id = Format-Plaintext -Text $segments[0]
-
+        $title = Format-Plaintext -Text $segments[3]
         $defaultSeverityLetter = Get-RegexMatch -Text $segments[2] -Pattern '::(?<{0}>.*?)::.*'
         $defaultSeverity = $severities |
             Where-Object -Property Letter -EQ $defaultSeverityLetter
 
         $rule = [PSCustomObject]@{
             id = $id
-            title = $segments[3]
+            title = $title
             helpUri = $ruleSet.HelpUriFormat -f $id
             category = $currentCategory
             default = $defaultSeverity.Name

@@ -6,24 +6,32 @@ function Format-Plaintext {
         [string]$Text
     )
     begin {
-        $linkSearch = '\[(?<Text>.+?)\]\((?<Url>.+?)\)'
-        $boldItalicSearch = '\*(?<Text>.*?)\*'
-        $codeSearch = '`(?<Text>.*?)`'
+        $groupName = 'text'
+
+        $linkSearch = "\[(?<$groupName>.+?)\]\((?<Url>.+?)\)"
+        $boldItalicSearch = "\*(?<$groupName>.*?)\*"
+        $codeSearch = "``(?<$groupName>.*?)``"
+        $crossReferenceSearch = "<xref:(?<$groupName>.*?)\*.*?>"
+
         $htmlLineBreakSearch = '<br\s*?\/>'
         $htmlLineBreakAlternateSearch = '<\/br>'
         $footnoteSearch = '†'
+
         $emojiSearch = '[\uD800-\uDFFF]'
 
-        $textGroupReplace = '${Text}'
+        $textGroupReplace = "`${$groupName}"
     }
     process {
         $plaintext = $Text -replace $linkSearch, $textGroupReplace `
             -replace $boldItalicSearch, $textGroupReplace `
             -replace $codeSearch, $textGroupReplace `
+            -replace $crossReferenceSearch, $textGroupReplace `
             -replace $htmlLineBreakSearch, ' ' `
             -replace $htmlLineBreakAlternateSearch, ' ' `
             -replace $footnoteSearch, '' `
-            -creplace $emojiSearch
+            -creplace $emojiSearch `
+            -replace '&lt;', '<' `
+            -replace '&gt;', '>'
         $plaintext.Trim()
     }
 }
