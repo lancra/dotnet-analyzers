@@ -43,7 +43,7 @@ function Merge-OptionSetting {
         )
         $onlineOptions = $rawOnlineOptions | Select-Object -Property $selectProperties
 
-        $settingsPath = "$env:DOTNET_ANALYZERS_DATA_SETS/option-settings.csv"
+        $settingsPath = Get-DataSetFile -File 'option-settings.csv'
         $localOptions = Get-Setting -Path $settingsPath
 
         $names = @()

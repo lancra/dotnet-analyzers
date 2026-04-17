@@ -40,7 +40,7 @@ function Merge-RuleSetting {
         )
         $onlineRules = $rawOnlineRules | Select-Object -Property $selectProperties
 
-        $settingsPath = "$env:DOTNET_ANALYZERS_DATA_SETS/rule-settings.csv"
+        $settingsPath = Get-DataSetFile -File 'rule-settings.csv'
         $localRules = Get-Setting -Path $settingsPath
 
         $ids = @()
