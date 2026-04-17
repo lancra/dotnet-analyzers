@@ -6,15 +6,19 @@ function Format-Plaintext {
         [string]$Text
     )
     begin {
-        $linkSearch = '\[(?<Text>.+?)\]\((?<Url>.+?)\)'
-        $boldItalicSearch = '\*(?<Text>.*?)\*'
-        $codeSearch = '`(?<Text>.*?)`'
+        $groupName = 'text'
+
+        $linkSearch = "\[(?<$groupName>.+?)\]\((?<Url>.+?)\)"
+        $boldItalicSearch = "\*(?<$groupName>.*?)\*"
+        $codeSearch = "``(?<$groupName>.*?)``"
+
         $htmlLineBreakSearch = '<br\s*?\/>'
         $htmlLineBreakAlternateSearch = '<\/br>'
         $footnoteSearch = '†'
+
         $emojiSearch = '[\uD800-\uDFFF]'
 
-        $textGroupReplace = '${Text}'
+        $textGroupReplace = "`${$groupName}"
     }
     process {
         $plaintext = $Text -replace $linkSearch, $textGroupReplace `
