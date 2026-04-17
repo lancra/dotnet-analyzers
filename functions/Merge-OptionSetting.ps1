@@ -16,7 +16,7 @@ function Merge-OptionSetting {
         Get-RuleSet |
             ForEach-Object {
                 $ruleSet = $_
-                $rulesPath = "$env:DOTNET_ANALYZERS_RULE_SETS/$($ruleSet.Id)/rules.json"
+                $rulesPath = Get-RuleSetFile -RuleSet $ruleSet.Id -File 'rules.json'
                 if (-not (Test-Path -Path $rulesPath)) {
                     Write-Warning "Skipping merge of $($ruleSet.Name) option settings, no downloaded rules found"
                     return
