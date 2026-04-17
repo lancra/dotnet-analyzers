@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/analyzer-rules.schema.json",
-  "timestamp": "2026-04-07T06:50:08.6835033-04:00",
+  "timestamp": "2026-04-17T05:46:01.8355462-04:00",
   "rules": [
     {
       "id": "xUnit1000",
@@ -400,7 +400,7 @@
     },
     {
       "id": "xUnit1033",
-      "title": "Test classes decorated with 'Xunit.IClassFixture<TFixture>' or 'Xunit.ICollectionFixture<TFixture>' should add a constructor argument of type TFixture",
+      "title": "Test classes decorated with 'IClassFixture<T>' or 'ICollectionFixture<T>' should add a constructor argument of type 'T'",
       "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1033",
       "category": "Usage",
       "default": "Info",

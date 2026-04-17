@@ -29,7 +29,9 @@ function Format-Plaintext {
             -replace $htmlLineBreakSearch, ' ' `
             -replace $htmlLineBreakAlternateSearch, ' ' `
             -replace $footnoteSearch, '' `
-            -creplace $emojiSearch
+            -creplace $emojiSearch `
+            -replace '&lt;', '<' `
+            -replace '&gt;', '>'
         $plaintext.Trim()
     }
 }
