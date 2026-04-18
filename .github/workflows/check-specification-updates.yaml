@@ -23,7 +23,7 @@ jobs:
           persist-credentials: false
       - name: Download
         shell: pwsh
-        run: ./build.ps1 -DownloadOnly
+        run: ./build.ps1 -SkipPreferenceCheck -DownloadOnly
       - name: Check
         shell: bash
         run: git --no-pager diff --exit-code
