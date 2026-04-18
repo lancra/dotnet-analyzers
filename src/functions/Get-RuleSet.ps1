@@ -25,7 +25,7 @@ function Get-RuleSet {
 
             $callingPath = $callStackFrames[1].ScriptName
             $callingDirectory = [System.IO.Path]::GetDirectoryName($callingPath)
-            $Id = ([uri]$callingDirectory).Segments[-1]
+            $Id = [uri]::new($callingDirectory).Segments[-1]
         }
 
         $preferencesSpecification = Get-Content -Path $preferencesPath |
