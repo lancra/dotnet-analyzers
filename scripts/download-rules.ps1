@@ -24,7 +24,7 @@ Get-RuleSet |
             return
         }
 
-        $ruleSetDownloadPath = "$env:DOTNET_ANALYZERS_RULE_SETS/$($_.Id)/download.ps1"
+        $ruleSetDownloadPath = Get-RuleSetFile -RuleSet $_.Id -File 'download.ps1'
 
         Write-Output "Downloading $($_.Name) rules"
         & $ruleSetDownloadPath

@@ -61,15 +61,4 @@ $categories |
         $state = [RuleParserState]::Search
     }
 
-$path = Join-Path -Path $PSScriptRoot -ChildPath 'rules.json'
-
-$output = [ordered]@{
-    '$schema' = $env:DOTNET_ANALYZERS_SCHEMA
-    timestamp = Get-Date -Format 'o'
-    rules = $rules |
-        Sort-Object -Property 'id'
-}
-
-if (Test-RuleSetDifference -Path $path -Json ($output.rules | ConvertTo-Json)) {
-    $output | ConvertTo-Json > $path
-}
+New-RuleSpecification -Rule $rules

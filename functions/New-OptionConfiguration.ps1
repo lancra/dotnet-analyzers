@@ -7,7 +7,8 @@ function New-OptionConfiguration {
         $enabledRuleSetNames = Get-RuleSet -Enabled |
             Select-Object -ExpandProperty Name
 
-        $settings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/option-settings.csv" |
+        $settingsPath = Get-DataSetFile -File 'option-settings.csv'
+        $settings = Import-Csv -Path $settingsPath |
             Where-Object {
                 $optionRuleSet = $_.RuleSet
                 $enabledRuleSetNames |
@@ -66,7 +67,7 @@ function New-OptionConfiguration {
                 }
         }
 
-        $artifactsDirectory = "$env:DOTNET_ANALYZERS_ROOT/artifacts"
+        $artifactsDirectory = "$PSScriptRoot/../artifacts"
         New-Item -ItemType Directory -Path $artifactsDirectory -Force | Out-Null
 
         $configurationPath = "$artifactsDirectory/partial.editorconfig"

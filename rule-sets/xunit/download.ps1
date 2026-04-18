@@ -119,16 +119,4 @@ $currentCategory = $null
         $rules += $rule
     }
 
-$path = Join-Path -Path $PSScriptRoot -ChildPath 'rules.json'
-
-$output = [ordered]@{
-    '$schema' = $env:DOTNET_ANALYZERS_SCHEMA
-    timestamp = Get-Date -Format 'o'
-    rules = $rules |
-        Sort-Object -Property 'id'
-}
-
-$jsonDepth = 3
-if (Test-RuleSetDifference -Path $path -Json ($output.rules | ConvertTo-Json -Depth $jsonDepth)) {
-    $output | ConvertTo-Json -Depth $jsonDepth > $path
-}
+New-RuleSpecification -Rule $rules

@@ -12,7 +12,8 @@ function Get-FormattingOption {
         . "$Directory/Get-DocumentationUri.ps1"
 
         # Since this script is executed within parallel thread jobs, the global dot sources within the build script are inapplicable.
-        . "$env:DOTNET_ANALYZERS_FUNCTIONS/Format-Plaintext.ps1"
+        . "$Directory/../../functions/Format-Plaintext.ps1"
+        . "$Directory/../../functions/Get-DataSetFile.ps1"
 
         enum OptionParserState {
             Search # Looking for an option header in the document
@@ -28,7 +29,8 @@ function Get-FormattingOption {
         $defaultProperty = 'Default option value'
         $pipeEscapeCharacter = '&#124;'
 
-        $optionValueSpecifications = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/option-value-specifications.csv"
+        $optionValueSpecificationsPath = Get-DataSetFile -File 'option-value-specifications.csv'
+        $optionValueSpecifications = Import-Csv -Path $optionValueSpecificationsPath
     }
     process {
         Write-Verbose "Parsing formatting options from $(Split-Path -Path $Url -Leaf)."

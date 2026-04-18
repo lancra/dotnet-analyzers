@@ -13,6 +13,7 @@ $readmeLines = Get-GitHubFileLine -Uri $readmeFileUri
 
 $ruleJobs = @()
 $ruleFunctionDefinition = ${function:Get-Rule}.ToString()
+$ruleSetDirectoryPath = $PSScriptRoot
 
 $rules = @()
 
@@ -28,7 +29,14 @@ $ruleFilesUri = $repositoryContentsUriFormat -f 'src/ExceptionAnalyzer'
             )
 
             ${function:Get-Rule} = $using:ruleFunctionDefinition
-            return Get-Rule -Uri $Uri -HelpUriFormat $using:helpUriFormat -ReadmeLine $using:readmeLines
+
+            $getRuleArguments = @{
+                Uri = $Uri
+                HelpUriFormat = $using:helpUriFormat
+                Directory = $using:ruleSetDirectoryPath
+                ReadmeLine = $using:readmeLines
+            }
+            return Get-Rule @getRuleArguments
         } -ArgumentList (,$_.url)
         $ruleJobs += $ruleJob
     }
@@ -43,15 +51,4 @@ $ruleJobs |
         Remove-Job -Job $_
     }
 
-$path = Join-Path -Path $PSScriptRoot -ChildPath 'rules.json'
-
-$output = [ordered]@{
-    '$schema' = $env:DOTNET_ANALYZERS_SCHEMA
-    timestamp = Get-Date -Format 'o'
-    rules = $rules |
-        Sort-Object -Property 'id'
-}
-
-if (Test-RuleSetDifference -Path $path -Json ($output.rules | ConvertTo-Json)) {
-    $output | ConvertTo-Json > $path
-}
+New-RuleSpecification -Rule $rules

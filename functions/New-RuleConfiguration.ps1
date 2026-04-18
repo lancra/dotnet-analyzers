@@ -33,7 +33,8 @@ function New-RuleConfiguration {
                 }
             }
 
-        $ruleSettings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/rule-settings.csv" |
+        $ruleSettingsPath = Get-DataSetFile -File 'rule-settings.csv'
+        $ruleSettings = Import-Csv -Path $ruleSettingsPath |
             Where-Object {
                 $ruleRuleSet = $_.RuleSet
                 $enabledRuleSets |
@@ -57,7 +58,8 @@ function New-RuleConfiguration {
             throw 'All analyzer settings must specify a valid severity.'
         }
 
-        $optionSettings = Import-Csv -Path "$env:DOTNET_ANALYZERS_DATA_SETS/option-settings.csv" |
+        $optionSettingsPath = Get-DataSetFile -File 'option-settings.csv'
+        $optionSettings = Import-Csv -Path $optionSettingsPath |
             Where-Object {
                 $optionRuleSet = $_.RuleSet
                 $enabledRuleSets |
@@ -161,7 +163,7 @@ function New-RuleConfiguration {
                 $i++
             }
 
-        $artifactsDirectory = "$env:DOTNET_ANALYZERS_ROOT/artifacts"
+        $artifactsDirectory = "$PSScriptRoot/../artifacts"
         New-Item -ItemType Directory -Path $artifactsDirectory -Force | Out-Null
 
         $configurationPath = "$artifactsDirectory/.globalconfig"

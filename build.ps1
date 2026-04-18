@@ -56,8 +56,10 @@ param (
 
 . "$PSScriptRoot/functions/Format-MarkdownAnchor.ps1"
 . "$PSScriptRoot/functions/Format-Plaintext.ps1"
+. "$PSScriptRoot/functions/Get-DataSetFile.ps1"
 . "$PSScriptRoot/functions/Get-GitHubFileLine.ps1"
 . "$PSScriptRoot/functions/Get-RuleSet.ps1"
+. "$PSScriptRoot/functions/Get-RuleSetFile.ps1"
 . "$PSScriptRoot/functions/Get-Setting.ps1"
 . "$PSScriptRoot/functions/Get-Severity.ps1"
 . "$PSScriptRoot/functions/Get-VersionComment.ps1"
@@ -67,37 +69,30 @@ param (
 . "$PSScriptRoot/functions/New-OptionConfiguration.ps1"
 . "$PSScriptRoot/functions/New-PreferenceSpecification.ps1"
 . "$PSScriptRoot/functions/New-RuleConfiguration.ps1"
-. "$PSScriptRoot/functions/Switch-Environment.ps1"
+. "$PSScriptRoot/functions/New-RuleSpecification.ps1"
 . "$PSScriptRoot/functions/Test-RuleSetDifference.ps1"
 
-try {
-    $artifactsDirectory = Join-Path -Path $PSScriptRoot -ChildPath 'artifacts'
-    New-Item -ItemType Directory -Path $artifactsDirectory -Force |
-        Out-Null
+$artifactsDirectory = Join-Path -Path $PSScriptRoot -ChildPath 'artifacts'
+New-Item -ItemType Directory -Path $artifactsDirectory -Force |
+    Out-Null
 
-    $artifactsDirectoryContents = Join-Path -Path $artifactsDirectory -ChildPath '*'
-    Remove-Item -Path $artifactsDirectoryContents
+$artifactsDirectoryContents = Join-Path -Path $artifactsDirectory -ChildPath '*'
+Remove-Item -Path $artifactsDirectoryContents
 
-    Switch-Environment
-
-    $preferencesChanged = New-PreferenceSpecification
-    if ($preferencesChanged) {
-        Write-Output "`e[33mPreferences have been modified from the configuration. Review the settings and re-execute the build.`e[39m"
-        return
-    }
-
-    if (-not $SkipDownload) {
-        & "$PSScriptRoot/scripts/download-rules.ps1" -RuleSet $RuleSet
-    }
-
-    if (-not $DownloadOnly) {
-        & "$PSScriptRoot/scripts/generate-settings.ps1"
-
-        & "$PSScriptRoot/scripts/generate-configurations.ps1" `
-            -MergeConfiguration:$MergeConfiguration `
-            -IncludeVersion:$IncludeVersion
-    }
+$preferencesChanged = New-PreferenceSpecification
+if ($preferencesChanged) {
+    Write-Output "`e[33mPreferences have been modified from the configuration. Review the settings and re-execute the build.`e[39m"
+    return
 }
-finally {
-    Switch-Environment
+
+if (-not $SkipDownload) {
+    & "$PSScriptRoot/scripts/download-rules.ps1" -RuleSet $RuleSet
+}
+
+if (-not $DownloadOnly) {
+    & "$PSScriptRoot/scripts/generate-settings.ps1"
+
+    & "$PSScriptRoot/scripts/generate-configurations.ps1" `
+        -MergeConfiguration:$MergeConfiguration `
+        -IncludeVersion:$IncludeVersion
 }

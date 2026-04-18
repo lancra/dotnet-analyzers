@@ -8,13 +8,16 @@ function Get-Rule {
         [Parameter(Mandatory)]
         [string] $HelpUriFormat,
 
+        [Parameter(Mandatory)]
+        [string] $Directory,
+
         [Parameter()]
         [string[]] $ReadmeLine
     )
     begin {
         # Since this script is executed within parallel thread jobs, the global dot sources within the build script are inapplicable.
-        . "$env:DOTNET_ANALYZERS_FUNCTIONS/Format-MarkdownAnchor.ps1"
-        . "$env:DOTNET_ANALYZERS_FUNCTIONS/Get-GitHubFileLine.ps1"
+        . "$Directory/../../functions/Format-MarkdownAnchor.ps1"
+        . "$Directory/../../functions/Get-GitHubFileLine.ps1"
 
         class Indexer {
             [int] $ClassDefinition

@@ -15,7 +15,7 @@ function Merge-RuleSetting {
         Get-RuleSet |
             ForEach-Object {
                 $ruleSet = $_
-                $rulesPath = "$env:DOTNET_ANALYZERS_RULE_SETS/$($ruleSet.Id)/rules.json"
+                $rulesPath = Get-RuleSetFile -RuleSet $ruleSet.Id -File 'rules.json'
                 if (-not (Test-Path -Path $rulesPath)) {
                     Write-Warning "Skipping merge of $($ruleSet.Name) rule settings, no downloaded rules found"
                     return
@@ -40,7 +40,7 @@ function Merge-RuleSetting {
         )
         $onlineRules = $rawOnlineRules | Select-Object -Property $selectProperties
 
-        $settingsPath = "$env:DOTNET_ANALYZERS_DATA_SETS/rule-settings.csv"
+        $settingsPath = Get-DataSetFile -File 'rule-settings.csv'
         $localRules = Get-Setting -Path $settingsPath
 
         $ids = @()

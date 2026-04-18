@@ -16,7 +16,7 @@ function Merge-OptionSetting {
         Get-RuleSet |
             ForEach-Object {
                 $ruleSet = $_
-                $rulesPath = "$env:DOTNET_ANALYZERS_RULE_SETS/$($ruleSet.Id)/rules.json"
+                $rulesPath = Get-RuleSetFile -RuleSet $ruleSet.Id -File 'rules.json'
                 if (-not (Test-Path -Path $rulesPath)) {
                     Write-Warning "Skipping merge of $($ruleSet.Name) option settings, no downloaded rules found"
                     return
@@ -43,7 +43,7 @@ function Merge-OptionSetting {
         )
         $onlineOptions = $rawOnlineOptions | Select-Object -Property $selectProperties
 
-        $settingsPath = "$env:DOTNET_ANALYZERS_DATA_SETS/option-settings.csv"
+        $settingsPath = Get-DataSetFile -File 'option-settings.csv'
         $localOptions = Get-Setting -Path $settingsPath
 
         $names = @()
