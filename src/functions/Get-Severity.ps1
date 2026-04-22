@@ -2,7 +2,7 @@ function Get-Severity {
     [CmdletBinding()]
     param()
     process {
-        $configurationPath = Join-Path -Path $PSScriptRoot -ChildPath '..' -AdditionalChildPath 'configuration.json'
+        $configurationPath = Join-Path -Path $PSScriptRoot -ChildPath '..' -AdditionalChildPath '..', 'configuration.json'
         $properties = @(
             @{ Name = 'Id'; Expression = { $_.id } },
             @{ Name = 'Name'; Expression = { $_.name } },

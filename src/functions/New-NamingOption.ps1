@@ -3,7 +3,7 @@ function New-NamingOption {
     [OutputType([string[]])]
     param()
     begin {
-        $configurationPath = Join-Path -Path $PSScriptRoot -ChildPath '..' -AdditionalChildPath 'configuration.json'
+        $configurationPath = Join-Path -Path $PSScriptRoot -ChildPath '..' -AdditionalChildPath '..', 'configuration.json'
         $ruleSet = Get-RuleSet -Id 'dotnet-code-style'
 
         function Write-ValidationFailure {
