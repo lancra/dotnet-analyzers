@@ -58,6 +58,7 @@ param (
 . "$PSScriptRoot/src/functions/Format-Plaintext.ps1"
 . "$PSScriptRoot/src/functions/Get-DataSetFile.ps1"
 . "$PSScriptRoot/src/functions/Get-GitHubFileLine.ps1"
+. "$PSScriptRoot/src/functions/Get-RemoteRule.ps1"
 . "$PSScriptRoot/src/functions/Get-RuleSet.ps1"
 . "$PSScriptRoot/src/functions/Get-RuleSetFile.ps1"
 . "$PSScriptRoot/src/functions/Get-Setting.ps1"
@@ -86,13 +87,22 @@ if ($preferencesChanged) {
 }
 
 if (-not $SkipDownload) {
-    & "$PSScriptRoot/src/scripts/download-rules.ps1" -RuleSet $RuleSet
+    Get-RemoteRule -RuleSet $RuleSet
 }
 
 if (-not $DownloadOnly) {
-    & "$PSScriptRoot/src/scripts/generate-settings.ps1"
+    Write-Output 'Merging settings for analyzer rules'
+    Merge-RuleSetting
 
-    & "$PSScriptRoot/src/scripts/generate-configurations.ps1" `
-        -MergeConfiguration:$MergeConfiguration `
-        -IncludeVersion:$IncludeVersion
+    Write-Output 'Merging settings for analyzer options'
+    Merge-OptionSetting
+
+    $ruleConfigurationName = $MergeConfiguration ? 'combined' : 'rule'
+    Write-Output "Generating $ruleConfigurationName configuration (.globalconfig)"
+    New-RuleConfiguration -IncludeOption:$MergeConfiguration -IncludeVersion:$IncludeVersion
+
+    if (-not $MergeConfiguration) {
+        Write-Output 'Generating option configuration (partial.editorconfig)'
+        New-OptionConfiguration -IncludeVersion:$IncludeVersion
+    }
 }
