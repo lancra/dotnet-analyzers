@@ -31,7 +31,7 @@ param (
     [Parameter()]
     [ValidateScript(
         {
-            $ruleSetIds = Get-Content -Path $PSScriptRoot/configuration.json |
+            $ruleSetIds = Get-Content -Path "$PSScriptRoot/configuration.json" |
                 ConvertFrom-Json |
                 Select-Object -ExpandProperty 'ruleSets' |
                 Select-Object -ExpandProperty 'id'
@@ -41,7 +41,7 @@ param (
     [ArgumentCompleter(
         {
             param($commandName, $parameterName, $wordToComplete)
-            $ruleSetIds = Get-Content -Path $PSScriptRoot/configuration.json |
+            $ruleSetIds = Get-Content -Path "$PSScriptRoot/configuration.json" |
                 ConvertFrom-Json |
                 Select-Object -ExpandProperty 'ruleSets' |
                 Select-Object -ExpandProperty 'id'
@@ -54,23 +54,23 @@ param (
     [switch] $IncludeVersion
 )
 
-. "$PSScriptRoot/functions/Format-MarkdownAnchor.ps1"
-. "$PSScriptRoot/functions/Format-Plaintext.ps1"
-. "$PSScriptRoot/functions/Get-DataSetFile.ps1"
-. "$PSScriptRoot/functions/Get-GitHubFileLine.ps1"
-. "$PSScriptRoot/functions/Get-RuleSet.ps1"
-. "$PSScriptRoot/functions/Get-RuleSetFile.ps1"
-. "$PSScriptRoot/functions/Get-Setting.ps1"
-. "$PSScriptRoot/functions/Get-Severity.ps1"
-. "$PSScriptRoot/functions/Get-VersionComment.ps1"
-. "$PSScriptRoot/functions/Merge-OptionSetting.ps1"
-. "$PSScriptRoot/functions/Merge-RuleSetting.ps1"
-. "$PSScriptRoot/functions/New-NamingOption.ps1"
-. "$PSScriptRoot/functions/New-OptionConfiguration.ps1"
-. "$PSScriptRoot/functions/New-PreferenceSpecification.ps1"
-. "$PSScriptRoot/functions/New-RuleConfiguration.ps1"
-. "$PSScriptRoot/functions/New-RuleSpecification.ps1"
-. "$PSScriptRoot/functions/Test-RuleSetDifference.ps1"
+. "$PSScriptRoot/src/functions/Format-MarkdownAnchor.ps1"
+. "$PSScriptRoot/src/functions/Format-Plaintext.ps1"
+. "$PSScriptRoot/src/functions/Get-DataSetFile.ps1"
+. "$PSScriptRoot/src/functions/Get-GitHubFileLine.ps1"
+. "$PSScriptRoot/src/functions/Get-RuleSet.ps1"
+. "$PSScriptRoot/src/functions/Get-RuleSetFile.ps1"
+. "$PSScriptRoot/src/functions/Get-Setting.ps1"
+. "$PSScriptRoot/src/functions/Get-Severity.ps1"
+. "$PSScriptRoot/src/functions/Get-VersionComment.ps1"
+. "$PSScriptRoot/src/functions/Merge-OptionSetting.ps1"
+. "$PSScriptRoot/src/functions/Merge-RuleSetting.ps1"
+. "$PSScriptRoot/src/functions/New-NamingOption.ps1"
+. "$PSScriptRoot/src/functions/New-OptionConfiguration.ps1"
+. "$PSScriptRoot/src/functions/New-PreferenceSpecification.ps1"
+. "$PSScriptRoot/src/functions/New-RuleConfiguration.ps1"
+. "$PSScriptRoot/src/functions/New-RuleSpecification.ps1"
+. "$PSScriptRoot/src/functions/Test-RuleSetDifference.ps1"
 
 $artifactsDirectory = Join-Path -Path $PSScriptRoot -ChildPath 'artifacts'
 New-Item -ItemType Directory -Path $artifactsDirectory -Force |
@@ -86,13 +86,13 @@ if ($preferencesChanged) {
 }
 
 if (-not $SkipDownload) {
-    & "$PSScriptRoot/scripts/download-rules.ps1" -RuleSet $RuleSet
+    & "$PSScriptRoot/src/scripts/download-rules.ps1" -RuleSet $RuleSet
 }
 
 if (-not $DownloadOnly) {
-    & "$PSScriptRoot/scripts/generate-settings.ps1"
+    & "$PSScriptRoot/src/scripts/generate-settings.ps1"
 
-    & "$PSScriptRoot/scripts/generate-configurations.ps1" `
+    & "$PSScriptRoot/src/scripts/generate-configurations.ps1" `
         -MergeConfiguration:$MergeConfiguration `
         -IncludeVersion:$IncludeVersion
 }

@@ -13,7 +13,7 @@ function Get-RuleSet {
         }
     }
     process {
-        $rootDirectoryPath = Join-Path -Path $PSScriptRoot -ChildPath '..'
+        $rootDirectoryPath = Join-Path -Path $PSScriptRoot -ChildPath '..' -AdditionalChildPath '..'
         $configurationPath = Join-Path -Path $rootDirectoryPath -ChildPath 'configuration.json'
         $preferencesPath = Join-Path -Path $rootDirectoryPath -ChildPath '.preferences.json'
 
