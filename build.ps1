@@ -77,7 +77,7 @@ New-Item -ItemType Directory -Path $artifactsDirectory -Force |
     Out-Null
 
 $artifactsDirectoryContents = Join-Path -Path $artifactsDirectory -ChildPath '*'
-Remove-Item -Path $artifactsDirectoryContents
+Remove-Item -Path $artifactsDirectoryContents -Recurse
 
 $preferencesChanged = New-PreferenceSpecification
 if ($preferencesChanged -and -not $SkipPreferenceCheck) {

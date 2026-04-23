@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Executable/">
+    <Project Path="Executable/DotnetAnalyzers.SmokeTests.Executable.csproj" />
+  </Folder>
+  <Folder Name="/Library/">
+    <Project Path="Library/DotnetAnalyzers.SmokeTests.Library.csproj" />
+  </Folder>
+</Solution>

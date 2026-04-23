@@ -1,0 +1,8 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <ErrorLog>../../artifacts/diagnostics.library.sarif</ErrorLog>
+  </PropertyGroup>
+
+</Project>
