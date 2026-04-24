@@ -1,0 +1,6 @@
+# CA1509
+
+CA1501: 1
+CA1502(Type): 4
+CA1505(Method): five
+CA1506(UnknownKind): 10

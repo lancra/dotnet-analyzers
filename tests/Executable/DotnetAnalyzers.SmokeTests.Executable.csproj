@@ -5,4 +5,8 @@
     <ErrorLog>../../artifacts/diagnostics.executable.sarif</ErrorLog>
   </PropertyGroup>
 
+  <ItemGroup>
+    <AdditionalFiles Include="CodeMetricsConfig.txt" />
+  </ItemGroup>
+
 </Project>
