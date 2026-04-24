@@ -1,0 +1,39 @@
+Id,Title,RuleSet,Category,Reasoning
+CA1824,Mark assemblies with NeutralResourcesLanguageAttribute,.NET Quality,Performance,Unable to trigger.
+CA1842,Do not use 'WhenAll' with a single task,.NET Quality,Performance,https://github.com/dotnet/sdk/issues/51219
+CA1843,Do not use 'WaitAll' with a single task,.NET Quality,Performance,https://github.com/dotnet/sdk/issues/51219
+CA1865,Use char overload,.NET Quality,Performance,Unable to trigger.
+CA2305,Do not use insecure deserializer LosFormatter,.NET Quality,Security,Only available in .NET Framework.
+CA2310,Do not use insecure deserializer NetDataContractSerializer,.NET Quality,Security,Only available in .NET Framework.
+CA2311,Do not deserialize without first setting NetDataContractSerializer.Binder,.NET Quality,Security,Only available in .NET Framework.
+CA2312,Ensure NetDataContractSerializer.Binder is set before deserializing,.NET Quality,Security,Only available in .NET Framework.
+CA2315,Do not use insecure deserializer ObjectStateFormatter,.NET Quality,Security,Only available in .NET Framework.
+CA2321,Do not deserialize with JavaScriptSerializer using a SimpleTypeResolver,.NET Quality,Security,Only available in .NET Framework.
+CA2322,Ensure JavaScriptSerializer is not initialized with SimpleTypeResolver before deserializing,.NET Quality,Security,Only available in .NET Framework.
+CA2355,Unsafe DataSet or DataTable type found in deserializable object graph,.NET Quality,Security,Unable to trigger.
+CA2356,Unsafe DataSet or DataTable type in web deserializable object graph,.NET Quality,Security,Only available in .NET Framework.
+CA2361,Ensure auto-generated class containing DataSet.ReadXml() is not used with untrusted data,.NET Quality,Security,Unable to trigger.
+CA2362,Unsafe DataSet or DataTable in auto-generated serializable type can be vulnerable to remote code execution attacks,.NET Quality,Security,Unable to trigger.
+CA3001,Review code for SQL injection vulnerabilities,.NET Quality,Security,Unable to trigger.
+CA3002,Review code for XSS vulnerabilities,.NET Quality,Security,Unable to trigger.
+CA3003,Review code for file path injection vulnerabilities,.NET Quality,Security,Unable to trigger.
+CA3004,Review code for information disclosure vulnerabilities,.NET Quality,Security,Unable to trigger.
+CA3005,Review code for LDAP injection vulnerabilities,.NET Quality,Security,Unable to trigger.
+CA3006,Review code for process command injection vulnerabilities,.NET Quality,Security,Unable to trigger.
+CA3007,Review code for open redirect vulnerabilities,.NET Quality,Security,Unable to trigger.
+CA3008,Review code for XPath injection vulnerabilities,.NET Quality,Security,Unable to trigger.
+CA3009,Review code for XML injection vulnerabilities,.NET Quality,Security,Unable to trigger.
+CA3010,Review code for XAML injection vulnerabilities,.NET Quality,Security,Unable to trigger.
+CA3011,Review code for DLL injection vulnerabilities,.NET Quality,Security,Unable to trigger.
+CA3012,Review code for regex injection vulnerabilities,.NET Quality,Security,Unable to trigger.
+CA3075,Insecure DTD processing in XML,.NET Quality,Security,Unable to trigger.
+CA3077,"Insecure Processing in API Design, XmlDocument and XmlTextReader",.NET Quality,Security,Unable to trigger.
+CA3147,Mark Verb Handlers With Validate Antiforgery Token,.NET Quality,Security,Unable to trigger.
+CA5363,Do Not Disable Request Validation,.NET Quality,Security,Only available in .NET Framework.
+CA5365,Do Not Disable HTTP Header Checking,.NET Quality,Security,Only available in .NET Framework.
+CA5368,Set ViewStateUserKey For Classes Derived From Page,.NET Quality,Security,Only available in .NET Framework.
+CA5375,Do Not Use Account Shared Access Signature,.NET Quality,Security,Deprecated Azure package.
+CA5376,Use SharedAccessProtocol HttpsOnly,.NET Quality,Security,Deprecated Azure package.
+CA5377,Use Container Level Access Policy,.NET Quality,Security,Deprecated Azure package.
+CA5396,Set HttpOnly to true for HttpCookie,.NET Quality,Security,Only available in .NET Framework.
+CA2246,Assigning symbol and its member in the same statement,.NET Quality,Usage,Unable to trigger.
