@@ -11,4 +11,8 @@
     <PackageVersion Include="xunit.analyzers" Version="1.27.0" />
   </ItemGroup>
 
+  <ItemGroup Label="Infrastructure">
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.11" />
+  </ItemGroup>
+
 </Project>
