@@ -5,6 +5,10 @@
     <ErrorLog>../../artifacts/diagnostics.executable.sarif</ErrorLog>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PublishSingleFile>true</PublishSingleFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <AdditionalFiles Include="CodeMetricsConfig.txt" />
   </ItemGroup>
