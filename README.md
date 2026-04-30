@@ -5,15 +5,19 @@ the lists up-to-date and to generate the configuration files to apply the settin
 
 ## Rule Sets
 
-Name|Package
--|-
-[.NET Code Quality](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules)|![microsoft.codeanalysis.netanalyzers](https://img.shields.io/nuget/v/microsoft.codeanalysis.netanalyzers)
-[.NET Code Style](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules)|![built-in](https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=fff)
-[Exceptionator](https://github.com/elmahio/Exceptionator/blob/main/README.md)|![theexceptionator.analyzers](https://img.shields.io/nuget/v/theexceptionator.analyzers)
-[StyleCop](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/StyleCop.Analyzers/StyleCop.Analyzers.CodeFixes/rulesets/StyleCopAnalyzersDefault.ruleset)|![stylecop.analyzers.unstable](https://img.shields.io/nuget/v/stylecop.analyzers.unstable)
-[TUnit](https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md)|![tunit](https://img.shields.io/nuget/v/tunit)
-[Visual Studio Threading](https://microsoft.github.io/vs-threading/analyzers/index.html)|![microsoft.visualstudio.threading.analyzers](https://img.shields.io/nuget/v/microsoft.visualstudio.threading.analyzers)
-[xUnit](https://xunit.net/xunit.analyzers/rules/)|![xunit.v3](https://img.shields.io/nuget/v/xunit.v3)
+<!-- markdownlint-disable MD033 -->
+<!-- prettier-ignore -->
+Name|Packages|Shields
+-|-|-
+[.NET Code Quality](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules)|`Microsoft.CodeAnalysis.NetAnalyzers`<br/>`Text.Analyzers`|![microsoft.codeanalysis.netanalyzers](https://img.shields.io/nuget/v/microsoft.codeanalysis.netanalyzers)<br/>![text.analyzers](https://img.shields.io/nuget/v/text.analyzers)
+[.NET Code Style](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules)|N/A|![built-in](https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=fff)
+[Exceptionator](https://github.com/elmahio/Exceptionator/blob/main/README.md)|`TheExceptionator.Analyzers`|![theexceptionator.analyzers](https://img.shields.io/nuget/v/theexceptionator.analyzers)
+[StyleCop](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/StyleCop.Analyzers/StyleCop.Analyzers.CodeFixes/rulesets/StyleCopAnalyzersDefault.ruleset)|`StyleCop.Analyzers.Unstable`|![stylecop.analyzers.unstable](https://img.shields.io/nuget/v/stylecop.analyzers.unstable)
+[TUnit](https://github.com/thomhurst/TUnit/blob/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md)|`TUnit`|![tunit](https://img.shields.io/nuget/v/tunit)
+[Visual Studio Threading](https://microsoft.github.io/vs-threading/analyzers/index.html)|`Microsoft.VisualStudio.Threading.Analyzers`|![microsoft.visualstudio.threading.analyzers](https://img.shields.io/nuget/v/microsoft.visualstudio.threading.analyzers)
+[xUnit](https://xunit.net/xunit.analyzers/rules/)|`xUnit.v3`|![xunit.v3](https://img.shields.io/nuget/v/xunit.v3)
+
+<!-- markdownlint-enable MD033 -->
 
 ## Usage
 
