@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/analyzer-rules.schema.json",
-  "timestamp": "2025-12-08T06:09:23.4132560-05:00",
+  "timestamp": "2026-05-01T05:35:10.2052706-04:00",
   "rules": [
     {
       "id": "CA1000",
@@ -1416,6 +1416,12 @@
       "id": "CA2265",
       "title": "Do not compare Span<T> to 'null' or 'default'",
       "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2265",
+      "category": "Usage"
+    },
+    {
+      "id": "CA2266",
+      "title": "File-based program entry point should start with '#!'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2266",
       "category": "Usage"
     },
     {
