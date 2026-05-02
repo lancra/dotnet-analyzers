@@ -11,6 +11,10 @@ within .NET projects.
 Specifies the ruleset to download metadata for. Metadata is downloaded for all
 rulesets when this is not provided.
 
+.PARAMETER SkipPreferenceCheck
+Specifies that the build should continue whether or not preferences have been
+changed.
+
 .PARAMETER SkipDownload
 Specifies that the remote metadata download should not be executed.
 
@@ -48,6 +52,7 @@ param (
             $ruleSetIds -like "$wordToComplete*"
         })]
     [string] $RuleSet,
+    [switch] $SkipPreferenceCheck,
     [switch] $SkipDownload,
     [switch] $DownloadOnly,
     [switch] $MergeConfiguration,
@@ -81,7 +86,7 @@ $artifactsDirectoryContents = Join-Path -Path $artifactsDirectory -ChildPath '*'
 Remove-Item -Path $artifactsDirectoryContents
 
 $preferencesChanged = New-PreferenceSpecification
-if ($preferencesChanged) {
+if ($preferencesChanged -and -not $SkipPreferenceCheck) {
     Write-Output "`e[33mPreferences have been modified from the configuration. Review the settings and re-execute the build.`e[39m"
     return
 }

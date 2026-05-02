@@ -1,0 +1,32 @@
+name: Check for Rule Specification Updates
+
+on:
+  schedule:
+    - cron: "0 5 * * 0"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  GH_TOKEN: ${{ github.token }}
+
+jobs:
+  update-check:
+    name: Check for Rule Specification Updates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - name: Download
+        shell: pwsh
+        run: ./build.ps1 -SkipPreferenceCheck -DownloadOnly
+      - name: Check
+        shell: bash
+        run: git --no-pager diff --exit-code
