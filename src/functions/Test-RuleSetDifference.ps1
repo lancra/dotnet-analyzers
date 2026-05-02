@@ -7,29 +7,37 @@ function Test-RuleSetDifference {
         [Parameter(Mandatory)]
         [string]$Json
     )
+    begin {
+        $jsonDepth = 10
+    }
     process {
         if (-not (Test-Path -Path $Path)) {
             return $true
         }
 
-        $tempPath = [System.IO.Path]::GetTempFileName()
-        $tempJsonPath = "$tempPath.json"
-        Rename-Item -Path $tempPath -NewName $tempJsonPath
-        & jq '.rules' $Path > $tempJsonPath
+        $tempCurrentRulesPath = "$([System.IO.Path]::GetTempPath())$(New-Guid).json"
+        Get-Content -Path $Path |
+            ConvertFrom-Json |
+            Select-Object -ExpandProperty 'rules' |
+            ConvertTo-Json -Depth $jsonDepth |
+            Set-Content -Path $tempCurrentRulesPath
 
-        if ($null -eq (Get-Command -Name 'jd' -ErrorAction SilentlyContinue)) {
-            $warningMessage = 'Checking for rule-set differences requires jd. Please download it from GitHub ' +
-                '(https://github.com/josephburnett/jd) or install it with Go (go install github.com/josephburnett/jd@latest).'
-            Write-Warning $warningMessage
-            return $true
-        }
+        $tempNewRulesPath = "$([System.IO.Path]::GetTempPath())$(New-Guid).json"
+        $Json |
+            Set-Content $tempNewRulesPath
 
-        $hasDifferences = $null -ne ($Json | jd -set $tempJsonPath)
+        git diff --exit-code --no-index $tempCurrentRulesPath $tempNewRulesPath |
+            Out-Null
+        $hasDifferences = $LASTEXITCODE -ne 0
         return $hasDifferences
     }
     end {
-        if ($tempJsonPath) {
-            Remove-Item -Path $tempJsonPath
+        if ($tempCurrentRulesPath) {
+            Remove-Item -Path $tempCurrentRulesPath
+        }
+
+        if ($tempNewRulesPath) {
+            Remove-Item -Path $tempNewRulesPath
         }
     }
 }
