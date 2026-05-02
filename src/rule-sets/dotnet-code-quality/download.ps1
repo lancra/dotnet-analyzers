@@ -10,6 +10,8 @@ parsed from the relevant Markdown index.
 [CmdletBinding()]
 param ()
 
+$severities = Get-Severity
+
 function Get-Rule {
     [CmdletBinding()]
     [OutputType([PSCustomObject[]])]
@@ -23,6 +25,14 @@ function Get-Rule {
             @{ Name = 'title'; Expression = { $_.shortDescription } }
             'helpUri'
             @{ Name = 'category'; Expression = { $_.properties.category } }
+            @{
+                Name = 'default'
+                Expression = {
+                    $severities |
+                        Where-Object -Property AlternateId -EQ $_.defaultLevel |
+                        Select-Object -ExpandProperty Name
+                }
+            }
         )
     }
     process {
