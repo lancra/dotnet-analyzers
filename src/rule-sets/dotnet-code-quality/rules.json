@@ -4,7 +4,7 @@
   "rules": [
     {
       "id": "CA1000",
-      "title": "Do not declare static members on generic types",
+      "title": "Do not declare static members on generic types ABC123",
       "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1000",
       "category": "Design",
       "default": "Hidden"
