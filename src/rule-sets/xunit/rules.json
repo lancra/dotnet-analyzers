@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/analyzer-rules.schema.json",
-  "timestamp": "2026-04-17T05:46:01.8355462-04:00",
+  "timestamp": "2026-05-03T09:40:27.1363382-04:00",
   "rules": [
     {
       "id": "xUnit1000",
@@ -819,6 +819,30 @@
       }
     },
     {
+      "id": "xUnit1068",
+      "title": "MemberData cannot point to an open generic type",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1068",
+      "category": "Usage",
+      "default": "Error",
+      "versions": {
+        "v2": false,
+        "v3": false,
+        "AOT": true
+      }
+    },
+    {
+      "id": "xUnit1069",
+      "title": "Test methods with a Timeout should reference TestContext.Current.CancellationToken",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1069",
+      "category": "Usage",
+      "default": "Warning",
+      "versions": {
+        "v2": false,
+        "v3": true,
+        "AOT": true
+      }
+    },
+    {
       "id": "xUnit2000",
       "title": "Constants and literals should be the expected argument",
       "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2000",
@@ -1284,6 +1308,30 @@
         "v2": false,
         "v3": true,
         "AOT": true
+      }
+    },
+    {
+      "id": "xUnit3006",
+      "title": "Test case implementation must be serializable",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit3006",
+      "category": "Extensibility",
+      "default": "Error",
+      "versions": {
+        "v2": false,
+        "v3": true,
+        "AOT": false
+      }
+    },
+    {
+      "id": "xUnit3007",
+      "title": "Test case implementation might not be serializable",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit3007",
+      "category": "Extensibility",
+      "default": "Warning",
+      "versions": {
+        "v2": false,
+        "v3": true,
+        "AOT": false
       }
     }
   ]
