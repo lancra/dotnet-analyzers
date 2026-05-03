@@ -25,6 +25,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Download
+        continue-on-error: true
         shell: pwsh
         run: ./build.ps1 -SkipPreferenceCheck -DownloadOnly
       - name: Check
