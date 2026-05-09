@@ -369,6 +369,7 @@ None,IDE0039,Use local function instead of lambda,.NET Style,,Warning,
 None,IDE0040,Add accessibility modifiers,.NET Style,,Warning,
 None,IDE0041,Use is null check,.NET Style,,Warning,
 None,IDE0042,Deconstruct variable declaration,.NET Style,,Warning,
+None,IDE0043,Format string contains invalid placeholder,.NET Style,,Disabled,Deprecated in favor of CA2241.
 None,IDE0044,Add readonly modifier,.NET Style,,Warning,
 None,IDE0045,Use conditional expression for assignment,.NET Style,,Warning,
 None,IDE0046,Use conditional expression for return,.NET Style,,Info,

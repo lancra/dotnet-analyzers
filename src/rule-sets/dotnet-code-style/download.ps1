@@ -155,4 +155,13 @@ $optionsJobs |
         Remove-Job -Job $_
     }
 
+# Microsoft has intentionally avoided adding documentation for this rule since it's deprecated in favor of CA2241.
+# Since it still surfaces by default on build, it needs to be represented in the download to be disabled in output configuration.
+# See: https://redirect.github.com/dotnet/docs/issues/22080
+$rules += [PSCustomObject]@{
+    id = 'IDE0043'
+    title = 'Format string contains invalid placeholder'
+    options = @()
+}
+
 New-RuleSpecification -Rule $rules
