@@ -3,10 +3,9 @@ function Merge-OptionSetting {
     param ()
     begin {
         $actionProperty = 'Action'
+        $ruleSetProperty = 'RuleSet'
         $nameProperty = 'Name'
         $idProperty = 'Id'
-        $ruleSetProperty = 'RuleSet'
-        $categoryProperty = 'Category'
         $defaultProperty = 'Default'
         $valueProperty = 'Value'
         $reasoningProperty = 'Reasoning'
@@ -29,16 +28,14 @@ function Merge-OptionSetting {
                     Select-Object -Property 'id' -ExpandProperty 'options'
 
                 $ruleSetOptions | Add-Member -MemberType NoteProperty -Name $ruleSetProperty -Value $ruleSet.Name
-                $ruleSetOptions | Add-Member -MemberType NoteProperty -Name $categoryProperty -Value ''
 
                 $rawOnlineOptions += $ruleSetOptions
             }
 
         $selectProperties = @(
+            $ruleSetProperty,
             @{Name = $nameProperty; Expression = {$_.name}},
             @{Name = $idProperty; Expression = {$_.id}},
-            $ruleSetProperty,
-            $categoryProperty,
             @{Name = $defaultProperty;Expression = {$_.default}}
         )
         $onlineOptions = $rawOnlineOptions | Select-Object -Property $selectProperties
@@ -65,10 +62,9 @@ function Merge-OptionSetting {
                 $localOption = $localOptions | Where-Object -Property $nameProperty -EQ $_ | Select-Object -First 1
 
                 $option = [PSCustomObject]@{
+                    $ruleSetProperty = $onlineOption.$ruleSetProperty ?? $localOption.$ruleSetProperty
                     $nameProperty = $onlineOption.$nameProperty ?? $localOption.$nameProperty
                     $idProperty = $onlineOption.$idProperty ?? $localOption.$idProperty
-                    $ruleSetProperty = $onlineOption.$ruleSetProperty ?? $localOption.$ruleSetProperty
-                    $categoryProperty = $onlineOption.$categoryProperty ?? $localOption.$categoryProperty
                     $defaultProperty = $onlineOption.$defaultProperty ?? $localOption.$defaultProperty
                     $valueProperty = $localOption.$valueProperty
                     $reasoningProperty = $localOption.$reasoningProperty
@@ -91,10 +87,9 @@ function Merge-OptionSetting {
 
         $outputProperties = @(
             $actionProperty,
+            $ruleSetProperty,
             $nameProperty,
             $idProperty,
-            $ruleSetProperty,
-            $categoryProperty,
             $defaultProperty,
             $valueProperty,
             $reasoningProperty

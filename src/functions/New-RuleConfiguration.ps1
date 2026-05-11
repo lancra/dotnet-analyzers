@@ -127,7 +127,6 @@ function New-RuleConfiguration {
                 if ($IncludeOption) {
                     $optionSettingLines = $optionSettings |
                         Where-Object -Property RuleSet -EQ $category.RuleSet |
-                        Where-Object -Property Category -EQ $category.Name |
                         ForEach-Object { $optionSettingFormat -f $_.Name, $_.Value, $_.Id }
 
                     if ($optionSettingLines) {
