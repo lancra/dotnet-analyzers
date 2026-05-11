@@ -4,9 +4,9 @@ function Merge-RuleSetting {
     begin {
         $actionProperty = 'Action'
         $idProperty = 'Id'
-        $titleProperty = 'Title'
         $ruleSetProperty = 'RuleSet'
         $categoryProperty = 'Category'
+        $titleProperty = 'Title'
         $severityProperty = 'Severity'
         $reasoningProperty = 'Reasoning'
     }
@@ -33,9 +33,9 @@ function Merge-RuleSetting {
 
         $selectProperties = @(
             @{Name = $idProperty; Expression = {$_.id}},
-            @{Name = $titleProperty; Expression = {$_.title}},
             $ruleSetProperty,
             @{Name = $categoryProperty; Expression = {$_.category}},
+            @{Name = $titleProperty; Expression = {$_.title}},
             @{Name = $severityProperty; Expression = {$_.default}}
         )
         $onlineRules = $rawOnlineRules | Select-Object -Property $selectProperties
@@ -55,9 +55,9 @@ function Merge-RuleSetting {
 
                 $rule = [PSCustomObject]@{
                     $idProperty = $onlineRule.$idProperty ?? $localRule.$idProperty
-                    $titleProperty = $onlineRule.$titleProperty ?? $localRule.$titleProperty
                     $ruleSetProperty = $onlineRule.$ruleSetProperty ?? $localRule.$ruleSetProperty
                     $categoryProperty = $onlineRule.$categoryProperty ?? $localRule.$categoryProperty
+                    $titleProperty = $onlineRule.$titleProperty ?? $localRule.$titleProperty
                     $severityProperty = $localRule.$severityProperty ?? $onlineRule.$severityProperty
                     $reasoningProperty = $localRule.$reasoningProperty
                 }
@@ -80,9 +80,9 @@ function Merge-RuleSetting {
         $outputProperties = @(
             $actionProperty,
             $idProperty,
-            $titleProperty,
             $ruleSetProperty,
             $categoryProperty,
+            $titleProperty,
             $severityProperty,
             $reasoningProperty
         )
