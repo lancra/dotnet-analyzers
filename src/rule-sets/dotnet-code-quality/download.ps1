@@ -14,7 +14,7 @@ $severities = Get-Severity
 
 function Get-Rule {
     [CmdletBinding()]
-    [OutputType([PSCustomObject[]])]
+    [OutputType([pscustomobject[]])]
     param(
         [Parameter(Mandatory)]
         [uri] $Uri
@@ -37,15 +37,17 @@ function Get-Rule {
     }
     process {
         $rules = @()
-
-        @(
+        $arguments = @(
             'curl',
-            '--silent',
-            # Skip the UTF byte order mark included from GitHub, since it interferes with PowerShell JSON deserialization.
-            '--range 3-',
+            '--silent'
             $Uri
-        ) -join ' ' |
-            Invoke-Expression |
+        )
+
+        $command = [scriptblock]::Create($arguments)
+        $contents = Invoke-Command -ScriptBlock $command
+
+        # Skip the UTF byte order mark if included from GitHub, since it interferes with PowerShell JSON deserialization.
+        $contents -replace '\uFEFF' |
             ConvertFrom-Json |
             Select-Object -ExpandProperty 'runs' |
             Select-Object -ExpandProperty 'rules' |
