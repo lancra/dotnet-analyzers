@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": ".NET Analyzer Options",
+  "description": "Provides a set of options for an analyzer.",
+  "definitions": {
+    "option": {
+      "title": "Analyzer Option",
+      "description": "An option for customizing the behavior of one or more analyzer rules.",
+      "properties": {
+        "name": {
+          "description": "The name of the option.",
+          "type": "string"
+        },
+        "values": {
+          "description": "The option values that are available for use.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/optionValue"
+          }
+        },
+        "default": {
+          "description": "The default value that is used when the option is not specified.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "values"
+      ]
+    },
+    "optionValue": {
+      "title": "Analyzer Option Value",
+      "description": "A value that can be used for an analyzer option.",
+      "properties": {
+        "value": {
+          "description": "The option value.",
+          "type": "string"
+        },
+        "alternate": {
+          "description": "An alternate option value that can be used in place of the normal value.",
+          "type": "string"
+        },
+        "specification": {
+          "description": "Additional specification about the value property. Used to provide context when many different values are possible.",
+          "type": "string"
+        },
+        "description": {
+          "description": "An explanation of the resulting behavior after applying the selected value.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value",
+        "description"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "description": "The timestamp of the download.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "options": {
+      "description": "The collection of analyzer options.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/option"
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "options"
+  ]
+}
