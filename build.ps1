@@ -76,6 +76,7 @@ param (
 . "$PSScriptRoot/src/functions/New-PreferenceSpecification.ps1"
 . "$PSScriptRoot/src/functions/New-RuleConfiguration.ps1"
 . "$PSScriptRoot/src/functions/New-RuleSpecification.ps1"
+. "$PSScriptRoot/src/functions/Remove-MarkdownTableAffix.ps1"
 . "$PSScriptRoot/src/functions/Test-RuleSetDifference.ps1"
 
 $artifactsDirectory = Join-Path -Path $PSScriptRoot -ChildPath 'artifacts'

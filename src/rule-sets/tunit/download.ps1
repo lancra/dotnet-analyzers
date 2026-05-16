@@ -32,7 +32,7 @@ $rules = @()
             if ($_.StartsWith($headerPrefix)) {
                 $state = [RuleParserState]::TableTitle
 
-                $categoryName = $_.Substring($headerPrefix.Length, $_.Length - $headerPrefix.Length)
+                $categoryName = $_.Substring($headerPrefix.Length)
                 if ($categoryName.EndsWith($headerSuffix)) {
                     $categoryName = $categoryName.Substring(0, $categoryName.Length - $headerSuffix.Length)
                 }

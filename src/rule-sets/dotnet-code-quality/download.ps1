@@ -96,8 +96,7 @@ $state = [RuleParserState]::Search
             return
         }
 
-        # Remove '|' from the beginning of the line and '|' from the end.
-        $rawLine = $_.Substring(1, $_.Length - 2)
+        $rawLine = Remove-MarkdownTableAffix -Text $_
         $rowValues = ((Format-Plaintext $rawLine) -split '\|').Trim()
 
         $rawId = $rowValues[0]
