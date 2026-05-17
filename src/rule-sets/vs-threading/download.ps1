@@ -60,4 +60,4 @@ $rules = @()
         $rules += $rule
     }
 
-New-RuleSpecification -Rule $rules
+New-AnalyzerSpecification -Kind 'rules' -Item $rules

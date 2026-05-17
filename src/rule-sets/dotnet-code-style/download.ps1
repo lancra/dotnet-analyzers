@@ -45,9 +45,7 @@ $ruleIndexUrl = Get-DocumentationUri -Document 'index.md'
 # documents linked from the Option column.
 $optionsOutlierRuleId = 'IDE0055'
 
-$tableRowPrefix = '> | '
-$tableRowSuffix = ' |'
-$tableTitleHeader = "${tableRowPrefix}Rule ID | Title | Option$tableRowSuffix"
+$tableTitleHeader = 'Rule ID | Title | Option'
 
 $ruleSet = Get-RuleSet -CurrentDirectory
 
@@ -67,8 +65,10 @@ $ruleSetDirectoryPath = $PSScriptRoot
 
 (& curl --silent $ruleIndexUrl) |
     ForEach-Object {
+        $line = Remove-MarkdownTableAffix -Text $_
+
         if ($state -eq [RuleParserState]::Search) {
-            if ($_ -eq $tableTitleHeader) {
+            if ($line -eq $tableTitleHeader) {
                 $state = [RuleParserState]::Header
             }
 
@@ -84,15 +84,14 @@ $ruleSetDirectoryPath = $PSScriptRoot
             return
         }
 
-        if (-not $_) {
+        if (-not $line) {
             $state = [RuleParserState]::Done
             return
         }
 
-        $lineContent = $_.Substring($tableRowPrefix.Length, $_.Length - ($tableRowPrefix.Length + $tableRowSuffix.Length))
-        $links = Read-Link $lineContent
+        $links = Read-Link $line
 
-        $formattedLineContent = Format-Plaintext -Text $lineContent
+        $formattedLineContent = Format-Plaintext -Text $line
         $rowValues = ($formattedLineContent -split '\|').Trim()
 
         $rule = [PSCustomObject]@{
@@ -140,15 +139,30 @@ $ruleSetDirectoryPath = $PSScriptRoot
         $rules += $rule
     }
 
-Wait-Job $optionsJobs | Out-Null
+Wait-Job $optionsJobs |
+    Out-Null
+
+$optionLookup = @{}
 $optionsJobs |
     ForEach-Object {
         $options = Receive-Job -Job $_
+
+        $options |
+            ForEach-Object {
+                if (-not $optionLookup.ContainsKey($_.name)) {
+                    $optionLookup.Add($_.name, $_)
+                }
+            }
+
         $rule = $rules |
             Where-Object -Property id -EQ $_.Name |
             Select-Object -First 1
 
         $rule.options = @($options |
+            ForEach-Object {
+                $_['name']
+            } |
+            Sort-Object |
             ConvertTo-Json -Depth 10 |
             ConvertFrom-Json)
 
@@ -164,4 +178,5 @@ $rules += [PSCustomObject]@{
     options = @()
 }
 
-New-RuleSpecification -Rule $rules
+New-AnalyzerSpecification -Kind 'rules' -Item $rules
+New-AnalyzerSpecification -Kind 'options' -Item $optionLookup.Values

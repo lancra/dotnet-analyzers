@@ -32,7 +32,7 @@ $rules = @()
             if ($_.StartsWith($headerPrefix)) {
                 $state = [RuleParserState]::TableTitle
 
-                $categoryName = $_.Substring($headerPrefix.Length, $_.Length - $headerPrefix.Length)
+                $categoryName = $_.Substring($headerPrefix.Length)
                 if ($categoryName.EndsWith($headerSuffix)) {
                     $categoryName = $categoryName.Substring(0, $categoryName.Length - $headerSuffix.Length)
                 }
@@ -74,4 +74,4 @@ $rules = @()
 
 # Sort the migration rules after others since they deviate from the identifier format.
 $migrationRuleSortProperty = { $_.id.StartsWith('TUnit') ? 0 : 1 }
-New-RuleSpecification -Rule $rules -Sort $migrationRuleSortProperty
+New-AnalyzerSpecification -Kind 'rules' -Item $rules -Sort $migrationRuleSortProperty

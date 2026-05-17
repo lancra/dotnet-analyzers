@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": ".NET Analyzer Rules",
+  "description": "Provides a set of rules for an analyzer.",
+  "definitions": {
+    "rule": {
+      "title": "Analyzer Rule",
+      "description": "A rule that is used by an analyzer to denote diagnostic issues.",
+      "properties": {
+        "id": {
+          "description": "The unique code used to reference a rule.",
+          "type": "string"
+        },
+        "title": {
+          "description": "A short description of the rule.",
+          "type": "string"
+        },
+        "helpUri": {
+          "description": "The URI which provides help documentation for the rule.",
+          "type": "string",
+          "format": "uri"
+        },
+        "category": {
+          "description": "The category used to organize the rule within the set.",
+          "type": "string"
+        },
+        "default": {
+          "description": "The default severity for the rule.",
+          "type": "string"
+        },
+        "options": {
+          "description": "The names of options used to further customize the rule's behavior.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "helpUri"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "description": "The timestamp of the download.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "rules": {
+      "description": "The collection of analyzer rules.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/rule"
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "rules"
+  ]
+}

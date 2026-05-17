@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/analyzer-rules.schema.json",
+  "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/rules.schema.json",
   "timestamp": "2026-04-11T06:56:15.1288425-04:00",
   "rules": [
     {

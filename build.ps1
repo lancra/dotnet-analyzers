@@ -21,11 +21,6 @@ Specifies that the remote metadata download should not be executed.
 .PARAMETER DownloadOnly
 Specifies that only the remote metadata download should be executed.
 
-.PARAMETER MergeConfiguration
-Specifies that the resulting configuration should be represented by a single
-globalconfig file. The default is to place rule configurations in the
-globalconfig file and option configurations in the partial editorconfig file.
-
 .PARAMETER IncludeVersion
 Specifies that the repository version should be added as a header in generated
 configuration files.
@@ -55,7 +50,6 @@ param (
     [switch] $SkipPreferenceCheck,
     [switch] $SkipDownload,
     [switch] $DownloadOnly,
-    [switch] $MergeConfiguration,
     [switch] $IncludeVersion
 )
 
@@ -71,12 +65,12 @@ param (
 . "$PSScriptRoot/src/functions/Get-VersionComment.ps1"
 . "$PSScriptRoot/src/functions/Merge-OptionSetting.ps1"
 . "$PSScriptRoot/src/functions/Merge-RuleSetting.ps1"
+. "$PSScriptRoot/src/functions/New-AnalyzerConfiguration.ps1"
+. "$PSScriptRoot/src/functions/New-AnalyzerSpecification.ps1"
 . "$PSScriptRoot/src/functions/New-NamingOption.ps1"
-. "$PSScriptRoot/src/functions/New-OptionConfiguration.ps1"
 . "$PSScriptRoot/src/functions/New-PreferenceSpecification.ps1"
-. "$PSScriptRoot/src/functions/New-RuleConfiguration.ps1"
-. "$PSScriptRoot/src/functions/New-RuleSpecification.ps1"
-. "$PSScriptRoot/src/functions/Test-RuleSetDifference.ps1"
+. "$PSScriptRoot/src/functions/Remove-MarkdownTableAffix.ps1"
+. "$PSScriptRoot/src/functions/Test-AnalyzerDifference.ps1"
 
 $artifactsDirectory = Join-Path -Path $PSScriptRoot -ChildPath 'artifacts'
 New-Item -ItemType Directory -Path $artifactsDirectory -Force |
@@ -102,12 +96,6 @@ if (-not $DownloadOnly) {
     Write-Output 'Merging settings for analyzer options'
     Merge-OptionSetting
 
-    $ruleConfigurationName = $MergeConfiguration ? 'combined' : 'rule'
-    Write-Output "Generating $ruleConfigurationName configuration (.globalconfig)"
-    New-RuleConfiguration -IncludeOption:$MergeConfiguration -IncludeVersion:$IncludeVersion
-
-    if (-not $MergeConfiguration) {
-        Write-Output 'Generating option configuration (partial.editorconfig)'
-        New-OptionConfiguration -IncludeVersion:$IncludeVersion
-    }
+    Write-Output 'Generating analyzer configuration (.globalconfig)'
+    New-AnalyzerConfiguration -IncludeVersion:$IncludeVersion
 }

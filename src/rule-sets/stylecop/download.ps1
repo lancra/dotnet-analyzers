@@ -61,4 +61,4 @@ $categories |
         $state = [RuleParserState]::Search
     }
 
-New-RuleSpecification -Rule $rules
+New-AnalyzerSpecification -Kind 'rules' -Item $rules

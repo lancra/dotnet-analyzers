@@ -81,7 +81,8 @@ $currentCategory = $null
             return
         }
 
-        $segments = $_.Substring(2) -split '\|' |
+        $line = Remove-MarkdownTableAffix -Text $_
+        $segments = $line -split '\|' |
             ForEach-Object { $_.Trim() }
         $id = Format-Plaintext -Text $segments[0]
         $title = Format-Plaintext -Text $segments[3]
@@ -119,4 +120,4 @@ $currentCategory = $null
         $rules += $rule
     }
 
-New-RuleSpecification -Rule $rules
+New-AnalyzerSpecification -Kind 'rules' -Item $rules

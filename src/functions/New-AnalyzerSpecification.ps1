@@ -1,16 +1,25 @@
-function New-RuleSpecification {
+function New-AnalyzerSpecification {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory)]
-        [pscustomobject[]] $Rule,
+        [ValidateSet('options', 'rules')]
+        [string] $Kind,
+
+        [Parameter(Mandatory)]
+        [pscustomobject[]] $Item,
 
         [Parameter()]
         [scriptblock[]] $Sort = @()
     )
     begin {
         $jsonDepth = 10
-        $schema = 'https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/analyzer-rules.schema.json'
+        $schema = "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/$Kind.schema.json"
         $timestamp = Get-Date -Format 'o'
+
+        $defaultSort = switch ($Kind) {
+            'options' { { $_.name } }
+            'rules' { { $_.id } }
+        }
     }
     process {
         $callStackFrames = Get-PSCallStack
@@ -20,21 +29,21 @@ function New-RuleSpecification {
 
         $callingPath = $callStackFrames[1].ScriptName
         $callingDirectory = [System.IO.Path]::GetDirectoryName($callingPath)
-        $path = $path = Join-Path -Path $callingDirectory -ChildPath 'rules.json'
+        $path = $path = Join-Path -Path $callingDirectory -ChildPath "$Kind.json"
 
-        $fullSort = @($Sort) + { $_.id }
-        $sortedRules = $Rule |
+        $fullSort = @($Sort) + $defaultSort
+        $sortedItems = $Item |
             Sort-Object -Property $fullSort
 
         $output = [ordered]@{
             '$schema' = $schema
             timestamp = $timestamp
-            rules = $sortedRules
+            "$Kind" = $sortedItems
         }
 
-        $inMemoryRulesJson = $output['rules'] |
+        $inMemoryItemsJson = $output[$Kind] |
             ConvertTo-Json -Depth $jsonDepth
-        $hasChanges = Test-RuleSetDifference -Path $path -Json $inMemoryRulesJson
+        $hasChanges = Test-AnalyzerDifference -Path $path -Json $inMemoryItemsJson -Property $Kind
         if ($hasChanges) {
             $output |
                 ConvertTo-Json -Depth $jsonDepth |

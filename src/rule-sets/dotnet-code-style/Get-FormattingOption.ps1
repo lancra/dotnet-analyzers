@@ -13,7 +13,7 @@ function Get-FormattingOption {
 
         # Since this script is executed within parallel thread jobs, the global dot sources within the build script are inapplicable.
         . "$Directory/../../functions/Format-Plaintext.ps1"
-        . "$Directory/../../functions/Get-DataSetFile.ps1"
+        . "$Directory/../../functions/Remove-MarkdownTableAffix.ps1"
 
         enum OptionParserState {
             Search # Looking for an option header in the document
@@ -29,7 +29,7 @@ function Get-FormattingOption {
         $defaultProperty = 'Default option value'
         $pipeEscapeCharacter = '&#124;'
 
-        $optionValueSpecificationsPath = Get-DataSetFile -File 'option-value-specifications.csv'
+        $optionValueSpecificationsPath = "$Directory/option-value-specifications.csv"
         $optionValueSpecifications = Import-Csv -Path $optionValueSpecificationsPath
     }
     process {
@@ -74,8 +74,7 @@ function Get-FormattingOption {
                     return
                 }
 
-                # Remove '| ' from the beginning of the line and ' |' from the end.
-                $rawLine = $_.Substring(2, $_.Length - 4)
+                $rawLine = Remove-MarkdownTableAffix -Text $_
                 $rowValues = ((Format-Plaintext $rawLine) -split '\|').Trim()
 
                 # Skip rule tables, options table are all we're interested in here.
