@@ -71,11 +71,11 @@ param (
 . "$PSScriptRoot/src/functions/Get-VersionComment.ps1"
 . "$PSScriptRoot/src/functions/Merge-OptionSetting.ps1"
 . "$PSScriptRoot/src/functions/Merge-RuleSetting.ps1"
+. "$PSScriptRoot/src/functions/New-AnalyzerSpecification.ps1"
 . "$PSScriptRoot/src/functions/New-NamingOption.ps1"
 . "$PSScriptRoot/src/functions/New-OptionConfiguration.ps1"
 . "$PSScriptRoot/src/functions/New-PreferenceSpecification.ps1"
 . "$PSScriptRoot/src/functions/New-RuleConfiguration.ps1"
-. "$PSScriptRoot/src/functions/New-RuleSpecification.ps1"
 . "$PSScriptRoot/src/functions/Remove-MarkdownTableAffix.ps1"
 . "$PSScriptRoot/src/functions/Test-AnalyzerDifference.ps1"
 

@@ -51,4 +51,4 @@ $ruleJobs |
         Remove-Job -Job $_
     }
 
-New-RuleSpecification -Rule $rules
+New-AnalyzerSpecification -Kind 'rules' -Item $rules
