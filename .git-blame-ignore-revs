@@ -6,3 +6,6 @@
 
 # Update settings file with re-ordered columns
 cdf59f9ad50e249efcaec3ba9197e740535b0c89
+
+# Remove rule identifier from options settings
+98ed3574751b20c3881de9f2e9c7a500843ec71c
