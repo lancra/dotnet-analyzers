@@ -77,7 +77,7 @@ param (
 . "$PSScriptRoot/src/functions/New-RuleConfiguration.ps1"
 . "$PSScriptRoot/src/functions/New-RuleSpecification.ps1"
 . "$PSScriptRoot/src/functions/Remove-MarkdownTableAffix.ps1"
-. "$PSScriptRoot/src/functions/Test-RuleSetDifference.ps1"
+. "$PSScriptRoot/src/functions/Test-AnalyzerDifference.ps1"
 
 $artifactsDirectory = Join-Path -Path $PSScriptRoot -ChildPath 'artifacts'
 New-Item -ItemType Directory -Path $artifactsDirectory -Force |

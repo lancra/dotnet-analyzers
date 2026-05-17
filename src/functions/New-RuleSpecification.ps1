@@ -34,7 +34,7 @@ function New-RuleSpecification {
 
         $inMemoryRulesJson = $output['rules'] |
             ConvertTo-Json -Depth $jsonDepth
-        $hasChanges = Test-RuleSetDifference -Path $path -Json $inMemoryRulesJson
+        $hasChanges = Test-AnalyzerDifference -Path $path -Json $inMemoryItemsJson -Property 'rules'
         if ($hasChanges) {
             $output |
                 ConvertTo-Json -Depth $jsonDepth |
