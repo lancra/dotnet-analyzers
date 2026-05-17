@@ -1,8 +1,7 @@
-function New-RuleConfiguration {
+function New-AnalyzerConfiguration {
     [CmdletBinding(SupportsShouldProcess)]
     param (
-        [switch]$IncludeOption,
-        [switch]$IncludeVersion
+        [switch] $IncludeVersion
     )
     begin {
         $severities = @{}
@@ -124,18 +123,16 @@ function New-RuleConfiguration {
 
                 $lines = $ruleSettingLines
 
-                if ($IncludeOption) {
-                    $optionSettingLines = $optionSettings |
-                        Where-Object -Property RuleSet -EQ $category.RuleSet |
-                        ForEach-Object { $optionSettingFormat -f $_.Name, $_.Value, $_.Id }
+                $optionSettingLines = $optionSettings |
+                    Where-Object -Property RuleSet -EQ $category.RuleSet |
+                    ForEach-Object { $optionSettingFormat -f $_.Name, $_.Value, $_.Id }
 
-                    if ($optionSettingLines) {
-                        $lines += ,'' + $optionSettingLines
+                if ($optionSettingLines) {
+                    $lines += ,'' + $optionSettingLines
 
-                        $namingSettingLines = New-NamingOption
-                        if ($namingSettingLines) {
-                            $lines += ,'' + $namingSettingLines
-                        }
+                    $namingSettingLines = New-NamingOption
+                    if ($namingSettingLines) {
+                        $lines += ,'' + $namingSettingLines
                     }
                 }
 
