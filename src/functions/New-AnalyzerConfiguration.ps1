@@ -66,7 +66,7 @@ function New-AnalyzerConfiguration {
             }
 
         $ruleSettingFormat = 'dotnet_diagnostic.{0}.severity = {1}'
-        $optionSettingFormat = '{0} = {1} # {2}'
+        $optionSettingFormat = '{0} = {1}'
         $builder = [System.Text.StringBuilder]::new()
     }
     process {
@@ -125,7 +125,7 @@ function New-AnalyzerConfiguration {
 
                 $optionSettingLines = $optionSettings |
                     Where-Object -Property RuleSet -EQ $category.RuleSet |
-                    ForEach-Object { $optionSettingFormat -f $_.Name, $_.Value, $_.Id }
+                    ForEach-Object { $optionSettingFormat -f $_.Name, $_.Value }
 
                 if ($optionSettingLines) {
                     $lines += ,'' + $optionSettingLines

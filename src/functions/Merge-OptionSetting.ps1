@@ -5,7 +5,6 @@ function Merge-OptionSetting {
         $actionProperty = 'Action'
         $ruleSetProperty = 'RuleSet'
         $nameProperty = 'Name'
-        $idProperty = 'Id'
         $defaultProperty = 'Default'
         $valueProperty = 'Value'
         $reasoningProperty = 'Reasoning'
@@ -35,7 +34,6 @@ function Merge-OptionSetting {
         $selectProperties = @(
             $ruleSetProperty,
             @{Name = $nameProperty; Expression = {$_.name}},
-            @{Name = $idProperty; Expression = {$_.id}},
             @{Name = $defaultProperty;Expression = {$_.default}}
         )
         $onlineOptions = $rawOnlineOptions | Select-Object -Property $selectProperties
@@ -53,18 +51,12 @@ function Merge-OptionSetting {
             ForEach-Object {
                 $matchingOnlineOptions = $onlineOptions | Where-Object -Property $nameProperty -EQ $_
                 $onlineOption = $matchingOnlineOptions | Select-Object -First 1
-                if ($matchingOnlineOptions.Length -gt 1) {
-                    $onlineOption.$idProperty = ($matchingOnlineOptions |
-                        Select-Object -ExpandProperty $idProperty |
-                        Sort-Object) -join '/'
-                }
 
                 $localOption = $localOptions | Where-Object -Property $nameProperty -EQ $_ | Select-Object -First 1
 
                 $option = [PSCustomObject]@{
                     $ruleSetProperty = $onlineOption.$ruleSetProperty ?? $localOption.$ruleSetProperty
                     $nameProperty = $onlineOption.$nameProperty ?? $localOption.$nameProperty
-                    $idProperty = $onlineOption.$idProperty ?? $localOption.$idProperty
                     $defaultProperty = $onlineOption.$defaultProperty ?? $localOption.$defaultProperty
                     $valueProperty = $localOption.$valueProperty
                     $reasoningProperty = $localOption.$reasoningProperty
@@ -89,7 +81,6 @@ function Merge-OptionSetting {
             $actionProperty,
             $ruleSetProperty,
             $nameProperty,
-            $idProperty,
             $defaultProperty,
             $valueProperty,
             $reasoningProperty
