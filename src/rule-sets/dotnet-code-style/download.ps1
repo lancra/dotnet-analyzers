@@ -139,15 +139,30 @@ $ruleSetDirectoryPath = $PSScriptRoot
         $rules += $rule
     }
 
-Wait-Job $optionsJobs | Out-Null
+Wait-Job $optionsJobs |
+    Out-Null
+
+$optionLookup = @{}
 $optionsJobs |
     ForEach-Object {
         $options = Receive-Job -Job $_
+
+        $options |
+            ForEach-Object {
+                if (-not $optionLookup.ContainsKey($_.name)) {
+                    $optionLookup.Add($_.name, $_)
+                }
+            }
+
         $rule = $rules |
             Where-Object -Property id -EQ $_.Name |
             Select-Object -First 1
 
         $rule.options = @($options |
+            ForEach-Object {
+                $_['name']
+            } |
+            Sort-Object |
             ConvertTo-Json -Depth 10 |
             ConvertFrom-Json)
 
@@ -164,3 +179,4 @@ $rules += [PSCustomObject]@{
 }
 
 New-AnalyzerSpecification -Kind 'rules' -Item $rules
+New-AnalyzerSpecification -Kind 'options' -Item $optionLookup.Values

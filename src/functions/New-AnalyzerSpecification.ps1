@@ -2,7 +2,7 @@ function New-AnalyzerSpecification {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory)]
-        [ValidateSet('rules')]
+        [ValidateSet('options', 'rules')]
         [string] $Kind,
 
         [Parameter(Mandatory)]
@@ -15,6 +15,11 @@ function New-AnalyzerSpecification {
         $jsonDepth = 10
         $schema = "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/$Kind.schema.json"
         $timestamp = Get-Date -Format 'o'
+
+        $defaultSort = switch ($Kind) {
+            'options' { { $_.name } }
+            'rules' { { $_.id } }
+        }
     }
     process {
         $callStackFrames = Get-PSCallStack
@@ -26,7 +31,7 @@ function New-AnalyzerSpecification {
         $callingDirectory = [System.IO.Path]::GetDirectoryName($callingPath)
         $path = $path = Join-Path -Path $callingDirectory -ChildPath "$Kind.json"
 
-        $fullSort = @($Sort) + { $_.id }
+        $fullSort = @($Sort) + $defaultSort
         $sortedItems = $Item |
             Sort-Object -Property $fullSort
 

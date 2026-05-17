@@ -14,17 +14,14 @@ function Merge-OptionSetting {
         Get-RuleSet |
             ForEach-Object {
                 $ruleSet = $_
-                $rulesPath = Get-RuleSetFile -RuleSet $ruleSet.Id -File 'rules.json'
-                if (-not (Test-Path -Path $rulesPath)) {
-                    Write-Warning "Skipping merge of $($ruleSet.Name) option settings, no downloaded rules found"
+                $optionsPath = Get-RuleSetFile -RuleSet $ruleSet.Id -File 'options.json'
+                if (-not (Test-Path -Path $optionsPath)) {
                     return
                 }
 
-                $ruleSetOptions = Get-Content -Path $rulesPath |
+                $ruleSetOptions = Get-Content -Path $optionsPath |
                     ConvertFrom-Json |
-                    Select-Object -ExpandProperty 'rules' |
-                    Where-Object -Property 'options' |
-                    Select-Object -Property 'id' -ExpandProperty 'options'
+                    Select-Object -ExpandProperty 'options'
 
                 $ruleSetOptions | Add-Member -MemberType NoteProperty -Name $ruleSetProperty -Value $ruleSet.Name
 
@@ -49,10 +46,13 @@ function Merge-OptionSetting {
             Select-Object -Unique |
             Sort-Object |
             ForEach-Object {
-                $matchingOnlineOptions = $onlineOptions | Where-Object -Property $nameProperty -EQ $_
-                $onlineOption = $matchingOnlineOptions | Select-Object -First 1
+                $onlineOption = $onlineOptions |
+                    Where-Object -Property $nameProperty -EQ $_ |
+                    Select-Object -First 1
 
-                $localOption = $localOptions | Where-Object -Property $nameProperty -EQ $_ | Select-Object -First 1
+                $localOption = $localOptions |
+                    Where-Object -Property $nameProperty -EQ $_ |
+                    Select-Object -First 1
 
                 $option = [PSCustomObject]@{
                     $ruleSetProperty = $onlineOption.$ruleSetProperty ?? $localOption.$ruleSetProperty
