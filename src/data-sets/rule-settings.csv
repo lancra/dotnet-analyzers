@@ -186,6 +186,7 @@ None,CA2024,.NET Quality,Reliability,Do not use 'StreamReader.EndOfStream' in as
 None,CA2025,.NET Quality,Reliability,Do not pass 'IDisposable' instances into unawaited tasks,Warning,
 None,CA2026,.NET Quality,Reliability,Prefer JsonElement.Parse over JsonDocument.Parse().RootElement,Warning,
 None,CA2027,.NET Quality,Reliability,Cancel Task.Delay after Task.WhenAny completes,Warning,
+None,CA2028,.NET Quality,Reliability,Avoid redundant 'Regex.IsMatch' call before 'Regex.Match',Warning,
 None,CA2100,.NET Quality,Security,Review SQL queries for security vulnerabilities,Warning,
 None,CA2119,.NET Quality,Security,Seal methods that satisfy private interfaces,Warning,
 None,CA2153,.NET Quality,Security,Do Not Catch Corrupted State Exceptions,Warning,
