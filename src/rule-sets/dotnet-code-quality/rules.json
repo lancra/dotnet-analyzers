@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/rules.schema.json",
-  "timestamp": "2026-05-01T21:48:15.2802760-04:00",
+  "timestamp": "2026-05-24T14:20:29.3161819-04:00",
   "rules": [
     {
       "id": "CA1000",
@@ -1308,6 +1308,13 @@
       "id": "CA2027",
       "title": "Cancel Task.Delay after Task.WhenAny completes",
       "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2027",
+      "category": "Reliability",
+      "default": "Info"
+    },
+    {
+      "id": "CA2028",
+      "title": "Avoid redundant 'Regex.IsMatch' call before 'Regex.Match'",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2028",
       "category": "Reliability",
       "default": "Info"
     },
