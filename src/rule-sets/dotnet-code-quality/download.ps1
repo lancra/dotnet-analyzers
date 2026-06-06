@@ -69,7 +69,7 @@ function Get-Rule {
 }
 
 $rules = @()
-$rules += Get-Rule -Uri 'https://raw.githubusercontent.com/dotnet/sdk/main/src/Microsoft.CodeAnalysis.NetAnalyzers/src/Microsoft.CodeAnalysis.NetAnalyzers.sarif'
+$rules += Get-Rule -Uri 'https://raw.githubusercontent.com/dotnet/sdk/main/src/Microsoft.CodeAnalysis.NetAnalyzers/src/Microsoft.CodeAnalysis.NetAnalyzers.sarif.template'
 $rules += Get-Rule -Uri 'https://raw.githubusercontent.com/dotnet/roslyn/main/src/RoslynAnalyzers/Text.Analyzers/Text.Analyzers.sarif'
 
 $ruleSet = Get-RuleSet -CurrentDirectory
