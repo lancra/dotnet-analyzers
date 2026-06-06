@@ -9,6 +9,7 @@ the lists up-to-date and to generate the configuration files to apply the settin
 <!-- prettier-ignore -->
 Name|Packages|Shields
 -|-|-
+[.NET Code Analysis](https://github.com/dotnet/dotnet/blob/main/src/roslyn/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md)|`Microsoft.CodeAnalysis.Analyzers`|![microsoft.codeanalysis.analyzers](https://img.shields.io/nuget/v/microsoft.codeanalysis.analyzers)
 [.NET Code Quality](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules)|`Microsoft.CodeAnalysis.NetAnalyzers`<br/>`Text.Analyzers`|![microsoft.codeanalysis.netanalyzers](https://img.shields.io/nuget/v/microsoft.codeanalysis.netanalyzers)<br/>![text.analyzers](https://img.shields.io/nuget/v/text.analyzers)
 [.NET Code Style](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules)|N/A|![built-in](https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=fff)
 [Exceptionator](https://github.com/elmahio/Exceptionator/blob/main/README.md)|`TheExceptionator.Analyzers`|![theexceptionator.analyzers](https://img.shields.io/nuget/v/theexceptionator.analyzers)
