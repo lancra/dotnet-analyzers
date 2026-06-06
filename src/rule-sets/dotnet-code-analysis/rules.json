@@ -1,0 +1,370 @@
+{
+  "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/rules.schema.json",
+  "timestamp": "2026-06-06T06:43:59.2796000-04:00",
+  "rules": [
+    {
+      "id": "RS1001",
+      "title": "Missing diagnostic analyzer attribute",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1001-missing-diagnostic-analyzer-attribute",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1002",
+      "title": "Missing kind argument when registering an analyzer action",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1002-missing-kind-argument-when-registering-an-analyzer-action",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1003",
+      "title": "Unsupported SymbolKind argument when registering a symbol analyzer action",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1003-unsupported-symbolkind-argument-when-registering-a-symbol-analyzer-action",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1004",
+      "title": "Recommend adding language support to diagnostic analyzer",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1004-recommend-adding-language-support-to-diagnostic-analyzer",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1005",
+      "title": "ReportDiagnostic invoked with an unsupported DiagnosticDescriptor",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1005-reportdiagnostic-invoked-with-an-unsupported-diagnosticdescriptor",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1006",
+      "title": "Invalid type argument for DiagnosticAnalyzer's Register method",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1006-invalid-type-argument-for-diagnosticanalyzers-register-method",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1007",
+      "title": "Provide localizable arguments to diagnostic descriptor constructor",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1007-provide-localizable-arguments-to-diagnostic-descriptor-constructor",
+      "category": "Localization",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1008",
+      "title": "Avoid storing per-compilation data into the fields of a diagnostic analyzer",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1008-avoid-storing-percompilation-data-into-the-fields-of-a-diagnostic-analyzer",
+      "category": "Performance",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1009",
+      "title": "Only internal implementations of this interface are allowed",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1009-only-internal-implementations-of-this-interface-are-allowed",
+      "category": "Compatibility",
+      "default": "Error"
+    },
+    {
+      "id": "RS1010",
+      "title": "Create code actions should have a unique EquivalenceKey for FixAll occurrences support",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1010-create-code-actions-should-have-a-unique-equivalencekey-for-fixall-occurrences-support",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1011",
+      "title": "Use code actions that have a unique EquivalenceKey for FixAll occurrences support",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1011-use-code-actions-that-have-a-unique-equivalencekey-for-fixall-occurrences-support",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1012",
+      "title": "Start action has no registered actions",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1012-start-action-has-no-registered-actions",
+      "category": "Performance",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1013",
+      "title": "Start action has no registered non-end actions",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1013-start-action-has-no-registered-nonend-actions",
+      "category": "Performance",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1014",
+      "title": "Do not ignore values returned by methods on immutable objects",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1014-do-not-ignore-values-returned-by-methods-on-immutable-objects",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1015",
+      "title": "Provide non-null 'helpLinkUri' value to diagnostic descriptor constructor",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1015-provide-nonnull-helplinkuri-value-to-diagnostic-descriptor-constructor",
+      "category": "Documentation",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1016",
+      "title": "Code fix providers should provide FixAll support",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1016-code-fix-providers-should-provide-fixall-support",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1017",
+      "title": "DiagnosticId for analyzers must be a non-null constant",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1017-diagnosticid-for-analyzers-must-be-a-nonnull-constant",
+      "category": "Design",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1018",
+      "title": "DiagnosticId for analyzers must be in specified format",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1018-diagnosticid-for-analyzers-must-be-in-specified-format",
+      "category": "Design",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1019",
+      "title": "DiagnosticId must be unique across analyzers",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1019-diagnosticid-must-be-unique-across-analyzers",
+      "category": "Design",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1020",
+      "title": "Category for analyzers must be from the specified values",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1020-category-for-analyzers-must-be-from-the-specified-values",
+      "category": "Design",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1021",
+      "title": "Invalid entry in analyzer category and diagnostic ID range specification file",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1021-invalid-entry-in-analyzer-category-and-diagnostic-id-range-specification-file",
+      "category": "Design",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1022",
+      "title": "Do not use types from Workspaces assembly in an analyzer",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1022-do-not-use-types-from-workspaces-assembly-in-an-analyzer",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1023",
+      "title": "Upgrade MSBuildWorkspace",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1023-upgrade-msbuildworkspace",
+      "category": "Library",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1024",
+      "title": "Symbols should be compared for equality",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1024-symbols-should-be-compared-for-equality",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1025",
+      "title": "Configure generated code analysis",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1025-configure-generated-code-analysis",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1026",
+      "title": "Enable concurrent execution",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1026-enable-concurrent-execution",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1027",
+      "title": "Types marked with DiagnosticAnalyzerAttribute(s) should inherit from DiagnosticAnalyzer",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1027-types-marked-with-diagnosticanalyzerattributes-should-inherit-from-diagnosticanalyzer",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1028",
+      "title": "Provide non-null 'customTags' value to diagnostic descriptor constructor",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1028-provide-nonnull-customtags-value-to-diagnostic-descriptor-constructor",
+      "category": "Documentation",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1029",
+      "title": "Do not use reserved diagnostic IDs",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1029-do-not-use-reserved-diagnostic-ids",
+      "category": "Design",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1030",
+      "title": "Do not invoke Compilation.GetSemanticModel() method within a diagnostic analyzer",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1030-do-not-invoke-compilationgetsemanticmodel-method-within-a-diagnostic-analyzer",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1031",
+      "title": "Define diagnostic title correctly",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1031-define-diagnostic-title-correctly",
+      "category": "Design",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1032",
+      "title": "Define diagnostic message correctly",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1032-define-diagnostic-message-correctly",
+      "category": "Design",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1033",
+      "title": "Define diagnostic description correctly",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1033-define-diagnostic-description-correctly",
+      "category": "Design",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1034",
+      "title": "Prefer 'IsKind' for checking syntax kinds",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1034-prefer-iskind-for-checking-syntax-kinds",
+      "category": "Performance",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1035",
+      "title": "Do not use APIs banned for analyzers",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1035-do-not-use-apis-banned-for-analyzers",
+      "category": "Correctness",
+      "default": "Error"
+    },
+    {
+      "id": "RS1036",
+      "title": "Specify analyzer banned API enforcement setting",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1036-specify-analyzer-banned-api-enforcement-setting",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1037",
+      "title": "Add \"CompilationEnd\" custom tag to compilation end diagnostic descriptor",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1037-add-compilationend-custom-tag-to-compilation-end-diagnostic-descriptor",
+      "category": "Design",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1038",
+      "title": "Compiler extensions should be implemented in assemblies with compiler-provided references",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1038-compiler-extensions-should-be-implemented-in-assemblies-with-compilerprovided-references",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1039",
+      "title": "This call to 'SemanticModel.GetDeclaredSymbol()' will always return 'null'",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1039-this-call-to-semanticmodelgetdeclaredsymbol-will-always-return-null",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1040",
+      "title": "This call to 'SemanticModel.GetDeclaredSymbol()' will always return 'null'",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1040-this-call-to-semanticmodelgetdeclaredsymbol-will-always-return-null",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1041",
+      "title": "Compiler extensions should be implemented in assemblies targeting netstandard2.0",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1041-compiler-extensions-should-be-implemented-in-assemblies-targeting-netstandard20",
+      "category": "Correctness",
+      "default": "Warning"
+    },
+    {
+      "id": "RS1042",
+      "title": "Implementations of this interface are not allowed",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1042-implementations-of-this-interface-are-not-allowed",
+      "category": "Compatibility",
+      "default": "Error"
+    },
+    {
+      "id": "RS1043",
+      "title": "Do not use file types for implementing analyzers, generators, and code fixers",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs1043-do-not-use-file-types-for-implementing-analyzers-generators-and-code-fixers",
+      "category": "Correctness",
+      "default": "Error"
+    },
+    {
+      "id": "RS2000",
+      "title": "Add analyzer diagnostic IDs to analyzer release",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs2000-add-analyzer-diagnostic-ids-to-analyzer-release",
+      "category": "ReleaseTracking",
+      "default": "Warning"
+    },
+    {
+      "id": "RS2001",
+      "title": "Ensure up-to-date entry for analyzer diagnostic IDs are added to analyzer release",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs2001-ensure-uptodate-entry-for-analyzer-diagnostic-ids-are-added-to-analyzer-release",
+      "category": "ReleaseTracking",
+      "default": "Warning"
+    },
+    {
+      "id": "RS2002",
+      "title": "Do not add removed analyzer diagnostic IDs to unshipped analyzer release",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs2002-do-not-add-removed-analyzer-diagnostic-ids-to-unshipped-analyzer-release",
+      "category": "ReleaseTracking",
+      "default": "Warning"
+    },
+    {
+      "id": "RS2003",
+      "title": "Shipped diagnostic IDs that are no longer reported should have an entry in the 'Removed Rules' table in unshipped file",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs2003-shipped-diagnostic-ids-that-are-no-longer-reported-should-have-an-entry-in-the-removed-rules-table-in-unshipped-file",
+      "category": "ReleaseTracking",
+      "default": "Warning"
+    },
+    {
+      "id": "RS2004",
+      "title": "Diagnostic IDs marked as removed in analyzer release file should not be reported by analyzers",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs2004-diagnostic-ids-marked-as-removed-in-analyzer-release-file-should-not-be-reported-by-analyzers",
+      "category": "ReleaseTracking",
+      "default": "Warning"
+    },
+    {
+      "id": "RS2005",
+      "title": "Remove duplicate entries for diagnostic ID in the same analyzer release",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs2005-remove-duplicate-entries-for-diagnostic-id-in-the-same-analyzer-release",
+      "category": "ReleaseTracking",
+      "default": "Warning"
+    },
+    {
+      "id": "RS2006",
+      "title": "Remove duplicate entries for diagnostic ID between analyzer releases",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs2006-remove-duplicate-entries-for-diagnostic-id-between-analyzer-releases",
+      "category": "ReleaseTracking",
+      "default": "Warning"
+    },
+    {
+      "id": "RS2007",
+      "title": "Invalid entry in analyzer release file",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs2007-invalid-entry-in-analyzer-release-file",
+      "category": "ReleaseTracking",
+      "default": "Warning"
+    },
+    {
+      "id": "RS2008",
+      "title": "Enable analyzer release tracking",
+      "helpUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#rs2008-enable-analyzer-release-tracking",
+      "category": "ReleaseTracking",
+      "default": "Warning"
+    }
+  ]
+}
