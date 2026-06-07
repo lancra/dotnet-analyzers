@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/rules.schema.json",
-  "timestamp": "2026-05-03T09:40:27.1363382-04:00",
+  "timestamp": "2026-06-07T05:49:22.3360477-04:00",
   "rules": [
     {
       "id": "xUnit1000",
@@ -107,7 +107,7 @@
       "versions": {
         "v2": true,
         "v3": true,
-        "AOT": true
+        "AOT": false
       }
     },
     {
