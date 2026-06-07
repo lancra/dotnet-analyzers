@@ -48,6 +48,39 @@
   },
   "ruleSets": [
     {
+      "id": "dotnet-code-analysis",
+      "name": ".NET Analysis",
+      "indexUri": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md",
+      "helpUriFormat": "https://github.com/dotnet/roslyn/blob/main/src/RoslynAnalyzers/Microsoft.CodeAnalysis.Analyzers/Microsoft.CodeAnalysis.Analyzers.md#{0}",
+      "categories": [
+        {
+          "name": "Compatibility"
+        },
+        {
+          "name": "Correctness"
+        },
+        {
+          "name": "Design"
+        },
+        {
+          "name": "Documentation"
+        },
+        {
+          "name": "Library"
+        },
+        {
+          "name": "Localization"
+        },
+        {
+          "name": "Performance"
+        },
+        {
+          "name": "ReleaseTracking"
+        }
+      ],
+      "properties": {}
+    },
+    {
       "id": "dotnet-code-quality",
       "name": ".NET Quality",
       "helpUriFormat": "https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/warnings/{0}",
