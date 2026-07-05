@@ -11,6 +11,7 @@ param ()
 $indexUri = 'https://raw.githubusercontent.com/thomhurst/TUnit/refs/heads/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md'
 $headerPrefix = [string]::new('#', 4) + ' '
 $headerSuffix = ' Rules'
+$tableTitlePrefix = 'Rule ID |'
 
 $ruleSet = Get-RuleSet -CurrentDirectory
 $categories = $ruleSet |
@@ -45,7 +46,10 @@ $rules = @()
         }
 
         if ($state -eq [RuleParserState]::TableTitle) {
-            $state = [RuleParserState]::TableAlignment
+            if ($_.StartsWith($tableTitlePrefix)) {
+                $state = [RuleParserState]::TableAlignment
+            }
+
             return
         }
 
