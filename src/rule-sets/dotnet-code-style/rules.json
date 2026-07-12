@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/rules.schema.json",
-  "timestamp": "2026-05-17T07:09:38.6497180-04:00",
+  "timestamp": "2026-07-12T14:20:34.0078956-04:00",
   "rules": [
     {
       "id": "IDE0001",
@@ -301,7 +301,8 @@
     },
     {
       "id": "IDE0043",
-      "title": "Format string contains invalid placeholder",
+      "title": "Invalid format string",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0043",
       "options": []
     },
     {
