@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/options.schema.json",
-  "timestamp": "2026-05-17T06:39:05.9778651-04:00",
+  "timestamp": "2026-07-12T14:19:29.3882267-04:00",
   "options": [
     {
       "name": "csharp_indent_block_contents",
@@ -991,6 +991,20 @@
         {
           "value": "false",
           "description": "Prefer not to use the ^ operator when calculating an index from the end of a collection"
+        }
+      ],
+      "default": "true"
+    },
+    {
+      "name": "csharp_style_prefer_labeled_jump_statements",
+      "values": [
+        {
+          "value": "true",
+          "description": "Prefer labeled jump statements"
+        },
+        {
+          "value": "false",
+          "description": "Disables the rule"
         }
       ],
       "default": "true"

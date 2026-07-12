@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/rules.schema.json",
-  "timestamp": "2026-05-17T07:09:38.6497180-04:00",
+  "timestamp": "2026-07-12T14:20:34.0078956-04:00",
   "rules": [
     {
       "id": "IDE0001",
@@ -301,7 +301,8 @@
     },
     {
       "id": "IDE0043",
-      "title": "Format string contains invalid placeholder",
+      "title": "Invalid format string",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0043",
       "options": []
     },
     {
@@ -940,6 +941,26 @@
       "options": []
     },
     {
+      "id": "IDE0390",
+      "title": "Make method synchronous",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0390-ide0391",
+      "options": []
+    },
+    {
+      "id": "IDE0391",
+      "title": "Make method synchronous",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0390-ide0391",
+      "options": []
+    },
+    {
+      "id": "IDE0410",
+      "title": "Use labeled jump statement",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0410",
+      "options": [
+        "csharp_style_prefer_labeled_jump_statements"
+      ]
+    },
+    {
       "id": "IDE1005",
       "title": "Use conditional delegate call",
       "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide1005",
@@ -951,6 +972,12 @@
       "id": "IDE1006",
       "title": "Naming styles",
       "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/naming-rules",
+      "options": []
+    },
+    {
+      "id": "IDE1007",
+      "title": "The name does not exist in the current context",
+      "helpUri": "https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide1007",
       "options": []
     },
     {
