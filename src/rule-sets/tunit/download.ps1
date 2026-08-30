@@ -8,7 +8,7 @@ The rules are parsed from the individual category tables in the Markdown index.
 [CmdletBinding()]
 param ()
 
-$indexUri = 'https://raw.githubusercontent.com/thomhurst/TUnit/refs/heads/main/TUnit.Analyzers/AnalyzerReleases.Shipped.md'
+$indexUri = 'https://raw.githubusercontent.com/thomhurst/TUnit/refs/heads/main/src/TUnit.Analyzers/AnalyzerReleases.Shipped.md'
 $headerPrefix = [string]::new('#', 4) + ' '
 $headerSuffix = ' Rules'
 $tableTitlePrefix = 'Rule ID |'

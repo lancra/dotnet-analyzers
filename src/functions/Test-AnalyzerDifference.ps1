@@ -30,9 +30,11 @@ function Test-AnalyzerDifference {
         $Json |
             Set-Content $tempNewPath
 
-        git diff --exit-code --no-index $tempCurrentPath $tempNewPath |
-            Out-Null
-        $hasDifferences = $LASTEXITCODE -ne 0
+        $currentHash = Get-FileHash -Path $tempCurrentPath -Algorithm SHA256 |
+            Select-Object -ExpandProperty Hash
+        $newHash = Get-FileHash -Path $tempNewPath -Algorithm SHA256 |
+            Select-Object -ExpandProperty Hash
+        $hasDifferences = $currentHash -ne $newHash
         return $hasDifferences
     }
     end {
