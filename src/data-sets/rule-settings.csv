@@ -385,6 +385,7 @@ None,CA2263,.NET Quality,Usage,Prefer generic overload when type is known,Warnin
 None,CA2264,.NET Quality,Usage,Do not pass a non-nullable value to 'ArgumentNullException.ThrowIfNull',Warning,
 None,CA2265,.NET Quality,Usage,Do not compare Span<T> to 'null' or 'default',Warning,
 None,CA2266,.NET Quality,Usage,File-based program entry point should start with '#!',Warning,
+None,CA2267,.NET Quality,Usage,Quote whitespace in file-based program directive values,Warning,
 None,IDE0001,.NET Style,,Simplify name,Warning,
 None,IDE0002,.NET Style,,Simplify member access,Warning,
 None,IDE0003,.NET Style,,Name can be simplified,Warning,
