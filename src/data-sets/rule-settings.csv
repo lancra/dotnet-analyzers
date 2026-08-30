@@ -849,6 +849,7 @@ None,xUnit2029,xUnit,Assertion,Do not use Assert.Empty to check if a value does 
 None,xUnit2030,xUnit,Assertion,Do not use Assert.NotEmpty to check if a value exists in a collection,Warning,
 None,xUnit2031,xUnit,Assertion,Do not use Where clause with Assert.Single,Warning,
 None,xUnit2032,xUnit,Assertion,Type assertions based on 'assignable from' are confusingly named,Warning,
+None,xUnit2033,xUnit,Assertion,Use the assertion return value instead of re-deriving it,Warning,
 None,xUnit3000,xUnit,Extensibility,Classes which cross AppDomain boundaries must derive directly or indirectly from LongLivedMarshalByRefObject,Warning,
 None,xUnit3001,xUnit,Extensibility,Classes that are marked as serializable (or created by the test framework at runtime) must have a public parameterless constructor,Warning,
 None,xUnit3002,xUnit,Extensibility,Classes which are JSON serializable should not be tested for their concrete type,Warning,
