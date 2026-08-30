@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/rules.schema.json",
-  "timestamp": "2026-06-07T05:49:22.3360477-04:00",
+  "timestamp": "2026-08-30T12:01:35.5956599-04:00",
   "rules": [
     {
       "id": "xUnit1000",
@@ -1230,6 +1230,18 @@
       "id": "xUnit2032",
       "title": "Type assertions based on 'assignable from' are confusingly named",
       "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2032",
+      "category": "Assertion",
+      "default": "Info",
+      "versions": {
+        "v2": true,
+        "v3": true,
+        "AOT": true
+      }
+    },
+    {
+      "id": "xUnit2033",
+      "title": "Use the assertion return value instead of re-deriving it",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit2033",
       "category": "Assertion",
       "default": "Info",
       "versions": {

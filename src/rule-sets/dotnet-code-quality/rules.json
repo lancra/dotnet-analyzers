@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/rules.schema.json",
-  "timestamp": "2026-05-24T14:20:29.3161819-04:00",
+  "timestamp": "2026-08-30T12:01:26.1494160-04:00",
   "rules": [
     {
       "id": "CA1000",
@@ -1665,6 +1665,13 @@
       "id": "CA2266",
       "title": "File-based program entry point should start with '#!'",
       "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2266",
+      "category": "Usage",
+      "default": "Warning"
+    },
+    {
+      "id": "CA2267",
+      "title": "Quote whitespace in file-based program directive values",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2267",
       "category": "Usage",
       "default": "Warning"
     },

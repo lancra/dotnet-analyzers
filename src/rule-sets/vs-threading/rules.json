@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/rules.schema.json",
-  "timestamp": "2026-04-11T06:56:15.1288425-04:00",
+  "timestamp": "2026-08-30T12:01:35.3312025-04:00",
   "rules": [
     {
       "id": "VSTHRD001",
@@ -42,6 +42,12 @@
       "id": "VSTHRD012",
       "title": "Provide JoinableTaskFactory where allowed",
       "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD012.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD013",
+      "title": "Apply CompletedTaskAttribute only to immutable members",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD013.html",
       "default": "Warning"
     },
     {
@@ -138,6 +144,18 @@
       "id": "VSTHRD115",
       "title": "Avoid creating a JoinableTaskContext with an explicit null SynchronizationContext",
       "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD115.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD116",
+      "title": "Use ThreadStaticAttribute only with static fields",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD116.html",
+      "default": "Warning"
+    },
+    {
+      "id": "VSTHRD117",
+      "title": "Avoid initialization of ThreadStatic fields in a type initializer",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD117.html",
       "default": "Warning"
     },
     {
