@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/rules.schema.json",
-  "timestamp": "2026-08-30T12:01:26.1494160-04:00",
+  "timestamp": "2026-09-01T06:07:54.9915037-04:00",
   "rules": [
     {
       "id": "CA1000",
@@ -1154,6 +1154,13 @@
       "id": "CA1877",
       "title": "Collapse consecutive Path.Combine or Path.Join operations",
       "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1877",
+      "category": "Performance",
+      "default": "Info"
+    },
+    {
+      "id": "CA1878",
+      "title": "Prefer ReadOnlySpan<T> properties over readonly array fields",
+      "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1878",
       "category": "Performance",
       "default": "Info"
     },
