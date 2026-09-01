@@ -820,6 +820,7 @@ None,VSTHRD115,Visual Studio Threading,,Avoid creating a JoinableTaskContext wit
 None,VSTHRD116,Visual Studio Threading,,Use ThreadStaticAttribute only with static fields,Warning,
 None,VSTHRD117,Visual Studio Threading,,Avoid initialization of ThreadStatic fields in a type initializer,Warning,
 None,VSTHRD200,Visual Studio Threading,,Use Async naming convention,Warning,
+None,VSTHRD202,Visual Studio Threading,,Remove unnecessary async state machine,Warning,
 None,xUnit2000,xUnit,Assertion,Constants and literals should be the expected argument,Warning,
 None,xUnit2001,xUnit,Assertion,Do not use invalid equality check,Warning,
 None,xUnit2002,xUnit,Assertion,Do not use null check on value type,Warning,

@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/rules.schema.json",
-  "timestamp": "2026-08-30T12:01:35.3312025-04:00",
+  "timestamp": "2026-09-01T06:08:06.9296922-04:00",
   "rules": [
     {
       "id": "VSTHRD001",
@@ -163,6 +163,12 @@
       "title": "Use Async naming convention",
       "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD200.html",
       "default": "Warning"
+    },
+    {
+      "id": "VSTHRD202",
+      "title": "Remove unnecessary async state machine",
+      "helpUri": "https://microsoft.github.io/vs-threading/analyzers/VSTHRD202.html",
+      "default": "Info"
     }
   ]
 }
