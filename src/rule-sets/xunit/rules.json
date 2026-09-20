@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/rules.schema.json",
-  "timestamp": "2026-08-30T12:01:35.5956599-04:00",
+  "timestamp": "2026-09-20T14:54:55.1383897-04:00",
   "rules": [
     {
       "id": "xUnit1000",
@@ -834,6 +834,30 @@
       "id": "xUnit1069",
       "title": "Test methods with a Timeout should reference TestContext.Current.CancellationToken",
       "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1069",
+      "category": "Usage",
+      "default": "Warning",
+      "versions": {
+        "v2": false,
+        "v3": true,
+        "AOT": true
+      }
+    },
+    {
+      "id": "xUnit1070",
+      "title": "Cultured test methods cannot have null cultures",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1070",
+      "category": "Usage",
+      "default": "Error",
+      "versions": {
+        "v2": false,
+        "v3": true,
+        "AOT": true
+      }
+    },
+    {
+      "id": "xUnit1071",
+      "title": "Cultured test methods should not have duplicate cultures",
+      "helpUri": "https://xunit.net/xunit.analyzers/rules/xUnit1071",
       "category": "Usage",
       "default": "Warning",
       "versions": {
