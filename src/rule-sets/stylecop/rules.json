@@ -435,6 +435,12 @@
       "category": "Readability"
     },
     {
+      "id": "SA1143",
+      "title": "A conditional expression does not use a supported single-line or indented multiline layout.",
+      "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1143.md",
+      "category": "Readability"
+    },
+    {
       "id": "SA1200",
       "title": "A C# using directive is placed outside of a namespace element.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1200.md",
@@ -633,9 +639,21 @@
       "category": "Naming"
     },
     {
+      "id": "SA1315",
+      "title": "Parameter names in methods that override a base method or implement an interface member should match the inherited parameter names.",
+      "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1315.md",
+      "category": "Naming"
+    },
+    {
       "id": "SA1316",
       "title": "Element names within a tuple type should have the correct casing.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1316.md",
+      "category": "Naming"
+    },
+    {
+      "id": "SA1317",
+      "title": "An identifier should be named only with Latin letters.",
+      "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1317.md",
       "category": "Naming"
     },
     {
@@ -1173,6 +1191,18 @@
       "category": "Documentation"
     },
     {
+      "id": "SA1653",
+      "title": "More than one declaration of a partial type contains summary documentation.",
+      "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1653.md",
+      "category": "Documentation"
+    },
+    {
+      "id": "SA1654",
+      "title": "Generic type arguments in cref attributes should use braces instead of escaped angle brackets.",
+      "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1654.md",
+      "category": "Documentation"
+    },
+    {
       "id": "SX1101",
       "title": "A call to an instance member of the local class or a base class is prefixed with 'this.', within a C# code file.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SX1101.md",
@@ -1188,6 +1218,12 @@
       "id": "SX1309S",
       "title": "A static field name does not begin with an underscore.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SX1309S.md",
+      "category": "Alternative"
+    },
+    {
+      "id": "SX1412",
+      "title": "The encoding of the file is not UTF-8 without byte order mark.",
+      "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SX1412.md",
       "category": "Alternative"
     }
   ]
