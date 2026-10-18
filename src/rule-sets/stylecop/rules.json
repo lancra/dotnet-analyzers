@@ -1,10 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/rules.schema.json",
-  "timestamp": "2025-08-25T06:18:07.0767686-04:00",
+  "timestamp": "2026-10-18T06:31:34.8148143-04:00",
   "rules": [
     {
       "id": "SA0001",
-      "title": "All diagnostics of XML documentation comments has been disabled due to the current project configuration.",
+      "title": "Diagnostics for documentation comments may be missing or incorrect, and code fixes for all diagnostics may misbehave in source files containing any documentation comments.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA0001.md",
       "category": "Special"
     },
@@ -574,7 +574,7 @@
     },
     {
       "id": "SA1305",
-      "title": "The name of a field or variable in C# uses Hungarian notation.",
+      "title": "The name of a field, variable, or parameter in C# uses Hungarian notation.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1305.md",
       "category": "Naming"
     },
@@ -682,7 +682,7 @@
     },
     {
       "id": "SA1407",
-      "title": "A C# statement contains a complex arithmetic expression which omits parenthesis around operators.",
+      "title": "A C# statement contains a complex expression with arithmetic, bitwise, or shift operators which omits parentheses to make precedence explicit.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1407.md",
       "category": "Maintainability"
     },
@@ -718,7 +718,7 @@
     },
     {
       "id": "SA1413",
-      "title": "A multi-line initializer should use a comma on the last item.",
+      "title": "A multi-line initializer, enum, switch expression or property pattern should use a comma on the last item.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1413.md",
       "category": "Maintainability"
     },
@@ -1006,7 +1006,7 @@
     },
     {
       "id": "SA1625",
-      "title": "The Xml documentation for a C# element contains two or more identical entries, indicating that the documentation has been copied and pasted.",
+      "title": "The Xml documentation for a C# element contains two or more identical entries.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1625.md",
       "category": "Documentation"
     },
