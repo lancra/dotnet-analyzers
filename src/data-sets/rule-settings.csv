@@ -941,3 +941,4 @@ None,xUnit1068,xUnit,Usage,MemberData cannot point to an open generic type,Warni
 None,xUnit1069,xUnit,Usage,Test methods with a Timeout should reference TestContext.Current.CancellationToken,Warning,
 None,xUnit1070,xUnit,Usage,Cultured test methods cannot have null cultures,Warning,
 None,xUnit1071,xUnit,Usage,Cultured test methods should not have duplicate cultures,Warning,
+None,xUnit1072,xUnit,Usage,Test methods from referenced assemblies are not supported in Native AOT,Warning,
