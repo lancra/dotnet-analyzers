@@ -1,10 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/rules.schema.json",
-  "timestamp": "2025-08-25T06:18:07.0767686-04:00",
+  "timestamp": "2026-10-18T06:31:34.8148143-04:00",
   "rules": [
     {
       "id": "SA0001",
-      "title": "All diagnostics of XML documentation comments has been disabled due to the current project configuration.",
+      "title": "Diagnostics for documentation comments may be missing or incorrect, and code fixes for all diagnostics may misbehave in source files containing any documentation comments.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA0001.md",
       "category": "Special"
     },
@@ -435,6 +435,12 @@
       "category": "Readability"
     },
     {
+      "id": "SA1143",
+      "title": "A conditional expression does not use a supported single-line or indented multiline layout.",
+      "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1143.md",
+      "category": "Readability"
+    },
+    {
       "id": "SA1200",
       "title": "A C# using directive is placed outside of a namespace element.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1200.md",
@@ -574,7 +580,7 @@
     },
     {
       "id": "SA1305",
-      "title": "The name of a field or variable in C# uses Hungarian notation.",
+      "title": "The name of a field, variable, or parameter in C# uses Hungarian notation.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1305.md",
       "category": "Naming"
     },
@@ -633,9 +639,21 @@
       "category": "Naming"
     },
     {
+      "id": "SA1315",
+      "title": "Parameter names in methods that override a base method or implement an interface member should match the inherited parameter names.",
+      "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1315.md",
+      "category": "Naming"
+    },
+    {
       "id": "SA1316",
       "title": "Element names within a tuple type should have the correct casing.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1316.md",
+      "category": "Naming"
+    },
+    {
+      "id": "SA1317",
+      "title": "An identifier should be named only with Latin letters.",
+      "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1317.md",
       "category": "Naming"
     },
     {
@@ -682,7 +700,7 @@
     },
     {
       "id": "SA1407",
-      "title": "A C# statement contains a complex arithmetic expression which omits parenthesis around operators.",
+      "title": "A C# statement contains a complex expression with arithmetic, bitwise, or shift operators which omits parentheses to make precedence explicit.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1407.md",
       "category": "Maintainability"
     },
@@ -718,7 +736,7 @@
     },
     {
       "id": "SA1413",
-      "title": "A multi-line initializer should use a comma on the last item.",
+      "title": "A multi-line initializer, enum, switch expression or property pattern should use a comma on the last item.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1413.md",
       "category": "Maintainability"
     },
@@ -1006,7 +1024,7 @@
     },
     {
       "id": "SA1625",
-      "title": "The Xml documentation for a C# element contains two or more identical entries, indicating that the documentation has been copied and pasted.",
+      "title": "The Xml documentation for a C# element contains two or more identical entries.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1625.md",
       "category": "Documentation"
     },
@@ -1173,6 +1191,18 @@
       "category": "Documentation"
     },
     {
+      "id": "SA1653",
+      "title": "More than one declaration of a partial type contains summary documentation.",
+      "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1653.md",
+      "category": "Documentation"
+    },
+    {
+      "id": "SA1654",
+      "title": "Generic type arguments in cref attributes should use braces instead of escaped angle brackets.",
+      "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1654.md",
+      "category": "Documentation"
+    },
+    {
       "id": "SX1101",
       "title": "A call to an instance member of the local class or a base class is prefixed with 'this.', within a C# code file.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SX1101.md",
@@ -1188,6 +1218,12 @@
       "id": "SX1309S",
       "title": "A static field name does not begin with an underscore.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SX1309S.md",
+      "category": "Alternative"
+    },
+    {
+      "id": "SX1412",
+      "title": "The encoding of the file is not UTF-8 without byte order mark.",
+      "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SX1412.md",
       "category": "Alternative"
     }
   ]
