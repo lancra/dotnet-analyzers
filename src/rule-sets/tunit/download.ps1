@@ -3,63 +3,43 @@
 Downloads TUnit rules.
 
 .DESCRIPTION
-The rules are parsed from the individual category tables in the Markdown index.
+Uses the Markdown index to parse the complete list of rules.
 #>
 [CmdletBinding()]
 param ()
 
-$indexUri = 'https://raw.githubusercontent.com/thomhurst/TUnit/refs/heads/main/src/TUnit.Analyzers/AnalyzerReleases.Shipped.md'
-$headerPrefix = [string]::new('#', 4) + ' '
-$headerSuffix = ' Rules'
-$tableTitlePrefix = 'Rule ID |'
-
 $ruleSet = Get-RuleSet -CurrentDirectory
-$categories = $ruleSet |
-    Select-Object -ExpandProperty Categories
 
 enum RuleParserState {
-    Search         # Looking for the category header in the document.
-    TableTitle     # Skipping the table title header.
-    TableAlignment # Skipping the table alignment header.
-    Active         # Parsing rules from the table
+    HeaderSearch # Searching for an analyzer table header.
+    Header # Skipping the table header.
+    Active # Parsing rules from the table.
+    Complete # Finished parsing.
 }
-$state = [RuleParserState]::Search
-$currentCategory = $null
+$state = [RuleParserState]::HeaderSearch
 
 $rules = @()
-& curl --silent $indexUri |
+& curl --silent 'https://raw.githubusercontent.com/thomhurst/TUnit/refs/heads/main/src/TUnit.Analyzers/AnalyzerReleases.Shipped.md' |
     ForEach-Object {
-        if ($state -eq [RuleParserState]::Search) {
-            if ($_.StartsWith($headerPrefix)) {
-                $state = [RuleParserState]::TableTitle
-
-                $categoryName = $_.Substring($headerPrefix.Length)
-                if ($categoryName.EndsWith($headerSuffix)) {
-                    $categoryName = $categoryName.Substring(0, $categoryName.Length - $headerSuffix.Length)
-                }
-
-                $currentCategory = $categories |
-                    Where-Object -Property 'name' -EQ $categoryName
+        if ($state -eq [RuleParserState]::HeaderSearch) {
+            if ($_.StartsWith('Rule ID |')) {
+                $state = [RuleParserState]::Header
             }
 
             return
         }
 
-        if ($state -eq [RuleParserState]::TableTitle) {
-            if ($_.StartsWith($tableTitlePrefix)) {
-                $state = [RuleParserState]::TableAlignment
-            }
-
-            return
-        }
-
-        if ($state -eq [RuleParserState]::TableAlignment) {
+        if ($state -eq [RuleParserState]::Header) {
             $state = [RuleParserState]::Active
             return
         }
 
-        if ($state -eq [RuleParserState]::Active -and -not $_) {
-            $state = [RuleParserState]::Search
+        if ($state -eq [RuleParserState]::Active -and [string]::IsNullOrEmpty($_)) {
+            $state = [RuleParserState]::Complete
+            return
+        }
+
+        if ($state -eq [RuleParserState]::Complete) {
             return
         }
 
@@ -68,8 +48,7 @@ $rules = @()
         $rule = [PSCustomObject]@{
             id = $rowValues[0]
             title = $rowValues[3]
-            helpUri = $currentCategory.indexUri
-            category = $currentCategory.name
+            helpUri = $ruleSet.HelpUriFormat
             default = $rowValues[2]
         }
 
