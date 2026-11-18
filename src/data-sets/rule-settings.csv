@@ -639,6 +639,7 @@ None,SA1411,StyleCop,Maintainability,"An attribute declaration does not contain 
 None,SA1412,StyleCop,Maintainability,The encoding of the file is not UTF-8 with byte order mark.,Disabled,
 None,SA1413,StyleCop,Maintainability,"A multi-line initializer, enum, switch expression or property pattern should use a comma on the last item.",Warning,
 None,SA1414,StyleCop,Maintainability,Tuple types appearing in member declarations should have explicitly named tuple elements.,Warning,
+None,SA1415,StyleCop,Maintainability,A member of an effectively internal or private type is declared public. This rule is disabled by default.,Disabled,
 None,SA1300,StyleCop,Naming,The name of a C# element does not begin with an upper-case letter.,Warning,
 None,SA1301,StyleCop,Naming,There are currently no situations in which this rule will fire.,Warning,
 None,SA1302,StyleCop,Naming,The name of a C# interface does not begin with the capital letter I.,Warning,
@@ -942,3 +943,4 @@ None,xUnit1069,xUnit,Usage,Test methods with a Timeout should reference TestCont
 None,xUnit1070,xUnit,Usage,Cultured test methods cannot have null cultures,Warning,
 None,xUnit1071,xUnit,Usage,Cultured test methods should not have duplicate cultures,Warning,
 None,xUnit1072,xUnit,Usage,Test methods from referenced assemblies are not supported in Native AOT,Warning,
+None,xUnit1073,xUnit,Usage,Collection definition is never used,Warning,

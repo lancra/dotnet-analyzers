@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/lancra/dotnet-analyzers/refs/heads/main/rules.schema.json",
-  "timestamp": "2026-10-18T06:31:34.8148143-04:00",
+  "timestamp": "2026-11-15T09:30:29.0560430-05:00",
   "rules": [
     {
       "id": "SA0001",
@@ -744,6 +744,12 @@
       "id": "SA1414",
       "title": "Tuple types appearing in member declarations should have explicitly named tuple elements.",
       "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1414.md",
+      "category": "Maintainability"
+    },
+    {
+      "id": "SA1415",
+      "title": "A member of an effectively internal or private type is declared public. This rule is disabled by default.",
+      "helpUri": "https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1415.md",
       "category": "Maintainability"
     },
     {
